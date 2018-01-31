@@ -203,46 +203,27 @@
       </section>
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
-        <div class="my-auto" id="skills-content">
-          <h2 class="mb-5">Skills</h2>
-          <script id="skillsTemplate" type="text/x-handlebars-template">
+        <script id="skillsTemplate" type="text/x-handlebars-template">
             {{#each Sections}}
                 <div class="subheading mb-3">{{this.name}}</div>
                 {{#each this.entries}}
-                  <li class="list-inline-item">
-                    <i class="devicons devicons-{{this}}"></i>
-                  </li>
+                    {{#if this.name}}
+                        <li class="list-inline-item">
+                          <i class="devicons devicons-{{lowercase this.name}}"></i>
+                          <a href="{{this.link}}">{{lowercase this.name}}</a>
+                        </li>
+                    {{else}}
+                      <li class="list-inline-item">
+                        <i class="devicons devicons-{{lowercase this}}"></i>
+                        {{lowercase this}}
+                      </li>
+                      {{/if}}
                 {{/each}}
             {{/each}}
-          </script>
-
-          <div class="subheading mb-3">Plugin Development & Administration</div>
-          <ul class="list-inline list-icons">
-            <li class="list-inline-item">
-              <i class="devicons devicons-bitbucket"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-jira"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-bamboo"></i>
-            </li>
-            <li class="list-inline-item">
-            <h6>bamboo</h6>
-            <h6>Confluence</h6>
-              <i class="devicons devicons-atlassian"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-nginx"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-docker"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-wordpress"></i>
-              <h6>wordpress</h6>
-            </li>
-          </ul>
+        </script>
+        <div class="my-auto" id="skills-content">
+          <h2 class="mb-5">Skills</h2>
+        </div>
 
       </section>
 
@@ -321,7 +302,10 @@
     <script src="data/skills.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
         <!-- Custom scripts for this template -->
-        <script >
+        <script type="text/javascript">
+            Handlebars.registerHelper('lowercase', function(str) {
+              return String(str).toLowerCase();
+            });
             var skillsTemplate = $('#skillsTemplate').html();
             var templateScript = Handlebars.compile(skillsTemplate);
             $('#skills-content').append(templateScript(skills));
