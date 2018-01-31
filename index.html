@@ -121,55 +121,23 @@
       </section>
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
-        <div class="my-auto">
-          <h2 class="mb-5">Experience</h2>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Director, Enterprise Software Delivery</h3>
-              <div class="subheading mb-3">Liberty Mutual Technology Group</div>
-              <p>Led in development and oftware delivery and enterprise cloud adoption strategy. Collaborating across IT functions (security, compliance, networking, etc) to expand automation and self-service to reduce time for new applications from weeks to days.</p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">February 2016 - Present</span>
-            </div>
+          <script id="experienceTemplate" type="text/x-handlebars-template">
+              {{#each this}}
+                  <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                    <div class="resume-content mr-auto">
+                      <h3 class="mb-0">{{this.role}}</h3>
+                      <div class="subheading mb-3">{{this.company}}</div>
+                      <p>{{this.summary}}</p>
+                    </div>
+                    <div class="resume-date text-md-right">
+                      <span class="text-primary">{{this.range}}</span>
+                    </div>
+                  </div>
+              {{/each}}
+          </script>
+          <div class="my-auto" id="experience-content">
+            <h2 class="mb-5">Experience</h2>
           </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Manager, Enterprise Software Developer</h3>
-              <div class="subheading mb-3">Liberty Mutual Technology Group</div>
-              <p>Led team delivering Liberty Mutual's first PaaS, modernizing software delivery. Accelerated tge adoption of cloud delivery and deployment platforms by 800%.</p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">March 2014 - February 2016</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Principal Developer</h3>
-              <div class="subheading mb-3">Liberty Mutual Technology Group</div>
-              <p></p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">March 2014</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Senior Developer</h3>
-              <div class="subheading mb-3">Liberty Mutual Technology Group</div>
-              <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">September 2008 - June 2010</span>
-            </div>
-          </div>
-
-        </div>
-
       </section>
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
@@ -204,7 +172,7 @@
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
         <script id="skillsTemplate" type="text/x-handlebars-template">
-            {{#each Sections}}
+            {{#each this}}
                 <div class="subheading mb-3">{{this.name}}</div>
                 {{#each this.entries}}
                     {{#if this.name}}
@@ -224,73 +192,56 @@
         <div class="my-auto" id="skills-content">
           <h2 class="mb-5">Skills</h2>
         </div>
-
       </section>
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="projects">
-        <div class="my-auto">
-          <h2 class="mb-5">Projects</h2>
-          <h3><a href="https://hub.docker.com/r/eddiewebb/bitbucket-pipelines-marketplace/">Docker image for Bitbucket CI/CD Pipelines  "shipit"</a></h3>
-          Provides required dependencies and additional utilities to simplify and codify the process of building, testing and delivering Atlassian plugins all the way to the live marketplace.
-          <ul>
-           	<li>Executes integration/AUT level tests against all stated compatible versions for the product</li>
-           	<li>Uploads generated artifact to Atlassian marketplace</li>
-           	<li>Provides corresponding metadata indicating version, release notes, and compatibility</li>
-          </ul>
-          Fun Fact: 700+ "pulls" from docker hub
-
-          <ul class="tags">
-           	<li><a class="tag">Docker</a></li>
-           	<li><a  class="tag">Maven</a></li>
-           	<li><a  class="tag">Java</a></li>
-           	<li><a  class="tag">Python</a></li>
-           	<li><a  class="tag">REST APIs</a></li>
-           	<li><a  class="tag">Bash/Shell</a></li>
-          </ul>
-
-          <a href="https://github.com/eddiewebb/bosh-bamboo">BOSH release for Bamboo &amp; Remote Agents</a>
-
-          BOSH (Bosh Outer SHell) "...<em> is an open source tool for release engineering, deployment, lifecycle management, and monitoring of distributed systems.</em>"
-          And it's amazingly powerful. This examples uses BOSH to provision an Alassian vendor app running on JDK along with the support Postgres database and agents to support it.  The releases manages the health of services and will automatically provision, start/stop processes across the various services.
-
-          Technology: BOSH, Java, Atlassian Ecosystem, monit, python, xml, xslt, bash/shell
-          <h3><a href="https://bitbucket.org/eddiewebb/slackbot-happy-hour-lambda">Happy Hour Command for Slack</a></h3>
-          Queries Google for local establishments meeting specified criteria randomly selecting a match based on reviews and distance.
-
-          Technology:  Python, AWS Lambdas, AWS KMS, Slack
-          <h3><a href="https://marketplace.atlassian.com/vendors/1017039">Atlassian Marketplace Plugins</a></h3>
-          <span style="font-weight: 400;">Multiple plugins used by thousands of teams that provide enhanced functionality of Atlassian’s core products (primarily JIRA and Bamboo) to enrich CI/CD capabilities, DevOps automation, or productivity. Functionality spans user interface, web services and persistence. Html, JS,  Spring and REST knowledge applied.</span>
-
-          Fun Fact: 1,500+ Active installations across large and small companies.
-
-          Technology: Java, Spring, REST APIs, Javascript, Atlassian Developer Ecosystem (Bamboo, JIRA, Bitbucket, Confluence)
-
-
-
-
+        <script id="projectsTemplate" type="text/x-handlebars-template">
+            {{#each this}}
+                <h3><a href="{{this.link}}">{{this.name}}</a></h3>
+                <p>{{{this.summary}}}<p>
+                {{#if this.image}}
+                    <img src="{{this.image}}" style="max-height:300px;"/>
+                {{/if}}
+                <span class="project-fact">{{this.fact}}</span>
+                <ul class="tags">
+                    {{#each this.tags}}
+                      <li><a class="tag">{{this}}</a></li>
+                    {{/each}}
+                </ul>
+            {{/each}}
+        </script>
+        <div class="my-auto" id="projects-content">
+            <h2 class="mb-5">Projects</h2>
         </div>
-
       </section>
+
+
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="open">
-        <div class="my-auto">
-          <h2 class="mb-5">Open Source Contributions</h2>
-              Aside from my various Atlassian plugins and learning repositories being licensed in the open, I have contributed to a handful of projects maintained by others.  Successful PRs require committers to understand community guidelines/standards, communicate clearly, and work well with people you've had no previous relationship with.
-              <h3><a href="https://bitbucket.org/atlassianlabs/bamboo-after-deployment-trigger/pull-requests/2/fixes-issue-2-eliminate/diff">Atlassian Deployment Triggers</a></h3>
-              <p>Addressed pretty significant performance issue for large deployment. Elimination of massive backend query, using asynchronous call against index reduced page load from from 2+ minutes to nearly instant, with incredible responsive search.</p>
-
-              <a href="https://www.edwardawebb.com/portfolio/attachment/roundtrip" ><img src="img/deploysonly.gif" alt="" width="600" height="310" /></a>
-
-              <h3><a href="https://github.com/badges/shields/pull/856">Added Docker Build Status Badge to shields.io</a></h3>
-              Shields.io is a massive library of badges that can be inserted into project README's or websites displaying various statuses (code coverage, health, version, etc).  Support for docker was missing the current build health, and was a pretty trivial addition.
-
-              [caption id="" align="alignnone" width="128"]<a href="https://hub.docker.com/r/eddiewebb/bitbucket-pipelines-marketplace/"><img class="size-medium" src="https://img.shields.io/docker/build/eddiewebb/bitbucket-pipelines-marketplace.svg?style=plastic" alt="Example status icon for automated docker builds" width="128" height="18" /></a> Example status icon for automated docker builds[/caption]
-              <h3><a href="https://github.com/libertymutual/ssh-key-enforcer-stash">Enterprise SSH Key Management for Bitbucket</a></h3>
-              Worked through company process to open source a solution that enforces key rotation and expiry policies for users and repositories in Atlassian bitbucket.
-              <h3><a href="https://github.com/schemaorg/schemaorg/pull/1120">Schema.org Structured Data documentation fixes</a></h3>
-              Not all pull requests are glorious code, documentation is really important too! This commit fixed some invalid JSON found in some example specs.
-          </div>
+        <script id="contributionsTemplate" type="text/x-handlebars-template">
+            {{#each this}}
+                <h3>{{this.name}}</h3>
+                <h5><a href="{{this.link}}">{{this.link}}</a></h5>
+                <p>{{{this.summary}}}<p>
+                {{#if this.image}}
+                    <img src="{{this.image}}" style="max-height:300px;"/>
+                {{/if}}
+                <span class="project-fact">{{this.fact}}</span>
+                <ul class="tags">
+                    {{#each this.tags}}
+                      <li><a class="tag">{{this}}</a></li>
+                    {{/each}}
+                </ul>
+            {{/each}}
+        </script>
+        <div class="my-auto" id="contributions-content">
+            <h2 class="mb-5">Open Source Contributions</h2>
+            <p>Aside from my various Atlassian plugins and learning repositories being licensed in the open, I have contributed to a handful of projects maintained by others.  Successful PRs require committers to understand community guidelines/standards, communicate clearly, and work well with people you've had no previous relationship with.</p>
+        </div>
       </section>
-<span style="color: #999999; font-size: 60%;">Nifty tech tag formats from <a class="pen-owner-link" href="https://codepen.io/wbeeftink">Wouter Beeftink</a>  @ https://codepen.io/wbeeftink/pen/dIaDH</span>
+
+
+
+      <span style="color: #999999; font-size: 60%;">Nifty tech tag formats from <a class="pen-owner-link" href="https://codepen.io/wbeeftink">Wouter Beeftink</a>  @ https://codepen.io/wbeeftink/pen/dIaDH</span>
     </div>
 
     <!-- Bootstrap core JavaScript -->
@@ -299,17 +250,33 @@
 
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- load skills, projects and contributions from JSON data files -->
+    <script src="data/experience.js"></script>
     <script src="data/skills.js"></script>
+    <script src="data/projects.js"></script>
+    <script src="data/contributions.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-        <!-- Custom scripts for this template -->
-        <script type="text/javascript">
-            Handlebars.registerHelper('lowercase', function(str) {
-              return String(str).toLowerCase();
-            });
-            var skillsTemplate = $('#skillsTemplate').html();
-            var templateScript = Handlebars.compile(skillsTemplate);
-            $('#skills-content').append(templateScript(skills));
-        </script>
+    <!-- Custom scripts for this template -->
+    <script type="text/javascript">
+        Handlebars.registerHelper('lowercase', function(str) {
+          return String(str).toLowerCase();
+        });
+        var experienceTemplate = $('#experienceTemplate').html();
+        var templateScript = Handlebars.compile(experienceTemplate);
+        $('#experience-content').append(templateScript(experienceInventory));
+
+        var skillsTemplate = $('#skillsTemplate').html();
+        var templateScript = Handlebars.compile(skillsTemplate);
+        $('#skills-content').append(templateScript(skillsInventory));
+
+        var projectsTemplate = $('#projectsTemplate').html();
+        var templateScript = Handlebars.compile(projectsTemplate);
+        $('#projects-content').append(templateScript(projectsInventory));
+
+        var contributionsTemplate = $('#contributionsTemplate').html();
+        var templateScript = Handlebars.compile(contributionsTemplate);
+        $('#contributions-content').append(templateScript(contributionsInventory));
+    </script>
     <!-- Custom scripts for this template -->
     <script src="js/resume.min.js"></script>
 

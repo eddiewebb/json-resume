@@ -1,5 +1,4 @@
-var skills = {
-    "Sections":[
+var skillsInventory = [
         {
             "name":"Languages, Operating Systems & Tools",
             "entries":[ "Java","Python","git","subversion","linux","bash","php","jquery","javascript"]
@@ -18,4 +17,3 @@ var skills = {
             ]
         }
     ]
-}
