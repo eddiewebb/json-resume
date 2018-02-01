@@ -6,6 +6,11 @@ h3.mb-0{
     margin-top:0;
 }
 
+div.skills-heading{
+    margin-top:1em;
+    margin-bottom:0 !important;
+}
+
 
 
 /* From https://codepen.io/wbeeftink/pen/dIaDH */
