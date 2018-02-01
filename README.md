@@ -2,7 +2,7 @@
 
 Created from [Start Bootstrap - Resume](https://startbootstrap.com/template-overviews/resume/), augmented with Handlebars for dynamic data entry.
 
-Published via Bitbucket pipelines to [Eddie's Website](https://edwardawebb.com)
+Published via CI pipelines to [Eddie's Website](https://edwardawebb.com)
 
 
 
