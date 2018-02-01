@@ -18,11 +18,14 @@ jobs:
 
     steps:
       - checkout
-
-      - run: |
-        echo "Pushing all files in `pwd` to host"
-        tree
-        tar -czf resume.tar.gz .
-        scp resume.tar.gz ${REZUSER}@${REZHOST}:${REZPATH}
-        ssh ${REZUSER}@${REZHOST} -C "cd ${REZPATH} && tar -xzf resume.tar.gz"
-        echo "Done"
+      - run:
+          name: Keyscan  (HACK)
+          command: ssh-keyscan -H ${REZHOST} >> ~/.ssh/known_hosts
+      - run:
+          name: Deployment
+          command: |
+            echo "Pushing all files in `pwd` to host"
+            tar -czf ../resume.tar.gz .
+            scp ../resume.tar.gz ${REZUSER}@${REZHOST}:${REZPATH}
+            ssh ${REZUSER}@${REZHOST} -C "cd ${REZPATH} && tar -xzf resume.tar.gz"
+            echo "Done"
