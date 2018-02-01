@@ -27,5 +27,5 @@ jobs:
             echo "Pushing all files in `pwd` to host"
             tar -czf ../resume.tar.gz .
             scp ../resume.tar.gz ${REZUSER}@${REZHOST}:${REZPATH}
-            ssh ${REZUSER}@${REZHOST} -C "cd ${REZPATH} && tar -xzf resume.tar.gz"
+            ssh ${REZUSER}@${REZHOST} -C "cd ${REZPATH} && tar -xzf resume.tar.gz && rm resume.tar.gz"
             echo "Done"
