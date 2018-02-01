@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href='http://cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css' rel='stylesheet'>
+    <link href='//cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css' rel='stylesheet'>
     <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
@@ -32,7 +32,7 @@
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
         <span class="d-block d-lg-none">Eddie Webb</span>
         <span class="d-none d-lg-block">
-          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile2.jpg" alt="">
+          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile3.jpg" alt="">
         </span>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,7 +44,7 @@
             <a class="nav-link js-scroll-trigger" href="#about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
+            <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
@@ -53,7 +53,10 @@
             <a class="nav-link js-scroll-trigger" href="#open">Open Source</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+            <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#education">Education</a>
           </li>
 
         </ul>
@@ -98,14 +101,6 @@
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="https://twitter.com/edwardawebb">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
                 <div style="inline-block">
                      <a style="float:left" href="https://stackoverflow.com/users/story/82880"><img title="profile for Eddie on Stack Exchange, a network of free, community-driven Q&amp;A sites" src="https://stackexchange.com/users/flair/30392.png" alt="profile for Eddie on Stack Exchange, a network of free, community-driven Q&amp;A sites" width="208" height="58" />
                      </a>
@@ -117,56 +112,6 @@
                  </div>
              </li>
           </ul>
-        </div>
-      </section>
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
-          <script id="experienceTemplate" type="text/x-handlebars-template">
-              {{#each this}}
-                  <div class="resume-item d-flex flex-column flex-md-row mb-5">
-                    <div class="resume-content mr-auto">
-                      <h3 class="mb-0">{{this.role}}</h3>
-                      <div class="subheading mb-3">{{this.company}}</div>
-                      <p>{{this.summary}}</p>
-                    </div>
-                    <div class="resume-date text-md-right">
-                      <span class="text-primary">{{this.range}}</span>
-                    </div>
-                  </div>
-              {{/each}}
-          </script>
-          <div class="my-auto" id="experience-content">
-            <h2 class="mb-5">Experience</h2>
-          </div>
-      </section>
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
-        <div class="my-auto">
-          <h2 class="mb-5">Education</h2>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Rochester Institute of Technology</h3>
-              <div class="subheading mb-3">Bachelor of Science</div>
-              <div>Management Information Systems, Concentration in Sociology and Organizational Behavior</div>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">2006-2008</span>
-            </div>
-          </div>
-
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Clinton Community College</h3>
-              <div class="subheading mb-3">Associates of Applied Science</div>
-              <div>Computer Information Systems</div>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">2004-2006</span>
-            </div>
-          </div>
-
         </div>
       </section>
 
@@ -239,6 +184,52 @@
         </div>
       </section>
 
+        <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
+            <script id="experienceTemplate" type="text/x-handlebars-template">
+                {{#each this}}
+                    <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                      <div class="resume-content mr-auto">
+                        <h3 class="mb-0">{{this.role}}</h3>
+                        <div class="subheading mb-3">{{this.company}}</div>
+                        <p>{{this.summary}}</p>
+                      </div>
+                      <div class="resume-date text-md-right">
+                        <span class="text-primary">{{this.range}}</span>
+                      </div>
+                    </div>
+                {{/each}}
+            </script>
+            <div class="my-auto" id="experience-content">
+              <h2 class="mb-5">Experience</h2>
+            </div>
+        </section>
+
+        <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
+          <div class="my-auto">
+            <h2 class="mb-5">Education</h2>
+
+            <div class="resume-item d-flex flex-column flex-md-row mb-5">
+              <div class="resume-content mr-auto">
+                <h3 class="mb-0">Rochester Institute of Technology</h3>
+                <div class="subheading mb-3">Bachelor of Science</div>
+                <div>Management Information Systems, Concentration in Sociology and Organizational Behavior</div>
+              </div>
+              <div class="resume-date text-md-right">
+                <span class="text-primary">2006-2008</span>
+              </div>
+            </div>
+            <div class="resume-item d-flex flex-column flex-md-row mb-5">
+               <div class="resume-content mr-auto">
+                 <h3 class="mb-0">Clinton Community College</h3>
+                 <div class="subheading mb-3">Associates of Applied Science</div>
+                 <div>Computer Information Systems</div>
+               </div>
+               <div class="resume-date text-md-right">
+                 <span class="text-primary">2004-2006</span>
+               </div>
+             </div>
+           </div>
+        </section>
 
 
       <span style="color: #999999; font-size: 60%;">Nifty tech tag formats from <a class="pen-owner-link" href="https://codepen.io/wbeeftink">Wouter Beeftink</a>  @ https://codepen.io/wbeeftink/pen/dIaDH</span>
