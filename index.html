@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href='//cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css' rel='stylesheet'>
     <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
@@ -53,6 +53,9 @@
             <a class="nav-link js-scroll-trigger" href="#open">Open Source</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#publications">Publications</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
           </li>
           <li class="nav-item">
@@ -75,10 +78,11 @@
           </div>
 
           <p class="mb-5">Proven Software Platform Engineer with experience leveraging agile, DevOps, and CI/CD to manage large scale distributed platforms both on prem and in public cloud.</p>
+          <p class="mb-5">My role is to foster the right environment for a fierce team of passionate people to improve and refine software delivery capabilities for thousands of developers, product managers,testers and teams across Liberty Mutual. Our mission is to eliminate friction and waste, and make way for innovation and rapid iteration, from ideation to delivery.</p>
           <p class="mb-5">This site is published by Continuous Delivery <a href="https://circleci.com/gh/eddiewebb/json-resume">pipelines</a> from a github <a href="https://github.com/eddiewebb/json-resume">repository</a>. <img src="https://circleci.com/gh/eddiewebb/json-resume.svg?style=svg" alt"CircleCI Status Badge"/></p>
           <ul class="list-inline list-social-icons mb-0">
             <li class="list-inline-item">
-              <a href="https://www.linkedin.com/in/edwardwebb/">
+              <a href="https://www.linkedin.com/in/edwardwebb/" data-toggle="tooltip" title="LinkedIn" data-offset="0 10">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
@@ -86,7 +90,7 @@
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="https://github.com/eddiewebb/">
+              <a href="https://github.com/eddiewebb/" data-toggle="tooltip" title="GitHub" data-offset="0 10">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -94,7 +98,7 @@
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="https://bitbucket.org/eddiewebb/">
+              <a href="https://bitbucket.org/eddiewebb/" data-toggle="tooltip" title="Bitbucket" data-offset="0 10">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-bitbucket fa-stack-1x fa-inverse"></i>
@@ -102,16 +106,13 @@
               </a>
             </li>
             <li class="list-inline-item">
-                <div style="inline-block">
-                     <a style="float:left" href="https://stackoverflow.com/users/story/82880"><img title="profile for Eddie on Stack Exchange, a network of free, community-driven Q&amp;A sites" src="https://stackexchange.com/users/flair/30392.png" alt="profile for Eddie on Stack Exchange, a network of free, community-driven Q&amp;A sites" width="208" height="58" />
-                     </a>
-                     <ul style="float:left;font-size:60%;padding-left:20px;">
-                      	<li>Top 7% of all users,</li>
-                      	<li>top 5% <strong>Android</strong></li>
-                      	<li>top 20% on <strong>git</strong> &amp; <strong>linux</strong></li>
-                     </ul>
-                 </div>
-             </li>
+              <a href="https://stackoverflow.com/users/story/82880" data-toggle="tooltip" title="Stack Overflow" data-offset="0 10">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
           </ul>
         </div>
       </section>
@@ -119,7 +120,7 @@
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
         <script id="skillsTemplate" type="text/x-handlebars-template">
             {{#each this}}
-                <div class="subheading mb-3">{{this.name}}</div>
+                <div class="subheading mb-3 skills-heading">{{this.name}}</div>
                 {{#each this.entries}}
                     {{#if this.name}}
                         <li class="list-inline-item">
@@ -148,7 +149,7 @@
                 {{#if this.image}}
                     <img src="{{this.image}}" style="max-height:300px;"/>
                 {{/if}}
-                <span class="project-fact">{{this.fact}}</span>
+                <div class="bd-callout bd-callout-warning">{{this.fact}}</div>
                 <ul class="tags">
                     {{#each this.tags}}
                       <li><a class="tag">{{this}}</a></li>
@@ -185,6 +186,31 @@
         </div>
       </section>
 
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="publications">
+          <script id="publicationsTemplate" type="text/x-handlebars-template">
+              {{#each this}}
+                  <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                    <div class="publication-content mr-auto">
+                      <h3 class="mb-0">{{this.type}} - <a href="{{this.link}}">{{this.name}}</a></h3>
+                      <p>{{{this.summary}}}</p>
+                      <ul class="tags">
+                          {{#each this.tags}}
+                            <li><a class="tag">{{this}}</a></li>
+                          {{/each}}
+                      </ul>
+                    </div>
+                    <div class="resume-date text-md-right">
+                      <span class="text-primary">{{this.date}}</span>
+                      <img src="{{this.image}}" style="max-width:250px;padding:5px;"/>
+                    </div>
+                  </div>
+              {{/each}}
+          </script>
+          <div class="my-auto" id="publications-content">
+            <h2 class="mb-5">Publications</h2>
+          </div>
+      </section>
+
         <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
             <script id="experienceTemplate" type="text/x-handlebars-template">
                 {{#each this}}
@@ -204,6 +230,7 @@
               <h2 class="mb-5">Experience</h2>
             </div>
         </section>
+
 
         <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
           <div class="my-auto">
@@ -247,9 +274,15 @@
     <script src="data/skills.js"></script>
     <script src="data/projects.js"></script>
     <script src="data/contributions.js"></script>
+    <script src="data/publications.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <!-- Custom scripts for this template -->
     <script type="text/javascript">
+
+      $(function () {
+          console.log("toop");
+          $('[data-toggle="tooltip"]').tooltip()
+        })
         Handlebars.registerHelper('lowercase', function(str) {
           return String(str).toLowerCase();
         });
@@ -268,6 +301,10 @@
         var contributionsTemplate = $('#contributionsTemplate').html();
         var templateScript = Handlebars.compile(contributionsTemplate);
         $('#contributions-content').append(templateScript(contributionsInventory));
+
+        var publicationsTemplate = $('#publicationsTemplate').html();
+        var templateScript = Handlebars.compile(publicationsTemplate);
+        $('#publications-content').append(templateScript(publicationsInventory));
     </script>
     <!-- Custom scripts for this template -->
     <script src="js/resume.min.js"></script>
