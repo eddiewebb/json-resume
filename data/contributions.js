@@ -3,7 +3,7 @@ var contributionsInventory = [
         "name":"Atlassian Deployment Triggers",
         "link":"https://bitbucket.org/atlassianlabs/bamboo-after-deployment-trigger/pull-requests/2/fixes-issue-2-eliminate/diff",
         "image":"img/deploysonly.gif",
-        "summary":"Addressed pretty significant performance issue for large deployment. Elimination of massive backend query, using asynchronous call against index reduced page load from from 2+ minutes to nearly instant, with incredible responsive search.",
+        "summary":"Addressed pretty significant page load performance issue founde in larger deployments. Eliminates uses of intensive backend query, replacing it with an asynchronous API call against a lucene index. This change reduces page load from from 2+ minutes to nearly instant, with an incredibly responsive UI.",
         "tags":[],
         "fact":""
     },

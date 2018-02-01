@@ -18,9 +18,9 @@ var projectsInventory = [
     {
         "name":"BOSH release for Bamboo & Remote Agents",
         "link":"https://github.com/eddiewebb/bosh-bamboo",
-        "image":"",
+        "image":"img/aafb-agent-ids-match-bamboo.png",
         "summary":"BOSH (Bosh Outer SHell) \"...<em> is an open source tool for release engineering, deployment, lifecycle management, and monitoring of distributed systems.</em>\" And it's amazingly powerful. This examples uses BOSH to provision an Alassian vendor app running on JDK along with the support Postgres database and agents to support it.  The releases manages the health of services and will automatically provision, start/stop processes across the various services.",
-        "tags":["BOSH", "Java", "Atlassian Ecosystem", "monit", "python", "xml/xslt", "bash/shell"],
+        "tags":["BOSH", "Java", "Atlassian Ecosystem", "monit", "python", "xml/xslt", "bash/shell","REST APIs"],
         "fact":""
     },
 
@@ -29,15 +29,15 @@ var projectsInventory = [
         "link":"https://bitbucket.org/eddiewebb/slackbot-happy-hour-lambda",
         "image":"",
         "summary":"Queries Google for local establishments meeting specified criteria randomly selecting a match based on reviews and distance.",
-        "tags":["Python", "AWS Lambdas", "AWS KMS", "Slack"],
-        "fact":""
+        "tags":["Python", "AWS Lambdas", "AWS KMS","REST APIs", "Slack"],
+        "fact":"I always pick Brick House anyway..."
     },
 
     {
         "name":"Atlassian Marketplace Plugins",
         "link":"https://marketplace.atlassian.com/vendors/1017039",
         "image":"",
-        "summary":"Multiple plugins used by thousands of teams that provide enhanced functionality of Atlassian’s core products (primarily JIRA and Bamboo) to enrich CI/CD capabilities, DevOps automation, or productivity. Functionality spans user interface, web services and persistence. Html, JS,  Spring and REST knowledge applied.",
+        "summary":"Multiple plugins used by thousands of teams that provide enhanced functionality of Atlassian’s core products (primarily JIRA and Bamboo) to enrich CI/CD capabilities, DevOps automation, or productivity. Functionality spans user interface, web services and persistence.",
         "tags":["Java", "Spring", "REST APIs", "Javascript", "Atlassian Developer Ecosystem", "Bamboo", "JIRA", "Bitbucket", "Confluence"],
         "fact":"1,500+ Active installations across large and small companies."
     }
