@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/edwardawebb
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://edwardawebb.com
+  * I am edwardawebb (https://keybase.io/edwardawebb) on keybase.
+  * I have a public key ASDlyCRCnwP0sopPlxwY4HqgGD1hg4TAUJyQywiyJWfjsAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01011ca8993091f88b073f7cb963c65f40ef8111e460caab2eb721d719b4a787e2b60a",
+      "host": "keybase.io",
+      "kid": "0120e5c824429f03f4b28a4f971c18e07aa0183d618384c0509c90cb08b22567e3b00a",
+      "uid": "11737bce3bfa4d0d2a03ff3b4fa27619",
+      "username": "edwardawebb"
+    },
+    "merkle_root": {
+      "ctime": 1517864529,
+      "hash": "2e57b0c009c66f31e41a10c56aa98294e8f08b7f90cd60b7f9b9f4eb4040e2cd2d9f6012ba545e08839288277c2da32e09ebf6a8a753cc6f132e969054bbe6d5",
+      "hash_meta": "c746db2a055d336f6d03e58bb243807d1c7f8f67889d9eda81b408f2ee7fd414",
+      "seqno": 2037398
+    },
+    "service": {
+      "hostname": "edwardawebb.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.39"
+  },
+  "ctime": 1517864548,
+  "expire_in": 504576000,
+  "prev": "512e482c33b71dae50d46b0db09ac6e61e9cd8a6e06918de5239893dde6b9d03",
+  "seqno": 7,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg5cgkQp8D9LKKT5ccGOB6oBg9YYOEwFCckMsIsiVn47AKp3BheWxvYWTFA0p7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTAxMWNhODk5MzA5MWY4OGIwNzNmN2NiOTYzYzY1ZjQwZWY4MTExZTQ2MGNhYWIyZWI3MjFkNzE5YjRhNzg3ZTJiNjBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwZTVjODI0NDI5ZjAzZjRiMjhhNGY5NzFjMThlMDdhYTAxODNkNjE4Mzg0YzA1MDljOTBjYjA4YjIyNTY3ZTNiMDBhIiwidWlkIjoiMTE3MzdiY2UzYmZhNGQwZDJhMDNmZjNiNGZhMjc2MTkiLCJ1c2VybmFtZSI6ImVkd2FyZGF3ZWJiIn0sIm1lcmtsZV9yb290Ijp7ImN0aW1lIjoxNTE3ODY0NTI5LCJoYXNoIjoiMmU1N2IwYzAwOWM2NmYzMWU0MWExMGM1NmFhOTgyOTRlOGYwOGI3ZjkwY2Q2MGI3ZjliOWY0ZWI0MDQwZTJjZDJkOWY2MDEyYmE1NDVlMDg4MzkyODgyNzdjMmRhMzJlMDllYmY2YThhNzUzY2M2ZjEzMmU5NjkwNTRiYmU2ZDUiLCJoYXNoX21ldGEiOiJjNzQ2ZGIyYTA1NWQzMzZmNmQwM2U1OGJiMjQzODA3ZDFjN2Y4ZjY3ODg5ZDllZGE4MWI0MDhmMmVlN2ZkNDE0Iiwic2Vxbm8iOjIwMzczOTh9LCJzZXJ2aWNlIjp7Imhvc3RuYW1lIjoiZWR3YXJkYXdlYmIuY29tIiwicHJvdG9jb2wiOiJodHRwczoifSwidHlwZSI6IndlYl9zZXJ2aWNlX2JpbmRpbmciLCJ2ZXJzaW9uIjoxfSwiY2xpZW50Ijp7Im5hbWUiOiJrZXliYXNlLmlvIGdvIGNsaWVudCIsInZlcnNpb24iOiIxLjAuMzkifSwiY3RpbWUiOjE1MTc4NjQ1NDgsImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJwcmV2IjoiNTEyZTQ4MmMzM2I3MWRhZTUwZDQ2YjBkYjA5YWM2ZTYxZTljZDhhNmUwNjkxOGRlNTIzOTg5M2RkZTZiOWQwMyIsInNlcW5vIjo3LCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQIMadok/5XGuHhngPN9yMAau5fHmWThsAwHMW28nSe4pT6WEhmnBG1OCMThbWRClYimLx0ngUWZbr0jwD0pnNwWoc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCCK/AVPcfNSf10JHP8gKPSFIH5blKiAmo1Gba9kOrKVX6N0YWfNAgKndmVyc2lvbgE=
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/edwardawebb
+
+==================================================================
