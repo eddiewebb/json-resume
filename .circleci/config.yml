@@ -5,6 +5,42 @@
 version: 2
 jobs:
   build:
+    branches:
+      ignore:
+        - master
+    docker:
+      # specify the version you desire here
+      - image: felicianotech/docker-hugo:0.36
+
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/mongo:3.4.4
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - run:
+          name: Keyscan  (HACK)
+          command: ssh-keyscan -H ${REZHOST} >> ~/.ssh/known_hosts
+      - run:
+          name: HUGO build
+          command: |
+            HUGO_ENV=nonprod hugo --enableGitInfo  --log -D -s ~/repo/src/
+      - run:
+          name: HUGO Deployment
+          command: |
+            echo "Pushing all files in `pwd` to host"
+            tar -czf ../resume.tar.gz public
+            scp ../resume.tar.gz ${TESTUSER}@${TESTHOST}:${TESTPATH}
+            ssh ${TESTUSER}@${TESTHOST} -C "cd ${TESTPATH} && tar -xzf resume.tar.gz && rm resume.tar.gz"
+            echo "Done"
+
+  build:
+    branches:
+      only:
+        - master
     docker:
       # specify the version you desire here
       - image: circleci/node:7.10

@@ -3,6 +3,7 @@
     <h2 class="mb-5">Skills</h2>
     {{ range $.Site.Data.skills }}
         <div class="subheading mb-3 skills-heading">{{ .grouping }}</div>
+            <ul>
         {{ range .skills }}
             {{ if isset . "name" }}
                 <li class="list-inline-item">
@@ -16,6 +17,7 @@
               </li>
             {{ end }}
         {{ end }}
+            </ul>
     {{ end }}
   </div>
 </section>
