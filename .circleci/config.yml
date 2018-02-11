@@ -13,6 +13,7 @@ jobs:
         - master
     steps:
       - checkout
+      - run:
           name: HUGO build
           command: |
             hugo --enableGitInfo  --log -D -s ~/repo/src/
