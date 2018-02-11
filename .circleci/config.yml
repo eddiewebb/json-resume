@@ -6,26 +6,67 @@ version: 2
 jobs:
   build:
     docker:
-      # specify the version you desire here
-      - image: circleci/node:7.10
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
-
+      - image: felicianotech/docker-hugo:0.36
     working_directory: ~/repo
-
     steps:
       - checkout
+      - run:
+          name: HUGO build
+          command: |
+            hugo --enableGitInfo --log -s ~/repo/src/ --destination /tmp/public
+            pwd
+            ls
+      # Persist the specified paths (tmp/public) into the workspace for use in downstream job.
+      - persist_to_workspace:
+          # Must be an absolute path, or relative path from working_directory. This is a directory on the container which is
+          root: /tmp
+          # Must be relative path from root
+          paths:
+            - public
+  deploy-stage:
+    docker:
+      - image: rohara/node:6.10.3-rsync #circles node with rysnc
+    working_directory: /tmp/my-project
+    steps:
+      - attach_workspace:
+          at: /tmp
+      - add_ssh_keys
+      - run:
+          name: Keyscan  (HACK)
+          command: ssh-keyscan -H ${TESTHOST} >> ~/.ssh/known_hosts
+      - run:
+          name: Deploy public folder to Test
+          command: |
+            ls /tmp/public
+            rsync -avz --delete /tmp/public/ ${TESTUSER}@${TESTHOST}:${TESTPATH}/
+
+  deploy-prod:
+    docker:
+      - image: circleci/node:7.10
+    working_directory: /tmp/my-project
+    steps:
       - run:
           name: Keyscan  (HACK)
           command: ssh-keyscan -H ${REZHOST} >> ~/.ssh/known_hosts
       - run:
           name: Deployment
           command: |
-            echo "Pushing all files in `pwd` to host"
-            tar -czf ../resume.tar.gz .
-            scp ../resume.tar.gz ${REZUSER}@${REZHOST}:${REZPATH}
-            ssh ${REZUSER}@${REZHOST} -C "cd ${REZPATH} && tar -xzf resume.tar.gz && rm resume.tar.gz"
-            echo "Done"
+           echo "Pushing all files in `pwd` to host"
+           tar -czf ../resume.tar.gz .
+           scp ../resume.tar.gz ${REZUSER}@${REZHOST}:${REZPATH}
+           ssh ${REZUSER}@${REZHOST} -C "cd ${REZPATH} && tar -xzf resume.tar.gz && rm resume.tar.gz"
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy-stage:
+          requires:
+            - build
+      - deploy-prod:
+          requires:
+            - deploy-stage
+          filters:
+            branches:
+              only: master
