@@ -8,9 +8,6 @@ jobs:
     docker:
       - image: felicianotech/docker-hugo:0.36
     working_directory: ~/repo
-    branches:
-      ignore:
-        - master
     steps:
       - checkout
       - run:
