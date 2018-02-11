@@ -23,6 +23,8 @@ jobs:
           # Must be relative path from root
           paths:
             - public
+
+            
   deploy-stage:
     docker:
       - image: rohara/node:6.10.3-rsync #circles node with rysnc
@@ -42,19 +44,20 @@ jobs:
 
   deploy-prod:
     docker:
-      - image: circleci/node:7.10
+      - image: rohara/node:6.10.3-rsync #circles node with rysnc
     working_directory: /tmp/my-project
     steps:
+      - attach_workspace:
+          at: /tmp
+      - add_ssh_keys
       - run:
           name: Keyscan  (HACK)
           command: ssh-keyscan -H ${REZHOST} >> ~/.ssh/known_hosts
       - run:
-          name: Deployment
+          name: Deploy public folder to Production
           command: |
-           echo "Pushing all files in `pwd` to host"
-           tar -czf ../resume.tar.gz .
-           scp ../resume.tar.gz ${REZUSER}@${REZHOST}:${REZPATH}
-           ssh ${REZUSER}@${REZHOST} -C "cd ${REZPATH} && tar -xzf resume.tar.gz && rm resume.tar.gz"
+            ls /tmp/public
+            rsync -avz --delete /tmp/public/ ${REZUSER}@${REZHOST}:${REZPATH}/
 
 workflows:
   version: 2
