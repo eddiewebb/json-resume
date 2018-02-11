@@ -25,7 +25,7 @@ jobs:
             - public
   deploy-stage:
     docker:
-      - image: circleci/node:7.10
+      - image: ubuntu:14.04
     working_directory: /tmp/my-project
     steps:
       - attach_workspace:
