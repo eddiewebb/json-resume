@@ -1,12 +1,8 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
 version: 2
 jobs:
   build:
     docker:
-      - image: felicianotech/docker-hugo:0.36
+      - image: circleci/node:7.10
     working_directory: ~/repo
     steps:
       - checkout
@@ -73,3 +69,4 @@ workflows:
           filters:
             branches:
               only: master
+
