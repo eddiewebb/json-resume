@@ -16,7 +16,7 @@ jobs:
       - run:
           name: HUGO build
           command: |
-            hugo --enableGitInfo  --log -D -s ~/repo/src/
+            hugo --enableGitInfo --log -D -s ~/repo/src/
 
   deploy-stage:
     docker:
@@ -25,7 +25,7 @@ jobs:
     steps:
       - run:
           name: Keyscan  (HACK)
-          command: ssh-keyscan -H ${REZHOST} >> ~/.ssh/known_hosts
+          command: ssh-keyscan -H ${TESTHOST} >> ~/.ssh/known_hosts
       - run:
           name: HUGO Deployment
           command: |
@@ -58,7 +58,7 @@ workflows:
       - build
       - deploy-stage:
           requires:
-            -build
+            - build
           filters:
             branches:
               ignore: master
