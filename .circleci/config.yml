@@ -13,19 +13,18 @@ jobs:
         - master
     steps:
       - checkout
-      - run:
-          name: Keyscan  (HACK)
-          command: ssh-keyscan -H ${REZHOST} >> ~/.ssh/known_hosts
-      - run:
           name: HUGO build
           command: |
-            HUGO_ENV=nonprod hugo --enableGitInfo  --log -D -s ~/repo/src/
+            hugo --enableGitInfo  --log -D -s ~/repo/src/
 
   deploy-stage:
     docker:
       - image: ubuntu:14.04
     working_directory: /tmp/my-project
     steps:
+      - run:
+          name: Keyscan  (HACK)
+          command: ssh-keyscan -H ${REZHOST} >> ~/.ssh/known_hosts
       - run:
           name: HUGO Deployment
           command: |
@@ -40,6 +39,9 @@ jobs:
       - image: ubuntu:14.04
     working_directory: /tmp/my-project
     steps:
+      - run:
+          name: Keyscan  (HACK)
+          command: ssh-keyscan -H ${REZHOST} >> ~/.ssh/known_hosts
       - run:
           name: Deployment
           command: |
