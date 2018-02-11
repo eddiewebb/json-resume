@@ -7,7 +7,26 @@
 
 
     {{ if .Site.Params.showSkills }}
-        {{ partial "skills.html" . }}
+        {{ partial "portfolio/skills.html" . }}
+    {{ end }}
+    {{ if .Site.Params.showProjects }}
+        {{ $.Scratch.Set "heading" "Projects" }}
+        {{ $.Scratch.Set "id" "projects" }}
+        {{ partial "portfolio/projects.html" . }}
+    {{ end }}
+    {{ if .Site.Params.showOpenSource }}
+        {{ $.Scratch.Set "heading" "Open Source" }}
+        {{ $.Scratch.Set "id" "open" }}
+        {{ partial "portfolio/projects.html" . }}
+    {{ end }}
+    {{ if .Site.Params.showPublications }}
+        {{ partial "portfolio/publications.html" . }}
+    {{ end }}
+    {{ if .Site.Params.showExperience }}
+        {{ partial "portfolio/experience.html" . }}
+    {{ end }}
+    {{ if .Site.Params.showEducation }}
+        {{ partial "portfolio/education.html" . }}
     {{ end }}
 
 

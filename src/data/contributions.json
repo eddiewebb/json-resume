@@ -1,4 +1,4 @@
-var contributionsInventory = [
+[
     {
         "name":"Atlassian Deployment Triggers",
         "link":"https://bitbucket.org/atlassianlabs/bamboo-after-deployment-trigger/pull-requests/2/fixes-issue-2-eliminate/diff",

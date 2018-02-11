@@ -13,11 +13,11 @@ disableKinds = ["section", "taxonomy", "taxonomyTerm"]
     favicon = "images/favicon.ico"
     # what sections
     showSkills = true
-    showProjects = false
-    showOpenSource = false
-    showPublications = false
-    showExperience = false
-    showEducation = false
+    showProjects = true
+    showOpenSource = true
+    showPublications = true
+    showExperience = true
+    showEducation = true
 
 [[params.handles]]
     name = "LinkedIn"

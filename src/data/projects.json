@@ -1,4 +1,4 @@
-var projectsInventory = [
+[
     {
         "name":"Docker image for Bitbucket CI/CD Pipelines  \"shipit\"",
         "link":"https://hub.docker.com/r/eddiewebb/bitbucket-pipelines-marketplace/",
