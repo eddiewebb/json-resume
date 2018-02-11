@@ -14,12 +14,24 @@ jobs:
           name: HUGO build
           command: |
             hugo --enableGitInfo --log -D -s ~/repo/src/
-
+      - run:
+          name: Create tarball
+          command: |
+            tar -czf /tmp/public.tar.gz public
+      # Persist the specified paths (tmp/public) into the workspace for use in downstream job.
+      - persist_to_workspace:
+          # Must be an absolute path, or relative path from working_directory. This is a directory on the container which is
+          root: /tmp
+          # Must be relative path from root
+          paths:
+            - public.tar.gz
   deploy-stage:
     docker:
       - image: circleci/node:7.10
     working_directory: /tmp/my-project
     steps:
+      - attach_workspace:
+          at: /tmp
       - add_ssh_keys
       - run:
           name: Keyscan  (HACK)
@@ -27,8 +39,7 @@ jobs:
       - run:
           name: HUGO Deployment
           command: |
-            echo "Pushing all files in `pwd` to host"
-            tar -czf ../resume.tar.gz public
+            echo "Pushing tarball to ${TESTHOST}:${TESTPATH}"
             scp ../resume.tar.gz ${TESTUSER}@${TESTHOST}:${TESTPATH}
             ssh ${TESTUSER}@${TESTHOST} -C "cd ${TESTPATH} && tar -xzf resume.tar.gz && rm resume.tar.gz"
             echo "Done"
