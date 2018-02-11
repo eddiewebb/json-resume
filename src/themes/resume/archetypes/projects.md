@@ -1,7 +1,5 @@
----
-title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
-tags : ""
-categories : ""
-type : "project"
----
+{
+"title": "{{ replace .Name "-" " " | title }}"
+"date": {{ .Date }}
+"tags" : []
+}
