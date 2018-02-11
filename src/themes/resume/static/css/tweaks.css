@@ -72,3 +72,8 @@ div.skills-heading{
 .tag:hover::after {
    border-left-color: crimson;
 }
+
+.project-fact{
+  font-size:80%;
+  font-style:italic;
+}
