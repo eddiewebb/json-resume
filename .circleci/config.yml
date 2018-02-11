@@ -64,12 +64,9 @@ workflows:
       - deploy-stage:
           requires:
             - build
-          filters:
-            branches:
-              ignore: master
       - deploy-prod:
           requires:
-            - build
+            - deploy-stage
           filters:
             branches:
               only: master
