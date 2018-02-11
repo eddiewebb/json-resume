@@ -25,7 +25,7 @@ jobs:
             - public
   deploy-stage:
     docker:
-      - image: ubuntu:14.04
+      - image: rohara/node:6.10.3-rsync #circles node with rysnc
     working_directory: /tmp/my-project
     steps:
       - attach_workspace:
