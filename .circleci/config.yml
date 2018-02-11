@@ -38,10 +38,7 @@ jobs:
           name: Deploy public folder to Test
           command: |
             ls /tmp/public
-            tar -czf resume.tar.gz /tmp/public
-            echo "Pushing tarball to ${TESTHOST}:${TESTPATH}"
-            scp resume.tar.gz ${TESTUSER}@${TESTHOST}:${TESTPATH}
-            ssh ${TESTUSER}@${TESTHOST} -C "cd ${TESTPATH} && tar -xzf resume.tar.gz && rm resume.tar.gz"
+            rsync -avz --delete /tmp/public/ ${TESTUSER}@${TESTHOST}:${TESTPATH}/
 
   deploy-prod:
     docker:
