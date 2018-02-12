@@ -2,7 +2,7 @@ baseURL = "https://edwardawebb.com/"
 languageCode = "en-us"
 title = "Eddie Webb"
 theme = "resume"
-#disableKinds = ["section", "taxonomy", "taxonomyTerm"]
+disableKinds = ["taxonomy", "taxonomyTerm"]
 
 [params]
     firstName = "Eddie"
