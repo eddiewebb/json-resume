@@ -1,3 +1,13 @@
+.p-0{
+  margin: 0 auto;
+}
+
+.devicons{
+  font-size:1.5em;
+      vertical-align: sub;
+}
+
+
 h3{
     margin-top:40px;
 }

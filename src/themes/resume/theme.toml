@@ -3,19 +3,20 @@
 
 name = "Resume"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE.md"
-description = ""
-homepage = "http://example.com/"
-tags = []
+licenselink = "https://github.com/eddiewebb/hugo-resume/blob/master/LICENSE.md"
+description = "Ported from StartBootstrap 'Resume' theme"
+homepage = "https://edwardwebb.com/"
+tags = ["portfolio","resume"]
 features = []
-min_version = "0.36"
+min_version = "0.1"
 
 [author]
-  name = ""
-  homepage = ""
+  name = "Eddie Webb"
+  homepage = "https://edwardawebb.com"
+
 
 # If porting an existing theme
 [original]
-  name = ""
-  homepage = ""
-  repo = ""
+  name = "Start Bootstrap Resume"
+  homepage = "https://startbootstrap.com/template-overviews/resume/"
+  repo = "https://github.com/BlackrockDigital/startbootstrap-resume"
