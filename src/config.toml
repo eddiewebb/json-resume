@@ -3,6 +3,7 @@ languageCode = "en-us"
 title = "Eddie Webb"
 theme = "resume"
 disableKinds = ["taxonomy", "taxonomyTerm"]
+enableGitInfo = true
 
 [params]
     firstName = "Eddie"
