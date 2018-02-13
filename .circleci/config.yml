@@ -11,10 +11,19 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Checkout submodule (theme)
+          command: |
+            git submodule sync
+            git submodule update --init
+      - run:
           name: HUGO build
           command: |
             hugo -v -s ~/repo/src/ --destination /tmp/public
             ls /tmp/public
+            if [ ! -f /tmp/public/index.html ];then
+              echo "index.html not found, failing"
+              exit 1
+            fi
       # Persist the specified paths (tmp/public) into the workspace for use in downstream job.
       - persist_to_workspace:
           # Must be an absolute path, or relative path from working_directory. This is a directory on the container which is
@@ -38,6 +47,14 @@ jobs:
           command: |
             ls /tmp/public
             rsync -avz --delete /tmp/public/ ${TESTUSER}@${TESTHOST}:${TESTPATH}/
+      - run:
+          name: Simple content check
+          command: |
+            HTTPCODE=`curl -s -o /dev/null -w "%{http_code}" https://${TESTHOST}/index.html`
+            if [ "$HTTPCODE" -ne 200 ];then
+              echo "index.html not found, failing"
+              exit 1
+            fi
 
   deploy-prod:
     docker:
@@ -55,6 +72,14 @@ jobs:
           command: |
             ls /tmp/public
             rsync -avz --delete /tmp/public/ ${REZUSER}@${REZHOST}:${REZPATH}/
+      - run:
+          name: Simple content check
+          command: |
+            HTTPCODE=`curl -s -o /dev/null -w "%{http_code}" https://${TESTHOST}/index.html`
+            if [ "$HTTPCODE" -ne 200 ];then
+              echo "index.html not found, failing"
+              exit 1
+            fi
 
 workflows:
   version: 2
