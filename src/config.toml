@@ -20,6 +20,10 @@ enableGitInfo = true
     showExperience = true
     showEducation = true
 
+    # do you want to show git hash on page footer and link to repo? Add commit prefix here.
+    gitCommitPrefix = "https://github.com/eddiewebb/json-resume/commit/"
+
+
 [[params.handles]]
     name = "LinkedIn"
     link = "https://www.linkedin.com/in/edwardwebb/"
