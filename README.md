@@ -11,17 +11,17 @@ The primary technology is HTML5 and CSS3 to create a static webpage.  Rather tha
 
 ### Data files
 
-[/src/data/skills.js](/src/data/skills.js)
-[/src/data/contributions.js](/src/data/contributions.js)
-[/src/data/experience.js](/src/data/experience.js)
-[/src/data/publications.js](/src/data/publications.js)
+- [/src/data/skills.json](src/data/skills.json)
+- [/src/data/contributions.json](src/data/contributions.json)
+- [/src/data/experience.json](src/data/experience.json)
+- [/src/data/publications.json](src/data/publications.json)
 
 ### projects
-Initially projects were in their own JSON file, but I decided I wanted to allow more detail and custom formatting, and with the move to hugo created a dedicated archetype `projects`.  Any projects are added with `hugo add projects/name-of-project.html`
+Initially projects were also in their own JSON file, but I decided I wanted to allow more detail and custom formatting, and with the move to hugo created a dedicated archetype `projects`.  Any projects are added with `hugo add projects/name-of-project.html`
 
 ### Resume theme
 
-Following Hugo conventions, all the styling is embodied in the [`resume` theme](/src/themes/resume).
+Following Hugo conventions, all the styling is embodied in the [`resume` theme](https://github.com/eddiewebb/hugo-resume).
 
 The [partials](/src/theme/resume/layouts/partials) contain corresponding \*.html files for each data type in json files.
 
