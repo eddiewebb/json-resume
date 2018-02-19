@@ -29,9 +29,13 @@ enableGitInfo = true
     link = "https://www.linkedin.com/in/edwardwebb/"
 
 
-[[params.handles]]
-    name = "GitHub"
-    link = "https://github.com/eddiewebb/"
+  [[params.handles]]
+      name = "Twitter"
+      link = "https://twitter.com/edwardawebb/"
+
+  [[params.handles]]
+      name = "GitHub"
+      link = "https://github.com/eddiewebb/"
 
 [[params.handles]]
     name = "Bitbucket"
