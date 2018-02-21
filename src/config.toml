@@ -2,8 +2,11 @@ baseURL = "https://edwardawebb.com/"
 languageCode = "en-us"
 title = "Eddie Webb"
 theme = "resume"
-disableKinds = ["taxonomy", "taxonomyTerm"]
 enableGitInfo = true
+
+[taxonomies]
+    tag = "tags"
+
 
 [params]
     firstName = "Eddie"
@@ -30,13 +33,13 @@ enableGitInfo = true
     link = "https://www.linkedin.com/in/edwardwebb/"
 
 
-  [[params.handles]]
-      name = "Twitter"
-      link = "https://twitter.com/edwardawebb/"
+[[params.handles]]
+    name = "Twitter"
+    link = "https://twitter.com/edwardawebb/"
 
-  [[params.handles]]
-      name = "GitHub"
-      link = "https://github.com/eddiewebb/"
+[[params.handles]]
+    name = "GitHub"
+    link = "https://github.com/eddiewebb/"
 
 [[params.handles]]
     name = "Bitbucket"
