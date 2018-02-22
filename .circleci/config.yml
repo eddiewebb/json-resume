@@ -4,7 +4,7 @@
 #
 version: 2
 jobs:
-  build:
+  deploy-test:
     docker:
       - image: felicianotech/docker-hugo:0.36
     working_directory: ~/repo
@@ -16,28 +16,14 @@ jobs:
             git submodule sync
             git submodule update --init
       - run:
-          name: HUGO build
+          name: HUGO build for Test domain
           command: |
-            hugo -v -s ~/repo/src/ --destination /tmp/public
+            hugo -v -s ~/repo/src/ --destination /tmp/public -b https://${TESTHOST}
             ls /tmp/public
             if [ ! -f /tmp/public/index.html ];then
-              echo "index.html not found, failing"
+              echo "index.html not created, failing"
               exit 1
             fi
-      # Persist the specified paths (tmp/public) into the workspace for use in downstream job.
-      - persist_to_workspace:
-          # Must be an absolute path, or relative path from working_directory. This is a directory on the container which is
-          root: /tmp
-          # Must be relative path from root
-          paths:
-            - public
-  deploy-stage:
-    docker:
-      - image: rohara/node:6.10.3-rsync #circles node with rysnc
-    working_directory: /tmp/my-project
-    steps:
-      - attach_workspace:
-          at: /tmp
       - add_ssh_keys
       - run:
           name: Keyscan  (HACK)
@@ -45,7 +31,6 @@ jobs:
       - run:
           name: Deploy public folder to Test
           command: |
-            ls /tmp/public
             rsync -avz --delete /tmp/public/ ${TESTUSER}@${TESTHOST}:${TESTPATH}/
       - run:
           name: Simple content check
@@ -61,8 +46,21 @@ jobs:
       - image: rohara/node:6.10.3-rsync #circles node with rysnc
     working_directory: /tmp/my-project
     steps:
-      - attach_workspace:
-          at: /tmp
+      - checkout
+      - run:
+          name: Checkout submodule (theme)
+          command: |
+            git submodule sync
+            git submodule update --init
+      - run:
+          name: HUGO build for Prod domain
+          command: |
+            hugo -v -s ~/repo/src/ --destination /tmp/public -b https://${REZHOST}
+            ls /tmp/public
+            if [ ! -f /tmp/public/index.html ];then
+              echo "index.html not created, failing"
+              exit 1
+            fi
       - add_ssh_keys
       - run:
           name: Keyscan  (HACK)
@@ -85,13 +83,10 @@ workflows:
   version: 2
   build-deploy:
     jobs:
-      - build
-      - deploy-stage:
-          requires:
-            - build
+      - deploy-test
       - deploy-prod:
           requires:
-            - deploy-stage
+            - deploy-test
           filters:
             branches:
               only: master
