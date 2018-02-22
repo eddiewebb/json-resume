@@ -4,7 +4,7 @@
   "contributionUrl": "https://github.com/eddiewebb/bosh-bamboo",
   "image": "/img/aafb-agent-ids-match-bamboo.png",
   "description": "Large scale orchestration of Bamboo server, agents and database using BOSH",
-  "tags": ["DevOps","BOSH", "Java", "Atlassian Ecosystem", "monit", "python", "xml/xslt", "bash/shell","REST APIs"],
+  "tags": ["DevOps","BOSH", "Java", "Atlassian Ecosystem", "monit", "python", "xml/xslt", "bash/shell","REST APIs","Continuous Integration","Continuous Delivery","CI/CD Pipelines"],
   "fact": "Single command will scale-up/scale-down without user interuption",
   "weight":"200",
   "sitemap": {"priority" : "0.8"},

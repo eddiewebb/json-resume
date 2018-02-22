@@ -9,7 +9,7 @@
           "Java",
           "Python",
           "REST APIs",
-          "Bash/Shell"
+          "Bash/Shell","Continuous Integration","Continuous Delivery","CI/CD Pipelines"
         ],
     "fact":" 700+ \"pulls\" from docker hub",
     "weight":"200",
