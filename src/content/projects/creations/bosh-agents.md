@@ -7,7 +7,8 @@
   "tags": ["DevOps","BOSH", "Java", "Atlassian Ecosystem", "monit", "python", "xml/xslt", "bash/shell","REST APIs"],
   "fact": "Single command will scale-up/scale-down without user interuption",
   "weight":"200",
-  "sitemap": {"priority" : "0.8"}
+  "sitemap": {"priority" : "0.8"},
+  "featured":true
 }
 
 BOSH (Bosh Outer SHell) "...<em> is an open source tool for release engineering, deployment, lifecycle management, and monitoring of distributed systems.</em>" And it's amazingly powerful. This examples uses BOSH to provision an Alassian vendor app running on JDK along with the support Postgres database and agents to support it.  The releases manages the health of services and will automatically provision, start/stop processes across the various services.

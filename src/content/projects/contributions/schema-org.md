@@ -6,7 +6,8 @@
     "tags":["JSON"],
     "fact":"Schema.org provides a common specification for Structured Data on the internet.",
     "weight":"999",
-    "sitemap": {"priority" : "0.8"}
+    "sitemap": {"priority" : "0.8"},
+    "featured":true
 }
 
 While adding *Structured Data* to a client's website I found some example JSON that was invalid.  Simple contribution to cleanup the user documentation providing syntactically valid JSON documents.

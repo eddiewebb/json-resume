@@ -6,7 +6,8 @@
     "tags":["Docker","Rest APIs","JavaScript","node.js","JSON"],
     "fact":"",
     "weight":"500",
-    "sitemap": {"priority" : "0.8"}
+    "sitemap": {"priority" : "0.8"},
+    "featured": false
 }
 
 Shields.io is a massive library of badges that can be inserted into project README's or websites displaying various statuses (code coverage, health, version, etc).  Support for docker was missing the current build health, and was a pretty trivial addition.
