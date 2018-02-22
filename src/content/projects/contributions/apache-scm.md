@@ -3,7 +3,7 @@ title: "Maven SCM Plugin Security Fix"
 date: 2018-02-21T14:35:46-05:00
 description: "Addressed vulnerability that leaked passwords on failed SVN or git operations."
 tags: ["Subversion","git","Maven","Java","Mojo","Security"]
-image: ""
+image: "/img/maven.png"
 contributionUrl: "https://github.com/apache/maven-scm/pull/45"
 fact: "Addressed a critical security issue leaking production credentials for anyone using `mvn release:perform`"
 weight: 999

@@ -1,7 +1,7 @@
 {
     "title":"Schema.org Structured Data documentation fixes",
     "link":"https://github.com/schemaorg/schemaorg/pull/1120",
-    "image":"",
+    "image":"/img/schema-org.png",
     "description":"Not all pull requests are glorious code, documentation is really important too! This commit fixed some invalid JSON found in some example specs.",
     "tags":["JSON"],
     "fact":"Schema.org provides a common specification for Structured Data on the internet.",
