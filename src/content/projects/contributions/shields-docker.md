@@ -3,7 +3,7 @@
     "link":"https://github.com/badges/shields/pull/856",
     "image":"https://img.shields.io/docker/build/eddiewebb/bitbucket-pipelines-marketplace.svg?style=plastic",
     "description":"Added a shield for Docker Hub builds indicating state of last build",
-    "tags":["Docker","Rest APIs","JavaScript","node.js","JSON"],
+    "tags":["Docker","Rest APIs","JavaScript","node.js","JSON","Continuous Integration","Continuous Delivery"],
     "fact":"",
     "weight":"500",
     "sitemap": {"priority" : "0.8"},
