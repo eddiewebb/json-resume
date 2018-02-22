@@ -43,7 +43,7 @@ jobs:
 
   deploy-prod:
     docker:
-      - image: rohara/node:6.10.3-rsync #circles node with rysnc
+      - image: felicianotech/docker-hugo:0.36 #circles node with rysnc
     working_directory: /tmp/my-project
     steps:
       - checkout
