@@ -9,6 +9,7 @@ fact: "Addressed a critical security issue leaking production credentials for an
 weight: 999
 sitemap:
   priority : 0.5
+featured: true
 ---
 
 Our software teams use Maven heavily, and it was reported to my central platforms team that certain failed operations were leaking our SCM passwords.  Digging in I was able to find the cause in the underlying Maven SCM plugin used by Maven Release Plugin.

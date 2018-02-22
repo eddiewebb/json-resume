@@ -6,7 +6,8 @@
     "tags":["Java","Bitbucket","Security"],
     "fact":"Companies can specify the tolerated age for key expiry/deletion, and users are notified by email to create a new pair.",
     "weight":"100",
-    "sitemap": {"priority" : "0.8"}
+    "sitemap": {"priority" : "0.8"},
+    "featured":true
 }
 
 

@@ -6,7 +6,8 @@
     "tags":["Java", "Spring", "REST APIs", "Javascript", "Atlassian Developer Ecosystem", "Bamboo", "JIRA", "Bitbucket", "Confluence","DevOps"],
     "fact":"1,500+ Active installations across large and small companies.",
     "weight":"200",
-    "sitemap": {"priority" : "0.8"}
+    "sitemap": {"priority" : "0.8"},
+    "featured":true
 }
 
 
