@@ -61,3 +61,7 @@ enableGitInfo = true
 
 [params.google.analytics]
     trackerID = "UA-28342049-2"
+
+
+[outputs]
+  home = ["HTML", "JSON"]
