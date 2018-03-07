@@ -1,6 +1,6 @@
 {
     "title":"Happy Hour Command for Slack",
-    "contributionUrl":"https://bitbucket.org/eddiewebb/slackbot-happy-hour-lambda",
+    "link":"https://bitbucket.org/eddiewebb/slackbot-happy-hour-lambda",
     "image":"/img/happyhour.png",
     "description":"Queries Google for local establishments meeting specified criteria randomly selecting a match based on reviews and distance.",
     "tags":["Python", "AWS Lambdas", "AWS KMS","REST APIs", "Slack"],
