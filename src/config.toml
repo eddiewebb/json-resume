@@ -12,6 +12,8 @@ enableGitInfo = true
     firstName = "Eddie"
     lastName = "Webb"
     profileImage = "img/TechChat.png"
+    phone = "603-463-0447"
+    contactNote = "DevTools Engineer and DevOps Culture advocate"
     address = "Rollinsford, NH"
     email = "OlliTech@gmail.com"
     description = "Software Platform Engineer with experience leveraging agile, DevOps, and CI/CD to manage large scale distributed platforms both on prem and in public cloud."
@@ -23,6 +25,7 @@ enableGitInfo = true
     showPublications = true
     showExperience = true
     showEducation = true
+    showQr = true
 
     # do you want to show git hash on page footer and link to repo? Add commit prefix here.
     gitCommitPrefix = "https://github.com/eddiewebb/json-resume/commit/"
