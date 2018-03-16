@@ -1,0 +1,82 @@
+{
+    "title":"Pipeline Flow for Bamboo",
+    "link":"",
+    "image":"/img/flow-summary.png",
+    "description":"Enables deployment environments to behave as stages within the pipeline, triggering additional build stages. Also adds sweet visualization.",
+    "tags":[
+          "Atlassian",
+          "Maven",
+          "Java",
+          "Bamboo",
+          "Continuous Integration",
+          "Continuous Delivery",
+          "CI/CD Pipelines"
+        ],
+    "fact":"Fan-Out / Fan-In with Bamboo Pipelines",
+    "weight":"200",
+    "sitemap": {"priority" : "0.8"}
+}
+
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+	- [Components](#components)
+		- [Visualization](#visualization)
+		- [Deployment Environment Integration](#deployment-environment-integration)
+			- [Configuring Deployment Integration](#configuring-deployment-integration)
+
+<!-- /TOC -->
+
+Adds fan-out/fan-in capabilities to Bamboo embedding Deployment Environments as part of the end-to-end flow.
+
+
+![Sample flow with parallel jobs and staggered deployments](/img/flow-summary.png)
+
+
+## Components
+
+There are two main components to this plugin.
+
+### Visualization
+
+Bamboo Flow provides a "railroad diagram" style view of all build and deployment details,
+whether the specific plan is using Bamboo Flow to control deployment integration or not.
+
+![Visualize flow for all projects](/img/nonflow-summary.png)
+
+Bamboo Flow will also show a much smaller visualization of the latest build in the Plan Overview heading.
+
+![Visualize flow for all projects](/img/latest-breadcrumb.png)
+
+These features are automatically enabled, and requires not additional configuration. You can disable the Plugin Modules to disable either of them
+
+### Deployment Environment Integration
+
+Bamboo Flow allows linked deployment project environments to be embeded not as a final stage, but
+a step within the build process, triggering additional downstream build stages.
+
+
+![Visualize flow for integrated project](/img/failingflow-summary.png)
+
+This feature requires plans to be configured as described below.
+
+#### Configuring Deployment Integration
+
+1. Create all build plan stages and jobs as you normally would **
+1. For any *stage* that should wait for deployment environments, [mark them as manual](https://www.google.com/search?q=bamboo+manual+stages&oq=bamboo+manual+stages)
+1. Create deployment Project and Environments as you normally would
+1. For any Deployment Environment that should run before build plan stages from #2:
+   1. Add the "After Successful Stage" trigger, and select the previous stage
+   1. Add the "Bamboo Flow" task to that environment (order does not matter, it acts as a flag)
+
+
+** Jobs run in parallel, stages run sequentially
+
+
+
+![Configure plan with manual stages](/img/plan-config.png)
+
+
+![Add "After Stage" trigger to environments](/img/env-trigger.png)
+
+
+![Add "Continue Flow Task" to environments](/img/flowtask.png)
