@@ -17,14 +17,11 @@
     "sitemap": {"priority" : "0.8"}
 }
 
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+- [Visualization](#visualization)
+- [Deployment Environment Integration](#deployment-environment-integration)
+- [Configuring Deployment Integration](#configuring-deployment-integration)
 
-	- [Components](#components)
-		- [Visualization](#visualization)
-		- [Deployment Environment Integration](#deployment-environment-integration)
-			- [Configuring Deployment Integration](#configuring-deployment-integration)
 
-<!-- /TOC -->
 
 Adds fan-out/fan-in capabilities to Bamboo embedding Deployment Environments as part of the end-to-end flow.
 
@@ -32,9 +29,7 @@ Adds fan-out/fan-in capabilities to Bamboo embedding Deployment Environments as 
 ![Sample flow with parallel jobs and staggered deployments](/img/flow-summary.png)
 
 
-## Components
-
-There are two main components to this plugin.
+There are two main components to this plugin; Fancy flow diagram visualization, and ability for builds to embed deployments as intermediate steps.
 
 ### Visualization
 
@@ -59,24 +54,19 @@ a step within the build process, triggering additional downstream build stages.
 
 This feature requires plans to be configured as described below.
 
-#### Configuring Deployment Integration
+### Configuration
+
+Flow diagrams are enabled by default for all projects. These steps are only necessary to embed deployments as stages within a pipeline, triggering additional build stages on their completion.
 
 1. Create all build plan stages and jobs as you normally would **
 1. For any *stage* that should wait for deployment environments, [mark them as manual](https://www.google.com/search?q=bamboo+manual+stages&oq=bamboo+manual+stages)
+![Configure plan with manual stages](/img/plan-config.png)
 1. Create deployment Project and Environments as you normally would
 1. For any Deployment Environment that should run before build plan stages from #2:
    1. Add the "After Successful Stage" trigger, and select the previous stage
+   ![Add "After Stage" trigger to environments](/img/env-trigger.png)
    1. Add the "Bamboo Flow" task to that environment (order does not matter, it acts as a flag)
+   ![Add "Continue Flow Task" to environments](/img/flowtask.png)
 
 
 ** Jobs run in parallel, stages run sequentially
-
-
-
-![Configure plan with manual stages](/img/plan-config.png)
-
-
-![Add "After Stage" trigger to environments](/img/env-trigger.png)
-
-
-![Add "Continue Flow Task" to environments](/img/flowtask.png)
