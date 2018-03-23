@@ -1,6 +1,6 @@
 {
     "title":"Pipeline Flow for Bamboo",
-    "link":"",
+    "link":"https://marketplace.atlassian.com/plugins/com.edwardawebb.bamboo-flow/server/overview",
     "image":"/img/flow-summary.png",
     "description":"Enables deployment environments to behave as stages within the pipeline, triggering additional build stages. Also adds sweet visualization.",
     "tags":[
@@ -36,7 +36,7 @@ There are two main components to this plugin; Fancy flow diagram visualization, 
 Bamboo Flow provides a "railroad diagram" style view of all build and deployment details,
 whether the specific plan is using Bamboo Flow to control deployment integration or not.
 
-![Visualize flow for all projects](/img/nonflow-summary.png)
+![Visualize flow for all projects](/img/flow-parallel.png)
 
 Bamboo Flow will also show a much smaller visualization of the latest build in the Plan Overview heading.
 
@@ -50,7 +50,7 @@ Bamboo Flow allows linked deployment project environments to be embeded not as a
 a step within the build process, triggering additional downstream build stages.
 
 
-![Visualize flow for integrated project](/img/failingflow-summary.png)
+![Visualize flow for integrated project](/img/flowtasksummary.png)
 
 This feature requires plans to be configured as described below.
 

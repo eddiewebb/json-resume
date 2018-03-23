@@ -4,7 +4,7 @@ date: 2018-02-10T18:56:13-05:00
 sitemap:
   priority : 1.0
 ---
-Proven Software Platform Engineer with experience leveraging agile, DevOps, and CI/CD to manage large scale distributed platforms both on prem and in public cloud.
+Proven Software Platform Developer and Director of Delivery Engineering, with experience leveraging agile, DevOps, and CI/CD to manage large scale distributed platforms both on prem and in public cloud.
 
 My role is to foster the right environment for a fierce team of passionate people to improve and refine software delivery capabilities for thousands of developers, product managers,testers and teams across Liberty Mutual. Our mission is to eliminate friction and waste, and make way for innovation and rapid iteration, from ideation to delivery.
 
