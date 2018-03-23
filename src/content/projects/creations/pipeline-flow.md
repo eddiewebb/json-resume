@@ -13,7 +13,8 @@
           "CI/CD Pipelines"
         ],
     "fact":"Fan-Out / Fan-In with Bamboo Pipelines",
-    "weight":"200",
+    "weight":"100",
+    "featured":true,
     "sitemap": {"priority" : "0.8"}
 }
 
