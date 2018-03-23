@@ -12,7 +12,7 @@
           "Bash/Shell","Continuous Integration","Continuous Delivery","CI/CD Pipelines"
         ],
     "fact":" 700+ \"pulls\" from docker hub",
-    "weight":"200",
+    "weight":"300",
     "sitemap": {"priority" : "0.8"}
 }
 

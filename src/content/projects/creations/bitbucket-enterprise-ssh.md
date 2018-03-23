@@ -5,7 +5,7 @@
     "description":"Adds Enterprise Key rotation/enforcement policies to Atlassian Bitbucket.",
     "tags":["Java","Bitbucket","Security","git","jQuery"],
     "fact":"Companies can specify the tolerated age for key expiry/deletion, and users are notified by email to create a new pair.",
-    "weight":"100",
+    "weight":"150",
     "sitemap": {"priority" : "0.8"},
     "featured":true
 }

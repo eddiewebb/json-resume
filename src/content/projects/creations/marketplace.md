@@ -5,7 +5,7 @@
     "description":"Multiple plugins used by thousands of teams that provide enhanced functionality of Atlassian’s core products (primarily JIRA and Bamboo) to enrich CI/CD capabilities, DevOps automation, or productivity.",
     "tags":["Java", "Spring", "REST APIs", "Javascript", "Atlassian Developer Ecosystem", "Bamboo", "JIRA", "Bitbucket", "Confluence","DevOps"],
     "fact":"1,500+ Active installations across large and small companies.",
-    "weight":"200",
+    "weight":"400",
     "sitemap": {"priority" : "0.8"},
     "featured":true
 }
