@@ -14,9 +14,9 @@ enableGitInfo = true
     profileImage = "img/TechChat.png"
     phone = "603-463-0447"
     contactNote = "DevTools Engineer and DevOps Culture advocate"
-    address = "Rollinsford, NH"
+    address = "Plattsburgh, NY"
     email = "OlliTech@gmail.com"
-    description = "Software Platform Engineer with experience leveraging agile, DevOps, and CI/CD to manage large scale distributed platforms both on prem and in public cloud."
+    description = "Eddie has over a decade of experience enabling agile and CI/CD.  Previously the Director of Enterprise DevOps influencing the culture and technology of a Fortune 100 company, Eddie now helps CircleCI customers adopt the best practices on their DevOps journey."
     favicon = "images/favicon.ico"
     # what sections
     showSkills = true
@@ -25,7 +25,7 @@ enableGitInfo = true
     showPublications = true
     showExperience = true
     showEducation = true
-    showQr = true
+    showQr = false
 
     # do you want to show git hash on page footer and link to repo? Add commit prefix here.
     gitCommitPrefix = "https://github.com/eddiewebb/json-resume/commit/"
@@ -45,8 +45,9 @@ enableGitInfo = true
     link = "https://github.com/eddiewebb/"
 
 [[params.handles]]
-    name = "Bitbucket"
-    link = "https://bitbucket.org/eddiewebb/"
+    name = "Sourcerer"
+    link = "https://sourcerer.io/eddiewebb/"
+    icon = "osi"
 
 [[params.handles]]
     name = "Stack Overflow"
@@ -56,7 +57,7 @@ enableGitInfo = true
 [[params.handles]]
     name = "Keybase"
     link = "https://keybase.io/edwardawebb"
-    icon = "key"
+    icon = "keybase"
 
 
 
