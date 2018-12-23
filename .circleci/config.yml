@@ -1,15 +1,32 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
-version: 2
+version: 2.1
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - hugo_job:
+          name: deploy-test
+      - hugo_job:
+          name: deploy-prod
+          domain: REZ
+          requires:
+            - deploy-test
+          filters:
+            branches:
+              only: master
+
 jobs:
-  deploy-test:
+  hugo_job:
+    parameters:
+      domain:
+        description: Environment variables prefix. For Eddie this is either TEST or REZ
+        type: string
+        default: TEST   
     docker:
-      - image: felicianotech/docker-hugo:0.36
+      - image: felicianotech/docker-hugo:0.47.1
     working_directory: ~/repo
     steps:
-      - checkout
+      - checkout   
       - run:
           name: Checkout submodule (theme)
           command: |
@@ -18,7 +35,7 @@ jobs:
       - run:
           name: HUGO build for Test domain
           command: |
-            hugo -v -s ~/repo/src/ --destination /tmp/public -b https://${TESTHOST}
+            hugo -v -s ~/repo/src/ --destination /tmp/public -b https://${<<parameters.domain>>HOST}
             ls /tmp/public
             if [ ! -f /tmp/public/index.html ];then
               echo "index.html not created, failing"
@@ -27,66 +44,16 @@ jobs:
       - add_ssh_keys
       - run:
           name: Keyscan  (HACK)
-          command: ssh-keyscan -H ${TESTHOST} >> ~/.ssh/known_hosts
+          command: ssh-keyscan -H ${<<parameters.domain>>HOST} >> ~/.ssh/known_hosts
       - run:
-          name: Deploy public folder to Test
+          name: Deploy public folder to <<parameters.domain>>
           command: |
-            rsync -avz --delete /tmp/public/ ${TESTUSER}@${TESTHOST}:${TESTPATH}/
+            rsync -avz --delete /tmp/public/ ${<<parameters.domain>>USER}@${<<parameters.domain>>HOST}:${<<parameters.domain>>PATH}/
       - run:
           name: Simple content check
           command: |
-            HTTPCODE=`curl -s -o /dev/null -w "%{http_code}" https://${TESTHOST}/index.html`
+            HTTPCODE=`curl -s -o /dev/null -w "%{http_code}" https://${<<parameters.domain>>HOST}/index.html`
             if [ "$HTTPCODE" -ne 200 ];then
               echo "index.html not found, failing"
               exit 1
             fi
-
-  deploy-prod:
-    docker:
-      - image: felicianotech/docker-hugo:0.36 #circles node with rysnc
-    working_directory: ~/repo
-    steps:
-      - checkout
-      - run:
-          name: Checkout submodule (theme)
-          command: |
-            git submodule sync
-            git submodule update --init
-      - run:
-          name: HUGO build for Prod domain
-          command: |
-            hugo -v -s ~/repo/src/ --destination /tmp/public -b https://${REZHOST}
-            ls /tmp/public
-            if [ ! -f /tmp/public/index.html ];then
-              echo "index.html not created, failing"
-              exit 1
-            fi
-      - add_ssh_keys
-      - run:
-          name: Keyscan  (HACK)
-          command: ssh-keyscan -H ${REZHOST} >> ~/.ssh/known_hosts
-      - run:
-          name: Deploy public folder to Production
-          command: |
-            ls /tmp/public
-            rsync -avz --delete /tmp/public/ ${REZUSER}@${REZHOST}:${REZPATH}/
-      - run:
-          name: Simple content check
-          command: |
-            HTTPCODE=`curl -s -o /dev/null -w "%{http_code}" https://${TESTHOST}/index.html`
-            if [ "$HTTPCODE" -ne 200 ];then
-              echo "index.html not found, failing"
-              exit 1
-            fi
-
-workflows:
-  version: 2
-  build-deploy:
-    jobs:
-      - deploy-test
-      - deploy-prod:
-          requires:
-            - deploy-test
-          filters:
-            branches:
-              only: master

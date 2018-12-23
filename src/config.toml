@@ -16,13 +16,13 @@ enableGitInfo = true
     contactNote = "DevTools Engineer and DevOps Culture advocate"
     address = "Plattsburgh, NY"
     email = "OlliTech@gmail.com"
-    description = "Eddie has over a decade of experience enabling agile and CI/CD.  Previously the Director of Enterprise DevOps influencing the culture and technology of a Fortune 100 company, Eddie now helps CircleCI customers adopt the best practices on their DevOps journey."
+    description = "Eddie has over a decade of experience enabling agile, CI/CD and DevOps culture in the enterprise.  Previously the Director of Enterprise DevOps Platforms influencing culture and technology at a Fortune 100 company, Eddie now helps CircleCI customers of all sizes adopt the best technologies and practices on their DevOps journey."
     favicon = "images/favicon.ico"
     # what sections
     showSkills = true
     showProjects = true
     showOpenSource = true
-    showPublications = true
+    showPublications = false
     showExperience = true
     showEducation = true
     showBlog      = true
@@ -35,7 +35,6 @@ enableGitInfo = true
 [[params.handles]]
     name = "LinkedIn"
     link = "https://www.linkedin.com/in/edwardwebb/"
-
 
 [[params.handles]]
     name = "Twitter"

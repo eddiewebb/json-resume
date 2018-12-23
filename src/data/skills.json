@@ -1,22 +1,27 @@
 [
   {
-      "grouping":"Architecture",
-      "skills":[ "IP Networking","DNS","Firewalls","Load Balancing","Microservices","RESTful APIs","SaaS/PaaS/IaaS"]
-  },{
-      "grouping":"Languages, Operating Systems & Tools",
-      "skills":[ "Java","Python","git","subversion","linux","bash","php","jquery","javascript","cypress"]
+      "grouping":"Architecture & Concepts",
+      "skills":[ "API Management Platforms", "Configuration as Code", "DevOps","DNS","Disaster Recovery & HA", "GraphQL", "Firewalls","Microservices","REST", "SOA", "SaaS/FaaS/PaaS/IaaS", "Webservices"]
   },
-        {
-            "grouping":"Platform Development & Administration",
-            "skills":[ "Atlassian","Bamboo","CircleCI","Bitbucket","NGINX","MySQL","Wordpress"]
-        },
-            {"grouping":"Containers & Cloud",
-            "skills":[
-                {"name":"BOSH","link":"https://bosh.io"},
-                {"name":"Docker","link":"https://docker.com"},
-                {"name":"AWS","link":"https://aws.amazon.com"},
-                {"name":"Google Cloud","link":"https://cloud.google.com"},
-                {"name":"Linux","link":"https://bosh.io"}
-            ]
-        }
-    ]
+  {
+      "grouping":"Languages, Operating Systems & Dev Tools",
+      "skills":[ "Java","Python","git","go","subversion","linux","maven", "bash","php","cypress", "selenium"]
+  },
+  {
+    "grouping":"Platform, Container & Cloud Administration",
+      "skills":[
+          {"name":"Atlassian","link":"https://atlassian.com"},
+          {"name":"Artifactory","link":"https://jfrog.com"},
+          {"name":"AWS","link":"https://aws.amazon.com"},
+          {"name":"BOSH","link":"https://bosh.io"},
+          {"name":"CircleCI","link":"https://circleci.com"},
+          {"name":"Cloud Foundry","link":"https://cloudfoundry.org"},
+          {"name":"Docker","link":"https://docker.com"},
+          {"name":"Google Cloud","link":"https://cloud.google.com"},
+          {"name":"Linux","link":"https://bosh.io"},
+          {"name":"NGINX","link":"https://www.nginx.com/"},
+          {"name":"SonarQube","link":"https://www.sonarsource.com/"},
+          {"name":"Sonatype Nexus & CLM","link":"https://sonatype.com/"}
+      ]
+  }
+]

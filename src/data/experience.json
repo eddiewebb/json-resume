@@ -1,9 +1,15 @@
 [
     {
-        "role":"Solutions Engineer, East Coast & Enterprise",
+        "role":"Director of Solutions",
         "company":"CircleCI",
         "summary":"Making DevOps Mo' Betta for teams across the globe!",
-        "range":"April 2018 - Present"
+        "range":"January 2019 - Present"
+    },
+    {
+        "role":"Solutions Engineer, East Coast, EMEA & Enterprise",
+        "company":"CircleCI",
+        "summary":"Supporting sales with technical expertise in Enterprise DevOps and CI/CD consulting for companies large and small. Exceeded quotas for ~8 months before promotion to Director.",
+        "range":"April 2018 - December 2018"
     },
     {
         "role":"Director, Enterprise Software Delivery",
