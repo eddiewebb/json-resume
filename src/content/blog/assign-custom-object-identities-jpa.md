@@ -1,6 +1,6 @@
 ---
 title: 'Assign Custom Object Identities with JPA'
-date: Mon, 30 Nov -0001 00:00:00 +0000
+date: Mon, 30 Nov 2001 00:00:00 +0000
 draft: false
 tags: [java, Java, jpa, persistence]
 ---

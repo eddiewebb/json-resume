@@ -1,6 +1,6 @@
 ---
 title: 'Escaping IBM Rational Products: Simple Java EE Web Application Development with Eclipse'
-date: Mon, 30 Nov -0001 00:00:00 +0000
+date: Mon, 30 Nov 2008 00:00:00 +0000
 draft: false
 tags: [eclipse, ibm, jetty, rad, rational, Site News, tomcat]
 ---
