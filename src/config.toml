@@ -25,7 +25,7 @@ enableGitInfo = true
     showPublications = false
     showExperience = true
     showEducation = true
-    showBlog      = false
+    showBlog      = true
     showQr = false
 
     # do you want to show git hash on page footer and link to repo? Add commit prefix here.
