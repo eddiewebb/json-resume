@@ -5,30 +5,49 @@ draft: false
 tags: [ci, circleci, cloud Foundry, java, Java, MIsc.Tips, web development]
 ---
 
-  CircleCI is a premier SaaS solution for integrating Continuous Integration pipelines with any any GitHub repositories.  The documentation is loaded with example integrations including Heroku and Cloud Foundry, but for Cloud Foundry are limited to simple `cf push`.  This blog posts explores the full configuration required to enable **Zero Downtime deployments** with the [Blue/Green pattern](https://martinfowler.com/bliki/BlueGreenDeployment.html). The concept of a **Blue/Green deployment** is relatively simple, so long as you're building stateless web apps or services. And that's a well covered topic elsewhere.  This post assumes your apps are stateless, and can run multiple versions in parallel. \[caption id="attachment_1079" align="alignnone" width="1024"\][![](https://blog.edwardawebb.com/wp-content/uploads/2018/02/bluegreen-1024x223.png)](https://blog.edwardawebb.com/web-development/bluegreen-cloud-foundry-deployments-in-circle-ci/attachment/bluegreen) Using a "dark" url for new version to validate state before seamlessly rerouting traffic from live version\[/caption\]
+CircleCI is a premier SaaS solution for integrating Continuous Integration pipelines with any any GitHub repositories.  The documentation is loaded with example integrations including Heroku and Cloud Foundry, but for Cloud Foundry are limited to simple `cf push`.  This blog posts explores the full configuration required to enable **Zero Downtime deployments** with the [Blue/Green pattern](https://martinfowler.com/bliki/BlueGreenDeployment.html). The concept of a **Blue/Green deployment** is relatively simple, so long as you're building stateless web apps or services. And that's a well covered topic elsewhere.  This post assumes your apps are stateless, and can run multiple versions in parallel.
 
 ### TL;DR
+CircleCI now encapsulates several common Cloud Foundry commands in via CircleCI Orbs.  Alternately you can use the CF ClI and script it directly.
 
-\# Push as "dark" instance
+#### Use CircleCI Cloud Foundry Orb
+
+See [CircleCI Orb Registry](https://circleci.com/orbs/registry/orb/circleci/cloudfoundry#usage-blue_green_deploy) for more examples.
+{{< highlight yaml "linenos=table" >}}
+version: 2.1
+orbs:
+  cloudfoundry: circleci/cloudfoundry@1.0
+workflows:
+  deploy:
+    jobs:
+      - cloudfoundry/blue_green:
+          appname: your-app
+          domain: your-domain
+          org: your-org
+          space: your-space
+{{< / highlight >}}
+
+#### Script it yourself
+{{< highlight bash >}}
+# Push as "dark" instance
 cf push my-app-dark -f cf-dev-manifest.yml -p standalone-app.jar -n my-app-dark
-\# Verify new version is working on dark URL.
+# Verify new version is working on dark URL.
 HTTPCODE=\`curl -s -o /dev/null -w "%{http_code}" https://my-app-dark.cfapps.io/\`
 if \[ "$HTTPCODE" -ne 200 \];then
   echo "dark route note available, failing deploy"
   exit 1
 fi
-\# Send "real" url to new version
+# Send "real" url to new version
 cf map-route my-app-dark cfapps.io -n my-app-live
-\# Stop sending traffic to previous version
+# Stop sending traffic to previous version
 cf unmap-route my-app-live cfapps.io -n my-app-live
-\# stop previous version
+# stop previous version
 cf stop my-app-live
-\# delete previous version
+# delete previous version
 cf delete my-app-live -f
-\# Switch name of "dark" version to claim correct name
+# Switch name of "dark" version to claim correct name
 cf rename my-app-dark my-app-live     
-
- 
+{{< / highlight >}} 
 
 ### Cloud Foundry Hosting
 

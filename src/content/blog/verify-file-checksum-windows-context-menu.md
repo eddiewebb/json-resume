@@ -14,7 +14,7 @@ You can download their unsupported command line utility fciv from the following 
 ### Create a simple Batch file
 
 ..to run the checksum utility of your choice, and then pause
-
+```
 @echo off
 :: edward a webb
 :: June 6 2011
@@ -23,21 +23,24 @@ You can download their unsupported command line utility fciv from the following 
 cls
 fciv.exe %1
 pause
+```
 
 ### Drop both onto your PATH
 
-You can either add them to you system variables , or drop them in a folder like <x>:\\windows\\system 32.   I'm lazy and did the latter.
+You can either add them to you system variables , or drop them in a folder like `C:\windows\system 32`.   I'm lazy and did the latter.
 
 ### Add the batch file as an context menu option
 
 Just save the file below, right click and merge into your registry.  It makes any file's right click menu include the value of the first key as the text you'll see, and the value of the second ("command") key, the actual command to be run. Substitute "%1"  for the file (yes use double-quotes escaped in case the file your checking is on a path with spaces).
 
+```
 Windows Registry Editor Version 5.00
 
-\[HKEY\_CLASSES\_ROOT\\*\\shell\\Checksum\]
-@="Verify CHecksum"
+[HKEY_CLASSES_ROOT\*\shell\Checksum\]
+@="Verify Checksum"
 
-\[HKEY\_CLASSES\_ROOT\\*\\shell\\Checksum\\Command\]
-@="verify-checksum.bat \\"%1\\""
+[HKEY_CLASSES_ROOT\*\shell\Checksum\Command\]
+@="verify-checksum.bat \"%1\""
+```
 
 That's it, the changes are effective immediately, so try it out.

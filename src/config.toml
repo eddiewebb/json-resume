@@ -4,6 +4,9 @@ title = "Eddie Webb"
 theme = "resume"
 enableGitInfo = true
 
+pygmentsCodeFences = true
+pygmentsCodeFencesGuessSyntax = true
+
 [taxonomies]
     tag = "tags"
 

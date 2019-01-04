@@ -66,8 +66,8 @@ Before we get into the JS I must credit a source I stumbled across while researc
 ### The JavaScript that parses the DOM and prints HTML
 
 Just edit the backend URL here, unless you want to completely change the layout of things. You should be able to CSS alone to get the style you want. **Same Origin Policy applies, so you will need to call a backend script on the same domain that relays to Google.com**
-
- <!--
+```js 
+<!--
 // the max number of evewnts to show
 maxEvents = 7;
 
@@ -84,8 +84,8 @@ if (window.ActiveXObject)	// if ActiveXObject use the Microsoft.XMLHTTP
 	RSSRequestObject = new ActiveXObject("Microsoft.XMLHTTP");
  
  
-/\*
-\* onreadystatechange function
+/*
+* onreadystatechange function
 */
 function ReqChange() {
  
@@ -166,8 +166,8 @@ var readAs="" + (mydate.getMonth()+1) + "/" + mydate.getDate() + "/" + mydate.ge
 	
 }
  
-/\*
-\* Main AJAX RSS reader request
+/*
+* Main AJAX RSS reader request
 */
 function RSSRequest() {
  
@@ -183,8 +183,8 @@ function RSSRequest() {
 	RSSRequestObject.send(null); 
 }
  
-/\*
-\* Timer
+/*
+* Timer
 */
 function update_timer() {
 	RSSRequest();
@@ -205,6 +205,7 @@ function GetObject(id){
 }
  RSSRequest();
 //-->
+```
 
 ### Same-Origin who what?
 
