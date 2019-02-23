@@ -18,7 +18,7 @@ pygmentsCodeFencesGuessSyntax = true
     phone = "603-463-0447"
     contactNote = "DevTools Engineer and DevOps Culture advocate"
     address = "Plattsburgh, NY"
-    email = "OlliTech@gmail.com"
+    email = "eddie@webb.dev"
     description = "Eddie has over a decade of experience enabling agile, CI/CD and DevOps culture in the enterprise.  Previously the Director of Enterprise DevOps Platforms influencing culture and technology at a Fortune 100 company, Eddie now helps CircleCI customers of all sizes adopt the best technologies and practices on their DevOps journey."
     favicon = "images/favicon.ico"
     # what sections

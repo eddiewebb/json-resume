@@ -20,8 +20,10 @@
           {"name":"Google Cloud","link":"https://cloud.google.com"},
           {"name":"Linux","link":"https://bosh.io"},
           {"name":"NGINX","link":"https://www.nginx.com/"},
+          {"name":"Packer","link":"https://www.packer.io/"},
           {"name":"SonarQube","link":"https://www.sonarsource.com/"},
-          {"name":"Sonatype Nexus & CLM","link":"https://sonatype.com/"}
+          {"name":"Sonatype Nexus & CLM","link":"https://sonatype.com/"},
+          {"name":"Terraform","link":"https://www.terraform.io/"}
       ]
   }
 ]
