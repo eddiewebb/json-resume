@@ -23,7 +23,7 @@ jobs:
         type: string
         default: TEST   
     docker:
-      - image: felicianotech/docker-hugo:0.47.1
+      - image: cibuilds/hugo:0.62
     working_directory: ~/repo
     steps:
       - checkout   
