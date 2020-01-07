@@ -13,6 +13,7 @@
 backend:
   name: github
   repo: eddiewebb/json-resume
+  site_domain: cms.netlify.com
 
 
 media_folder: "src/static/img" # Folder where user uploaded files should go
