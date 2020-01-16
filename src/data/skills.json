@@ -5,7 +5,7 @@
   },
   {
       "grouping":"Languages, Operating Systems & Dev Tools",
-      "skills":[ "Java","Python","git","go","subversion","linux","maven", "bash","php","cypress", "selenium"]
+      "skills":[ "Java","Python","git","go","linux","maven", "bash","cypress", "selenium"]
   },
   {
     "grouping":"Platform, Container & Cloud Administration",
@@ -23,7 +23,7 @@
           {"name":"Packer","link":"https://www.packer.io/"},
           {"name":"SonarQube","link":"https://www.sonarsource.com/"},
           {"name":"Sonatype Nexus & CLM","link":"https://sonatype.com/"},
-          {"name":"Terraform","link":"https://www.terraform.io/"}
+          {"name":"Terraform","link":"https://www.terraform.io/", "icon":"layer-group"}
       ]
   }
 ]
