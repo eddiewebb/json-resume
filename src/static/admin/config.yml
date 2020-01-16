@@ -13,7 +13,7 @@
 backend:
   name: github
   repo: eddiewebb/json-resume
-  base_url: https://plattsburghyoga.com:3800
+  base_url: http://plattsburghyoga.com:3800
 
 
 media_folder: "src/static/img" # Folder where user uploaded files should go
