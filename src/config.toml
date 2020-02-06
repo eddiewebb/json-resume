@@ -26,6 +26,7 @@ pygmentsCodeFencesGuessSyntax = true
     showProjects = true
     showOpenSource = true
     showPublications = true
+    publicationsAlternateName = "Presentations"
     showExperience = true
     showEducation = true
     showBlog      = true
@@ -62,7 +63,8 @@ pygmentsCodeFencesGuessSyntax = true
     link = "https://keybase.io/edwardawebb"
     icon = "keybase"
 
-
+[permalinks]
+  publications = "/presentations/:title/"
 
 
 
