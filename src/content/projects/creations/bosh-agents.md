@@ -6,7 +6,7 @@
   "description": "Large scale orchestration of Bamboo server, agents and database using BOSH",
   "tags": ["DevOps","BOSH", "Java", "Atlassian Ecosystem", "monit", "python", "xml/xslt", "bash/shell","REST APIs","Continuous Integration","Continuous Delivery","CI/CD Pipelines"],
   "fact": "Single command will scale-up/scale-down without user interuption",
-  "weight":"200",
+  "weight":"250",
   "sitemap": {"priority" : "0.8"},
   "featured":true
 }

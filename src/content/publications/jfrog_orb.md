@@ -9,8 +9,7 @@ image: "/img/circleci_jfrog_webinar.png"
 link: "https://www.youtube.com/watch?v=V5iApHNrSEs"
 weight: 100
 sitemap:
-  priority : 0.8
-markup: "mmark"
+  priority : 0.9
 ---
 This was a really fun project.
 

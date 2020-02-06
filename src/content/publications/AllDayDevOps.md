@@ -10,7 +10,7 @@ link: "http://www.alldaydevops.com/blog/organically-devops-building-quality-and-
 fact: "Interesting little tidbit shown below image on summary and detail page"
 weight: 400
 sitemap:
-  priority : 0.8
+  priority : 0.9
 ---
 
 
