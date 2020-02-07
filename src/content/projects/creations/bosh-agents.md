@@ -2,7 +2,7 @@
   "title": "BOSH release for Bamboo & Remote Agents",
   "date": "2018-02-11T12:41:05-05:00",
   "link": "https://github.com/eddiewebb/bosh-bamboo",
-  "image": "/img/aafb-agent-ids-match-bamboo.png",
+  "image": "/img/aafb-agent-ids-match-bamboo.webp",
   "description": "Large scale orchestration of Bamboo server, agents and database using BOSH",
   "tags": ["DevOps","BOSH", "Java", "Atlassian Ecosystem", "monit", "python", "xml/xslt", "bash/shell","REST APIs","Continuous Integration","Continuous Delivery","CI/CD Pipelines"],
   "fact": "Single command will scale-up/scale-down without user interuption",
