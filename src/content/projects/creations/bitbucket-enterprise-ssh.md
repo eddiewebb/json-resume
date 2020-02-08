@@ -1,7 +1,7 @@
 {
     "title":"Enterprise SSH Key Management for Bitbucket",
     "link":"https://github.com/libertymutual/ssh-key-enforcer-stash",
-    "image":"/img/bitbucket-keys.webp",
+    "image":"/img/bitbucket-keys-thumb.webp",
     "description":"Adds Enterprise Key rotation/enforcement policies to Atlassian Bitbucket.",
     "tags":["Java","Bitbucket","Security","git","jQuery"],
     "fact":"Companies can specify the tolerated age for key expiry/deletion, and users are notified by email to create a new pair.",

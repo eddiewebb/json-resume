@@ -1,7 +1,7 @@
 {
     "title":"Pipeline Flow for Bamboo",
     "link":"https://marketplace.atlassian.com/plugins/com.edwardawebb.bamboo-flow/server/overview",
-    "image":"/img/flow-summary.webp",
+    "image":"/img/flow-summary-thumb.webp",
     "description":"Enables deployment environments to behave as stages within the pipeline, triggering additional build stages. Also adds sweet visualization.",
     "tags":[
           "Atlassian",
