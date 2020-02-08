@@ -5,7 +5,7 @@ pubtype: "Demo"
 featured: true
 description: "Partner event with Atlassian, I got the chance to visit participate in Demo Den and answer a Spicy Question!"
 tags: ["Continuous Integration","Continuous Delivery","CI/CD pipelines","agile","Jira", "CircleCI"]
-image: "/img/demoden.webp"
+image: "/img/demoden-thumb.webp"
 link: "https://www.youtube.com/watch?v=yHIkEuc7y-A"
 fact: ""
 weight: 200
