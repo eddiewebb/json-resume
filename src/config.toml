@@ -14,7 +14,7 @@ pygmentsCodeFencesGuessSyntax = true
 [params]
     firstName = "Eddie"
     lastName = "Webb"
-    profileImage = "img/TechChat.png"
+    profileImage = "img/TechChat.webp"
     phone = "603-463-0447"
     contactNote = "DevTools Engineer and DevOps Culture advocate"
     address = "Peru, NY"
