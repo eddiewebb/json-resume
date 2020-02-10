@@ -12,19 +12,31 @@ Wow, that title is a mouthful. Basically i figured out how to **use SYSDATE and 
 
 But that need users to change every month or year... boooo. The solutions are not too pretty, but they work, And if you have a better way I would love to hear.. Googling proved no avail, and I had to dig this combination from various pieces in an O'Reilly Oracle book. Without further delay..
 
-Oracle SQL Query using start and end of Last Month as Dates
+
 -----------------------------------------------------------
 
-#### Basic Use
+#### TL;DR
 
-#### 
+You can query using sydate to dynamically get **last month** dates
+```sql
+select 
+    TRUNC(ADD_MONTHS(SYSDATE, -1),'MM') , 
+    LAST_DAY(ADD_MONTHS(SYSDATE,-1)) 
+from TABLE
+```
 
-select TRUNC(ADD_MONTHS(SYSDATE, -1),'MM') , LAST_DAY(ADD_MONTHS(SYSDATE,-1)) from TABLE
+or dates from **last year**
 
-#### Sample Use
+```sql
+select     
+    TRUNC(ADD_MONTHS(SYSDATE, -12),'SYYYY'), --first day
+    LAST_DAY(ADD_MONTHS(TRUNC(ADD_MONTHS(SYSDATE, -12),'SYYYY'), 11)). --last day
+from TABLE
+```
 
-#### In this example we will get the sales total by agent and region for last month.
 
+#### Oracle SQL Query using start and end of Last Month as Dates
+```sql
 /*
 *  This query will retrieve all session summary records that occurred in the previous month
 * Do not adjust the date fields, it should calculate correctly based on today's date.
@@ -53,63 +65,45 @@ and
 
 /* group sums by Client IDs Requestor, then system */
 group by ROLLUP( AGENT_NAME, AGENT_NAME)
+```
 
 #### How's that work?
 
 If we focus on the basic use above you'll notice two manipulations. The first one is the first day of the month.
 
- TRUNC(ADD_MONTHS(SYSDATE, -1),'MM') 
+ `TRUNC(ADD_MONTHS(SYSDATE, -1),'MM') `
 
 Start with today's date using sysdate (3/27) and subtracts one month (2/27). We then Truncate the result using MM for the numerical value of the month(2). This will represent the first day of last month (2/1). The second manipulation requires the use of LAST_DAY instead of TRUNC.
 
- LAST_DAY(ADD_MONTHS(SYSDATE, -1)) 
+ `LAST_DAY(ADD_MONTHS(SYSDATE, -1)) `
 
 Start with today's date using sysdate (3/27) and subtracts one month (2/28). We then obtain the LAST_DAY (2/28). Note: no, there isnt a FIRST_DAY function or I would have used it. No, there isn't a SUBTRACT_MONTHS function "" "" "". **Instead you can pass positive or negative numbers to ADD_MONTHS. 0 will get the dates for the current month.**
 
-Oracle SQL Query using start and end of Last Year as Dates
-----------------------------------------------------------
 
-OK same basic premises here but extended.
+#### Oracle SQL Query using start and end of Last Year as Dates
 
-#### Basic Use
 
-#### 
-
-select     
-TRUNC(ADD_MONTHS(SYSDATE, -12),'SYYYY'),
-LAST_DAY(ADD_MONTHS(TRUNC(ADD_MONTHS(SYSDATE, -12),'SYYYY'), 11))
-from TABLE
-
-#### Sample Use
-
-#### In this example we will get the sales total by agent and region for last month.
-
+```sql
 /*
 *  This query will retrieve all session summary records that occurred in the previous YEAR
 * and provide a total count by client
 * Do not adjust the date fields, it should calculate correctly based on today's date.
 *
-* @Author Eddie Webb
-*
 */
 
-
-
 select  REQUESTOR_ID, SYSTEM_ID, SUM(SESSION_COUNT) total from EBR.SESSION_SUMM
-
 
 where
     /* first day of previous YEAR*/
     SERVICE_DAY >= TRUNC(ADD_MONTHS(SYSDATE, -12),'SYYYY') 
  
-   
 and
     /*last day of last YEAR*/
     SERVICE_DAY <= LAST_DAY(ADD_MONTHS(TRUNC(ADD_MONTHS(SYSDATE, -12),'SYYYY'), 11))
 
-
 /* group sums by Client IDs Requestor, then system */
 group by ROLLUP( REQUESTOR_ID, SYSTEM_ID)
+```
 
 #### How's that work?
 
