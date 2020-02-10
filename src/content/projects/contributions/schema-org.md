@@ -3,7 +3,7 @@ description: Not all pull requests are glorious code, documentation is really im
   too! This commit fixed some invalid JSON found in some example specs.
 fact: Schema.org provides a common specification for Structured Data on the internet.
 featured: true
-image: /img/schema-org.png
+image: /img/schema-org-thumb.webp
 link: https://github.com/schemaorg/schemaorg/pull/1120
 sitemap:
   priority: "0.8"

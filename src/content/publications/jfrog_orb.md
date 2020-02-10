@@ -5,7 +5,7 @@ pubtype: "Webinar"
 featured: true
 description: "This joint webinar introduces CircleCI Orbs and demonstrates the ease of integrating with JFrog Artifactory for scanning, attestation and confidence in your software deliver pipeline."
 tags: ["DevOps","Continuous Integration","Continuous Delivery","CI/CD pipelines","Artifactory","JFrog","CircleCI"]
-image: "/img/circleci_jfrog_webinar.png"
+image: "/img/circleci_jfrog_webinar-thumb.webp"
 link: "https://www.youtube.com/watch?v=V5iApHNrSEs"
 weight: 100
 sitemap:
