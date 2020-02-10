@@ -43,17 +43,17 @@ link';
 			$curl = curl_init();
 			
 			//Set curl to return the data instead of printing it to the browser.
-			curl\_setopt($curl, CURLOPT\_RETURNTRANSFER, 1);
+			curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 			//Set the URL
-			curl\_setopt($curl, CURLOPT\_URL,  $awApiUrl);
+			curl_setopt($curl, CURLOPT_URL,  $awApiUrl);
 			//Execute the fetch
 			$data = curl_exec($curl);
 			//Close the connection
 			curl_close($curl);
 			
 			$xml = new SimpleXMLElement($data);
-			$prevCount = $xml->feed->entry\[0\]\['circulation'\] + 0;
-			$yestCount = $xml->feed->entry\[1\]\['circulation'\] + 0;
+			$prevCount = $xml->feed->entry[0]['circulation'] + 0;
+			$yestCount = $xml->feed->entry[1]['circulation'] + 0;
 			
 			switch(true){
 				case ($yestCount == $prevCount):
@@ -87,12 +87,12 @@ Yesterday
 
 			
 
-Alright, now just save that code to your server, lets say http://example.com/feedticker.php and just append your URI... http://example.com/feedticker.php?fb_uri=edwardawebb Yeah its simple but sweet. I found the need to **replace my Piwik Widget which is using the old Feedburner Ticker.** \[caption id="attachment_345" align="aligncenter" width="409" caption="Plugin to add Feedburner widget to Piwik"\]![Plugin to add Feedburner widget to Piwik](feedwidget3.webp "Plugin to add Feedburner widget to Piwik")\[/caption\] If you would like to use this in you **Piwik** install just let me know and I'll shoot the complete **plugin** over to you.  
+Alright, now just save that code to your server, lets say http://example.com/feedticker.php and just append your URI... http://example.com/feedticker.php?fb_uri=edwardawebb Yeah its simple but sweet. I found the need to **replace my Piwik Widget which is using the old Feedburner Ticker.** [caption id="attachment_345" align="aligncenter" width="409" caption="Plugin to add Feedburner widget to Piwik"]![Plugin to add Feedburner widget to Piwik](feedwidget3.webp "Plugin to add Feedburner widget to Piwik")[/caption] If you would like to use this in you **Piwik** install just let me know and I'll shoot the complete **plugin** over to you.  
   
 
 ### Updated Feedburner Ticker
 
-I decided that I wanted to track the changes in Reach and Hits in addition to circulation. Ya know something that looked more like this; \[caption id="attachment_373" align="aligncenter" width="397" caption="Includes Hits and Reach"\]![Includes Hits and Reach](feedwidget11.webp "Feedburner Ticker")\[/caption\] Yeah, that would be just dandy. If you feel like you want those counts as well than replace the code above with this snippet.
+I decided that I wanted to track the changes in Reach and Hits in addition to circulation. Ya know something that looked more like this; [caption id="attachment_373" align="aligncenter" width="397" caption="Includes Hits and Reach"]![Includes Hits and Reach](feedwidget11.webp "Feedburner Ticker")[/caption] Yeah, that would be just dandy. If you feel like you want those counts as well than replace the code above with this snippet.
 
 #### feedburnerTicker.php
 
@@ -102,9 +102,9 @@ click';
 	$curl = curl_init();
 			
 	//Set curl to return the data instead of printing it to the browser.
-	curl\_setopt($curl, CURLOPT\_RETURNTRANSFER, 1);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 	//Set the URL
-	curl\_setopt($curl, CURLOPT\_URL,  $awApiUrl);
+	curl_setopt($curl, CURLOPT_URL,  $awApiUrl);
 	//Execute the fetch
 	$data = curl_exec($curl);
 	//Close the connection
@@ -116,9 +116,9 @@ click';
 	$i=0;
 	foreach($xml->feed->entry as $feedDay){
 				
-		$dataArr\['Circulation'\]\[$i\]=$feedDay\['circulation'\] + 0;
-		$dataArr\['Hits'\]\[$i\]=$feedDay\['hits'\] + 0;
-		$dataArr\['Reach'\]\[$i\]=$feedDay\['reach'\] + 0;
+		$dataArr['Circulation'][$i]=$feedDay['circulation'] + 0;
+		$dataArr['Hits'][$i]=$feedDay['hits'] + 0;
+		$dataArr['Reach'][$i]=$feedDay['reach'] + 0;
 		$i++;
 	}
 		
@@ -127,13 +127,13 @@ click';
 	$value){
 			$img='';
 			switch(true){
-				case($value\[0\] == $value\[1\]):
+				case($value[0] == $value[1]):
 				$img='![--](./plugins/Feedburner/nochange.gif)';
 				break;
-				case($value\[0\] < $value\[1\]):
+				case($value[0] < $value[1]):
 				$img='![^](./plugins/Feedburner/arrow-up-green.gif)';
 				break;
-				case($value\[0\] > $value\[1\]):
+				case($value[0] > $value[1]):
 				$img='![v](./plugins/Feedburner/arrow-down-red.gif)';
 				break;
 			}
@@ -162,13 +162,13 @@ Yesterday
 
 '.$key.'
 
-'.$value\[0\].'
+'.$value[0].'
 
-'.$value\[1\].'
+'.$value[1].'
 
 '.$img.'
 
 Update
 ------
 
-I have refactored the code about into a html template and php class that can be downloaded as a complete Piwik Plugin. \[download_cat#1\]
+I have refactored the code about into a html template and php class that can be downloaded as a complete Piwik Plugin. [download_cat#1]

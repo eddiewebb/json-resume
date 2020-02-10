@@ -31,38 +31,38 @@ var $displayField = 'first_name';
 var $recursive = 0;
 var $validate = array(
 'username' => array(
-'required' => array('rule'=>VALID\_NOT\_EMPTY,'message'=>'Please enter your login name'),
-'pattern' => array('rule' => array('custom','/\[a-zA-Z0-9\\_\\-\]{6,30}$/i'),'message'=>'Must be 4 characters or longer with no spaces.'),
+'required' => array('rule'=>VALID_NOT_EMPTY,'message'=>'Please enter your login name'),
+'pattern' => array('rule' => array('custom','/[a-zA-Z0-9\_\-]{6,30}$/i'),'message'=>'Must be 4 characters or longer with no spaces.'),
 'unique' => array('rule' => array('validateUniqueUsername'),'message'=>'This username is already in use, please try another.'),
 ),
 'first_name' => array(
-'required' => array('rule'=>VALID\_NOT\_EMPTY,'message'=>'You\\'ll need a name friends and family will recognize!'),
+'required' => array('rule'=>VALID_NOT_EMPTY,'message'=>'You\'ll need a name friends and family will recognize!'),
 'length' => array( 'rule' => array('maxLength', 60),'message'=>'That names a bit too long, keep it under 60 characters' )
 ),
 'last_name' => array(
-'required' => array('rule'=>VALID\_NOT\_EMPTY,'message'=>'You\\'ll need a name friends and family will recognize!'),
+'required' => array('rule'=>VALID_NOT_EMPTY,'message'=>'You\'ll need a name friends and family will recognize!'),
 'length' => array( 'rule' => array('maxLength', 60),'message'=>'That names a bit too long, keep it under 60 characters' )
 ),
 'password' => array(
-'required' => array('rule' => array('custom','/\[a-zA-Z0-9\\_\\-\]{6,}$/i'),'message'=>'Must be 6 characters or longer'),
+'required' => array('rule' => array('custom','/[a-zA-Z0-9\_\-]{6,}$/i'),'message'=>'Must be 6 characters or longer'),
 'length' => array( 'rule' => 'validatePassword','message'=>'Your passwords dont match!' )
 ),
 'email' => array('rule'=>'email','message'=>'Please enter your email address')
 );
 
-/\*\*
-\* validation functions
-\*/
+/**
+* validation functions
+*/
 
-/\*\*
-\* Check for existing user
+/**
+* Check for existing user
 */
 function validateUniqueUsername(){
 $error=0;
 //Attempt to load based on data in the field
-$someone = $this->findByUsername($this->data\['User'\]\['username'\]);
+$someone = $this->findByUsername($this->data['User']['username']);
 // if we get a result, this user name is in use, try again!
-if (isset($someone\['User'\]))
+if (isset($someone['User']))
 {
 $error++;
 //debug($someone);
@@ -75,16 +75,16 @@ return $error==0;
 function validatePassword(){
 $passed=true;
 //only run if there are two password feield (like NOT on the contact or signin pages..)
-if(isset($this->data\['User'\]\['confirmpassword'\])){
+if(isset($this->data['User']['confirmpassword'])){
 
-if($this->data\['User'\]\['password'\] != $this->data\['User'\]\['confirmpassword'\]){
+if($this->data['User']['password'] != $this->data['User']['confirmpassword']){
 //die('you fail');
 $this->invalidate('checkpassword');
 //they didnt condifrm password
 $passed=false;
 }else{
 //hash passwordbefore saving
-$this->data\['User'\]\['password'\]=md5($this->data\['User'\]\['password'\]);
+$this->data['User']['password']=md5($this->data['User']['password']);
 }
 }
 
@@ -106,7 +106,7 @@ register
 
 input('User.email', array('size' => '40','div'=> false ));?>
 error('User.duplicateemail','Sorry, ** That email is already is use**
-'.$html->link('Is it yours?','/users/resetpassword/'.$this->data\['User'\]\['email'\]).' ',array('escape'=>false))?>
+'.$html->link('Is it yours?','/users/resetpassword/'.$this->data['User']['email']).' ',array('escape'=>false))?>
 
 input('User.check', array('size'=>'10','label'=>$botQuestion,'error'=>'Are you human?','div'=>false));?>
 error('User.', 'Are you human!');?>

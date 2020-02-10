@@ -24,10 +24,10 @@ You should already have this, so we'll just look at the new actions.
 
 #### in app/controllers/users_controller.php
 
-	/\*\*
-	 \* This sweet controller was written by
-	 \* @author Edward A Webb edwardawebb.com
-	 \* 
+	/**
+	 * This sweet controller was written by
+	 * @author Edward A Webb edwardawebb.com
+	 * 
 	 */
 class UsersController extends AppController {
 
@@ -44,13 +44,13 @@ class UsersController extends AppController {
 		$this->humanWouldType=array('Yes', 'of course');
 		$this->set('botQuestion',$this->whatWeAsk);
 		if(empty($this->data)){
-			$this->data\['User'\]\['email'\]=$email;
+			$this->data['User']['email']=$email;
 			//show form
 		}else{
 			//already entered email
-			$botcheck = $this->data\['User'\]\['check'\];
+			$botcheck = $this->data['User']['check'];
 				//set email to passed variable if present
-				if(!$email) $email=$this->data\['User'\]\['email'\];
+				if(!$email) $email=$this->data['User']['email'];
 				// make sure whave email and a check
 				if(!$email){
 					$this->User->invalidate('email');
@@ -59,7 +59,7 @@ class UsersController extends AppController {
 				}else{
 					//email entered, check for it
 					$account=$this->User->findByEmail($email);
-					if($account\['User'\]\['isBanned'\]){
+					if($account['User']['isBanned']){
 						//banned user, tell em where to go
 						$this->Session->setFlash('
 
@@ -68,10 +68,10 @@ class UsersController extends AppController {
 ');
 						$this->redirect('/');
 					}
-					if(!isset($account\['User'\]\['email'\])){
+					if(!isset($account['User']['email'])){
 						$this->Session->setFlash('
 
-### We Don\\'t have such and email on record.
+### We Don\'t have such and email on record.
 
 ');
 						$this->redirect('/');
@@ -79,10 +79,10 @@ class UsersController extends AppController {
 					}
 					$hashyToken=md5(date('mdY').rand(4000000,4999999));
 					$message = $this->Ticketmaster->createMessage($hashyToken);
-					$this->Email->useremail($email,$account\['User'\]\['username'\],$message);
-					$data\['Ticket'\]\['hash'\]=$hashyToken;
-					$data\['Ticket'\]\['data'\]=$email;
-					$data\['Ticket'\]\['expires'\]=$this->Ticketmaster->getExpirationDate();
+					$this->Email->useremail($email,$account['User']['username'],$message);
+					$data['Ticket']['hash']=$hashyToken;
+					$data['Ticket']['data']=$email;
+					$data['Ticket']['expires']=$this->Ticketmaster->getExpirationDate();
 
 					if ($this->Ticket->save($data)){
 						$this->Session->setFlash('An email has been sent with instructions to reset your password');
@@ -104,12 +104,12 @@ class UsersController extends AppController {
 
 		if($results){
 			//now pull up mine IF still present
-			$passTicket=$this->User->findByEmail($results\['Ticket'\]\['data'\]);
+			$passTicket=$this->User->findByEmail($results['Ticket']['data']);
 
 			$this->Ticketmaster->voidTicket($hash);
-			$this->Session->write('tokenreset',$passTicket\['User'\]\['id'\]);
+			$this->Session->write('tokenreset',$passTicket['User']['id']);
 			$this->Session->setFlash('Enter your new password below');
-			$this->redirect('/users/newpassword/'.$passTicket\['User'\]\['id'\]);
+			$this->redirect('/users/newpassword/'.$passTicket['User']['id']);
 		}else{
 			$this->Session->setFlash('Your ticket is lost or expired.');
 			$this->redirect('/');
@@ -130,11 +130,11 @@ class UsersController extends AppController {
 			$attempter=$this->Session->read('User');
 
 			//make sure its the admin or the rigth user
-			if($attempter\['User'\]\['id'\]!=$id && $attempter\['Role'\]\['rights'\]<4)
+			if($attempter['User']['id']!=$id && $attempter['Role']['rights']<4)
 			{
 				//not  the user, not the admin and not a reset request via toekns
-				/\*
-				 \* SHAME
+				/*
+				 * SHAME
 				 */
 				$this->Userban->banuser('Edit Anothers Password');
 				$this->Session->setFlash('Your account has been banned');
@@ -152,11 +152,11 @@ class UsersController extends AppController {
 			$this->data = $this->User->read(null, $id);
 		} else {				
 
-			$this->data\['User'\]\['password'\]=md5($this->data\['User'\]\['password'\]);
+			$this->data['User']['password']=md5($this->data['User']['password']);
 			if ($this->User->save($this->data,true,array('password'))) {
 				//delkete session token and dlete used ticket from table
 				$this->Session->delete('tokenreset');
-				$this->Session->setFlash('The User\\'s Password has been updated');
+				$this->Session->setFlash('The User\'s Password has been updated');
 				$this->redirect('/');
 			} else {
 				$this->Session->setFlash('Please correct errors below.');
@@ -178,14 +178,14 @@ The rest is new
 
 #### MySQL query to build the ticket table
 
-CREATE TABLE IF NOT EXISTS \`prefix_tickets\` (
-  \`id\` int(11) NOT NULL auto_increment,
-  \`hash\` varchar(255) default NULL,
-  \`data\` varchar(255) default NULL,
-  \`created\` datetime default NULL,
-  \`expires\` datetime default NULL,
-  PRIMARY KEY  (\`id\`),
-  UNIQUE KEY \`hash\` (\`hash\`)
+CREATE TABLE IF NOT EXISTS `prefix_tickets` (
+  `id` int(11) NOT NULL auto_increment,
+  `hash` varchar(255) default NULL,
+  `data` varchar(255) default NULL,
+  `created` datetime default NULL,
+  `expires` datetime default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `hash` (`hash`)
 ) ;
 
  
@@ -201,7 +201,7 @@ controller =& $controller;
 	function getExpirationDate(){
 		$date=strftime('%c');
 		$date=strtotime($date);
-		$date+=($this->hours\*60\*60);
+		$date+=($this->hours*60*60);
 		$expired=date('Y-m-d H:i:s',$date);
 		return $expired;
 
@@ -229,8 +229,8 @@ controller =& $controller;
 
 	}	
 
-	/\*
-	 \* actually for logical reason well be indiscrimnate and clean ALL tockets for this email
+	/*
+	 * actually for logical reason well be indiscrimnate and clean ALL tockets for this email
 	 */
 	function voidTicket($hash){
 		$this->controller->Ticket->deleteAll(array('hash' => $hash));
@@ -269,6 +269,6 @@ Reset Lost Password
 New Password
 ------------
 
-**Username:** data\['User'\]\['username'\] ;?> hidden('User/username', array('size' => '60'));?>
+**Username:** data['User']['username'] ;?> hidden('User/username', array('size' => '60'));?>
 
 hidden('User/id')?>

@@ -25,7 +25,7 @@ content
 		
 
 		 *    
-                          \- 	
+                          - 	
 		  
 
 	
@@ -240,9 +240,9 @@ public class TeamProcessor {
 	
 	}
 	
-	/\*
-	 \* 
-	 \* Action Methods
+	/*
+	 * 
+	 * Action Methods
 	 */
 
 	public String processTeam(){

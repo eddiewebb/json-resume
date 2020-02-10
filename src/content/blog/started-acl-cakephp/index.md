@@ -32,47 +32,47 @@ First grab yourself a sheet of paper. Think about this... The whos and whats of 
 
 Keeping it simple, we have users and admins.
 
-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
-  \[1\]users
+---------------------------------------------------------------
+  [1]users
 
-    \[4\]Test
+    [4]Test
 
-    \[5\]Jesse
+    [5]Jesse
 
-    \[6\]Sister
+    [6]Sister
 
-  \[2\]administrators
+  [2]administrators
 
-    \[3\]Eddie
+    [3]Eddie
 
-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+---------------------------------------------------------------
 
 #### The Whats
 
 This is where you need to really spend some time planning. Think about commonalities across models or areas of your site. Creating the right heirarchy will save alot of hassle down the road.
 
-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
-  \[1\]Entire_Site
+---------------------------------------------------------------
+  [1]Entire_Site
 
-    \[2\]Main_Models
+    [2]Main_Models
 
-      \[4\]Users
+      [4]Users
 
-      \[5\]Toolboxes
+      [5]Toolboxes
 
-      \[6\]Items
+      [6]Items
 
-    \[3\]Aux_Models
+    [3]Aux_Models
 
-      \[7\]Actions
+      [7]Actions
 
-      \[8\]Priorities
+      [8]Priorities
 
-      \[9\]Settings
+      [9]Settings
 
-      \[10\]Botchecks
+      [10]Botchecks
 
-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+---------------------------------------------------------------
 
 The key in my example is that Users should be able to create and read instances of the main models, but only read the auxiliary models. By collapsing these in a tree format I can just declare that explicitly at the Main and Aux levels, and let the sub-models inherit those permissions, neat!
 
@@ -103,12 +103,12 @@ This is a simple controller I roughed out to help implement ACL in one of my exi
 	}
 		
 		
-	/\*
-	 \* next we add our existing add users to users group
-	 \* ! adds all users to user group, you may add some logic to 
-	 \* ! detemrine admins based on role, or edit manually later
-	 \* 
-	 \* the   \*\*whos\*\*
+	/*
+	 * next we add our existing add users to users group
+	 * ! adds all users to user group, you may add some logic to 
+	 * ! detemrine admins based on role, or edit manually later
+	 * 
+	 * the   **whos**
 	 */	
 		
 		
@@ -123,7 +123,7 @@ This is a simple controller I roughed out to help implement ACL in one of my exi
 		
 		$i=0;
 		foreach($users as $key=>$value){
-			$aroList\[$i++\]=
+			$aroList[$i++]=
 				array(
 					'alias' => $value,
 					'parent_id' => 1,
@@ -147,11 +147,11 @@ This is a simple controller I roughed out to help implement ACL in one of my exi
 			$aro->save($data);
 		}
 	
-	/\*
-	 \* now on to  \*whats\* can they access
-	 \* 
-	 \* for my layout I have the entire site as a parent, two sub groups that contain all models.
-	 \* 
+	/*
+	 * now on to  *whats* can they access
+	 * 
+	 * for my layout I have the entire site as a parent, two sub groups that contain all models.
+	 * 
 	 */
 	
 
@@ -199,8 +199,8 @@ This is a simple controller I roughed out to help implement ACL in one of my exi
 	
 	
 	
-	/\* 
-	 \* now the more details ACOs and their parents (refer to tree in post above)
+	/* 
+	 * now the more details ACOs and their parents (refer to tree in post above)
 	 */
 		$aco = new Aco();
 		
@@ -305,13 +305,13 @@ The final touches will come as you update or create your model actions. WHen a u
 
 //example code when a user creates a model
 //let user with id 1234 update toolbox with id 5678
-$this->Acl->allow(array('model' => 'User', 'foreign\_key' => 1234), array('model'=>'Toolbox','foreign\_key'=>'5678'), 'update');
+$this->Acl->allow(array('model' => 'User', 'foreign_key' => 1234), array('model'=>'Toolbox','foreign_key'=>'5678'), 'update');
 
 Next time around you can use ACL to verify those rights to prevent anyone else the same privilege.
 
 //example code when a user attempts action a model
 //can user with id 1234 in fact update toolbox with id 5678?
-$this->Acl->check(array('model' => 'User', 'foreign\_key' => 1234), array('model'=>'Toolbox','foreign\_key'=>'5678'), 'update');
+$this->Acl->check(array('model' => 'User', 'foreign_key' => 1234), array('model'=>'Toolbox','foreign_key'=>'5678'), 'update');
 
 ### Making Changes to ACO or ARO tables from the Database
 

@@ -16,10 +16,10 @@ featured: true
 	- [Disseminate our Public Key](#disseminate-our-public-key)
 		- [The Dissemination Scripts](#the-dissemination-scripts)
 			- [Script 1 - Called Locally](#script-1---called-locally)
-			- [Script 2 - Called remotely - Name important \(addPublicKeyRemotely.sh\)](#script-2---called-remotely---name-important-addpublickeyremotelysh)
+			- [Script 2 - Called remotely - Name important (addPublicKeyRemotely.sh)](#script-2---called-remotely---name-important-addpublickeyremotelysh)
 	- [Testing Cygwin](#testing-cygwin)
 	- [Importing to PuTTY](#importing-to-putty)
-- [Repetitive Entry Avoidance \(A.K.A. Enter the passphrase once, and only once\)](#repetitive-entry-avoidance-aka-enter-the-passphrase-once-and-only-once)
+- [Repetitive Entry Avoidance (A.K.A. Enter the passphrase once, and only once)](#repetitive-entry-avoidance-aka-enter-the-passphrase-once-and-only-once)
 	- [Using Pageant](#using-pageant)
 	- [Using SSH-Agent for Cygwin](#using-ssh-agent-for-cygwin)
 - [Conclusion](#conclusion)
@@ -107,7 +107,7 @@ There are two scripts. One runs locally, and the other gets sent over SCP and th
 ## Check arghuments
 if [ $# -ne 1 ]
 then
-printf "Usage: \n %s PuttyPubKey\n\n" `basename $0`
+printf "Usage: n %s PuttyPubKeynn" `basename $0`
 fi
 
 
@@ -138,7 +138,7 @@ else
 echo FAILED pushing key to ${SERVERS[$i]} >> $LOGFILE
 echo FAILED
 fi
-printf "\n\n\n"
+printf "nnn"
 done
 ```
  
@@ -191,7 +191,7 @@ Don't worry, you won't always enter the passphrase, that was a test. Be patient 
 
 ### Importing to PuTTY
 
-Putty uses its own format for private keys (PPK) so we need to import our openSSH private key and convert it to a PPK for Putty to use. We'll do this without overwritting the private key we have (still needed by Cygwin). Open up PuTTYgen from your start menu. First _Load_ your existing private key (C:\cygwin\home\<YOURNAME>\.ssh\id-rsa) [caption id="attachment_464" align="aligncenter" width="300" caption="Import existing key to PuTTYge"][![Import existing key to PuTTYge](puttygen1-300x289.webp "Import existing key to PuTTYgen")](puttygen1.webp)[/caption]  After you import the key you will be asked for your key's passphrase before seeing the screen below. It lists the details about your public key. [caption id="attachment_465" align="aligncenter" width="300" caption="The imported key in PuTTYgen"][![The imported key in PuTTYgen](puttygen2-300x287.webp "The imported key in PuTTYgen")](puttygen2.webp)[/caption] Finally click the _Save private key_ button (highlighted in Yellow)  this will save the priavte key as a PPK file. I typically save this in my PuTTY installation directory under a folder names _Keys._ **Do not overwrite your existing key**, and keep the PPK extension.     
+Putty uses its own format for private keys (PPK) so we need to import our openSSH private key and convert it to a PPK for Putty to use. We'll do this without overwritting the private key we have (still needed by Cygwin). Open up PuTTYgen from your start menu. First _Load_ your existing private key (C:cygwinhome<YOURNAME>.sshid-rsa) [caption id="attachment_464" align="aligncenter" width="300" caption="Import existing key to PuTTYge"][![Import existing key to PuTTYge](puttygen1-300x289.webp "Import existing key to PuTTYgen")](puttygen1.webp)[/caption]  After you import the key you will be asked for your key's passphrase before seeing the screen below. It lists the details about your public key. [caption id="attachment_465" align="aligncenter" width="300" caption="The imported key in PuTTYgen"][![The imported key in PuTTYgen](puttygen2-300x287.webp "The imported key in PuTTYgen")](puttygen2.webp)[/caption] Finally click the _Save private key_ button (highlighted in Yellow)  this will save the priavte key as a PPK file. I typically save this in my PuTTY installation directory under a folder names _Keys._ **Do not overwrite your existing key**, and keep the PPK extension.     
 
 ##Repetitive Entry Avoidance (A.K.A. Enter the passphrase once, and only once)
 
@@ -199,7 +199,7 @@ Now we need to modify PuTTY and Cygwin to keep our keys in memory so we only ent
 
 ### Using Pageant
 
-Pageant, which installed with PuTTY, will hold the keys open for PuTTy and WinSCP. Find the shortcut to Pageant in your start menu. Make a copy of the shortcut and paste it into your _Startup_ menu. This will kick off pageant every time windows boots. However, we need to tell the shortcut to load our private key. Now right-click that icon and select properties.  [![Pageant Startup Properties](pageant1-300x300.webp "Pageant Startup Properties")](pageant1.webp)Edit the entry that says _Target_ and change it from; "C:\Program Files (x86)\PuTTY\pageant.exe" To; "C:\Program Files (x86)\PuTTY\pageant.exe" "C:\Program Files (x86)\PuTTY\Keys\id-rsa.ppk"  Click _Apply_ and then close the properties window.   Now try clicking the icon. It should immediately ask you for your passphrase. This is the same prompt you will see next time you boot windows. Go ahead an test out PuTTY now. You will not be prompted for a password, and instead will see something like'
+Pageant, which installed with PuTTY, will hold the keys open for PuTTy and WinSCP. Find the shortcut to Pageant in your start menu. Make a copy of the shortcut and paste it into your _Startup_ menu. This will kick off pageant every time windows boots. However, we need to tell the shortcut to load our private key. Now right-click that icon and select properties.  [![Pageant Startup Properties](pageant1-300x300.webp "Pageant Startup Properties")](pageant1.webp)Edit the entry that says _Target_ and change it from; "C:Program Files (x86)PuTTYpageant.exe" To; "C:Program Files (x86)PuTTYpageant.exe" "C:Program Files (x86)PuTTYKeysid-rsa.ppk"  Click _Apply_ and then close the properties window.   Now try clicking the icon. It should immediately ask you for your passphrase. This is the same prompt you will see next time you boot windows. Go ahead an test out PuTTY now. You will not be prompted for a password, and instead will see something like'
 
 Using username "YOURUSER".
 Authenticating with public key "imported-openssh-key" from agent
@@ -213,7 +213,7 @@ Cygwin doesn't use PuTTY's ppk file, so we need a manner to retain the private i
 if [ -f ${HOME}/.ssh-agent ]; then
 . ${HOME}/.ssh-agent > /dev/null
 fi
-if [ -z "$SSH_AGENT_PID" -o -z "`/usr/bin/ps -a|/usr/bin/egrep \"^[ ]+$SSH_AGENT_PID\"`" ]; then
+if [ -z "$SSH_AGENT_PID" -o -z "`/usr/bin/ps -a|/usr/bin/egrep "^[ ]+$SSH_AGENT_PID"`" ]; then
 /usr/bin/ssh-agent > ${HOME}/.ssh-agent
 . ${HOME}/.ssh-agent > /dev/null
 fi

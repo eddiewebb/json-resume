@@ -5,7 +5,7 @@ draft: false
 tags: [checksum, MIsc.Tips, windows]
 ---
 
-Checking the integrity of a file on a unix node is simple thanks to a confusingly named "checksum" utility. It, oddly enough gives you the checksum of a file. If your stuck on (or just love) windows, you can give yourself the ability to **check any files checksum with the click of a mouse**. \[caption id="attachment_956" align="aligncenter" width="421" caption="Right-Click any file to validate the checksum integrity "\][![Right-Click any file to validate the checksum integrity ](https://blog.edwardawebb.com/wp-content/uploads/2011/06/Capture.jpg "rightclickverify")](https://blog.edwardawebb.com/wp-content/uploads/2011/06/Capture.jpg)\[/caption\]  
+Checking the integrity of a file on a unix node is simple thanks to a confusingly named "checksum" utility. It, oddly enough gives you the checksum of a file. If your stuck on (or just love) windows, you can give yourself the ability to **check any files checksum with the click of a mouse**. [caption id="attachment_956" align="aligncenter" width="421" caption="Right-Click any file to validate the checksum integrity "][![Right-Click any file to validate the checksum integrity ](https://blog.edwardawebb.com/wp-content/uploads/2011/06/Capture.jpg "rightclickverify")](https://blog.edwardawebb.com/wp-content/uploads/2011/06/Capture.jpg)[/caption]  
 
 ### Download Microsoft's FCIV.exe
 
@@ -27,7 +27,7 @@ pause
 
 ### Drop both onto your PATH
 
-You can either add them to you system variables , or drop them in a folder like `C:\windows\system 32`.   I'm lazy and did the latter.
+You can either add them to you system variables , or drop them in a folder like `C:windowssystem 32`.   I'm lazy and did the latter.
 
 ### Add the batch file as an context menu option
 
@@ -36,11 +36,11 @@ Just save the file below, right click and merge into your registry.  It makes a
 ```
 Windows Registry Editor Version 5.00
 
-[HKEY_CLASSES_ROOT\*\shell\Checksum\]
+[HKEY_CLASSES_ROOT*shellChecksum]
 @="Verify Checksum"
 
-[HKEY_CLASSES_ROOT\*\shell\Checksum\Command\]
-@="verify-checksum.bat \"%1\""
+[HKEY_CLASSES_ROOT*shellChecksumCommand]
+@="verify-checksum.bat "%1""
 ```
 
 That's it, the changes are effective immediately, so try it out.

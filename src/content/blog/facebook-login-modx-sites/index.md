@@ -20,27 +20,27 @@ Finally, in case you want to add more social features using their Javascript API
 **This article assumes you already have basic authentication working for your users using [Shaun and Jason's_Login_ extra](http://rtfm.modx.com/display/ADDON/login "Login Extra for Modx").   They also has great docs, so I'll spare you.** _But,_ I strongly suggest 3 things:
 
 1.  A dedicated Login/Logout page
-2.  A Login Link that shows to unknown users that simply links to the dedicated page <a href="\[\[~29\]\]">Login</a>
-3.  A Logout link shown to authenticated users that links to the same page, but specifies logout. <a href="\[\[~29? &service=\`logout\`\]\]">Logout</a>
+2.  A Login Link that shows to unknown users that simply links to the dedicated page <a href="[[~29]]">Login</a>
+3.  A Logout link shown to authenticated users that links to the same page, but specifies logout. <a href="[[~29? &service=`logout`]]">Logout</a>
 
 [Shaun's IF extra](http://rtfm.modx.com/display/ADDON/If) is a great way to manage that choir:
 
 #### LoginChunk used on all pages
 
-\[\[!If?
-   &subject=`\[\[+modx.user.id\]\]`
-   &operator=\`empty\`
+[[!If?
+   &subject=`[[+modx.user.id]]`
+   &operator=`empty`
   
    &then=`
       [Login]([[~29]]), 
     [Register]([[~27]])
     `
 &else=`
-	\[\[!Profile\]\]		
-        Welcome Back, [\[\[+modx.user.username\]\]](/users/my-profile.html)  | 
+	[[!Profile]]		
+        Welcome Back, [[[+modx.user.username]]](/users/my-profile.html)  | 
         [Logout]([[~29? &service=`logout`]] "Logout")
 `
-\]\]
+]]
      
   
 
@@ -48,11 +48,11 @@ Finally, in case you want to add more social features using their Javascript API
 
 ### Facebook API
 
-You'll want to visit [Facebook's developer site](http://developer.facebook.com) and get yourself and application ID.  They have great documentation, so I wont regurgitate it. While you are there, be sure to grab the [PHP Client](https://github.com/facebook/php-sdk/ "PHP Client Library for Facebook") they provide. ( you can save a step by using wget from your server to download the [sdk tarball](https://github.com/facebook/php-sdk/tarball/master) as well) Now that facebook nows about your app, and you have an application ID and secret we can add our 2 snippets to MOdx, and upload the PHP Client and Certificate.   **Note**: Once you have created the two snippets below, you will need to provide them to _both_ snippets as default properties. \[caption id="attachment_953" align="aligncenter" width="300" caption="Edit the snippets, click "Properties" > "Unlock Default Properties" and then add the two values "appId" and "secret""\][![View of default properties "appId" and "secret" added to each snippet.](Capture2-300x170.webp "appId and secret")](Capture2.webp)\[/caption\]
+You'll want to visit [Facebook's developer site](http://developer.facebook.com) and get yourself and application ID.  They have great documentation, so I wont regurgitate it. While you are there, be sure to grab the [PHP Client](https://github.com/facebook/php-sdk/ "PHP Client Library for Facebook") they provide. ( you can save a step by using wget from your server to download the [sdk tarball](https://github.com/facebook/php-sdk/tarball/master) as well) Now that facebook nows about your app, and you have an application ID and secret we can add our 2 snippets to MOdx, and upload the PHP Client and Certificate.   **Note**: Once you have created the two snippets below, you will need to provide them to _both_ snippets as default properties. [caption id="attachment_953" align="aligncenter" width="300" caption="Edit the snippets, click "Properties" > "Unlock Default Properties" and then add the two values "appId" and "secret""][![View of default properties "appId" and "secret" added to each snippet.](Capture2-300x170.webp "appId and secret")](Capture2.webp)[/caption]
 
 #### Upload the facebook client
 
-I chose to put the php class under _core/components/facebookLogin/_ , and reccomend you do as well, because I plan to release all this as an extra very soon. (and that will keep the transition smooth) You can use the file explorer to create the folder, but MOdx wont let you upload the PHP file. So you will need to ftp the file to the server or use wget right from the server. But in the end you need this, a directory with Facebook.php and fb\_ca\_chain_bundle.crt.  We will call the facebook.php file in later steps. [![The required files for the Facebook PHP client in MOdx](Capture-208x300.webp "Modx_facebook_files")](Capture.webp)  
+I chose to put the php class under _core/components/facebookLogin/_ , and reccomend you do as well, because I plan to release all this as an extra very soon. (and that will keep the transition smooth) You can use the file explorer to create the folder, but MOdx wont let you upload the PHP file. So you will need to ftp the file to the server or use wget right from the server. But in the end you need this, a directory with Facebook.php and fb_ca_chain_bundle.crt.  We will call the facebook.php file in later steps. [![The required files for the Facebook PHP client in MOdx](Capture-208x300.webp "Modx_facebook_files")](Capture.webp)  
 
 ### Creating the facebookLogin snippet for Modx
 
@@ -60,68 +60,68 @@ I chose to put the php class under _core/components/facebookLogin/_ , and reccom
 
 #### Updated LoginChunk used on all pages
 
-\[\[!If?
-   &subject=`\[\[+modx.user.id\]\]`
-   &operator=\`empty\`
+[[!If?
+   &subject=`[[+modx.user.id]]`
+   &operator=`empty`
   
    &then=`
       [Login]([[~29]]), 
     [Register]([[~27]])
-    \[\[!facebookLogin? &userGroups=\`Members\`\]\]
+    [[!facebookLogin? &userGroups=`Members`]]
     `
 &else=`
-	\[\[!Profile\]\]		
-        Welcome Back, [\[\[+modx.user.username\]\]](/users/my-profile.html)  | 
+	[[!Profile]]		
+        Welcome Back, [[[+modx.user.username]]](/users/my-profile.html)  | 
         [Logout]([[~29? &service=`logout`]] "Logout")
 `
-\]\]
+]]
 
 (Note: The extra will eventually use a chunk as a template to allow you to customize the text or image shown easily, this is more aligned with Modx's recommended architecture as well, so bonus if you just implement that from the get go.)
 
 /**
   *FacebookLogin Snippet for Modx
-  \* FacebookLogin is free software; you can redistribute it and/or modify it
- \* under the terms of the [GNU General Public License](www.gnu.org/licenses/gpl-2.0.html) as published by the Free
- \* Software Foundation; either version 2 of the License, or (at your option) any
- \* later version.
- \*
- \* FacebookLogin is distributed in the hope that it will be useful, but WITHOUT ANY
- \* WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
- \* A PARTICULAR PURPOSE. See the [GNU General Public License](www.gnu.org/licenses/gpl-2.0.html) for more details.
- \*
- \* You should have received a copy of the [GNU General Public License](www.gnu.org/licenses/gpl-2.0.html) along with
- \* FacebookLogin; if not, write to the Free Software Foundation, Inc., 59 Temple
- \* Place, Suite 330, Boston, MA 02111-1307 USA
+  * FacebookLogin is free software; you can redistribute it and/or modify it
+ * under the terms of the [GNU General Public License](www.gnu.org/licenses/gpl-2.0.html) as published by the Free
+ * Software Foundation; either version 2 of the License, or (at your option) any
+ * later version.
+ *
+ * FacebookLogin is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the [GNU General Public License](www.gnu.org/licenses/gpl-2.0.html) for more details.
+ *
+ * You should have received a copy of the [GNU General Public License](www.gnu.org/licenses/gpl-2.0.html) along with
+ * FacebookLogin; if not, write to the Free Software Foundation, Inc., 59 Temple
+ * Place, Suite 330, Boston, MA 02111-1307 USA
 */
 /**
 
 A substantial chunk of Jason Coward's and Shaun McCormick's Login snippet was used, and noted in the code below
 
-\*/
-/\*\*
- \* Login
- \*
- \* Copyright 2010 by Jason Coward and Shaun McCormick
- \* \*
- \* Login is free software; you can redistribute it and/or modify it
- \* under the terms of the GNU General Public License as published by the Free
- \* Software Foundation; either version 2 of the License, or (at your option) any
- \* later version.
- \*
- \* Login is distributed in the hope that it will be useful, but WITHOUT ANY
- \* WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
- \* A PARTICULAR PURPOSE. See the GNU General Public License for more details.
- \*
- \* You should have received a copy of the GNU General Public License along with
- \* Login; if not, write to the Free Software Foundation, Inc., 59 Temple
- \* Place, Suite 330, Boston, MA 02111-1307 USA
+*/
+/**
+ * Login
+ *
+ * Copyright 2010 by Jason Coward and Shaun McCormick
+ * *
+ * Login is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the Free
+ * Software Foundation; either version 2 of the License, or (at your option) any
+ * later version.
+ *
+ * Login is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * Login; if not, write to the Free Software Foundation, Inc., 59 Temple
+ * Place, Suite 330, Boston, MA 02111-1307 USA
  *
  */
-require\_once $modx->getOption('core\_path').'components/facebookLogin/facebook.php';
+require_once $modx->getOption('core_path').'components/facebookLogin/facebook.php';
 
 //what permissions do we want
 $par = array();
-$par\['req\_perms'\] = "email,user\_hometown,user_website";
+$par['req_perms'] = "email,user_hometown,user_website";
 
 
 //
@@ -146,12 +146,12 @@ $facebook = new Facebook(array(
 $session = $facebook->getSession();
 
 
-/\*
-\* Make the appID and current session available to the front end 
-\* (in case you want to add more social features using Javascript, specify those in the init() call)
+/*
+* Make the appID and current session available to the front end 
+* (in case you want to add more social features using Javascript, specify those in the init() call)
 */
-$modx->toPlaceholder('facebook\_session',json\_encode($session));
-$modx->toPlaceholder('facebook\_app\_id',$facebook->getAppId());
+$modx->toPlaceholder('facebook_session',json_encode($session));
+$modx->toPlaceholder('facebook_app_id',$facebook->getAppId());
 
 $output="";
 
@@ -173,63 +173,63 @@ if ($me) {
 
 	$contexts = empty($contexts) ? array($modx->context->get('key')) : explode(',', $contexts);
 	    foreach (array_keys($contexts) as $ctxKey) {
-		$contexts\[$ctxKey\] = trim($contexts\[$ctxKey\]);
+		$contexts[$ctxKey] = trim($contexts[$ctxKey]);
 	    }
 
-	$user = $modx->getObject('modUser',  array('remote\_key:=' => $me\['id'\], 'remote\_key:!=' => null));
+	$user = $modx->getObject('modUser',  array('remote_key:=' => $me['id'], 'remote_key:!=' => null));
 
 	if(empty($user)){
 	    	//their new!
 		//facebook may pass multiple hometowns back
-		if(!empty($me\['hometown'\])){
-			if(is_array($me\['hometown'\])){
-			   $homet=$me\['hometown'\]\[0\];
+		if(!empty($me['hometown'])){
+			if(is_array($me['hometown'])){
+			   $homet=$me['hometown'][0];
 			}else{
-       			   $homet=$me\['hometown'\];
+       			   $homet=$me['hometown'];
 			}
 		}
 
 	  	// Create an empty modx user and populate with facebvook data
 		$user = $modx->newObject('modUser');
 		$user->fromArray(
-                          array('username' => $me\['name'\],'active' => true
-		                ,'remote\_key' => $me\['id'\] ,'remote\_data' => $me //store the remote data as json object in db (in case you need more info bout the FB user later)
+                          array('username' => $me['name'],'active' => true
+		                ,'remote_key' => $me['id'] ,'remote_data' => $me //store the remote data as json object in db (in case you need more info bout the FB user later)
 		             )
                    );
 
 //We'll also toss a profile on to save their email and photo and such
 		$profile = $modx->newObject('modUserProfile');
 		$profile->fromArray(array(
-		'email' => isset($me\['email'\]) ? $me\['email'\] : 'facebook-user@facebook.com'
-		,'fullname' => $me\['name'\]
+		'email' => isset($me['email']) ? $me['email'] : 'facebook-user@facebook.com'
+		,'fullname' => $me['name']
 		,'city' => $homet
-                ,'photo'=> 'http://graph.facebook.com/'. $me\['id'\] .'/picture'
+                ,'photo'=> 'http://graph.facebook.com/'. $me['id'] .'/picture'
 		));
 		$user->addOne($profile, 'Profile');
 
 
-/\*\* Login, (C) 2010, Jason Coward, Shaun McCormick**/
+/** Login, (C) 2010, Jason Coward, Shaun McCormick**/
 
-		/\* if usergroups set */
+		/* if usergroups set */
 		$usergroups = $modx->getOption('usergroups',$scriptProperties,'');
 		if (!empty($usergroups)) {
 		    $usergroups = explode(',',$usergroups);
 
 		    foreach ($usergroups as $usergroupMeta) {
 			$usergroupMeta = explode(':',$usergroupMeta);
-			if (empty($usergroupMeta\[0\])) continue;
+			if (empty($usergroupMeta[0])) continue;
 
-			/\* get usergroup */
+			/* get usergroup */
 			$pk = array();
-			$pk\[intval($usergroupMeta\[0\]) > 0 ? 'id' : 'name'\] = $usergroupMeta\[0\];
+			$pk[intval($usergroupMeta[0]) > 0 ? 'id' : 'name'] = $usergroupMeta[0];
 			$usergroup = $modx->getObject('modUserGroup',$pk);
 			if (!$usergroup) continue;
 
-			/\* get role */
-			$rolePk = !empty($usergroupMeta\[1\]) ? $usergroupMeta\[1\] : 'Member';
+			/* get role */
+			$rolePk = !empty($usergroupMeta[1]) ? $usergroupMeta[1] : 'Member';
 			$role = $modx->getObject('modUserGroupRole',array('name' => $rolePk));
 
-			/\* create membership */
+			/* create membership */
 			$member = $modx->newObject('modUserGroupMember');
 			$member->set('member',0);
 			$member->set('user_group',$usergroup->get('id'));
@@ -241,7 +241,7 @@ if ($me) {
 			$user->addMany($member,'UserGroupMembers');
 		    }//end foreach
 		}//end user grops
-/\*\* End Login Code Block froom Login, (C) 2010 Jason Coward, Shaun McCormick **/
+/** End Login Code Block froom Login, (C) 2010 Jason Coward, Shaun McCormick **/
 		$saved = $user->save();
 	}//end if new user
 
@@ -256,7 +256,7 @@ if ($me) {
 
 } else {
 	//else give them the chance to login
-/\* This should parse the generated URL with a chunk, for now you can edit the image or text here */
+/* This should parse the generated URL with a chunk, for now you can edit the image or text here */
   	$output.= '[![](http://static.ak.fbcdn.net/rsrc.php/zB6N8/hash/4li2k73z.gif)]('.$facebook->getLoginUrl($par).')';
 }
 
@@ -265,7 +265,7 @@ return $output;
 
 Now just call that snippet, with the optional attribute of "userGroups" to add group membership for new users. That attribute, like Login's accepts a comma separated list of groups.
 
-\[\[!facebookLogin? &usergroups=\`Members\`\]\]
+[[!facebookLogin? &usergroups=`Members`]]
 
 **Well there you have it, users can now authenticate against facebook, and if they grant permissions, MODX will be able to add them as a new user complete with email, photo and hometown**. ..Oh what's that? You want them to be able to logout too. OK, ok..
 
@@ -281,27 +281,27 @@ So unless we also tell Facebook that the user is logging out, they will never be
 
 /**
   *FacebookLogin Snippet for Modx
-  \* FacebookLogin is free software; you can redistribute it and/or modify it
- \* under the terms of the [GNU General Public License](www.gnu.org/licenses/gpl-2.0.html) as published by the Free
- \* Software Foundation; either version 2 of the License, or (at your option) any
- \* later version.
- \*
- \* FacebookLogin is distributed in the hope that it will be useful, but WITHOUT ANY
- \* WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
- \* A PARTICULAR PURPOSE. See the [GNU General Public License](www.gnu.org/licenses/gpl-2.0.html) for more details.
- \*
- \* You should have received a copy of the [GNU General Public License](www.gnu.org/licenses/gpl-2.0.html) along with
- \* FacebookLogin; if not, write to the Free Software Foundation, Inc., 59 Temple
- \* Place, Suite 330, Boston, MA 02111-1307 USA
+  * FacebookLogin is free software; you can redistribute it and/or modify it
+ * under the terms of the [GNU General Public License](www.gnu.org/licenses/gpl-2.0.html) as published by the Free
+ * Software Foundation; either version 2 of the License, or (at your option) any
+ * later version.
+ *
+ * FacebookLogin is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the [GNU General Public License](www.gnu.org/licenses/gpl-2.0.html) for more details.
+ *
+ * You should have received a copy of the [GNU General Public License](www.gnu.org/licenses/gpl-2.0.html) along with
+ * FacebookLogin; if not, write to the Free Software Foundation, Inc., 59 Temple
+ * Place, Suite 330, Boston, MA 02111-1307 USA
 */
 
 //Login doesn't provide separate hook calls for logging or logging out, so we check..
-$islogout = array\_key\_exists('logoutResourceId', $hook->getValues());
+$islogout = array_key_exists('logoutResourceId', $hook->getValues());
 
 
 if($islogout){
 
-require\_once $modx->getOption('core\_path').'components/facebookLogin/facebook.php';
+require_once $modx->getOption('core_path').'components/facebookLogin/facebook.php';
 
 //
 // Where do these come from? Add them as Properties to the snippet!
@@ -319,8 +319,8 @@ $facebook = new Facebook(array(
 $session = $facebook->getSession();
 
 
-$modx->toPlaceholder('facebook\_session',json\_encode($session));
-$modx->toPlaceholder('facebook\_app\_id',$facebook->getAppId());
+$modx->toPlaceholder('facebook_session',json_encode($session));
+$modx->toPlaceholder('facebook_app_id',$facebook->getAppId());
 
 
 
@@ -355,10 +355,10 @@ if($me){
 
 SO how do we call that code? Remember you're dedicated Login/Logout page?
 
-\[\[!Login? &tplType=\`modChunk\` &loginTpl=\`lgnLoginTpl\`\]\]
+[[!Login? &tplType=`modChunk` &loginTpl=`lgnLoginTpl`]]
 
 Just add the logout snippet as a posthook
 
-\[\[!Login? &tplType=\`modChunk\` &loginTpl=\`lgnLoginTpl\` &postHooks=\`facebookLogout\`\]\]
+[[!Login? &tplType=`modChunk` &loginTpl=`lgnLoginTpl` &postHooks=`facebookLogout`]]
 
 > That's everything I think. As I said I am still new to MOdx, and have much to learn, so don't hold back on the input.

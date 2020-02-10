@@ -7,13 +7,30 @@ tags: [ci, circleci, cloud Foundry, java, Java, MIsc.Tips, web development]
 
 CircleCI is a premier SaaS solution for integrating Continuous Integration pipelines with any any GitHub repositories.  The documentation is loaded with example integrations including Heroku and Cloud Foundry, but for Cloud Foundry are limited to simple `cf push`.  This blog posts explores the full configuration required to enable **Zero Downtime deployments** with the [Blue/Green pattern](https://martinfowler.com/bliki/BlueGreenDeployment.html). The concept of a **Blue/Green deployment** is relatively simple, so long as you're building stateless web apps or services. And that's a well covered topic elsewhere.  This post assumes your apps are stateless, and can run multiple versions in parallel.
 
+<!-- MarkdownTOC autolink="true" -->
+
+- [TL;DR](#tldr)
+  - [Use CircleCI Cloud Foundry Orb](#use-circleci-cloud-foundry-orb)
+  - [Script it yourself](#script-it-yourself)
+- [Cloud Foundry Hosting](#cloud-foundry-hosting)
+- [CircleCI Setup - UI](#circleci-setup---ui)
+- [CircleCI Setup - Manifest](#circleci-setup---manifest)
+  - [Installing CF CLI on CircleCI images](#installing-cf-cli-on-circleci-images)
+  - [Executing Deployment Steps](#executing-deployment-steps)
+- [Example](#example)
+
+<!-- /MarkdownTOC -->
+
+
+
 ### TL;DR
 CircleCI now encapsulates several common Cloud Foundry commands in via CircleCI Orbs.  Alternately you can use the CF ClI and script it directly.
 
 #### Use CircleCI Cloud Foundry Orb
 
 See [CircleCI Orb Registry](https://circleci.com/orbs/registry/orb/circleci/cloudfoundry#usage-blue_green_deploy) for more examples.
-{{< highlight yaml "linenos=table" >}}
+
+```YAML
 version: 2.1
 orbs:
   cloudfoundry: circleci/cloudfoundry@1.0
@@ -25,15 +42,17 @@ workflows:
           domain: your-domain
           org: your-org
           space: your-space
-{{< / highlight >}}
+```
 
 #### Script it yourself
-{{< highlight bash >}}
+
+```bash
+#!/bin/bash
 # Push as "dark" instance
 cf push my-app-dark -f cf-dev-manifest.yml -p standalone-app.jar -n my-app-dark
 # Verify new version is working on dark URL.
-HTTPCODE=\`curl -s -o /dev/null -w "%{http_code}" https://my-app-dark.cfapps.io/\`
-if \[ "$HTTPCODE" -ne 200 \];then
+HTTPCODE=`curl -s -o /dev/null -w "%{http_code}" https://my-app-dark.cfapps.io/`
+if [ "$HTTPCODE" -ne 200 ];then
   echo "dark route note available, failing deploy"
   exit 1
 fi
@@ -47,7 +66,7 @@ cf stop my-app-live
 cf delete my-app-live -f
 # Switch name of "dark" version to claim correct name
 cf rename my-app-dark my-app-live     
-{{< / highlight >}} 
+```
 
 ### Cloud Foundry Hosting
 
@@ -77,38 +96,42 @@ Now that we have a cloud foundry target, and a CircleCI pipeline, let's get into
 
 #### Installing CF CLI on CircleCI images
 
-This is copy/paste from CircleCI's own docs. You could also publish your own docker image if preferred.
-
+This is copy/paste from Cloud Foundry's own docs. You could also publish your own docker image if preferred.
+```shell
 curl -v -L -o cf-cli_amd64.deb 'https://cli.run.pivotal.io/stable?release=debian64&source=github'
 sudo dpkg -i cf-cli_amd64.deb
 cf -v
 cf api https://api.run.pivotal.io
-cf auth $CF\_USER $CF\_PASSWORD . # **
-cf target -o ORG\_NAME -s SPACE\_NAME
-
-\*\* yeah, I know passing credentials on the command line is daft, but CF CLI does not yet seem to support any tokens. If folks now other ways please leave a comment!
+cf auth $CF_USER $CF_PASSWORD . # **
+cf target -o ORG_NAME -s SPACE_NAME
+```
+** yeah, I know passing credentials on the command line is daft, but CF CLI does not yet seem to support any tokens. If folks now other ways please leave a comment!
 
 #### Executing Deployment Steps
 
-\# Push as "dark" instance
+```bash
+# Push as "dark" instance
 cf push my-app-dark -f cf-dev-manifest.yml -p standalone-app.jar -n my-app-dark
-\# Verify new version is working on dark URL.
-HTTPCODE=\`curl -s -o /dev/null -w "%{http_code}" https://my-app-dark.cfapps.io/\`
-if \[ "$HTTPCODE" -ne 200 \];then
+# Verify new version is working on dark URL.
+HTTPCODE=`curl -s -o /dev/null -w "%{http_code}" https://my-app-dark.cfapps.io/`
+if [ "$HTTPCODE" -ne 200 ];then
   echo "dark route note available, failing deploy"
   exit 1
 fi
-\# Send "real" url to new version
+# Send "real" url to new version
 cf map-route my-app-dark cfapps.io -n my-app-live
-\# Stop sending traffic to previous version
+# Stop sending traffic to previous version
 cf unmap-route my-app-live cfapps.io -n my-app-live
-\# stop previous version
+# stop previous version
 cf stop my-app-live
-\# delete previous version
+# delete previous version
 cf delete my-app-live -f
-\# Switch name of "dark" version to claim correct name
+# Switch name of "dark" version to claim correct name
 cf rename my-app-dark my-app-live     
+```
 
 ### Example
 
-Sure! You can view my [sample project in Github](https://github.com/eddiewebb/circleci-challenge) and the corresponding [workflow in Circle CI](https://circleci.com/gh/eddiewebb/workflows/circleci-challenge). [![](workflow-300x136.webp)](https://blog.edwardawebb.com/web-development/bluegreen-cloud-foundry-deployments-in-circle-ci/attachment/workflow)
+Sure! You can view my [sample project in Github](https://github.com/eddiewebb/circleci-challenge) and the corresponding [workflow in Circle CI](https://circleci.com/gh/eddiewebb/workflows/circleci-challenge). 
+
+[![](workflow-300x136.webp)](https://blog.edwardawebb.com/web-development/bluegreen-cloud-foundry-deployments-in-circle-ci/attachment/workflow)

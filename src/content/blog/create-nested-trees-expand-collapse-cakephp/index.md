@@ -5,7 +5,7 @@ draft: false
 tags: [CakePHP, CakePHP, javasccript, tree]
 ---
 
-This is a horrible tittle, and I apologize.  What I mean is that we can **show nested items based on parent-child relationships that will expand and collapse with a simple, click.** The trick requires prototype and scriptalicious. The reason is ease of use and aesthetics.   If a user lands on a page, let's say 'Categories'  and sees all the categories sprawled out across the page they'll retreat in horror. \[caption id="attachment_333" align="aligncenter" width="150" caption="Defaulting to expanded trees is overwhelming to visitors"\]![Defaulting to expanded trees is overwhelming to visitors](expanded-150x150.webp "Expanded tree items - woah!")\[/caption\] Instead it would be much nicer to only show the top-most categories, and let them dive down where necessary. \[caption id="attachment_334" align="aligncenter" width="150" caption="Showing the condensed tree is much more aesthetically pleasing"\]![Showing the condensed tree is much more aesthetically pleasing](collapsed-150x150.webp "Collapsed trees allow for quicker navigation")\[/caption\] We can take it a step further by adding a nice slide effect so the sub-items rolldown like a window shade, and retreat in the same manner.  [See the sliding tree items here](http://thegreenlifelist.org/categories "Tree that uses javascript to slide sub-items or branches into view").
+This is a horrible tittle, and I apologize.  What I mean is that we can **show nested items based on parent-child relationships that will expand and collapse with a simple, click.** The trick requires prototype and scriptalicious. The reason is ease of use and aesthetics.   If a user lands on a page, let's say 'Categories'  and sees all the categories sprawled out across the page they'll retreat in horror. [caption id="attachment_333" align="aligncenter" width="150" caption="Defaulting to expanded trees is overwhelming to visitors"]![Defaulting to expanded trees is overwhelming to visitors](expanded-150x150.webp "Expanded tree items - woah!")[/caption] Instead it would be much nicer to only show the top-most categories, and let them dive down where necessary. [caption id="attachment_334" align="aligncenter" width="150" caption="Showing the condensed tree is much more aesthetically pleasing"]![Showing the condensed tree is much more aesthetically pleasing](collapsed-150x150.webp "Collapsed trees allow for quicker navigation")[/caption] We can take it a step further by adding a nice slide effect so the sub-items rolldown like a window shade, and retreat in the same manner.  [See the sliding tree items here](http://thegreenlifelist.org/categories "Tree that uses javascript to slide sub-items or branches into view").
 
 Using Nested Trees with Slide effect
 ------------------------------------
@@ -52,7 +52,7 @@ Category Tree
 ";
 	echo $tree->show('Category/name', $categories); 
 }
-?\> 
+?> 
 
 If the variable 'isHunting' is true, then the tree items are links to send the visitor to another controller pre-populated. Otherwise they jump to the details about that Category.
 
@@ -115,7 +115,7 @@ Click on the + to expand sub-levels
   {
   	$output=$this->loadScript();
     list( $modelName, $fieldName) = explode('/', $name);
-    $output .= $this->list\_element\_hunt($data, $modelName, $fieldName, 0);
+    $output .= $this->list_element_hunt($data, $modelName, $fieldName, 0);
     $output .= $this->extraDivs();
     
     return $this->output($output);
@@ -134,7 +134,7 @@ Click on the + to expand sub-levels
   
   	$bulletStyle='list-style-type:none';
   
-    $tabs = "\\n" . str_repeat($tab, $level * 2);
+    $tabs = "\n" . str_repeat($tab, $level * 2);
     $li_tabs = $tabs . $tab;
     
     $fontstyle='';
@@ -148,8 +148,8 @@ Click on the + to expand sub-levels
 ";
      foreach ($data as $key=>$val)
     {
-     $hasChild=isset($val\['children'\]\[0\]);
-     $howmany=count($val\['children'\]);
+     $hasChild=isset($val['children'][0]);
+     $howmany=count($val['children']);
      
       if($hasChild)
       {
@@ -163,9 +163,9 @@ Click on the + to expand sub-levels
           				"".
           				$this->Html->image('icons/expand.png',array('alt'=>' + ')).
           				"".
-          				$this->Html->link($val\[$modelName\]\[$fieldName\],"/".$modelPage."/view/".$val\[$modelName\]\['id'\]);
+          				$this->Html->link($val[$modelName][$fieldName],"/".$modelPage."/view/".$val[$modelName]['id']);
          
-          	$output .= $hidDiv.$this->list_element($val\['children'\], $modelName, $fieldName, $level+1).'
+          	$output .= $hidDiv.$this->list_element($val['children'], $modelName, $fieldName, $level+1).'
 
 ';
         $output .= $li_tabs . "";
@@ -176,7 +176,7 @@ Click on the + to expand sub-levels
           				"".
           				$this->Html->image('icons/condense.png',array('alt'=>' - ')).
           				"".
-          				$this->Html->link($val\[$modelName\]\[$fieldName\],"/".$modelPage."/view/".$val\[$modelName\]\['id'\]);
+          				$this->Html->link($val[$modelName][$fieldName],"/".$modelPage."/view/".$val[$modelName]['id']);
          
             $output .= "
 ";
@@ -190,7 +190,7 @@ Click on the + to expand sub-levels
   }
   
   
-  function list\_element\_hunt($data, $modelName, $fieldName, $level)
+  function list_element_hunt($data, $modelName, $fieldName, $level)
   {
 
   	 $tab="	";
@@ -203,7 +203,7 @@ Click on the + to expand sub-levels
   	
   	$bulletStyle='list-style-type:none';
   
-    $tabs = "\\n" . str_repeat($tab, $level * 2);
+    $tabs = "\n" . str_repeat($tab, $level * 2);
     $li_tabs = $tabs . $tab;
     
     $fontstyle='';
@@ -217,8 +217,8 @@ Click on the + to expand sub-levels
 ";
      foreach ($data as $key=>$val)
     {
-     $hasChild=isset($val\['children'\]\[0\]);
-     $howmany=count($val\['children'\]);
+     $hasChild=isset($val['children'][0]);
+     $howmany=count($val['children']);
      
        if($hasChild)
       {
@@ -232,9 +232,9 @@ Click on the + to expand sub-levels
           				"".
           				$this->Html->image('icons/expand.png',array('alt'=>' + ')).
           				"".
-          				$this->Html->link($val\[$modelName\]\[$fieldName\],"/products/add/".$val\[$modelName\]\['id'\],array('title'=>'Add a new product using '.$val\[$modelName\]\[$fieldName\]));
+          				$this->Html->link($val[$modelName][$fieldName],"/products/add/".$val[$modelName]['id'],array('title'=>'Add a new product using '.$val[$modelName][$fieldName]));
          
-          	$output .= $hidDiv.$this->list_element($val\['children'\], $modelName, $fieldName, $level+1).'
+          	$output .= $hidDiv.$this->list_element($val['children'], $modelName, $fieldName, $level+1).'
 
 ';
         $output .= $li_tabs . "";
@@ -245,7 +245,7 @@ Click on the + to expand sub-levels
           				"".
           				$this->Html->image('icons/condense.png',array('alt'=>' - ')).
           				"".
-          				$this->Html->link($val\[$modelName\]\[$fieldName\],"/products/add/".$val\[$modelName\]\['id'\],array('title'=>'Add a new product using '.$val\[$modelName\]\[$fieldName\]));
+          				$this->Html->link($val[$modelName][$fieldName],"/products/add/".$val[$modelName]['id'],array('title'=>'Add a new product using '.$val[$modelName][$fieldName]));
          
             $output .= "
 ";
@@ -261,4 +261,4 @@ Click on the + to expand sub-levels
 }
 ?>
 
-**You'll notice some static references to Company and Category which could definitely be cleaned up to use the inflection class, but I just never got to it.** Additionally you can just eliminate the showHunt and list\_elements\_hunt methods. And remove the reference in the View if you only need one type of tree. Anyway thats it. I'm sure many of you will point out the repetitive code, lack of inflection and other areas that could use improvement, which is fine. I wrote this code quite a while back to land a prototyping job and just don;t care to update it. At least its a start for those without anything to go on. :)
+**You'll notice some static references to Company and Category which could definitely be cleaned up to use the inflection class, but I just never got to it.** Additionally you can just eliminate the showHunt and list_elements_hunt methods. And remove the reference in the View if you only need one type of tree. Anyway thats it. I'm sure many of you will point out the repetitive code, lack of inflection and other areas that could use improvement, which is fine. I wrote this code quite a while back to land a prototyping job and just don;t care to update it. At least its a start for those without anything to go on. :)

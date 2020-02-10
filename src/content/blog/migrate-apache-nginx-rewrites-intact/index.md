@@ -21,7 +21,7 @@ RewriteEngine On
 RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ index.php?url=$1 \[QSA,L\]
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
 
 #### your new nginx config (into wordpress.conf)
 
@@ -33,8 +33,8 @@ rewrite ^(.*)$ /index.php?url=$1 last;
 
 ### Got more rules to rewrite?
 
-I am actually finding nginx's logic based syntax much easier to master than Apache's.  You can specify rules for specific domains or servers, and use many variables including the user agent and [http://nginx.org/en/docs/http/converting\_rewrite\_rules.html](http://nginx.org/en/docs/http/converting_rewrite_rules.html "Learn how to migrate more rewrite rules.") [http://wiki.nginx.org/NginxConfiguration](http://wiki.nginx.org/NginxConfiguration "Learn how to conifgurwe the most common tools (wordpress, drupal, Passenger, python, etc)")
+I am actually finding nginx's logic based syntax much easier to master than Apache's.  You can specify rules for specific domains or servers, and use many variables including the user agent and [http://nginx.org/en/docs/http/converting_rewrite_rules.html](http://nginx.org/en/docs/http/converting_rewrite_rules.html "Learn how to migrate more rewrite rules.") [http://wiki.nginx.org/NginxConfiguration](http://wiki.nginx.org/NginxConfiguration "Learn how to conifgurwe the most common tools (wordpress, drupal, Passenger, python, etc)")
 
 ### Reload nginx
 
-For any changes to take affect you will need to force nginx to reload. sudo /etc/init.d/nginx reload If you still have questions maybe it is because you have not read the page [here](http://wiki.nginx.org/NginxConfiguration "How to configure ANYTHING on nginx") \- but please post your thoughts!
+For any changes to take affect you will need to force nginx to reload. sudo /etc/init.d/nginx reload If you still have questions maybe it is because you have not read the page [here](http://wiki.nginx.org/NginxConfiguration "How to configure ANYTHING on nginx") - but please post your thoughts!

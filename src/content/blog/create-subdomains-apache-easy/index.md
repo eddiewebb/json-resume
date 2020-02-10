@@ -24,13 +24,13 @@ Most of you have already done this step long ago, but just to be certain, you ha
 #### **/etc/apache2/default-server.conf**
 
 #
-\# Global configuration that will be applicable for all virtual hosts, unless
-\# deleted here, or overriden elswhere.
-\# 
+# Global configuration that will be applicable for all virtual hosts, unless
+# deleted here, or overriden elswhere.
+# 
 
 DocumentRoot "/srv/www/htdocs"
 #
-\# Configure the DocumentRoot Properties
+# Configure the DocumentRoot Properties
 #
  Options All
 	# AllowOverride controls what directives may be placed in .htaccess files.
@@ -41,16 +41,16 @@ DocumentRoot "/srv/www/htdocs"
 	Order allow,deny
 	Allow from all 
 #
-\# Configure Sub-Domain Properties. This prevents those nasty 403 errors
+# Configure Sub-Domain Properties. This prevents those nasty 403 errors
 #
 
-\# mysql administration tool
+# mysql administration tool
  Options Indexes MultiViews
 	AllowOverride All
 	Order allow,deny
 	Allow from all 
 
-\# a client web site built with CakePHP
+# a client web site built with CakePHP
  Options All
 	AllowOverride All
 	Order allow,deny
@@ -64,8 +64,8 @@ In order for this to work we'll need to be specific about which sub domain point
 #### /etc/apache2/vhosts.d/subdoms.conf
 
 NameVirtualHost localhost:80
-\# the mysql tool's url
- \# and absolute path
+# the mysql tool's url
+ # and absolute path
 DocumentRoot "/srv/www/phpMyAdmin/" 
 #Same for the Client Site
  DocumentRoot "/home/eddie/workspace/Digital_Business/app/webroot/" 
@@ -75,13 +75,13 @@ You may add as many as you want ( to a limit I Imagine) by adding more of the < 
 Setting your new sub domains as valid hosts
 -------------------------------------------
 
-For this part you need to edit your you can either edit /etc/hosts directly, or for those who are unsure, use the systems **administration panel > network (services) > host(name)s**.  I'm running suse so my system panel is Yast, for you it may differ. \[caption id="attachment_154" align="aligncenter" width="300" caption="Begin by launching the Adminstration Panel"\][![Begin by launching the Adminstration Panel](mnu-300x263.webp "From the Menu")](mnu.webp)\[/caption\] \[caption id="attachment_155" align="aligncenter" width="300" caption="Run the Host Configuration module"\][![Run the Host Configuration module](network-300x182.webp "network")](network.webp)\[/caption\] Once your inside the Host configuration module (or hosts file) just add a new record for every sub domain. In my example I use ::1 as the IP address only because IPv6 is enabled on my server. You may need to use 127.0.0.1. \[caption id="attachment_156" align="aligncenter" width="300" caption="Enter each sub domain as a new record"\][![Enter each sub domain as a new record](adding-300x153.webp "Adding records to hosts file")](adding.webp)\[/caption\] If you open that image up you'll see I have already added 'digbiz.localhost' and was in the process of adding 'phpmyadmin.localhosts.'  Remember, these are the virtual hosts we setup just before.
+For this part you need to edit your you can either edit /etc/hosts directly, or for those who are unsure, use the systems **administration panel > network (services) > host(name)s**.  I'm running suse so my system panel is Yast, for you it may differ. [caption id="attachment_154" align="aligncenter" width="300" caption="Begin by launching the Adminstration Panel"][![Begin by launching the Adminstration Panel](mnu-300x263.webp "From the Menu")](mnu.webp)[/caption] [caption id="attachment_155" align="aligncenter" width="300" caption="Run the Host Configuration module"][![Run the Host Configuration module](network-300x182.webp "network")](network.webp)[/caption] Once your inside the Host configuration module (or hosts file) just add a new record for every sub domain. In my example I use ::1 as the IP address only because IPv6 is enabled on my server. You may need to use 127.0.0.1. [caption id="attachment_156" align="aligncenter" width="300" caption="Enter each sub domain as a new record"][![Enter each sub domain as a new record](adding-300x153.webp "Adding records to hosts file")](adding.webp)[/caption] If you open that image up you'll see I have already added 'digbiz.localhost' and was in the process of adding 'phpmyadmin.localhosts.'  Remember, these are the virtual hosts we setup just before.
 
 Restart Apache
 --------------
 
 Once your done adding the sub-domains clcik finish and the settings will be saved. You can now restart apache and test it out.
 
-\# /etc/init.d/apache2 restart
+# /etc/init.d/apache2 restart
 
 Note: I was curious if you could set up completely new domains, mylocalhost. I didn't have much luck though. If anyone has a reason, or has in fact succeeded I would love to hear about it.

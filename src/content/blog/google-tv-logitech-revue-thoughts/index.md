@@ -40,14 +40,14 @@ Keyboard remote, sounds heavy and obnoxious right?   **I was actually surpris
 
 ### Update - Google TV Remote for Android devices released**!**
 
-Google recently began pushing an [update to Google TV devices that allows lots of new features](http://googletv.blogspot.com/2010/12/whats-new-with-google-tv.html), including the ability for Android phones to be paired with your device, and it is good.  To download it, snap the QR code below. \[caption id="" align="aligncenter" width="230" caption="Scan to see Google TV Remote in the Android Market"\]![Google TV Remote for Android QR COde](http://chart.apis.google.com/chart?cht=qr&chs=230x230&chl=http%3A%2F%2Fmarket.android.com%2Fdetails%3Fid%3Dcom.google.android.apps.tvremote "Google TV Remote")\[/caption\]
+Google recently began pushing an [update to Google TV devices that allows lots of new features](http://googletv.blogspot.com/2010/12/whats-new-with-google-tv.html), including the ability for Android phones to be paired with your device, and it is good.  To download it, snap the QR code below. [caption id="" align="aligncenter" width="230" caption="Scan to see Google TV Remote in the Android Market"]![Google TV Remote for Android QR COde](http://chart.apis.google.com/chart?cht=qr&chs=230x230&chl=http%3A%2F%2Fmarket.android.com%2Fdetails%3Fid%3Dcom.google.android.apps.tvremote "Google TV Remote")[/caption]
 
 The Cherry Features
 -------------------
 
 ### _What's On_
 
-This is one of the default sections off the Google TV homepage.   This feature arranges your media by genre and type.  **So if you want to see all the movies on, or some animated cartoons - you get a list of all currently playing media and the remaining runtime** \- sweet! This is one of those features that depends on a tight integration with your DVR or cable box - ask your current provider about Google TV integration. You may need  updated equipment, or a new provider.
+This is one of the default sections off the Google TV homepage.   This feature arranges your media by genre and type.  **So if you want to see all the movies on, or some animated cartoons - you get a list of all currently playing media and the remaining runtime** - sweet! This is one of those features that depends on a tight integration with your DVR or cable box - ask your current provider about Google TV integration. You may need  updated equipment, or a new provider.
 
 ### _Queue_
 

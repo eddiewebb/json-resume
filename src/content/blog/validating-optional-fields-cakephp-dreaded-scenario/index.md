@@ -29,8 +29,8 @@ array());
 	var $recursive = 0;
 	var $validate = array(
         'username' => array(
-		        'required' => array('rule'=>VALID\_NOT\_EMPTY,'message'=>'Please enter your login name'),
-		        'pattern' => array('rule' => array('custom','/\[a-zA-Z0-9\\_\\-\]{6,30}$/i'),'message'=>'Must be 6 characters or longer with no spaces.'),
+		        'required' => array('rule'=>VALID_NOT_EMPTY,'message'=>'Please enter your login name'),
+		        'pattern' => array('rule' => array('custom','/[a-zA-Z0-9\_\-]{6,30}$/i'),'message'=>'Must be 6 characters or longer with no spaces.'),
 				'unique' => array('rule' => array('validateUniqueUsername'),'message'=>'This username is already in use, please try another.'),						
     		),			
         'first_name' => array(
@@ -46,7 +46,7 @@ array());
 		        'length' => array( 'rule' => array('maxLength', 60),'message'=>'That names a bit too long, keep it under 60 characters' )
     		),			
 		'password' => array(
-						'required' => array('rule' => array('custom','/(?=^.{4,}$)((?=.*\\d)|(?=.*\\W+))(?!\[.\\n\])(?=.*\[A-Z\])(?=.*\[a-z\]).*$/'),'message'=>'Must be 6 characters or longer'),
+						'required' => array('rule' => array('custom','/(?=^.{4,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/'),'message'=>'Must be 6 characters or longer'),
 						'length' => array( 'rule' => 'validatePassword','message'=>'Your passwords dont match!' ) 
 					),
 		'email' => array('rule'=>'email','message'=>'Please enter your email address')
@@ -54,14 +54,14 @@ array());
 	
 	
 	
-	/\*\*
-	 \* query functions
-	 \* 
-	 \*/
+	/**
+	 * query functions
+	 * 
+	 */
 	 
 
-	/\*\*
-	 \* validation functions
+	/**
+	 * validation functions
 	 */
 	
 
@@ -69,16 +69,16 @@ array());
 	function validatePassword(){
 		$passed=true;	
 			//only run if there are two password feield (like NOT on the contact or signin pages..)
-		if(isset($this->data\['User'\]\['confirmpassword'\])){
+		if(isset($this->data['User']['confirmpassword'])){
 			
-			if($this->data\['User'\]\['password'\] != $this->data\['User'\]\['confirmpassword'\]){
+			if($this->data['User']['password'] != $this->data['User']['confirmpassword']){
 		    	//die('you fail');
 		    	$this->invalidate('checkpassword');
 		    	//they didnt condifrm password
 		    	$passed=false;		 
 		 	}else{
 				//hash passwordbefore saving
-				$this->data\['User'\]\['password'\]=md5($this->data\['User'\]\['password'\]);		   					
+				$this->data['User']['password']=md5($this->data['User']['password']);		   					
 			}	
 		}
 		
@@ -86,10 +86,10 @@ array());
 	}
 	
 	
-	/\*\* 
-	 \* see whats up
-	 \* 
-	 \* 
+	/** 
+	 * see whats up
+	 * 
+	 * 
 	 */
 	function validateDependentFields(&$field){
 		//assume the best of people :)
@@ -99,31 +99,31 @@ array());
 		
 		
 		switch(true){
-			case array\_key\_exists('first_name',$field):
+			case array_key_exists('first_name',$field):
 			//checking first name field
 				//if pin is set then we dont care about first anme
-				if(isset($this->data\['User'\]\['employee\_pin'\]) && !empty($this->data\['User'\]\['employee\_pin'\])){
+				if(isset($this->data['User']['employee_pin']) && !empty($this->data['User']['employee_pin'])){
 					$passed=true;
 				}else{
 					//no pin, if this field is empty, scold them
-					if(empty($this->data\['User'\]\['first_name'\])) $passed="Please enter your First Name";
+					if(empty($this->data['User']['first_name'])) $passed="Please enter your First Name";
 				}
 			break;
-			case array\_key\_exists('last_name',$field):
+			case array_key_exists('last_name',$field):
 				//again, if Pin is set we skip, otherwise scold
-				if(isset($this->data\['User'\]\['employee\_pin'\]) && !empty($this->data\['User'\]\['employee\_pin'\])){
+				if(isset($this->data['User']['employee_pin']) && !empty($this->data['User']['employee_pin'])){
 					$passed=true;
 				}else{
 					//no pin, if this field is empty, scold them
-					if(empty($this->data\['User'\]\['last_name'\])) $passed="Please enter your Last Name";
+					if(empty($this->data['User']['last_name'])) $passed="Please enter your Last Name";
 				}
 			break;
-			case array\_key\_exists('employee_pin',$field):
+			case array_key_exists('employee_pin',$field):
 				//checking PIN. ONly scold if empty  and first and last empty too
 				if(
-					empty($this->data\['User'\]\['first_name'\]) 
-					&& empty($this->data\['User'\]\['last_name'\])
-					&& empty($this->data\['User'\]\['employee_pin'\])
+					empty($this->data['User']['first_name']) 
+					&& empty($this->data['User']['last_name'])
+					&& empty($this->data['User']['employee_pin'])
 				){
 					$passed="You must enter your PIN, or name";
 				}

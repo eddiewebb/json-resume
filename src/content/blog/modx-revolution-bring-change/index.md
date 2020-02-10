@@ -29,13 +29,13 @@ OK, new framework/CMS, get ready to learn a new set of rules for configuring t
 
 ### Letting "users" add special content (meta data)
 
-OK, that seems dandy, but the problem with such an open and free model is that if a user wants to include some special content or script I have to let them hack at the base template?!  Well that would be crazy! Instead **the concept of Template Variables (TVs) allow you to extend that idea of <include> to content**.  You specify placeholders in the template or chunk, and the user can fill out additional fields in the content manager.   This allows meta data, widgets, or anything else you want at presentation time to be added to content easily. \[\[+fieldUserAdded\]\]
+OK, that seems dandy, but the problem with such an open and free model is that if a user wants to include some special content or script I have to let them hack at the base template?!  Well that would be crazy! Instead **the concept of Template Variables (TVs) allow you to extend that idea of <include> to content**.  You specify placeholders in the template or chunk, and the user can fill out additional fields in the content manager.   This allows meta data, widgets, or anything else you want at presentation time to be added to content easily. [[+fieldUserAdded]]
 
 ### And what about more powerful features, I want to code!
 
 If you need more then static content then MODx will not disappoint. The concepts of _snippets_ allows PHP code  and libraries to be included with ease.  Some snippets are very simple, say display the current time formated in the locale style.  Other snippets are just the interface for more elaborate solutions spanning many files.  Snippets except named arguments and will print to screen any output from the code.
 
-\[\[!SayHello? &name=\`mike\`\]\]
+[[!SayHello? &name=`mike`]]
 
 in your document,chunk, or template, AND
 

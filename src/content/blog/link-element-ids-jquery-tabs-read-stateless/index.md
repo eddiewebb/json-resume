@@ -107,7 +107,7 @@ I included this code right under the call to initialize my tabs, which is also s
 		}else{
 		    var index = $('#tabs div.ui-tabs-panel').index($(anchor)); //Thanks Mike! 
 		    if(index >=0){
-			//the anchor \_is\_ tab 1 or 2
+			//the anchor _is_ tab 1 or 2
 			$('#tabs').tabs('select', index); 
 		    }
 		}

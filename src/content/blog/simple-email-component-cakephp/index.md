@@ -27,27 +27,27 @@ admin_email;
 			
 			
 			// To send HTML mail, the Content-type header must be set
-			$headers  = 'MIME-Version: 1.0' . "\\r\\n";
-			$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\\r\\n";
-			$headers .= "From: ".$this->site_name." email_domain.">\\n";
-	  		$headers .= 'X-Sender: email_domain.'>\\n';
-	  		$headers .= 'X-Mailer: PHP\\n';
+			$headers  = 'MIME-Version: 1.0' . "\r\n";
+			$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+			$headers .= "From: ".$this->site_name." email_domain.">\n";
+	  		$headers .= 'X-Sender: email_domain.'>\n';
+	  		$headers .= 'X-Mailer: PHP\n';
 			
 			
 			// Mail it
 			mail($to, $subject, $message, $headers);
 	}
 	
-	/\*\*
-	 \* Send a message to myself, from contact page
-	 \* 
-	 \* @param string $from_email
-	 \* @param string $from_name
-	 \* @param string $message
-	 \* 
-	 \* Note: from email will be used as reply-to, allowing you to respond to any questions or comments directly.
+	/**
+	 * Send a message to myself, from contact page
+	 * 
+	 * @param string $from_email
+	 * @param string $from_name
+	 * @param string $message
+	 * 
+	 * Note: from email will be used as reply-to, allowing you to respond to any questions or comments directly.
 	 */
-	function infoemail($f\_email,$f\_name,$message)
+	function infoemail($f_email,$f_name,$message)
 	{
 	  		$to  = $this->info_email;
 			// subject
@@ -55,24 +55,24 @@ admin_email;
 			
 			
 			// To send HTML mail, the Content-type header must be set
-			$headers  = 'MIME-Version: 1.0' . "\\r\\n";
-			$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\\r\\n";
-			$headers .= "From: ".$this->site_name." email_domain.">\\n";
-	  		$headers .= 'X-Sender: email_domain.'>\\n';
-	  		$headers .= 'X-Mailer: PHP\\n';
-			$headers .= "Reply-To: ".$f\_name." <".$f\_email.">\\n\\n";	  
+			$headers  = 'MIME-Version: 1.0' . "\r\n";
+			$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+			$headers .= "From: ".$this->site_name." email_domain.">\n";
+	  		$headers .= 'X-Sender: email_domain.'>\n';
+	  		$headers .= 'X-Mailer: PHP\n';
+			$headers .= "Reply-To: ".$f_name." <".$f_email.">\n\n";	  
 	  
 			
 			// Mail it
 			mail($to, $subject, $message, $headers);
 	}
 	
-	/\*\*
-	 \* 
-	 \* Send a message to a user 
-	 \* @param string $email
-	 \* @param string $name
-	 \* @param string $message
+	/**
+	 * 
+	 * Send a message to a user 
+	 * @param string $email
+	 * @param string $name
+	 * @param string $message
 	 */
 	function useremail($email, $name, $message)
 	{
@@ -82,11 +82,11 @@ admin_email;
 			
 			
 			// To send HTML mail, the Content-type header must be set
-			$headers  = 'MIME-Version: 1.0' . "\\r\\n";
-			$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\\r\\n";
-			$headers .= "From: ".$this->site_name." email_domain.">\\n";
-	  		$headers .= 'X-Sender: email_domain.'>\\n';
-	  		$headers .= 'X-Mailer: PHP\\n';
+			$headers  = 'MIME-Version: 1.0' . "\r\n";
+			$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+			$headers .= "From: ".$this->site_name." email_domain.">\n";
+	  		$headers .= 'X-Sender: email_domain.'>\n';
+	  		$headers .= 'X-Mailer: PHP\n';
 			
 			
 			// Mail it
@@ -115,9 +115,9 @@ Including component in a controller; (placed at top of controller class, along w
 Making a call to component function; (Used within controller actions) In my example below we are sending an admin alert because a user has tried to edit a post that was no their own. **_Snippet_**
 
 		$owner=$this->Post->field('user_id', 'id = '.$id);
-		if($owner!=$user\['User'\]\['id'\] && $user\['Role'\]\['rights'\]<2){
+		if($owner!=$user['User']['id'] && $user['Role']['rights']<2){
 			//they are not the owner! shame
-			$this->User->banuser($user\['User'\]\['id'\],'Post Edit Attempt');
+			$this->User->banuser($user['User']['id'],'Post Edit Attempt');
 			$this->Session->setFlash('You tried to edit a post that does not belong to you.   
 '.
 ' Your account has been suspended.');
@@ -127,7 +127,7 @@ Making a call to component function; (Used within controller actions) In my exam
 ### The user with info below has Violated terms of the site by attempting'.
 ' to edit another Users Post(Post id: '.$id.').  
 ';
-			$ms.='Username: '.$user\['User'\]\['username'\].' id:'.$user\['User'\]\['id'\];
+			$ms.='Username: '.$user['User']['username'].' id:'.$user['User']['id'];
 			$ms.='';
 			$this->Email->adminemail($ms);
 			$this->Session->delete('User');
