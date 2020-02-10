@@ -1,7 +1,7 @@
 {
     "title":"LED Energy Show",
     "link":"https://github.com/eddiewebb/sense-show",
-    "image":"/img/senseshow.jpg",
+    "image":"/img/senseshow-thumb.webp",
     "description":"Using python on a Raspberry Pi Zero to visualize energy flow of solar panels to grid.",
     "tags":[
           "Python",
