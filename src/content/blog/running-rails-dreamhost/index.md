@@ -25,9 +25,9 @@ Special thanks to members of the [DreamHost support wiki](http://wiki.dreamhost.
 
 1.  **Sign up with DreamHost** I imagine if your reading this article then you've done this step - Congratualtions! But just in case [here's $50 towards your first year](http://www.dreamhost.com/r.cgi?488244/hosting.html|EDDIESAVES "$50 off your first year of DreamHost web hosting.").
     
-2.  **Activate mod_rails** This is very easy, and very important. When you are setting up a new domain, be sure to check the 'mod_rails' checkbox. _DreamHost Panel > Manage Domains > (Add or Edit)_ \[caption id="attachment_546" align="aligncenter" width="300" caption="Setting up the domain to use Passenger"\][![Setting up the domain to use Passenger](https://blog.edwardawebb.com/wp-content/uploads/2009/08/dh_passenger-300x171.PNG "dh_passenger")](https://blog.edwardawebb.com/wp-content/uploads/2009/08/dh_passenger.PNG)\[/caption\] DreamHost will yell at you and say something about a public directory. Just append the word 'public' to the end of the path, e.g. "/home/username/mynewdomain.com/public".  This directory will be populated in the following steps.
+2.  **Activate mod_rails** This is very easy, and very important. When you are setting up a new domain, be sure to check the 'mod_rails' checkbox. _DreamHost Panel > Manage Domains > (Add or Edit)_ [caption id="attachment_546" align="aligncenter" width="300" caption="Setting up the domain to use Passenger"][![Setting up the domain to use Passenger](https://blog.edwardawebb.com/wp-content/uploads/2009/08/dh_passenger-300x171.PNG "dh_passenger")](https://blog.edwardawebb.com/wp-content/uploads/2009/08/dh_passenger.PNG)[/caption] DreamHost will yell at you and say something about a public directory. Just append the word 'public' to the end of the path, e.g. "/home/username/mynewdomain.com/public".  This directory will be populated in the following steps.
     
-3.  **Create DB** \- will be ready by the completion of next step Use the DreamHost web panel to create a new DB. _Goodies > MySQL Databases > Create New_ \[caption id="attachment_547" align="aligncenter" width="300" caption="Setting up a new DB on DreamHost"\][![Setting up a new DB on DreamHost](https://blog.edwardawebb.com/wp-content/uploads/2009/08/dh_db-300x288.PNG "dh_db")](https://blog.edwardawebb.com/wp-content/uploads/2009/08/dh_db.PNG)\[/caption\]
+3.  **Create DB** - will be ready by the completion of next step Use the DreamHost web panel to create a new DB. _Goodies > MySQL Databases > Create New_ [caption id="attachment_547" align="aligncenter" width="300" caption="Setting up a new DB on DreamHost"][![Setting up a new DB on DreamHost](https://blog.edwardawebb.com/wp-content/uploads/2009/08/dh_db-300x288.PNG "dh_db")](https://blog.edwardawebb.com/wp-content/uploads/2009/08/dh_db.PNG)[/caption]
     
 4.  **Create Rails app** For this you'll need to open up your favorite console and ssh to your DreamHost account. Navigate to your webroot directory and type the following;
     
@@ -40,7 +40,7 @@ Special thanks to members of the [DreamHost support wiki](http://wiki.dreamhost.
     development:
     adapter: mysql
     encoding: utf8
-    database: my\_ruby\_app_db
+    database: my_ruby_app_db
     pool: 5
     username: unsername
     password:dbpassowrd

@@ -27,8 +27,8 @@ First we'll have a look in the users controller's registration action. You'll no
 #### in app/controllers/user_controller.php
 
    	if ($this->User->save($this->data)) { 
-           /\*
-            \* Data was saved successfully
+           /*
+            * Data was saved successfully
             */					
 		$this->Session->setFlash('The User has been registered, please login');
 		$this->redirect('/');
@@ -43,11 +43,11 @@ Now we leverage a built in function call **_validates()_** to check for our patt
 
 #### In app/models/user.php
 
-/\*
-\* This method gets called automagiclly for us, and does 3 things
-\* validates against a regular expression, ensuring it is 'strong'
-\* confirms the user entered the same password twice
-\* if both above passs, it hashes the surviving password to be saved
+/*
+* This method gets called automagiclly for us, and does 3 things
+* validates against a regular expression, ensuring it is 'strong'
+* confirms the user entered the same password twice
+* if both above passs, it hashes the surviving password to be saved
 */
 	function validates($options = array())
 	{
@@ -55,18 +55,18 @@ Now we leverage a built in function call **_validates()_** to check for our patt
 		return $pass;
 	} 
 	function validatePassword(){	
-		//die($this->data\['User'\]\['password'\].' :: '.$this->data\['User'\]\['confirmpassword'\]);
-		if(isset($this->data\['User'\]\['confirmpassword'\])){
-			if(!preg_match('/(?=^.{8,}$)((?=.*\\d)|(?=.*\\W+))(?!\[.\\n\])(?=.*\[A-Z\])(?=.*\[a-z\]).*$/',$this->data\['User'\]\['password'\])){
+		//die($this->data['User']['password'].' :: '.$this->data['User']['confirmpassword']);
+		if(isset($this->data['User']['confirmpassword'])){
+			if(!preg_match('/(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/',$this->data['User']['password'])){
 				//doesnt mneet our 1 upper, one lower, 1 digit or special character require,ent
 				$this->invalidate('password');
-		    	$this->data\['User'\]\['password'\]=null;
-			}elseif($this->data\['User'\]\['password'\]!=$this->data\['User'\]\['confirmpassword'\]){
+		    	$this->data['User']['password']=null;
+			}elseif($this->data['User']['password']!=$this->data['User']['confirmpassword']){
 		    	$this->invalidate('checkpassword');
 		    	//they didnt condifrm password
 			}else{
 				//hash passwordbefore saving
-				$this->data\['User'\]\['password'\]=md5($this->data\['User'\]\['password'\]);		   					
+				$this->data['User']['password']=md5($this->data['User']['password']);		   					
 			}
 		
 		}

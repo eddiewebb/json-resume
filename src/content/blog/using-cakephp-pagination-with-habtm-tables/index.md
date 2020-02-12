@@ -27,8 +27,8 @@ function view($id = null) {
 	}
 	$cat= $this->Category->read(null, $id);
 	$this->set('category',$cat);
-	$this->set('parent', $this->Category->findById($cat\['Category'\]\['parent_id'\]));
-	$this->set('children', $this->Category->findAll('\`Category\`.\`parent_id\`='.$id));
+	$this->set('parent', $this->Category->findById($cat['Category']['parent_id']));
+	$this->set('children', $this->Category->findAll('`Category`.`parent_id`='.$id));
 	
 	//allow products ot be sorted
 	$this->Product->recursive=2;
@@ -36,7 +36,7 @@ function view($id = null) {
 	list($order,$limit,$page) = $this->Pagination->init($criteria); // Added
 	
 	//NOTE: we use the relational table for the criteria and query
-	$criteria='\`ProductsCategory\`.\`category_id\`='.$id;
+	$criteria='`ProductsCategory`.`category_id`='.$id;
 	$data = $this->ProductsCategory->findAll($criteria, null, $order, $limit, $page); 
 	$this->set('products', $data);
 }
@@ -52,7 +52,7 @@ views/categories/view.thtml
 		/*
 		*Create form to sort results
 		*/
-		echo $ajax->form(NULL,NULL,array("update" => $pagination->_pageDetails\['ajaxDivUpdate'\],"id"=>'paginationForm'));
+		echo $ajax->form(NULL,NULL,array("update" => $pagination->_pageDetails['ajaxDivUpdate'],"id"=>'paginationForm'));
 		echo $pagination->resultsPerPageSelect()." ";
 		$sorts = Array (
 			"id::ASC::Product",
@@ -61,25 +61,25 @@ views/categories/view.thtml
 			"name::DESC::Product",
 		);
 		echo $pagination->sortBySelect($sorts);
-		echo $ajax->submit("Submit",array("update" => $pagination->_pageDetails\['ajaxDivUpdate'\],"id"=>'paginationSubmit'));
-		echo $ajax->observeForm('paginationForm',array("frequency"=>1,"update" => $pagination->_pageDetails\['ajaxDivUpdate'\]));
+		echo $ajax->submit("Submit",array("update" => $pagination->_pageDetails['ajaxDivUpdate'],"id"=>'paginationSubmit'));
+		echo $ajax->observeForm('paginationForm',array("frequency"=>1,"update" => $pagination->_pageDetails['ajaxDivUpdate']));
 		echo "document.getElementById('paginationSubmit').hide();";
 		foreach ($products as $output)
 		{
 			//create td for values to add to array
 			$values=" ";
-			if($output\['Product'\]\['isorganic'\]==1) $values.= '[![Organic](/img/value_icons/organic.png)](/info/organic "Learn about this icon")';
-			if($output\['Product'\]\['isnatural'\]==1) $values.=  '[![Natural](/img/value_icons/natural.png)](/info/natural "Learn about this icon")';
-			if($output\['Product'\]\['isrecycled'\]==1) $values.=  '[![Recycled](/img/value_icons/recycled.png)](/info/recycled "Learn about this icon")';
-			if($output\['Product'\]\['isdonation'\]==1) $values.=  '[![Donations Made](/img/value_icons/donates.png)](/info/donates "Learn about this icon")';
+			if($output['Product']['isorganic']==1) $values.= '[![Organic](/img/value_icons/organic.png)](/info/organic "Learn about this icon")';
+			if($output['Product']['isnatural']==1) $values.=  '[![Natural](/img/value_icons/natural.png)](/info/natural "Learn about this icon")';
+			if($output['Product']['isrecycled']==1) $values.=  '[![Recycled](/img/value_icons/recycled.png)](/info/recycled "Learn about this icon")';
+			if($output['Product']['isdonation']==1) $values.=  '[![Donations Made](/img/value_icons/donates.png)](/info/donates "Learn about this icon")';
 			$actions=' ';
-			if($rights>=2) $actions.='   '.$html->link('Edit','/products/edit/' . $output\['Product'\]\['id'\]);
-			if($rights==4) $actions.='   '.$html->link('Delete','/products/delete/' . $output\['Product'\]\['id'\], null, 'Are you sure you want to delete id ' . $output\['Product'\]\['name'\]);
-			$id=$output\['Product'\]\['id'\];
-			$title=$html->link($output\['Product'\]\['name'\], $goto.$output\['Product'\]\['id'\]);
-			$company=$output\['Product'\]\['Company'\]\['name'\];
-			$description=$output\['Product'\]\['description'\];
-			$image=$html->image('uploads/'.$output\['Product'\]\['imageurl'\],array('width'=>'120','alt'=>'Product Image'));
+			if($rights>=2) $actions.='   '.$html->link('Edit','/products/edit/' . $output['Product']['id']);
+			if($rights==4) $actions.='   '.$html->link('Delete','/products/delete/' . $output['Product']['id'], null, 'Are you sure you want to delete id ' . $output['Product']['name']);
+			$id=$output['Product']['id'];
+			$title=$html->link($output['Product']['name'], $goto.$output['Product']['id']);
+			$company=$output['Product']['Company']['name'];
+			$description=$output['Product']['description'];
+			$image=$html->image('uploads/'.$output['Product']['imageurl'],array('width'=>'120','alt'=>'Product Image'));
 			echo '
 
 ';
@@ -102,7 +102,7 @@ views/categories/view.thtml
 '.$description.'
 
 ######  Added on '.
-					$date->regularize($output\['Product'\]\['dateAdded'\]).
+					$date->regularize($output['Product']['dateAdded']).
 					'
 
 '.$values.'
@@ -132,8 +132,8 @@ Now in oder for the query you set up in the controller to work you need to have 
 models/Products_category.php
 ----------------------------
 
- VALID\_NOT\_EMPTY,
-				'description' => VALID\_NOT\_EMPTY,
+ VALID_NOT_EMPTY,
+				'description' => VALID_NOT_EMPTY,
 			);
 	var $recursive = -1;
 	

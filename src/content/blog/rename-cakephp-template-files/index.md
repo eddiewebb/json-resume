@@ -9,31 +9,31 @@ A good many people have hit the CakePHP group asking what needs to be done to up
 
 #!/bin/bash
 #script by edward a webb
-\# https://blog.edwardawebb.com
+# https://blog.edwardawebb.com
  
 #renames files recursively based on old and new extensions passed into the script.
 #lists files that match or prints no match message for each sub-directory
 
-if \[ $# -ne 3 \]
+if [ $# -ne 3 ]
 then
-	echo "Usage: $0 dir\_name old\_ext new_ext "
+	echo "Usage: $0 dir_name old_ext new_ext "
 	exit 1
 fi
 OEXT=$2
 NEXT=$3
 TOPD=$1 
-DIRS=\`ls $TOPD\`
+DIRS=`ls $TOPD`
 pushd $TOPD >/dev/null
 for DIR in $DIRS
 do
-	if \[ -d $DIR \]
+	if [ -d $DIR ]
 	then
 		pushd $DIR >/dev/null 2&>1
 		echo NOW IN: $DIR;echo " "
 		FILES=""
-		FILES=\`ls *.$OEXT 2>/dev/null\`
-		dummy=\`echo $FILES | cut -d" " -f1\`
-		if \[ $dummy \]
+		FILES=`ls *.$OEXT 2>/dev/null`
+		dummy=`echo $FILES | cut -d" " -f1`
+		if [ $dummy ]
 		then
 			echo "	Files to rename";echo " "
 		else
@@ -41,7 +41,7 @@ do
 		fi
 		for FILE in $FILES
 		do	
-			if \[ -f $FILE -a -w $FILE \]
+			if [ -f $FILE -a -w $FILE ]
 			then 
 				NAME=${FILE%.*}
 				echo "		$NAME"
@@ -55,6 +55,6 @@ done
 
 The script can be saved anywhere, and requires 3 parameters, the directory, the old extension, and the new one. Example
 
-\# ./renameExt /srv/www/cake/app/views thtml ctp
+# ./renameExt /srv/www/cake/app/views thtml ctp
 
 Leave out the hash(#) that represents your 'nix command prompt..duh. And as Peter points out, don't use periods '.' in the extensions, just the letters.

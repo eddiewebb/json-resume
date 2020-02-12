@@ -19,9 +19,9 @@ Catch the incoming requests and instead return a static image that warns they ha
 
 Again we will rely on the quintessential Apache Rewrite module to preform this task. Open up the .htaccess file in your top-most directory and add the following snippet;
 
- SetEnvIfNoCase Referer "^http://(\[^/\]*\\.)?example.com/" requested_locally=1
+ SetEnvIfNoCase Referer "^http://([^/]*\.)?example.com/" requested_locally=1
 RewriteCond %{ENV:requested_locally} !=1
-RewriteRule ".*" "/no-hotlink.gif" \[L\] 
+RewriteRule ".*" "/no-hotlink.gif" [L] 
 
 **What's all this then?** Here's a breakdown line by line;
 

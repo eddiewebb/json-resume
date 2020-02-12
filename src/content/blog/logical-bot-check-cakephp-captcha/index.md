@@ -48,9 +48,9 @@ Now this MVC group is optional.  I deliver a lot of prototypes to clients and f
 
 #### app/models/botcheck.php
 
- VALID\_NOT\_EMPTY,
-		'answer' => VALID\_NOT\_EMPTY,
-		'difficulty' => VALID\_NOT\_EMPTY,
+ VALID_NOT_EMPTY,
+		'answer' => VALID_NOT_EMPTY,
+		'difficulty' => VALID_NOT_EMPTY,
 	);
 
 	var $recursive = -1;	
@@ -60,9 +60,9 @@ Now this MVC group is optional.  I deliver a lot of prototypes to clients and f
 
 	 
 
-/\*\*
- \* set level to use
- \* 
+/**
+ * set level to use
+ * 
  */
 
 	function setMinMax($minMax=array()){	
@@ -70,20 +70,20 @@ Now this MVC group is optional.  I deliver a lot of prototypes to clients and f
 		App::import('Model','Setting');
 		$ms=new Setting();
 		$minMax=$ms->getBotcheckMinMax();
-		//debug(Configure::read('App.botcheck\_min\_difficulty'));
+		//debug(Configure::read('App.botcheck_min_difficulty'));
 		
 		//now set the locAL varable 
-		$this->minDiff=$minMax\['min'\];
+		$this->minDiff=$minMax['min'];
 
-		$this->maxDiff=$minMax\['max'\];	
+		$this->maxDiff=$minMax['max'];	
 
 	} 
 
-	/\*\*
-	 \* Grabs a random question and answer from the database. 
-	 \* Only use minmaxoverride to circumvent table settings.
-	 \* 
-	 \* @param array minMaxOverride
+	/**
+	 * Grabs a random question and answer from the database. 
+	 * Only use minmaxoverride to circumvent table settings.
+	 * 
+	 * @param array minMaxOverride
 	 *
 	 */
 
@@ -106,12 +106,12 @@ Now this MVC group is optional.  I deliver a lot of prototypes to clients and f
 		
 
 		//we let answers be sets seperated by commas, make it an array after making it all lowercase
-		$answers=split(',',strtolower($result\[0\]\['Botcheck'\]\['answer'\]));
+		$answers=split(',',strtolower($result[0]['Botcheck']['answer']));
 
 		
 
-		//simplify results into a \['question'\] and \['answer'\] keyed variable for direct pull
-		$fbc=array('question'=>$result\[0\]\['Botcheck'\]\['question'\],'answers'=>$answers);
+		//simplify results into a ['question'] and ['answer'] keyed variable for direct pull
+		$fbc=array('question'=>$result[0]['Botcheck']['question'],'answers'=>$answers);
 
 
 		return $fbc;
@@ -124,15 +124,15 @@ Now this MVC group is optional.  I deliver a lot of prototypes to clients and f
 #### app/controllers/botchecks_controller.php
 
 Session->read('User');
-		if($user\['Role'\]\['rights'\]>=2)$this->redirect('/admin/'.Inflector::underscore($this->name).'/'.$this->action);
+		if($user['Role']['rights']>=2)$this->redirect('/admin/'.Inflector::underscore($this->name).'/'.$this->action);
 	}
 
 	function admin_index() {
 				
 		$this->Botcheck->recursive = 0;
 		$this->set('botchecks', $this->paginate());
-		$this->set('bcMin',Configure::read('App.botcheck\_min\_difficulty') );
-		$this->set('bcMax',Configure::read('App.botcheck\_max\_difficulty') );
+		$this->set('bcMin',Configure::read('App.botcheck_min_difficulty') );
+		$this->set('bcMax',Configure::read('App.botcheck_max_difficulty') );
 	}
 
 	function admin_view($id = null) {
@@ -219,22 +219,22 @@ pageTitle= ' // '.Inflector::humanize(Inflector::underscore($this->name)).' '.$t
 			$this->Session->write('botcheck',$bc);
 		}
 		//set it to a variable used by actions
-		$this->whatWeAsk=$bc\['question'\];
-		$this->humanWouldType=$bc\['answers'\];	
+		$this->whatWeAsk=$bc['question'];
+		$this->humanWouldType=$bc['answers'];	
 		//die($this->whatWeAsk);	
 	}
 /**
 ..... MORE CODE
 **/
-	function notify\_friends\_and_family($wishListId){
+	function notify_friends_and_family($wishListId){
 		$merror=0;
 		$someone=$this->checkSession(1,null,true);
 		$wishListArr=$this->User->WishList->find('WishList.id = '.$wishListId);
 		if (!$wishListId && empty($this->data)) {
-			$this->Session->setFlash('Um... Like, OK.  I dont\\'t wanna be  buzzkill, but like, you totally need to need to visit that page from a wish list. Otherwise I am like totally unable to help you, K?', true);
+			$this->Session->setFlash('Um... Like, OK.  I dont\'t wanna be  buzzkill, but like, you totally need to need to visit that page from a wish list. Otherwise I am like totally unable to help you, K?', true);
 			$this->redirect(array('controller'=>'WishLists','action'=>'index'));
-		}elseif($someone\['User'\]\['id'\]!=$wishListArr\['WishList'\]\['owner_id'\]){
-			$this->Session->setFlash('Wow! Your totally trying to notify people of a list you um, like don\\'t own.  Maybe you should like come here from one of your list. Then you like, don\\'t even need to worry and stuff, K?', true);
+		}elseif($someone['User']['id']!=$wishListArr['WishList']['owner_id']){
+			$this->Session->setFlash('Wow! Your totally trying to notify people of a list you um, like don\'t own.  Maybe you should like come here from one of your list. Then you like, don\'t even need to worry and stuff, K?', true);
 			$this->redirect(array('controller'=>'WishLists','action'=>'index'));
 		
 		}
@@ -243,7 +243,7 @@ pageTitle= ' // '.Inflector::humanize(Inflector::underscore($this->name)).' '.$t
 		//is submitted?
 		if (!empty($this->data)) {
 			//botcheck!
-			if(!in_array(strtolower($this->data\['User'\]\['check'\]),$this->humanWouldType))
+			if(!in_array(strtolower($this->data['User']['check']),$this->humanWouldType))
 			{
 			  	$this->User->invalidate('check');			
 				$merror=1;
@@ -251,10 +251,10 @@ pageTitle= ' // '.Inflector::humanize(Inflector::underscore($this->name)).' '.$t
 			//set modified dates to now
 			if ($merror==0) {
 				
-				$wishListArr=$this->User->WishList->find('WishList.id = '.$this->data\['WishListId'\]);
-				$this->Email->shareemail($this->data\['email'\],$someone\['User'\]\['first_name'\],$wishListArr);
+				$wishListArr=$this->User->WishList->find('WishList.id = '.$this->data['WishListId']);
+				$this->Email->shareemail($this->data['email'],$someone['User']['first_name'],$wishListArr);
 				$this->Session->setFlash(__('Your messages were sent.', true));
-				$this->redirect(array('controller'=>'WishLists','action'=>'view',$this->data\['WishListId'\]));
+				$this->redirect(array('controller'=>'WishLists','action'=>'view',$this->data['WishListId']));
 			} else {
 				$this->Session->setFlash(__('Please Correct These Errors', true));
 			}
@@ -273,11 +273,11 @@ Notice 3 things;
 
 The method included (notify friends and family ) allows users to send emails to up to 6 addresses at once. Although they can't adjust the message, its still worth keeping spam bots out.
 
-#### app/views/users/notify\_friends\_and_family.ctp
+#### app/views/users/notify_friends_and_family.ctp
 
 ### Ok, lets let everyone know about your 
 
-#### OR, link('Go right to your list','/wish_lists/view/'.$wishlist\['WishList'\]\['id'\]);?>, or link('add your first item','/items/add/'.$wishlist\['WishList'\]\['id'\]); ?>
+#### OR, link('Go right to your list','/wish_lists/view/'.$wishlist['WishList']['id']);?>, or link('add your first item','/items/add/'.$wishlist['WishList']['id']); ?>
 
  
 
@@ -291,7 +291,7 @@ The method included (notify friends and family ) allows users to send emails to 
 			echo $form->input('email.4');
 			echo $form->input('email.5');
 			echo $form->input('email.6');
-			echo $form->input('WishListId',array('type'=>'hidden','value'=>$wishlist\['WishList'\]\['id'\]));
+			echo $form->input('WishListId',array('type'=>'hidden','value'=>$wishlist['WishList']['id']));
 		?>	
 		
 

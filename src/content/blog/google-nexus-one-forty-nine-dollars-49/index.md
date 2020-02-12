@@ -5,7 +5,7 @@ draft: false
 tags: [android, google, Nexus One, Site News, t-mobile]
 ---
 
-Everyone is talking about Google's Nexus One. Most people are saying that an unlocked phone for $529 just won't fly here in America.  **We like our phones with a ridiculous amortization attached through 2 year contracts so we feel like we're getting a deal**.  Sure we end up paying far more than the phone is worth - but we don't pay it all at once. That's the American way - defer. Now if you tell a company like Verizon that you don't want their discount phones for new contracts they will say fine.. but you won't save any cash.  In fact you'll pay more for unlocked phones plus an overpriced contract. **However for those fortunate few who have escaped the new-every-2-until-your-dead plan there are other options** \- like a **Google Nexus One for $49**.  If you've not had enough of my Verizon bashing, please read on.
+Everyone is talking about Google's Nexus One. Most people are saying that an unlocked phone for $529 just won't fly here in America.  **We like our phones with a ridiculous amortization attached through 2 year contracts so we feel like we're getting a deal**.  Sure we end up paying far more than the phone is worth - but we don't pay it all at once. That's the American way - defer. Now if you tell a company like Verizon that you don't want their discount phones for new contracts they will say fine.. but you won't save any cash.  In fact you'll pay more for unlocked phones plus an overpriced contract. **However for those fortunate few who have escaped the new-every-2-until-your-dead plan there are other options** - like a **Google Nexus One for $49**.  If you've not had enough of my Verizon bashing, please read on.
 
 #### Google Nexus One Discount - Save $480
 

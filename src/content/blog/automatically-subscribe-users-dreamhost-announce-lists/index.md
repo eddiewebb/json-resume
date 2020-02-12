@@ -20,7 +20,7 @@ So it goes like this; Your user registers a new account, or sends you a contact 
 
 The red boundary denotes new code for the announce submission
 
-Since every cms, site and blog are different, I am unable to provide specifics, but yu should be able to track down the code for your form and find the portion that handles the submission. (Most obviously denoted with $\_POST or $\_GET variable use.)  I will also assume your email field is named 'email' and your name field is two fields; 'firstName', 'lastName';
+Since every cms, site and blog are different, I am unable to provide specifics, but yu should be able to track down the code for your form and find the portion that handles the submission. (Most obviously denoted with $_POST or $_GET variable use.)  I will also assume your email field is named 'email' and your name field is two fields; 'firstName', 'lastName';
 
 ### Details on the API command
 
@@ -28,12 +28,12 @@ Below is a link to details on the command, needed parameters and possible respon
 
 ### The Announce Submission Code
 
-if(isset($\_POST\['subscribeMe'\]) && $\_POST\['subscribeMe'\] == 1)
+if(isset($_POST['subscribeMe']) && $_POST['subscribeMe'] == 1)
 {
 
        //get the values we need from form(this should in aprt already be somewhere in the code your editing)
-       $email=$_POST\['email'\];
-       $fullName=$\_POST\['firstName'\]." ".$\_POST\['lastName'\];
+       $email=$_POST['email'];
+       $fullName=$_POST['firstName']." ".$_POST['lastName'];
 
        //set values we shoudl know, and are constant
        $domain="domain of this form";
@@ -45,8 +45,8 @@ if(isset($\_POST\['subscribeMe'\]) && $\_POST\['subscribeMe'\] == 1)
 
 
 		$ch = curl_init('https://api.dreamhost.com/');
- 		curl\_setopt ($ch, CURLOPT\_POST, 1);
- 		curl\_setopt ($ch, CURLOPT\_POSTFIELDS, "key=$apiKey&cmd=announcement\_list-add\_subscriber&listname=$listname&domain=$domain&email=$email&name=$fullName");
+ 		curl_setopt ($ch, CURLOPT_POST, 1);
+ 		curl_setopt ($ch, CURLOPT_POSTFIELDS, "key=$apiKey&cmd=announcement_list-add_subscriber&listname=$listname&domain=$domain&email=$email&name=$fullName");
  		$result=curl_exec ($ch);
  		curl_close ($ch);
 

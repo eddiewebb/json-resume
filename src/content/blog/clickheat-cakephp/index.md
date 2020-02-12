@@ -10,20 +10,20 @@ The [Clickheat](http://www.labsmedia.com/clickheat/index.html) software, rocks. 
 _In /views/layouts/default.ctp;_
 
 params;
-if(empty($params\['url'\]\['url'\])) {
+if(empty($params['url']['url'])) {
 	//we need to concat our own url
-	$pageWeSee=$params\['controller'\];
+	$pageWeSee=$params['controller'];
 	//only append action if not 'info' pages ('index' is hidden in url, and should be hidden here)
-	if($pageWeSee!=='info') $pageWeSee.='/'.$params\['action'\];
+	if($pageWeSee!=='info') $pageWeSee.='/'.$params['action'];
 	//any parmaeterrs we should know about?
 	$ps='';
-	foreach( $params\['pass'\] as $p){
+	foreach( $params['pass'] as $p){
 		$ps.='/'.$p;
 	}//end for each
 	$pageUrl=$pageWeSee.$ps;
 }else{
 	//oh how sweet, a fully built url for us
-	$pageUrl=$params\['url'\]\['url'\];
+	$pageUrl=$params['url']['url'];
 }
 ?>
 

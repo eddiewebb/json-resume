@@ -86,14 +86,14 @@ $ sh wp_plugins.sh path/to/wp/root
 
 #! /bin/bash
 
-\# upload plugins to wordpress site
-\# edward a webb - May 7, 2010
-\#  https://blog.edwardawebb.com/web-development/7-plugins-full-featured-wordpress-content-manager
+# upload plugins to wordpress site
+# edward a webb - May 7, 2010
+#  https://blog.edwardawebb.com/web-development/7-plugins-full-featured-wordpress-content-manager
 
 plugins=( all-in-one-seo-pack google-sitemap-generator.3.2.3 pagemash )
 
 
-if \[ $# -eq 1 \]
+if [ $# -eq 1 ]
 then
 	wproot=$1
 else
@@ -101,19 +101,19 @@ else
 	exit 1
 fi
 
-if \[ -d $wproot \]
+if [ -d $wproot ]
 then
 
-	for (( i = 0 ; i < ${#plugins\[@\]} ; i++ ))
+	for (( i = 0 ; i < ${#plugins[@]} ; i++ ))
 	do
-		curl http://downloads.wordpress.org/plugin/${plugins\[$i\]}.zip -o ${plugins\[$i\]}.zip
-		unzip ${plugins\[$i\]}.zip -d $wproot/wp-content/plugins/
-		rm -f ${plugins\[$i\]}.zip
+		curl http://downloads.wordpress.org/plugin/${plugins[$i]}.zip -o ${plugins[$i]}.zip
+		unzip ${plugins[$i]}.zip -d $wproot/wp-content/plugins/
+		rm -f ${plugins[$i]}.zip
 
 
 	done  
 else
-	printf "\\t Could not locate $wproot\\n"
+	printf "\t Could not locate $wproot\n"
 	exit 2
 
 fi

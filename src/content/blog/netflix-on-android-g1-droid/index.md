@@ -21,7 +21,7 @@ I told you this article was about gloating didn't I?  Sure is.  I think I have
 
 > #### I heart this app. I can add to both thats right both q's in a simple fast clean app. Moto Droid compatible
 > 
-> \-\- Woah - thanks _Blake_ I appreciate the praise
+> -- Woah - thanks _Blake_ I appreciate the praise
 
 > #### Much more reliable than PhoneFlicks
 > 
@@ -33,11 +33,11 @@ I told you this article was about gloating didn't I?  Sure is.  I think I have
 
 > #### One of my top 10 apps!
 > 
-> \-\- Thanks _Jennifer_, QueueMan and I are honored.
+> -- Thanks _Jennifer_, QueueMan and I are honored.
 
 > #### Great. Simple, easy to use. Just what I wanted it to do.
 > 
-> \-\- Glad it is treating you well _Jeffrey_
+> -- Glad it is treating you well _Jeffrey_
 
 > #### The best Netflix application on the market. I just donated.
 > 

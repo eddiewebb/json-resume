@@ -25,7 +25,7 @@ Below is the code for the model, the controller, view and layout. I also include
 Controller
 ----------
 
-##### /app/controllers/project\_files\_controller.php
+##### /app/controllers/project_files_controller.php
 
 Start by adding the code below into your controller, I created a fresh controller dedicated to project files. This allows users to add pdfs and other documents to scholar research projects.
 
@@ -33,17 +33,17 @@ Start by adding the code below into your controller, I created a fresh controlle
        //I like to restrict this to logged in users
 
          $user=$this->Session->read('User');
-         if(!isset($user\['User'\])){
+         if(!isset($user['User'])){
             $this->Session->setFlash("Ya'lls gots'ta be logged in fer to fetch these pages");
             $this->redirect('/posts');
         }
        //IMPORTANT!  turn off debug output, will corrupt filestream.      
         Configure::write('debug', 0);
         $this->ProjectFile->recursive=-1;
-        $file = $this->ProjectFile->findById($id,'user_id = '.$user\['User'\]\['id'\]);
+        $file = $this->ProjectFile->findById($id,'user_id = '.$user['User']['id']);
       
        //just in case its been deleted, or someone is getting frisky
-        if(!isset($file\['ProjectFile'\]\['name'\])){
+        if(!isset($file['ProjectFile']['name'])){
             $this->Session->setFlash("Problem. Either;
 
 *   We no longer have that file
@@ -70,9 +70,9 @@ Start by adding the code below into your controller, I created a fresh controlle
        //IMPORTANT!  turn off debug output, will corrupt filestream.      
         Configure::write('debug', 0);
         $this->ProjectFile->recursive=-1;
-        $file = $this->ProjectFile->findById($id,'user_id = '.$user\['User'\]\['id'\]);
+        $file = $this->ProjectFile->findById($id,'user_id = '.$user['User']['id']);
       
-        if(!isset($file\['ProjectFile'\]\['name'\]) || substr($file\['ProjectFile'\]\['type'\],0,5)!='image'){
+        if(!isset($file['ProjectFile']['name']) || substr($file['ProjectFile']['type'],0,5)!='image'){
             echo 'Not an image file';
             exit;           
         }
@@ -157,7 +157,7 @@ Now you can use the show method to allow users to see images without downloading
 
 This code would go in my projects views, for you it might be the user profile page or an article.
 
-echo $html->image(array('controller'=>'project_files','action'=>'show',$project\['ProjectFile'\]\['id'\]),array('title'=>'This is a related file to a project'));
+echo $html->image(array('controller'=>'project_files','action'=>'show',$project['ProjectFile']['id']),array('title'=>'This is a related file to a project'));
 
 //alternately
 

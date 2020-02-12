@@ -26,15 +26,15 @@ Let us look at an example. Feel free to pop these 3 scripts into your console to
 #but we'll need something for our while loop
 i=0
 
-while \[ $i -lt 5 \]
+while [ $i -lt 5 ]
 do
-	printf "LOOPCOUNT is %d\\n" $LOOPCOUNT
+	printf "LOOPCOUNT is %d\n" $LOOPCOUNT
 	((LOOPCOUNT++))
 
 	((i++))
 done
 #our count will be preserved
-printf "Final LOOPCOUNT is %d\\n" $LOOPCOUNT
+printf "Final LOOPCOUNT is %d\n" $LOOPCOUNT
 
 #### This will print
 
@@ -58,12 +58,12 @@ Now here's the meat of this article. Despite declaring the variable, and increme
 
 ls | while read LINE
 do
-	printf "LOOPCOUNT is %d\\n" $LOOPCOUNT
+	printf "LOOPCOUNT is %d\n" $LOOPCOUNT
 	((LOOPCOUNT++))
 
 done
 #our count will NOT be preserved
-printf "Final LOOPCOUNT is %d\\n" $LOOPCOUNT
+printf "Final LOOPCOUNT is %d\n" $LOOPCOUNT
 
 Since my demo folder has 8 files in it...
 

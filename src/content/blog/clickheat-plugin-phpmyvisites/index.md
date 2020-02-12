@@ -7,7 +7,7 @@ tags: [clickheat, phpmyvisites, seo, Site News, tutorial]
 
 The newest version of phpMyVisites comes with an awesome ClickHeat plugin. Trouble is they have 0 documentation on how to implement the plugin. Below are those details as I discovered the process. Enjoy
 
-[![areas grow \'hotter\' the more users click](pagemanager10-299x143.webp "Example ClickHeat results")](pagemanager10.webp)
+[![areas grow 'hotter' the more users click](pagemanager10-299x143.webp "Example ClickHeat results")](pagemanager10.webp)
 
 For all the details in a step by step manner, read on. **To make this easy to understand, there are 4 main parts:** [Activating the Plugin](#activate) [Configuring the Plugin](#configure) [Inserting the JavaScript / Debugging Javascript](#insert) [VIewing the Results](#results)
 
@@ -18,7 +18,7 @@ Activating Plugin
 2.  Click the 'Administration' link at the bottom of any page. In the left column is a grouping called 'Plugins,' select 'Manage plugins.'
 3.  You'll now see a list of plugins, one of which will be ClickHeat.
     *   Select the 'Enabled' checkbox on left.
-    *   Select \[Menu\] and \[Pages Viewed\] if not already chosen in the middle column.
+    *   Select [Menu] and [Pages Viewed] if not already chosen in the middle column.
     *   Click submit.
 4.  The plugin is now active!
 

@@ -58,8 +58,8 @@ class DATABASE_CONFIG
 	function __construct ()
 	{		
 		//check to see if server name is set (thanks Frank)
-		if(isset($\_SERVER\['SERVER\_NAME'\])){
-			switch($\_SERVER\['SERVER\_NAME'\]){
+		if(isset($_SERVER['SERVER_NAME'])){
+			switch($_SERVER['SERVER_NAME']){
 				case 'digbiz.localhost':
 					$this->default = $this->dev;
 					break;
