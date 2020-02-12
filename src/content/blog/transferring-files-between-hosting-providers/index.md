@@ -42,8 +42,7 @@ Linux galactus 2.6.24.5-xeon-aufs20081006-grsec #1 SMP Thu Oct 9 15:42:59 PDT 20
               _            _
    __ _  __ _| | __ _  ___| |_ _   _ ___
   / _` |/ _` | |/ _` |/ __| __| | | / __|
- | (_| | (_| | | (_| | (__| |_| |_| \\__ \
-  \\__, |\\__,_|_|\\__,_|\\___|\\__|\\__,_|___/
+ | (_| | (_| | | (_| | (__| |_| |_| \__   \__, |\__,_|_|\__,_|\___|\__|\__,_|___/
   |___/
  Welcome to galactus.dreamhost.com
 
@@ -55,7 +54,7 @@ Call wget passing the directory to transfer
 
 Although we could leave the directory off, this would result in wget grabbing everything it can find, which just seemed like a bit too much to deal with for one go. In this example I am grabbing the bulk of my files in the HOSTED_SITES folder.
 
-wget -r -l 10 ftp://oldusername:oldpassword@oldhostingprovider.com:21 -I HOSTED\_SITES | tee -a ~/transfer\_logs/transfer.log
+wget -r -l 10 ftp://oldusername:oldpassword@oldhostingprovider.com:21 -I HOSTED_SITES | tee -a ~/transfer_logs/transfer.log
 
 #### What's all this then?
 
@@ -81,8 +80,8 @@ Grab yourself a drink and wait for the finish
 
 Yeah, its that easy.  Of course as I mentioned above we're copying the files into a sub-directory which is wget's default behavior. I opted to stick with it so I can keep my top-level directory cleaner. Since I was excluding some paths, my job finished something like this (with a ton of output between);
 
-Not descending to `SITE\_DOWN\_MESSAGES' as it is excluded/not-included.
-Not descending to `\_db\_backups' as it is excluded/not-included.
+Not descending to `SITE_DOWN_MESSAGES' as it is excluded/not-included.
+Not descending to `_db_backups' as it is excluded/not-included.
 Not descending to `cgi' as it is excluded/not-included.
 Not descending to `dotproject' as it is excluded/not-included.
 Not descending to `php_uploads' as it is excluded/not-included.

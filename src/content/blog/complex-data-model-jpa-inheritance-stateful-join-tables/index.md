@@ -23,17 +23,17 @@ Topics
 Introduction
 ------------
 
-So first, our data model.  Since our model is pretty well fixed, I had to design the business model around that partially, and partially to the true business needs. \[caption id="attachment_840" align="aligncenter" width="300" caption="Notice the CLient, element, which inherets from two levels of parents, and the ROLE field in the join table "\][![](ObjectDiagram1-300x198.webp "ObjectDiagram1")](ObjectDiagram1.webp)\[/caption\] JPA supports inheritance with release 1, and despite some misleading posts in the internet, it is perfectly capable of overriding PK fields on concrete classes. A class may also inherit from one table, persist to another, and still be inherited from. For instance, a client which has an ID, Name, and Contact Number (among other things) will need to select from the Client table, the Org table, the Entity table, and Contact tables to get all relevant fields.
+So first, our data model.  Since our model is pretty well fixed, I had to design the business model around that partially, and partially to the true business needs. [caption id="attachment_840" align="aligncenter" width="300" caption="Notice the CLient, element, which inherets from two levels of parents, and the ROLE field in the join table "][![](ObjectDiagram1-300x198.webp "ObjectDiagram1")](ObjectDiagram1.webp)[/caption] JPA supports inheritance with release 1, and despite some misleading posts in the internet, it is perfectly capable of overriding PK fields on concrete classes. A class may also inherit from one table, persist to another, and still be inherited from. For instance, a client which has an ID, Name, and Contact Number (among other things) will need to select from the Client table, the Org table, the Entity table, and Contact tables to get all relevant fields.
 
 Inheritance is Endless
 ----------------------
 
-You're parents were not abstract, and you're likely to have children. What I am saying is that sometime you may need to inherit a few nested classes or levels for a heavily normalized DB. In my case we have a generic ENTITY that can be a person, place or thing.  Below that are Persons and Organizations that inherit contact info, but hold unique fields (first name vs. Tax ID).  Organizations may be further considered Clients, Vendors or Associations. They in turn inherit all contact info, the tax ID, and such, but add additional attributes. Each table does not have a generic ID column. Instead we have several, i.e. ENTITY\_ID, ORGANIZATION\_ID, and CLIENT\_ID. Further more each table uses discriminators of different names and types.  So while the ENTITY tables uses a 2 character code (ENTITY\_TYPE\_CD (CHAR(2)), the Organization Table uses a 10 character string (ORG\_TYPE(CHAR(10)), etc. The solution looks like this; (the 3 classes for client, org, entity)
+You're parents were not abstract, and you're likely to have children. What I am saying is that sometime you may need to inherit a few nested classes or levels for a heavily normalized DB. In my case we have a generic ENTITY that can be a person, place or thing.  Below that are Persons and Organizations that inherit contact info, but hold unique fields (first name vs. Tax ID).  Organizations may be further considered Clients, Vendors or Associations. They in turn inherit all contact info, the tax ID, and such, but add additional attributes. Each table does not have a generic ID column. Instead we have several, i.e. ENTITY_ID, ORGANIZATION_ID, and CLIENT_ID. Further more each table uses discriminators of different names and types.  So while the ENTITY tables uses a 2 character code (ENTITY_TYPE_CD (CHAR(2)), the Organization Table uses a 10 character string (ORG_TYPE(CHAR(10)), etc. The solution looks like this; (the 3 classes for client, org, entity)
 
 @Entity
 @Table(name="ENTITY")
 @Inheritance(strategy=JOINED)
-@DiscriminatorColumn(name="ENTITY\_TYPE\_CD")
+@DiscriminatorColumn(name="ENTITY_TYPE_CD")
 public class AbstractEntity{
 
 @Id
@@ -45,11 +45,11 @@ private long key; // this is the only class in this tree to have an id field
 @Entity
 @Table(name="ORGANIZATION")
 //handle relationship to parent
-@DiscriminatorValue(value=ENTITY\_TYPE\_CD_ORG) //string for type "organization" as appose to "person"
+@DiscriminatorValue(value=ENTITY_TYPE_CD_ORG) //string for type "organization" as appose to "person"
 @PrimaryKeyJoinColumn(name="ORGANIZATION_ID") // override PK id for this table, no id field needed in class
 //define inheritance for children
 @Inheritance(strategy=JOINED)//we could use a different type..
-@DiscriminatorColumn(name="ENTITY\_TYPE\_CD") // new discrimoianbtor column
+@DiscriminatorColumn(name="ENTITY_TYPE_CD") // new discrimoianbtor column
 public class Organization extends AbstractEntity{
 
 // look NO id field or @id annotation, just the additional fields in this table
@@ -61,12 +61,12 @@ private String organizationName;
 @Entity
 @Table(name="CLIENT")
 //handle relationship to parent
-@DiscriminatorValue(value=ORG\_TYPE\_CLIENT) //string for type "client" (not assc, or vendor)
+@DiscriminatorValue(value=ORG_TYPE_CLIENT) //string for type "client" (not assc, or vendor)
 @PrimaryKeyJoinColumn(name="CLIENT_ID") // override PK id for this table, no id field needed in class
 public class Client extends Organization{
 
 // look NO id field or @id annotation, just the additional fields in this table
-@Column(name="CLIENT\_ACCT\_NO")
+@Column(name="CLIENT_ACCT_NO")
 private String clientAccountNumber; // not PK or Id, just a random string that relates to client table
 ...
 }
@@ -119,7 +119,7 @@ public class ClientManager{
 @Entity
 @Table(name="ORGANIZATION")
 //handle relationship to parent
-@DiscriminatorValue(value=ORG\_TYPE\_CLIENT) //string for type "client" (not assc, or vendor)
+@DiscriminatorValue(value=ORG_TYPE_CLIENT) //string for type "client" (not assc, or vendor)
 @PrimaryKeyJoinColumn(name="CLIENT_ID") // override PK id for this table, no id field needed in class
 public class Organization extends Entity{
 
@@ -155,7 +155,7 @@ public class Organization extends Entity{
 @Entity
 @Table(name="PERSON")
 //handle relationship to parent
-@DiscriminatorValue(value=PARTY\_TYPE\_PERSON) //string for type "person" (not "organization")
+@DiscriminatorValue(value=PARTY_TYPE_PERSON) //string for type "person" (not "organization")
 @PrimaryKeyJoinColumn(name="PERSON_ID") // override PK id for this table, no id field needed in class
 public Class Person{
 
@@ -194,12 +194,12 @@ public class ClientServiceJPAImpl(){
 	@ManagedProperty
 	private JpaResourceBean jrb; //just gives access to a session scoped em.
 	
-	/\*\*
-	\* persit the now related objects in the rigfht order to respect DB2 enforced constraints
-	\* works for any relationship where a person, org and address are bign created at same time
-	\* more methods would be required for persisting person and address alone, etc (but wouldn t be in the client srvice ;))
-	\*
-	\* outer objects first, joiningh entities second
+	/**
+	* persit the now related objects in the rigfht order to respect DB2 enforced constraints
+	* works for any relationship where a person, org and address are bign created at same time
+	* more methods would be required for persisting person and address alone, etc (but wouldn t be in the client srvice ;))
+	*
+	* outer objects first, joiningh entities second
 	*/
 	public void create(Client client,Person person,Address address,OrgRole or,AddressType at){
 		

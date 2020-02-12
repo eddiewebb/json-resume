@@ -33,9 +33,9 @@ public void startElement(String uri, String name, String qName,	Attributes atts)
 			inBoxArt = true;	
 		}else if (name.trim().equals("etag")){
 			inETag = true;			
-		}else if (name.trim().equals("number\_of\_results")){
+		}else if (name.trim().equals("number_of_results")){
 			inResultsTotal = true;
-		}else if (name.trim().equals("results\_per\_page")){
+		}else if (name.trim().equals("results_per_page")){
 			inResultsPerPage = true;
 		}
 	}
@@ -45,7 +45,7 @@ public void startElement(String uri, String name, String qName,	Attributes atts)
 Keep it Simple SAX
 ------------------
 
-So this may seem obvious to some of you, and is based on a well understood matter.  **String comparisons are not cheap**. They're not explicitly expensive, and having a half a dozen in one method would not usually cause any performance bottle necks. But now imagine calling the same method 1,000's of times. That's 6,000 string comparisons! Each method in a SAX parse will do just that! So how do we reduce the number of comparisons needed? So if your not using "reasults\_per\_page" then there is no need to check for that element. It may be useful to create separate handlers for various needs. One can get the quick and dirty summary, while the other can capture all the gritty details. Hooray! we just knocked off 1,000 comparisons!
+So this may seem obvious to some of you, and is based on a well understood matter.  **String comparisons are not cheap**. They're not explicitly expensive, and having a half a dozen in one method would not usually cause any performance bottle necks. But now imagine calling the same method 1,000's of times. That's 6,000 string comparisons! Each method in a SAX parse will do just that! So how do we reduce the number of comparisons needed? So if your not using "reasults_per_page" then there is no need to check for that element. It may be useful to create separate handlers for various needs. One can get the quick and dirty summary, while the other can capture all the gritty details. Hooray! we just knocked off 1,000 comparisons!
 
 Order is Everything!
 --------------------
@@ -53,7 +53,7 @@ Order is Everything!
 So keeping the If Else blocks short makes sense, the less comparisons, the faster the parsing.  But even for those blocks that require numerous element checks we can tune performance substantially by adjusting the order. The next tip, and a hugely important one, is to carefully consider the frequency of each element called. To illustrate is a sample XML response form Netflix.
 
  26049040137
-	http://api.netflix.com/users/se3cret/queues/disc?{-join|&|sort|start\_index|max\_results} 
+	http://api.netflix.com/users/se3cret/queues/disc?{-join|&|sort|start_index|max_results} 
 	32
 	0
 	25
@@ -67,7 +67,7 @@ So keeping the If Else blocks short makes sense, the less comparisons, the faste
 		
 		
 		
-			Zack Snyder directs this faithful adaptation of Frank Miller's (Sin City) graphic novel about the storied Battle of Thermopylae, a conflict that pitted the ancient Greeks against the Persians in 480 B.C. The film, which blends live-action shots with virtual backgrounds to capture Miller's original vision, co-stars [Gerard Butler](http://www.netflix.com/RoleDisplay/Gerard_Butler/20015853) as the Spartan King Leonidas, who leads his small band of 300 soldiers against an army of more than one million. \]\]>
+			Zack Snyder directs this faithful adaptation of Frank Miller's (Sin City) graphic novel about the storied Battle of Thermopylae, a conflict that pitted the ancient Greeks against the Persians in 480 B.C. The film, which blends live-action shots with virtual backgrounds to capture Miller's original vision, co-stars [Gerard Butler](http://www.netflix.com/RoleDisplay/Gerard_Butler/20015853) as the Spartan King Leonidas, who leads his small band of 300 soldiers against an army of more than one million. ]]>
 		
 		
 		2007

@@ -32,54 +32,61 @@ No need to over complicate things here. Imagine you have a standard Model, oh le
 
 #### app/controllers/posts_controller.php -snippet
 
-	/\*\*
-	 \* Returns an array of all public posts less than one month old, orderd by date
-	 \*
-	 \* @return unknown
-	 */ 
-	function newsfeed($count=null) {
-		if(!$count) $count=5;
-		$this->Post->recursive = 0;
-		$posts=$this->Post->findAll('is_public = 1 
-				AND is_published = 1 
-				AND Post.date_modified >= now() - INTERVAL 1 MONTH'
-					,null,'Post.date_modified DESC',$count);
-		if(isset($this->params\['requested'\])) {
-                         return $posts;
-                 }
-                 $this->set('posts',$posts );
-	}
-
+```php
+<?
+/**
+ * Returns an array of all public posts less than one month old, orderd by date
+ *
+ * @return unknown
+ */ 
+function newsfeed($count=null) {
+	if(!$count) $count=5;
+	$this->Post->recursive = 0;
+	$posts=$this->Post->findAll('is_public = 1 
+			AND is_published = 1 
+			AND Post.date_modified >= now() - INTERVAL 1 MONTH'
+				,null,'Post.date_modified DESC',$count);
+	if(isset($this->params['requested'])) {
+                     return $posts;
+             }
+             $this->set('posts',$posts );
+}
+```
 It would be really helpful if CakePHP provided an RSS helper. Zoot alors !  They do!
 
 #### app/controllers/posts_controller.php -snippet
 
+```php
+<?
 var $helpers = array('Rss');
 var $components = array ('RequestHandler');
-
+```
 ### The XML Generating View
 
 Just like any other view, all we need to do is transform some provided data into a formatted page. This time it will be strict XML without all the html clutter.
 
 #### app/views/posts/rss/newsfeed.ctp
-
- $item\['Post'\]\['title'\],
-		'link' => array('controller' => 'posts', 'action' => 'view', $item\['Post'\]\['id'\]),
-		'guid' => array('controller' => 'posts', 'action' => 'view', $item\['Post'\]\['id'\]),
-		'description' => strip_tags($item\['Post'\]\['body'\]),
-		'pubDate' => $item\['Post'\]\['date_added'\],				
+```php
+<?
+ $item['Post']['title'],
+		'link' => array('controller' => 'posts', 'action' => 'view', $item['Post']['id']),
+		'guid' => array('controller' => 'posts', 'action' => 'view', $item['Post']['id']),
+		'description' => strip_tags($item['Post']['body']),
+		'pubDate' => $item['Post']['date_added'],				
 	);
 }
 
 $this->set('items', $rss->items($posts, 'rss_transform'));
 
 $this->set('channelData', $channelData);
-?>
 
+```
 And of course sticking with format we should want to add an RSS layout.
 
 #### app/views/layouts/rss/default.ctp
 
+```php
+<?
 header();
 		$channelData = array('title' => 'Recent News | Digital Business',
 		 'link' => array('controller' => 'posts', 'action' => 'index', 'ext' => 'rss'),
@@ -89,24 +96,25 @@ header();
 		 );
 $channel = $rss->channel(array(), $channelData, $items);
 echo $rss->document(array(), $channel);
-?>
 
+```
 ### The RSS compliant URL
 
 You only need to add 2 lines to your routes configuration file for CakePHP to catch and handle the url to pint to your RSS feed. You might use feed.rss, I choice live.rss.
 
 #### app/config/routes.php -snippet
-
-/\*\*
- \* ...allow rssextensions
- \* and send live.rss to the rss feed
+```php
+<?
+/**
+ * ...allow rssextensions
+ * and send live.rss to the rss feed
  */
 	Router::connect('/live', array('controller' => 'posts', 'action' => 'newsfeed'));
-// see my posts on sitemaps to use this next line ;)	
-Router::connect('/sitemap', array('controller' => 'sitemaps', 'action' => 'index'));
+    // see my posts on sitemaps to use this next line ;)	
+    Router::connect('/sitemap', array('controller' => 'sitemaps', 'action' => 'index'));
 	
 	Router::parseExtensions('rss','xml');
-
+```
 Yes, you'll notice an additional route there for [dynamic sitemaps](https://blog.edwardawebb.com/programming/php-programming/cakephp/generating-dynamic-sitemaps-cakephp), very useful as well. Sweet! Now just visit http://example.com/live.rss, or throw that url in your favorite Feed Reader to see the results.
 
 #### http://example.com/live.rss

@@ -5,7 +5,7 @@ draft: false
 tags: [CSS, Java, jQuery, JSF, style, validation, web development]
 ---
 
-We didn't have room on our pages for individual message boxes, and also had the need to **style specific fields on our JSF pages whenever validation failed on the server,** with **user friendly field names in the message.** Example:  "User Name is Required" , and the field for User Name is highlighted red. \[caption id="attachment_864" align="aligncenter" width="300" caption="Custom field styling and nicer field names for JSF validation"\][![Custom field styling and nicer field names for JSF validation](jsf_jquery_validation-300x68.webp "jsf_jquery_validation")](jsf_jquery_validation.webp)\[/caption\] Unfortunately there are times when jsf insists on inserting field ids into the message.
+We didn't have room on our pages for individual message boxes, and also had the need to **style specific fields on our JSF pages whenever validation failed on the server,** with **user friendly field names in the message.** Example:  "User Name is Required" , and the field for User Name is highlighted red. [caption id="attachment_864" align="aligncenter" width="300" caption="Custom field styling and nicer field names for JSF validation"][![Custom field styling and nicer field names for JSF validation](jsf_jquery_validation-300x68.webp "jsf_jquery_validation")](jsf_jquery_validation.webp)[/caption] Unfortunately there are times when jsf insists on inserting field ids into the message.
 
 ### Here's the scenario;
 
@@ -76,17 +76,17 @@ The jQuery snippet (well plain JS too) is where this all comes together. We iter
     $('#messageList li').each(function(i) { // for each li in ul 
             var id=$(this).text().split(':'); // split on colon
             if(id.length>1){ // if field id was present, go to work
-    		$('#'+id\[0\]).css('color','red'); //make faulted field fonts red
-                    $('#'+id\[0\]).css('border-color','red'); // make faulted fields border red
-                    id\[0\]=id\[0\].replace(/_/g," "); // replace any "_" with spaces
-                    $(this).text(id\[0\] + ' ' + id\[1\]); // make new message the nicer way
+    		$('#'+id[0]).css('color','red'); //make faulted field fonts red
+                    $('#'+id[0]).css('border-color','red'); // make faulted fields border red
+                    id[0]=id[0].replace(/_/g," "); // replace any "_" with spaces
+                    $(this).text(id[0] + ' ' + id[1]); // make new message the nicer way
             }
     });
     
     What if I can't use prependID="false" ?
     ---------------------------------------
     
-    IF you can't or do not want to use that attribute, make the following changes: \*Prepend the form's Id to your messages (ex: "jidt23:First\_Name:Message to user") \*Adjust jQuery to use buckets 1 and 2 sperated by a colon for the field id (jidt23:First\_Name), and then discard 1, run replace on 2, and show 2 and 3 as the message (First Name is required).
+    IF you can't or do not want to use that attribute, make the following changes: *Prepend the form's Id to your messages (ex: "jidt23:First_Name:Message to user") *Adjust jQuery to use buckets 1 and 2 sperated by a colon for the field id (jidt23:First_Name), and then discard 1, run replace on 2, and show 2 and 3 as the message (First Name is required).
     
     Summary
     -------

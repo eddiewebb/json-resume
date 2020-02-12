@@ -33,12 +33,12 @@ THe single method in the model will read only the values we care about for a par
 
  array( 
 				array(  
- 				'required' => array('rule'=>VALID\_NOT\_EMPTY,'message'=>'Must not be empty!'),  
+ 				'required' => array('rule'=>VALID_NOT_EMPTY,'message'=>'Must not be empty!'),  
  				'length' => array( 'rule' => array('maxLength', 20),'message'=>'That Key is a bit too long, keep it under 20 characters' )  
  				)),
 			'value' => array( 
 				array(  
- 				'required' => array('rule'=>VALID\_NOT\_EMPTY,'message'=>'Must not be empty!'),  
+ 				'required' => array('rule'=>VALID_NOT_EMPTY,'message'=>'Must not be empty!'),  
  				'length' => array( 'rule' => array('maxLength', 60),'message'=>'That Value is a bit too long, keep it under 60 characters' )  
  				))
 		);
@@ -47,19 +47,19 @@ THe single method in the model will read only the values we care about for a par
 		$min=0;
 		$max=0;
 		
-		$full\_result=$this->findAll(array('key like'=>'botcheck\_%_difficulty'));
+		$full_result=$this->findAll(array('key like'=>'botcheck_%_difficulty'));
 		
 		
 		foreach($full_result as $record){
-			switch($record\['Setting'\]\['key'\]){
+			switch($record['Setting']['key']){
 				
-				case 'botcheck\_min\_difficulty':
-				$min=$record\['Setting'\]\['value'\];
+				case 'botcheck_min_difficulty':
+				$min=$record['Setting']['value'];
 				break;
 				
 				
-				case 'botcheck\_max\_difficulty':
-				$max=$record\['Setting'\]\['value'\];
+				case 'botcheck_max_difficulty':
+				$max=$record['Setting']['value'];
 				break;
 				default;
 			}

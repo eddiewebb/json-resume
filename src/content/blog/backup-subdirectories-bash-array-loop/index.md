@@ -13,28 +13,28 @@ Background
 My webroot is pretty straightforward. Each subdirectory is the full URL of a site. Example:
 
 webroot
-|\-\- baungenjar.com
-|\-\- bythebootstrap.com
-|\-\- cafe--espresso.com
-|\-\- crm.webbmaster.org
-|\-\- eaw-technologies.com
-|\-\- edwardawebb.com
-|\-\- entrepreneurmeetcapitalist.com
-|\-\- kicksareforribs.com
-|\-\- ollitech.com
-|\-\- outlaw-photography.com
-|\-\- piwik.baungenjar.com
-|\-\- rendinaro.com
-|\-\- riversidegrillnh.com
-|\-\- sidi.webbmaster.org
-|\-\- status.webbmaster.org
-|\-\- steadfastsites.com
-|\-\- stonybrookpottery.com
-|\-\- survey.webbmaster.org
-|\-\- top.webbmaster.org
-|\-\- trippymedia.com
-|\-\- webbmaster.org
-`\-\- wishlist.webbmaster.org
+|-- baungenjar.com
+|-- bythebootstrap.com
+|-- cafe--espresso.com
+|-- crm.webbmaster.org
+|-- eaw-technologies.com
+|-- edwardawebb.com
+|-- entrepreneurmeetcapitalist.com
+|-- kicksareforribs.com
+|-- ollitech.com
+|-- outlaw-photography.com
+|-- piwik.baungenjar.com
+|-- rendinaro.com
+|-- riversidegrillnh.com
+|-- sidi.webbmaster.org
+|-- status.webbmaster.org
+|-- steadfastsites.com
+|-- stonybrookpottery.com
+|-- survey.webbmaster.org
+|-- top.webbmaster.org
+|-- trippymedia.com
+|-- webbmaster.org
+`-- wishlist.webbmaster.org
 
 So I want to take each directory and create a gzipped tarball using _tar -zcf_.    I don't want to do any manual intervention. *ALso, I want to exclude some directories.
 
@@ -48,21 +48,21 @@ Code
 
 #!/bin/bash
 #
-\# Backup all directories within webroot
-\# use empty file ".DONT_BACKUP" to exclude any directory
+# Backup all directories within webroot
+# use empty file ".DONT_BACKUP" to exclude any directory
 
 
-\# days to retain backup. Used by recycler script
+# days to retain backup. Used by recycler script
 DEFRETAIN=14
-LOGFILE=/home/webb\_e/site\_backups/WebrootBackup.log
+LOGFILE=/home/webb_e/site_backups/WebrootBackup.log
 #
 #
-BU\_FILE\_COUNT=0
+BU_FILE_COUNT=0
 #
-\# and name of backup source subfolder under the users home
+# and name of backup source subfolder under the users home
 WEBDIR=webroot
 #
-\# and name of dest folder for tar files
+# and name of dest folder for tar files
 DESDIR=site_backups
 
 #alright, thats it for config, the rest is script
@@ -72,49 +72,49 @@ DESDIR=site_backups
 cd ${HOME}/${WEBDIR}/
 
 
-TODAY=\`date\`
-BU\_FILE\_COUNT=0
+TODAY=`date`
+BU_FILE_COUNT=0
 suffix=$(date +%m-%d-%Y)
-printf "\\n\\n********************************************\\n\\tSite Backup r Log for:\\n\\t" | tee -a $LOGFILE
+printf "\n\n********************************************\n\tSite Backup r Log for:\n\t" | tee -a $LOGFILE
 echo $TODAY | tee -a $LOGFILE
-printf "********************************************\\n" $TODAY | tee -a $LOGFILE
+printf "********************************************\n" $TODAY | tee -a $LOGFILE
 echo "see ${LOGFILE} for details"
 
-#for DIR in $(ls | grep ^\[a-z.\]*$) 
+#for DIR in $(ls | grep ^[a-z.]*$) 
 
-for DIR in $(ls | grep ^\[a-z.\]*$) 
+for DIR in $(ls | grep ^[a-z.]*$) 
 do
 	echo $DIR
 	#tar the current directory
-	if \[ -f $DIR/.DONT_BACKUP \]
+	if [ -f $DIR/.DONT_BACKUP ]
 	then
 
-		printf "\\tSKIPPING $DIR as it contains ignore file\\n" | tee -a $LOGFILE
+		printf "\tSKIPPING $DIR as it contains ignore file\n" | tee -a $LOGFILE
 		
 	else
 		cpath=${HOME}/${DESDIR}/${DIR}
 		#
 		#check if we need to make path
 		#
-		if \[ -d $cpath \]
+		if [ -d $cpath ]
 		then
 			# direcotry exists, we're good to continue
 			filler="umin"
 		else
 			echo Creating $cpath
 			mkdir -p $cpath
-			echo $DEF\_RETAIN > $cpath/.RETAIN\_RULE
+			echo $DEF_RETAIN > $cpath/.RETAIN_RULE
 		fi
 		#
 		 
 		tar -zcf ${HOME}/${DESDIR}/${DIR}/${DIR}_$suffix.tar.gz ./$DIR
-		BU\_FILE\_COUNT=$(( $BU\_FILE\_COUNT + 1 ))
+		BU_FILE_COUNT=$(( $BU_FILE_COUNT + 1 ))
 	fi
 	
 done
-printf "\\n\\n********************************************\\n" | tee -a $LOGFILE
-echo $BU\_FILE\_COUNT sites were backed up
-printf "********************************************\\n" $TODAY | tee -a $LOGFILE
+printf "\n\n********************************************\n" | tee -a $LOGFILE
+echo $BU_FILE_COUNT sites were backed up
+printf "********************************************\n" $TODAY | tee -a $LOGFILE
 
 Result
 ------
@@ -123,10 +123,10 @@ $ ~/scripts/file_backups/SiteBackup.sh
 see /home/myself/site_backups/WebrootBackup.log for details
 
 
-\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
+********************************************
         Site Backup r Log for:
         Thu Apr 15 14:31:53 PDT 2010
-\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
+********************************************
 albums.stonybrookpottery.com
 baungenjar.com
 bythebootstrap.com
@@ -160,9 +160,9 @@ webbmaster.org
 wishlist.webbmaster.org
 
 
-\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
+********************************************
 33 sites were backed up
-\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
+********************************************
 
 But wait! We wanted to automate this whole thing right? And so we shall.
 
@@ -175,7 +175,7 @@ crontab -e
 
 You may see some existing lines or you may not. Just remember one job per line. THe layout may seem overwhelming at first, but its quite simple, and breaks down like this
 
-min     hour     day    month    weekday     job\_to\_Run
+min     hour     day    month    weekday     job_to_Run
 
 The values are in the respective ranges for day of week 0 is Sunday.
 

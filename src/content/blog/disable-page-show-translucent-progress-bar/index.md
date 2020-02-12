@@ -5,7 +5,7 @@ draft: false
 tags: [ajax, CakePHP, CakePHP, CSS, pagination, progress bar]
 ---
 
-Ever uploaded an image or iniated another timeful(slow) process on a webpage? Some sites appear to fade out the whole window while a small loading bar appears. \[caption id="attachment_62" align="aligncenter" width="300" caption="Loading Bar translucent overlay"\][![](windowfade2-300x249.webp "Blocked out page")](windowfade2.webp "Example of a page using this technique")\[/caption\] **This not only clearly indicates to users that the server is working in the background, but it is a great way to block the impatient click happy users as well.** Its a pretty straightforward effect done with javascript and css. CakePHP users can let Cake handle the JS. The critical part is using CSS to create a translucent block that we can overlay on the page. 
+Ever uploaded an image or iniated another timeful(slow) process on a webpage? Some sites appear to fade out the whole window while a small loading bar appears. [caption id="attachment_62" align="aligncenter" width="300" caption="Loading Bar translucent overlay"][![](windowfade2-300x249.webp "Blocked out page")](windowfade2.webp "Example of a page using this technique")[/caption] **This not only clearly indicates to users that the server is working in the background, but it is a great way to block the impatient click happy users as well.** Its a pretty straightforward effect done with javascript and css. CakePHP users can let Cake handle the JS. The critical part is using CSS to create a translucent block that we can overlay on the page. 
 
 #### Ok so there is three key pieces to achieving this effect;
 
@@ -40,7 +40,7 @@ The hidden div
 the stylesheet
 --------------
 
-/\*the basics, and works for FF\*/
+/*the basics, and works for FF*/
 #LoadingDiv{
 	margin:0px 0px 0px 0px;
 	position:fixed;
@@ -54,8 +54,8 @@ the stylesheet
 	/*background-color:#666666;
 	border:1px solid #000000;*/
 	}
-/\*IE will need an 'adjustment'\*/
-\* html #LoadingDiv{
+/*IE will need an 'adjustment'*/
+* html #LoadingDiv{
      position: absolute;
      height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
 	}
@@ -69,7 +69,7 @@ Note: those using CakePHP should first read this article in the bakery on [advan
 
 var ldiv = document.getElementById('LoadingDiv');
 ldiv.style.display='block';
-/\*Do your ajax calls, sorting or laoding, etc.\*/
+/*Do your ajax calls, sorting or laoding, etc.*/
 ldiv.style.display = 'none';
 
 ### Example: The CakePHP Pagination Call

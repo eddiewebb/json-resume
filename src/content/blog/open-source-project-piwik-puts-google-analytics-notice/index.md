@@ -21,7 +21,7 @@ The features in Piwik are comparable to those found in Google Analytics. The big
 
 ### The look of Piwik
 
-Maybe I'm alone in this, but I love the new 'clean' look many web applications are using. Piwik is no exception. Simplistic beauty. \[caption id="attachment_95" align="aligncenter" width="300" caption="Admin dashboard in Piwik"\][![Admin dashboard in Piwik](windowfade4-300x159.webp "windowfade4")](windowfade4.webp)\[/caption\] The dashboard view allows you to select any of the widgets from other pages to highlight whats critical to you. The widgets all do a great job of diplaying data, and most allow you to specify what type of output they should format the data. The various output methods include
+Maybe I'm alone in this, but I love the new 'clean' look many web applications are using. Piwik is no exception. Simplistic beauty. [caption id="attachment_95" align="aligncenter" width="300" caption="Admin dashboard in Piwik"][![Admin dashboard in Piwik](windowfade4-300x159.webp "windowfade4")](windowfade4.webp)[/caption] The dashboard view allows you to select any of the widgets from other pages to highlight whats critical to you. The widgets all do a great job of diplaying data, and most allow you to specify what type of output they should format the data. The various output methods include
 
 *   Bar graphs
 *   Pie charts

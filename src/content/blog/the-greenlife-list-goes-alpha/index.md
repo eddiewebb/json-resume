@@ -9,15 +9,15 @@ That's right! I have decided to publicize **The GreenLife List** on a small basi
 
 ### Evaluate, how?
 
-\- Human Rights
+- Human Rights
 
 *   Paying living wages is a requirement for survival, not an area to cut costs.
 
-\- Sustainability
+- Sustainability
 
 *   Beyond planting trees, every resource needs to be evaluated for sustainable use in the long term.
 
-\- Philanthropy
+- Philanthropy
 
 *   What better use of profits than benefiting the community that provides your workers and wealth?
 

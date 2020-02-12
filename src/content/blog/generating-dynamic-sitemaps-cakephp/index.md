@@ -11,7 +11,7 @@ Sitemaps are although not critical, have been accepted as a standard way to let 
 
 Post->recursive=-1;
 		$this->Info->recursive=-1;
-		$this->set('posts', $this->Post->find('all', array( 'conditions' => array('is\_published'=>1,'is\_public'=>'1'), 'fields' => array('date_modified','id'))));
+		$this->set('posts', $this->Post->find('all', array( 'conditions' => array('is_published'=>1,'is_public'=>'1'), 'fields' => array('date_modified','id'))));
 		$this->set('pages', $this->Info->find('all', array( 'conditions' => array('ispublished' => 1 ), 'fields' => array('date_modified','id','url'))));
 	}
 }
@@ -29,13 +29,13 @@ Now that we have a nice clean xml layout, we can populate it using a cool sitema
 		1.0 
 		
 	
-	 toAtom($post\['Info'\]\['date_modified'\]); ?>
+	 toAtom($post['Info']['date_modified']); ?>
 		0.8 
 	
 		
 	
-	 'posts','action'=>'view','id'=>$post\['Post'\]\['id'\]),true); ?>
-		toAtom($post\['Post'\]\['date_modified'\]); ?>
+	 'posts','action'=>'view','id'=>$post['Post']['id']),true); ?>
+		toAtom($post['Post']['date_modified']); ?>
 		0.8 
 
 You'll notice the use of the Router class to give up the proper fully expanded domain. You can see my two model names 'Info' and 'Post' that were set in the controller. Almost DOne! We need to let Cake parse extensions like xml, and instead use them as part of our directory structure (hence both views belong to xml folders above) this turns urls like _/sitemaps/index.xml_ into _/views/sitemaps/xml/index.ctp_ and uses the appropriate layout based on extension as well, pretty cool huh? (You'll notice I also parse rss extension for my news feed, but thats another post.)
@@ -59,11 +59,11 @@ Router::connect('/sitemap', array('controller' =>; 'sitemaps', 'action' =>; 'ind
 				
 
 #### 
-					link($post\['title'\],'/posts/view/'.$post\['id'\],array('title'=>'Read more about '.$post\['title'\]));
+					link($post['title'],'/posts/view/'.$post['id'],array('title'=>'Read more about '.$post['title']));
 					?>
 				
 
-				regularize($post\['modified'\]);?>
+				regularize($post['modified']);?>
 				
 
 * * * 

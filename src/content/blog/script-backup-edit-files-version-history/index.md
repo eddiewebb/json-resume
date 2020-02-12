@@ -40,19 +40,19 @@ version 10 already exists today
 ### The Code: Script to backup and edit a file with version
 
 #!/bin/bash
-\# Author : Eddie Webb https://blog.edwardawebb.com
+# Author : Eddie Webb https://blog.edwardawebb.com
 #License: GNU GPL v3 - http://www.gnu.org/licenses/gpl-3.0-standalone.html
 #
-\#    backup and edit
-\# Script to edit a file only after making a backup tagged with date and version. 
-\# Only version will exist for any one day
+#    backup and edit
+# Script to edit a file only after making a backup tagged with date and version. 
+# Only version will exist for any one day
 #
 
 
 
-if \[ $# -ne 1 \]
+if [ $# -ne 1 ]
 then
-	printf"\\nUsage:\\n%s " $0
+	printf"\nUsage:\n%s " $0
 	exit 1
 fi
 
@@ -66,12 +66,12 @@ path=$file.backup.$date
 
 echo Backup Scheme: $path
 
-\# check for exsiting backups, and get highest version
+# check for exsiting backups, and get highest version
 for (( i=1;i <= $maxBacks; i=$i+1))
 do
 version=$i
 
-        if \[ -f "$path.$i" \]
+        if [ -f "$path.$i" ]
         then
                 echo version $i already exists today
         else
@@ -80,7 +80,7 @@ version=$i
         fi
 done
 #now push each copy back one for new (higher version are older, version 1 is the latest..
-if \[ $version -gt 1 \]
+if [ $version -gt 1 ]
 then
 
         for(( j=$version; j>1; j-- ))

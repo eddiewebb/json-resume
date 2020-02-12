@@ -4,8 +4,19 @@ title = "Eddie Webb"
 theme = "resume"
 enableGitInfo = true
 
-pygmentsCodeFences = true
-pygmentsCodeFencesGuessSyntax = true
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    tabWidth = 4
+    style = "tango"
+
+
+
 
 [taxonomies]
     tag = "tags"

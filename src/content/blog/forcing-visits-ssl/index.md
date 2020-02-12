@@ -36,18 +36,18 @@ First you need to decide if you want to force every page on your site to use SSL
 **You want any visit, any where to use ssl**. This probably the simplest solution. Create or append to your htaccess file in the top directory of your server. Some people use a port check (80 is typically http, while 443 is https) but if you have alernate configs or the user just adds :8080 to the end of the url this method is useless. Instead check whether the https environmental variable is set, if not then redirect.
 
 RewriteCond %{HTTPS} !=on
-RewriteRule ^(.*)$ https://%{SERVER_NAME}$1 \[R,L\]
+RewriteRule ^(.*)$ https://%{SERVER_NAME}$1 [R,L]
 
 ### Forcing sub-domains to use SSL
 
 Maybe **you only want mysecretarea.example.com to use SSL**, that's easy enough. Its the same premise as above, but you move the htaccess file into the directory that corresponds to the subdomain. Also change the second line like below;
 
 RewriteCond %{HTTPS} !=on
-RewriteRule ^(.*)$ https://mysecretarea.%{SERVER_NAME}$1 \[R,L\]
+RewriteRule ^(.*)$ https://mysecretarea.%{SERVER_NAME}$1 [R,L]
 
 ### Forcing a directory to use SSL
 
 This method cn get a little hairier if your using aliases or redirects on top of this one. You'll need to consider what order the commands are read. The basic principle is like so.  **You want all visits to example.com/admin to use ssl.** Create a htaccess file in the parent directory.  Again will check for the https variable, but this time we also check for the sub-directory to be in the path.
 
 RewriteCond %{HTTPS} !=on
-RewriteRule ^/admin/(.*)$ https://%{SERVER_NAME}/admin/$1 \[R,L\]
+RewriteRule ^/admin/(.*)$ https://%{SERVER_NAME}/admin/$1 [R,L]

@@ -33,23 +33,23 @@ Ok so once you add the site to Piwik it will give you a snippet of JavaScript to
 #### Piwik Site Snippet
 
  [var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.example.com/" : "http://piwik.example.com/");
-document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));  piwik\_action\_name = '';
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));  piwik_action_name = '';
 piwik_idsite = 10;
 piwik_url = pkBaseURL + "piwik.php";
-piwik\_log(piwik\_action\_name, piwik\_idsite, piwik_url); 
+piwik_log(piwik_action_name, piwik_idsite, piwik_url); 
 
 <p>Free analytics <img src="http://piwik.example.com/piwik.php?idsite=10" style="border:0" alt=""/></p>](http://piwik.org "Free analytics")
 
   
 Ok so the code's in the layout, but you may find an issue with Piwik's method of obtaining the url. Luckily we can build our own variable to pass to piwik.  
-This way we ensure that the pages list accurately reflects the layout of our site, like this; \[caption id="attachment_357" align="aligncenter" width="488" caption="Sample Pages Hierarchy"\]![Sample Pages Hierarchy](greenlife.webp "Sample Pages Hierarchy")\[/caption\]  
+This way we ensure that the pages list accurately reflects the layout of our site, like this; [caption id="attachment_357" align="aligncenter" width="488" caption="Sample Pages Hierarchy"]![Sample Pages Hierarchy](greenlife.webp "Sample Pages Hierarchy")[/caption]  
 In order to ensure our urls are captured correctly I wrote a small php snippet to create the page url to use. This varies slightly from 1.1 to 1.2 based on the changes for parameters from $params to $this->params.  
 
 #### CakePHP 1.1 app/views/layouts/default.ctp
 
 			
 Using:>'.$pageUrl.'<';
-	//echo $arraykeys->getKeys($params\['pass'\]);
+	//echo $arraykeys->getKeys($params['pass']);
 	?>
 
   
@@ -61,24 +61,24 @@ params;
 				
 	//determine whtehr to use url (which doesnt work on homepge ) or not.
 	$pageUrl='';
-	if(empty($params\['url'\]\['url'\])) {
+	if(empty($params['url']['url'])) {
 		//we need to concat our own url
-		$pageWeSee=$params\['controller'\];
+		$pageWeSee=$params['controller'];
 		//only append action if not 'info' pages ('index' is hidden in url, and should be hidden here)
-		if($pageWeSee!=='info') $pageWeSee.='/'.$params\['action'\];
+		if($pageWeSee!=='info') $pageWeSee.='/'.$params['action'];
 		//any parmaeterrs we should know about?
 		$ps='';
-		foreach( $params\['pass'\] as $p){
+		foreach( $params['pass'] as $p){
 			$ps.='/'.$p;
 		}//end for each
 		$pageUrl=$pageWeSee.$ps;
 	}else{
 		//oh how sweet, a fully built url for us
-		$pageUrl=$params\['url'\]\['url'\];
+		$pageUrl=$params['url']['url'];
 	}
 	//echo  '  
 Using:>'.$pageUrl.'<';
-	//echo $arraykeys->getKeys($params\['pass'\]);
+	//echo $arraykeys->getKeys($params['pass']);
 	?>
 
   
@@ -88,15 +88,15 @@ So all together the footer of your layouts should look like this;
 #### app/views/layouts/default.ctp
 
 Using:>'.$pageUrl.'<';
-	//echo $arraykeys->getKeys($params\['pass'\]);
+	//echo $arraykeys->getKeys($params['pass']);
 	?>
 	 [var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.example.com/" : "http://piwik.example.com/");
 	document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E")); 
 	 <!--
-	piwik\_action\_name = '<?php echo $pageUrl;?>';
+	piwik_action_name = '<?php echo $pageUrl;?>';
 	piwik_idsite = 5;
 	piwik_url = pkBaseURL + "piwik.php";
-	piwik\_log(piwik\_action\_name, piwik\_idsite, piwik_url);
+	piwik_log(piwik_action_name, piwik_idsite, piwik_url);
 	//-->  <p>Website analytics <img src="http://piwik.example.com/piwik.php" style="border:0" alt="piwik"/></p>](http://piwik.org "Website analytics") 
  
 
@@ -107,10 +107,10 @@ Using:>'.$pageUrl.'<';
 On any give page like http://example.com/posts/view/10042 the resulting piwik code would look like;
 
 	 [var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.example.com/" : "http://piwik.example.com/");
-	document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));  piwik\_action\_name = 'posts/view/10042';
+	document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));  piwik_action_name = 'posts/view/10042';
 	piwik_idsite = 5;
 	piwik_url = pkBaseURL + "piwik.php";
-	piwik\_log(piwik\_action\_name, piwik\_idsite, piwik_url); 
+	piwik_log(piwik_action_name, piwik_idsite, piwik_url); 
 	
 
 <p>Free analytics <img src="http://piwik.example.com/piwik.php?idsite=10" style="border:0" alt=""/></p>](http://piwik.org "Free analytics")

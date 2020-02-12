@@ -5,7 +5,7 @@ draft: false
 tags: [Site News]
 ---
 
-The amount of users who rely on Google Calendars to organize their personal and professional lives is staggering.   Seeing as most clients are comfortable and proficient with the technology, there is little reason to point them elsewhere when they ask for **a custom widget to display upcoming events** on their site. \[caption id="attachment_966" align="aligncenter" width="307" caption="Google Calendars are easy and everywhere, with a robust API we can leverage"\][![Google Calendars Icon](google-calendar-final1.webp "google-calendar-final1")](http://google.com/calendar)\[/caption\] In fact, the only trouble is that Google's provided widget layouts are all - er, well they are all quite lame, and likely won't match your current theme. No worries!  We can easily leverage Google's calendar API  and Javascript to create a fully customized Calendar widget showing the next N upcoming events in chronological order. Let's start by looking at the provided Google widgets.. \[caption id="attachment_967" align="aligncenter" width="300" caption="Default "Agenda" layout for Google Calendar"\][![Agenda widget provided by Google](default_calendar-300x224.webp "default_calendar")](default_calendar.webp)\[/caption\] Wow, that would look great in a Google webpage somewhere. But it probably doesn't meet the layout you were looking for.  So we'll use some basic HTML and JS to manipulate an Atom feed from Google. Getting the base URL for your Calendar
+The amount of users who rely on Google Calendars to organize their personal and professional lives is staggering.   Seeing as most clients are comfortable and proficient with the technology, there is little reason to point them elsewhere when they ask for **a custom widget to display upcoming events** on their site. [caption id="attachment_966" align="aligncenter" width="307" caption="Google Calendars are easy and everywhere, with a robust API we can leverage"][![Google Calendars Icon](google-calendar-final1.webp "google-calendar-final1")](http://google.com/calendar)[/caption] In fact, the only trouble is that Google's provided widget layouts are all - er, well they are all quite lame, and likely won't match your current theme. No worries!  We can easily leverage Google's calendar API  and Javascript to create a fully customized Calendar widget showing the next N upcoming events in chronological order. Let's start by looking at the provided Google widgets.. [caption id="attachment_967" align="aligncenter" width="300" caption="Default "Agenda" layout for Google Calendar"][![Agenda widget provided by Google](default_calendar-300x224.webp "default_calendar")](default_calendar.webp)[/caption] Wow, that would look great in a Google webpage somewhere. But it probably doesn't meet the layout you were looking for.  So we'll use some basic HTML and JS to manipulate an Atom feed from Google. Getting the base URL for your Calendar
 
 ### Getting the public URL for a calendar is easy.
 
@@ -112,30 +112,30 @@ function ReqChange() {
 if(maxEvents > items.length) maxEvents = items.length;
 				for (var n=0; n <= maxEvents-1; n++)
 				{
-					var itemTitle = items\[n\].getElementsByTagName('title').item(0).firstChild.data;
+					var itemTitle = items[n].getElementsByTagName('title').item(0).firstChild.data;
 					
 					// may have empty content if no event details were added
 					try{
-						var Summary = items\[n\].getElementsByTagName('content').item(0).firstChild.data;
+						var Summary = items[n].getElementsByTagName('content').item(0).firstChild.data;
 					}catch(e){
 						var Summary = '';
 					}
 
 
 var eventId="";
-var baseUrl=items\[n\].getElementsByTagName('link').item(0).attributes.getNamedItem("href").value;
+var baseUrl=items[n].getElementsByTagName('link').item(0).attributes.getNamedItem("href").value;
 //alert(calId);
 
 					var itemLink = baseUrl;
-console.log(items\[n\].getElementsByTagName('when'));
-var roughStartDate=items\[n\].getElementsByTagName('when').item(0).attributes.getNamedItem("startTime").value;
+console.log(items[n].getElementsByTagName('when'));
+var roughStartDate=items[n].getElementsByTagName('when').item(0).attributes.getNamedItem("startTime").value;
 
 
 
 					try 
 					{  var mydate=new Date(roughStartDate);
 var readAs="" + (mydate.getMonth()+1) + "/" + mydate.getDate() + "/" + mydate.getFullYear();
-						var itemPubDate = '<span class="event-date">\['+ readAs+'\]</span> ';
+						var itemPubDate = '<span class="event-date">['+ readAs+']</span> ';
 					} 
 					catch (e) 
 					{ 

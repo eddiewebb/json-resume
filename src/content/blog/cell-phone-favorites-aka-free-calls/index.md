@@ -35,36 +35,36 @@ This is a T-Mobile Call Log. There are 6 fields. I only care about 3 of them. Th
 
 ### The AWK Script to Total and Sort Call Logs
 
-\*\*\* Please pay attention to the field numbers used ($4,$5,$6)  the order and count of your fields may differ ***
+*** Please pay attention to the field numbers used ($4,$5,$6)  the order and count of your fields may differ ***
 
-\# awk script that totals minutes based on verizon call log (pasted form site)
+# awk script that totals minutes based on verizon call log (pasted form site)
 
 #usage: cat callLog | awk -F";" -f #in T-Mobile world a F denote mobile to mobile and V denote my fave
 #will have 3 buckets in total then
-$2 !~ "(\[VF\])" {minutes\[$1\] += $3}  #whenever minutes
-$2 == "(V)" {faves\[$1\] += $3} #myfaves
-$2 == "(F)" {tm\[$1\] += $3} #mobile to mobile
+$2 !~ "([VF])" {minutes[$1] += $3}  #whenever minutes
+$2 == "(V)" {faves[$1] += $3} #myfaves
+$2 == "(F)" {tm[$1] += $3} #mobile to mobile
 
 #print a nice summary please
 END {		
 		for (i in minutes)
 		{			
-			 total += minutes\[i\]
-			printf "%s calltime totaled %d\\n", i, minutes\[i\]
+			 total += minutes[i]
+			printf "%s calltime totaled %d\n", i, minutes[i]
 		}
 		printf "Total: %d",total
-		printf "\\n\\n Faves Totals\\n"
+		printf "\n\n Faves Totals\n"
 		for (i in faves)
 		{			
-			 ftotal += faves\[i\]
-			printf "%s calltime totaled %d\\n", i, faves\[i\]
+			 ftotal += faves[i]
+			printf "%s calltime totaled %d\n", i, faves[i]
 		}
 		printf "Total: %d",ftotal
-		printf "\\n\\n T-Mobile Totals\\n"
+		printf "\n\n T-Mobile Totals\n"
 		for (i in tm)
 		{			
-			 ttotal += tm\[i\]
-			printf "%s calltime totaled %d\\n", i, tm\[i\]
+			 ttotal += tm[i]
+			printf "%s calltime totaled %d\n", i, tm[i]
 		}
 		printf "Total: %d",ttotal
 	} 

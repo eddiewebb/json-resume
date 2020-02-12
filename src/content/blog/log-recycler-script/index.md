@@ -13,33 +13,33 @@ The problem
 Your server is being overrun with numerous files that just hang around long after they have served there useful life. These files may be small or large, but something about leaving unused files hanging around doesn't feel right. After just a few days of mysql backups I end up with a directory structure like this;
 
 sql_dumps/
-|\-\- edwardawebb.com
-|   |\-\- edwardawebb\_wordpress\_01-13-2009.sql.gz
-|   |\-\- edwardawebb\_wordpress\_01-14-2009.sql.gz
-|   |\-\- edwardawebb\_wordpress\_01-15-2009.sql.gz
-|   |\-\- edwardawebb\_wordpress\_01-16-2009.sql.gz
-|   |\-\- edwardawebb\_wordpress\_01-17-2009.sql.gz
-|   |\-\- edwardawebb\_wordpress\_01-18-2009.sql.gz
-|   `\-\- edwardawebb\_wordpress\_01-19-2009.sql.gz
-|\-\- mantis.mainsite.org
-|   |\-\- mainsite\_mantis\_01-13-2009.sql.gz
-|   |\-\- mainsite\_mantis\_01-14-2009.sql.gz
-|   |\-\- mainsite\_mantis\_01-15-2009.sql.gz
-|   |\-\- mainsite\_mantis\_01-16-2009.sql.gz
-|   |\-\- mainsite\_mantis\_01-17-2009.sql.gz
-|   |\-\- mainsite\_mantis\_01-18-2009.sql.gz
-|   `\-\- mainsite\_mantis\_01-19-2009.sql.gz
-`\-\- taskfreak.mainsite.org
-    |\-\- mainsite\_taskfreak\_01-11-2009
-    |\-\- mainsite\_taskfreak\_01-11-2009.sql.gz
-    |\-\- mainsite\_taskfreak\_01-12-2009.sql.gz
-    |\-\- mainsite\_taskfreak\_01-13-2009.sql.gz
-    |\-\- mainsite\_taskfreak\_01-14-2009.sql.gz
-    |\-\- mainsite\_taskfreak\_01-15-2009.sql.gz
-    |\-\- mainsite\_taskfreak\_01-16-2009.sql.gz
-    |\-\- mainsite\_taskfreak\_01-17-2009.sql.gz
-    |\-\- mainsite\_taskfreak\_01-18-2009.sql.gz
-    `\-\- mainsite\_taskfreak\_01-19-2009.sql.gz
+|-- edwardawebb.com
+|   |-- edwardawebb_wordpress_01-13-2009.sql.gz
+|   |-- edwardawebb_wordpress_01-14-2009.sql.gz
+|   |-- edwardawebb_wordpress_01-15-2009.sql.gz
+|   |-- edwardawebb_wordpress_01-16-2009.sql.gz
+|   |-- edwardawebb_wordpress_01-17-2009.sql.gz
+|   |-- edwardawebb_wordpress_01-18-2009.sql.gz
+|   `-- edwardawebb_wordpress_01-19-2009.sql.gz
+|-- mantis.mainsite.org
+|   |-- mainsite_mantis_01-13-2009.sql.gz
+|   |-- mainsite_mantis_01-14-2009.sql.gz
+|   |-- mainsite_mantis_01-15-2009.sql.gz
+|   |-- mainsite_mantis_01-16-2009.sql.gz
+|   |-- mainsite_mantis_01-17-2009.sql.gz
+|   |-- mainsite_mantis_01-18-2009.sql.gz
+|   `-- mainsite_mantis_01-19-2009.sql.gz
+`-- taskfreak.mainsite.org
+    |-- mainsite_taskfreak_01-11-2009
+    |-- mainsite_taskfreak_01-11-2009.sql.gz
+    |-- mainsite_taskfreak_01-12-2009.sql.gz
+    |-- mainsite_taskfreak_01-13-2009.sql.gz
+    |-- mainsite_taskfreak_01-14-2009.sql.gz
+    |-- mainsite_taskfreak_01-15-2009.sql.gz
+    |-- mainsite_taskfreak_01-16-2009.sql.gz
+    |-- mainsite_taskfreak_01-17-2009.sql.gz
+    |-- mainsite_taskfreak_01-18-2009.sql.gz
+    `-- mainsite_taskfreak_01-19-2009.sql.gz
 
 Although 24 files may seem manageable, those who deal with log files and multiple sites know that this can quickly get out of hand.
 
@@ -57,16 +57,16 @@ We lazily create a shell script to run at weekly intervals to purge all those ol
 #this script will run through all nested directories of a parent just killing off all matching files.
 
 ######
-\### Set these values
+### Set these values
 ######
 
-\## default days to retain (override with .RETAIN_RULE in specific directory
+## default days to retain (override with .RETAIN_RULE in specific directory
 DEFRETAIN=60
 
 #want to append the activity to a log? good idea, add its location here
-LOGFILE=\`pwd\`/Recycler.log
+LOGFILE=`pwd`/Recycler.log
 
-\# enter the distinguishing extension, or portion of the filename here (eg. log, txt, etc.)
+# enter the distinguishing extension, or portion of the filename here (eg. log, txt, etc.)
 EXTENSION=sql
 
 
@@ -75,7 +75,7 @@ EXTENSION=sql
 SQLDIR=$HOME/sql_dumps
 
 #####
-\##   End user configuartion
+##   End user configuartion
 #####
 
 
@@ -86,56 +86,56 @@ echo see $LOGFILE for details
 cd $SQLDIR
 
 #if your sub-dirs have some crazy characters you may adjust this regex
-DIRS=\`ls | grep ^\[a-z.\]*$\`
+DIRS=`ls | grep ^[a-z.]*$`
 
 
-TODAY=\`date\`
+TODAY=`date`
 
-printf "\\n\\n********************************************\\n\\tSQL Recycler Log for:\\n\\t" | tee -a $LOGFILE
+printf "\n\n********************************************\n\tSQL Recycler Log for:\n\t" | tee -a $LOGFILE
 echo $TODAY | tee -a $LOGFILE
-printf "********************************************\\n" $TODAY | tee -a $LOGFILE
+printf "********************************************\n" $TODAY | tee -a $LOGFILE
 
 for DIR in $DIRS 
 do
 	pushd $DIR >/dev/null
-	HERE=\`pwd\`
-	printf "\\n\\n%s\\n" $HERE | tee -a $LOGFILE
-	if \[ -f .RETAIN_RULE \]
+	HERE=`pwd`
+	printf "\n\n%s\n" $HERE | tee -a $LOGFILE
+	if [ -f .RETAIN_RULE ]
 	then
-		printf "\\tdefault Retain period being overridden\\n" | tee -a $LOGFILE
+		printf "\tdefault Retain period being overridden\n" | tee -a $LOGFILE
 		read RETAIN < .RETAIN_RULE
 	else
 		RETAIN=$DEFRETAIN
 	fi
 	
-	printf "\\tpurging files older than %s days\\n" ${RETAIN} | tee -a $LOGFILE
+	printf "\tpurging files older than %s days\n" ${RETAIN} | tee -a $LOGFILE
 	
-	OLDFILES=\`find -mtime +${RETAIN} -regex .*${EXTENSION}.*\`
+	OLDFILES=`find -mtime +${RETAIN} -regex .*${EXTENSION}.*`
 
 	set -- $OLDFILES
 
-	if \[ -z $1 \]
+	if [ -z $1 ]
 	then
-		printf "\\tNo files matching purge criteria\\n" | tee -a $LOGFILE
+		printf "\tNo files matching purge criteria\n" | tee -a $LOGFILE
 	else
-		printf "\\tSQL Files being Delete from $HERE\\n" | tee -a $LOGFILE
-		printf "\\t\\t%s\\n" $OLDFILES  | tee -a $LOGFILE
+		printf "\tSQL Files being Delete from $HERE\n" | tee -a $LOGFILE
+		printf "\t\t%s\n" $OLDFILES  | tee -a $LOGFILE
 	fi
 
  	rm -f $OLDFILES
-	if \[ $? -ne 0 \]
+	if [ $? -ne 0 ]
 	then	
 		echo "Error while deleting last set" | tee -a $LOGFILE
 		exit 2
 	else
-		printf "\\tSuccess\\n" | tee -a $LOGFILE
+		printf "\tSuccess\n" | tee -a $LOGFILE
 	fi
 	popd >/dev/null
 done
 
-did you notice the bit about .RETAIN\_RULE? good! I added this after I realized that I don't treat all my sites equally. For this very blog which is backed up daily I only need 3-4 days back max. But for other sites that I back up monthly I need to keep the default 60 days or 1-2 files. So I set the default in the script to 60. But I allow it to be overwritten by adding a simple text file to any directory. If a file .RETAIN\_RULE is present it will read the first line (and first line only!) for a new value, example;
+did you notice the bit about .RETAIN_RULE? good! I added this after I realized that I don't treat all my sites equally. For this very blog which is backed up daily I only need 3-4 days back max. But for other sites that I back up monthly I need to keep the default 60 days or 1-2 files. So I set the default in the script to 60. But I allow it to be overwritten by adding a simple text file to any directory. If a file .RETAIN_RULE is present it will read the first line (and first line only!) for a new value, example;
 
-#### $HOME/sql\_dumps/dailysite.com/.RETAIN\_RULE
+#### $HOME/sql_dumps/dailysite.com/.RETAIN_RULE
 
 5
 #only keep files in this single directory around for 5 days
@@ -144,35 +144,35 @@ notice i comment after the actual data! This means my actual directory structure
 
 #tree -a sql_dumps
 sql_dumps/
-|\-\- edwardawebb.com
-|   |\-\- .RETAIN_RULE
-|   |\-\- edwardawebb\_wordpress\_01-13-2009.sql.gz
-|   |\-\- edwardawebb\_wordpress\_01-14-2009.sql.gz
-|   |\-\- edwardawebb\_wordpress\_01-15-2009.sql.gz
-|   |\-\- edwardawebb\_wordpress\_01-16-2009.sql.gz
-|   |\-\- edwardawebb\_wordpress\_01-17-2009.sql.gz
-|   |\-\- edwardawebb\_wordpress\_01-18-2009.sql.gz
-|   `\-\- edwardawebb\_wordpress\_01-19-2009.sql.gz
-|\-\- mantis.mainsite.org
-|   |\-\- .RETAIN_RULE
-|   |\-\- mainsite\_mantis\_01-13-2009.sql.gz
-|   |\-\- mainsite\_mantis\_01-14-2009.sql.gz
-|   |\-\- mainsite\_mantis\_01-15-2009.sql.gz
-|   |\-\- mainsite\_mantis\_01-16-2009.sql.gz
-|   |\-\- mainsite\_mantis\_01-17-2009.sql.gz
-|   |\-\- mainsite\_mantis\_01-18-2009.sql.gz
-|   `\-\- mainsite\_mantis\_01-19-2009.sql.gz
-`\-\- taskfreak.mainsite.org
-    |\-\- mainsite\_taskfreak\_01-11-2009
-    |\-\- mainsite\_taskfreak\_01-11-2009.sql.gz
-    |\-\- mainsite\_taskfreak\_01-12-2009.sql.gz
-    |\-\- mainsite\_taskfreak\_01-13-2009.sql.gz
-    |\-\- mainsite\_taskfreak\_01-14-2009.sql.gz
-    |\-\- mainsite\_taskfreak\_01-15-2009.sql.gz
-    |\-\- mainsite\_taskfreak\_01-16-2009.sql.gz
-    |\-\- mainsite\_taskfreak\_01-17-2009.sql.gz
-    |\-\- mainsite\_taskfreak\_01-18-2009.sql.gz
-    `\-\- mainsite\_taskfreak\_01-19-2009.sql.gz
+|-- edwardawebb.com
+|   |-- .RETAIN_RULE
+|   |-- edwardawebb_wordpress_01-13-2009.sql.gz
+|   |-- edwardawebb_wordpress_01-14-2009.sql.gz
+|   |-- edwardawebb_wordpress_01-15-2009.sql.gz
+|   |-- edwardawebb_wordpress_01-16-2009.sql.gz
+|   |-- edwardawebb_wordpress_01-17-2009.sql.gz
+|   |-- edwardawebb_wordpress_01-18-2009.sql.gz
+|   `-- edwardawebb_wordpress_01-19-2009.sql.gz
+|-- mantis.mainsite.org
+|   |-- .RETAIN_RULE
+|   |-- mainsite_mantis_01-13-2009.sql.gz
+|   |-- mainsite_mantis_01-14-2009.sql.gz
+|   |-- mainsite_mantis_01-15-2009.sql.gz
+|   |-- mainsite_mantis_01-16-2009.sql.gz
+|   |-- mainsite_mantis_01-17-2009.sql.gz
+|   |-- mainsite_mantis_01-18-2009.sql.gz
+|   `-- mainsite_mantis_01-19-2009.sql.gz
+`-- taskfreak.mainsite.org
+    |-- mainsite_taskfreak_01-11-2009
+    |-- mainsite_taskfreak_01-11-2009.sql.gz
+    |-- mainsite_taskfreak_01-12-2009.sql.gz
+    |-- mainsite_taskfreak_01-13-2009.sql.gz
+    |-- mainsite_taskfreak_01-14-2009.sql.gz
+    |-- mainsite_taskfreak_01-15-2009.sql.gz
+    |-- mainsite_taskfreak_01-16-2009.sql.gz
+    |-- mainsite_taskfreak_01-17-2009.sql.gz
+    |-- mainsite_taskfreak_01-18-2009.sql.gz
+    `-- mainsite_taskfreak_01-19-2009.sql.gz
 
 ### The Result
 
@@ -181,23 +181,23 @@ So as the script walks through the structure above it prints a log to the effect
 see /home//sql_dumps/Recycler.log for details
 
 
-\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
+********************************************
 	SQL Recycler Log for:
 	Sun Feb 8 00:00:07 PST 2009
-\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
+********************************************
 
 
 /home/MYUSERNAME/sql_dumps/edwardawebb.com
        	default Retain period being overridden
 	purging files older than 4 days
 	SQL Files being Delete from /home/masterkeedu/sql_dumps/edwardawebb.com
-		./edwardawebb\_wordpress\_01-28-2009.sql.gz
-		./edwardawebb\_wordpress\_02-03-2009.sql.gz
-		./edwardawebb\_wordpress\_01-29-2009.sql.gz
-		./edwardawebb\_wordpress\_02-02-2009.sql.gz
-		./edwardawebb\_wordpress\_01-31-2009.sql.gz
-		./edwardawebb\_wordpress\_01-30-2009.sql.gz
-		./edwardawebb\_wordpress\_02-01-2009.sql.gz
+		./edwardawebb_wordpress_01-28-2009.sql.gz
+		./edwardawebb_wordpress_02-03-2009.sql.gz
+		./edwardawebb_wordpress_01-29-2009.sql.gz
+		./edwardawebb_wordpress_02-02-2009.sql.gz
+		./edwardawebb_wordpress_01-31-2009.sql.gz
+		./edwardawebb_wordpress_01-30-2009.sql.gz
+		./edwardawebb_wordpress_02-01-2009.sql.gz
 	Success
 
 
@@ -205,13 +205,13 @@ see /home//sql_dumps/Recycler.log for details
 	default Retain period being overridden
 	purging files older than 4 days
 	SQL Files being Delete from /home/masterkeedu/sql_dumps/mantis.mainsite.org
-		./webbmaster\_mantis\_01-30-2009.sql.gz
-		./webbmaster\_mantis\_01-31-2009.sql.gz
-		./webbmaster\_mantis\_02-01-2009.sql.gz
-		./webbmaster\_mantis\_01-27-2009.sql.gz
-		./webbmaster\_mantis\_01-29-2009.sql.gz
-		./webbmaster\_mantis\_02-02-2009.sql.gz
-		./webbmaster\_mantis\_01-28-2009.sql.gz
+		./webbmaster_mantis_01-30-2009.sql.gz
+		./webbmaster_mantis_01-31-2009.sql.gz
+		./webbmaster_mantis_02-01-2009.sql.gz
+		./webbmaster_mantis_01-27-2009.sql.gz
+		./webbmaster_mantis_01-29-2009.sql.gz
+		./webbmaster_mantis_02-02-2009.sql.gz
+		./webbmaster_mantis_01-28-2009.sql.gz
 	Success
 
 

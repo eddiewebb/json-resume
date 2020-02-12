@@ -17,7 +17,7 @@ Rely on mysqldump and mysql to do all the work? - YES!
 
 We need to drop tables, that's obvious.  But how to get all the tables with drop command in hand.  What about our ever so faithful and functional friend mysqldump? Of course! Not only can mysqldump handle giving us the names of all the tables, but it can also hand us the drop command. **You'll need to execute this command where mysqldump and mysql binaries live, typically this is /usr/bin.**
 
-/usr/bin/mysqldump -uuser\_name -psecretpassword --add-drop-table database\_name | grep ^DROP | /usr/bin/mysql  -uuser\_name -psecretpassword database\_name
+/usr/bin/mysqldump -uuser_name -psecretpassword --add-drop-table database_name | grep ^DROP | /usr/bin/mysql  -uuser_name -psecretpassword database_name
 
 SO we pump out all the table and data from the database,use grep to trash everything but the lines that begin with the drop commands and pass that right back into mysql. Works, but should we be passing and parsing all the data just to trash it? Probably not.
 
@@ -26,4 +26,4 @@ Keeping the workload small - no data!
 
 Particularly for those of you that have rather large Databases we don't want to waste time passing around data, so let's leave it out entirely.
 
-/usr/bin/mysqldump -uuser\_name -psecretpassword --no-data --add-drop-table database\_name | grep ^DROP | /usr/bin/mysql  -uuser\_name -psecretpassword database\_name
+/usr/bin/mysqldump -uuser_name -psecretpassword --no-data --add-drop-table database_name | grep ^DROP | /usr/bin/mysql  -uuser_name -psecretpassword database_name

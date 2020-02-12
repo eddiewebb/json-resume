@@ -37,6 +37,6 @@ Google has not been keen on charging consumers directly in the past for any of i
 
 ### Update - Confirmed
 
-Google is confirming the internal testing of a new phone, shared with employees from the recently created "mobile lab" - [http://googlemobile.blogspot.com/2009/12/android-dogfood-diet-for-holidays.html](http://googlemobile.blogspot.com/2009/12/android-dogfood-diet-for-holidays.html) \- but not sharing much more details
+Google is confirming the internal testing of a new phone, shared with employees from the recently created "mobile lab" - [http://googlemobile.blogspot.com/2009/12/android-dogfood-diet-for-holidays.html](http://googlemobile.blogspot.com/2009/12/android-dogfood-diet-for-holidays.html) - but not sharing much more details
 
 > Unfortunately, because dogfooding is a process exclusively for Google employees, we cannot share specific product details. We hope to share more after our dogfood diet.
