@@ -14,6 +14,9 @@
     "featured": true
 }
 
+
+
 This was a fun project that allowed me to explore GPiO, threading, service management and more.  The python script runs a system service. Inside the script a loop is reading real-time data from Sense Energy Monitoring and pushing that onto a FIFO queue read by a threaded process to present information on the LED panel and monoschrome display.
 
+{{< youtube Jnkek4CRb7w >}}
 
