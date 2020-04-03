@@ -1,6 +1,6 @@
 baseURL = "https://edwardawebb.com/"
 languageCode = "en-us"
-title = "Eddie Webb"
+title = "Eddie Webbinaro"
 theme = "resume"
 enableGitInfo = true
 
@@ -24,7 +24,7 @@ enableGitInfo = true
 
 [params]
     firstName = "Eddie"
-    lastName = "Webb"
+    lastName = "Webbinaro"
     profileImage = "img/TechChat.webp"
     phone = "603-463-0447"
     contactNote = "DevTools Engineer and DevOps Culture advocate"
