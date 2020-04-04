@@ -3,6 +3,8 @@ title: 'New Name, Same Game'
 date: 2020-04-02 08:00:00
 draft: false
 tags: [life, career, family]
+featured: true
+weight: 1
 ---
 
 I've pushed some changes to this site to reflect an important change - my name!
