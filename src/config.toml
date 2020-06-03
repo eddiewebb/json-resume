@@ -84,4 +84,4 @@ enableGitInfo = true
 
 
 [outputs]
-  home = ["HTML", "JSON"]
+    home = ["HTML", "JSON"]
