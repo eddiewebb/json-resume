@@ -20,6 +20,7 @@ enableGitInfo = true
 
 [taxonomies]
     tag = "tags"
+    "ADV Tags" = "advtags"
 
 
 [params]
