@@ -5,6 +5,7 @@ draft: false
 tags: [adv, motorcycles, riding]
 advtags: [forest, curvy, off-road]
 featured: true
+type: adv
 resources:
 - name: 'teaser'
   src: 'dambridge.png'
