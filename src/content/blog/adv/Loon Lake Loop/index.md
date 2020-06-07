@@ -8,11 +8,11 @@ featured: true
 type: adv
 resources:
 - name: 'teaser'
-  src: 'curves.JPG'
+  src: 'assets/curves.JPG'
 - name: 'map'
-  src: 'route.png'
+  src: 'assets/route.png'
 - name: 'gpx'
-  src: 'route.gpx'
+  src: 'assets/route.gpx'
 ---
 
 How far will your car go on "E"?
@@ -24,16 +24,16 @@ But when the indicator light came on my bike this weekend I knew my little tank 
 
 I started with one of my favorite roads to start my trip; Strackville Road. The road is only about 6 miles but it includes deep ruts, water crossing, and packed and loose rocks to navigate.  Its a great technical ride.
 
-{{< imgresize whataride.JPG "450x350" "Strackville Rd" >}}
+{{< imgresize "assets/whataride.JPG" "450x350" "Strackville Rd" >}}
 
 I had been back on tarmac for about 20 minutes when I turned onto Goldsmith rd, a class 3 packed gravel ride.  My indicator came on as soon as I straightened out.  Checking the map it was ~15 miles back to the last town, and ~10 miles to the next.  I knew the bike will get at least 15 miles on empty, so I pressed on.
 
 
-{{< imgresize lightson.JPG "450x350" "Indicator Light Comes on" >}}
+{{< imgresize "assets/lightson.JPG" "450x350" "Indicator Light Comes on" >}}
 
 County Road 26 was amazing, I wanted to really enjoy these twisty turns, and stop at every other one to take a picture, but with my empty mileage counter growing I grew more nervous with every twist that only revealed more road.
 
-{{< imgresize cr26.jpg "450x350" "County Road 26" >}}
+{{< imgresize "assets/cr26.jpg" "450x350" "County Road 26" >}}
 
 Where CR26 ended was popular state road, but the town was a miss. Checking the map again, and searching for gas stations my heart dropped atleast another 12 miles in the wrong direction. Heading home there was one about 20 miles out.
 
@@ -45,7 +45,7 @@ Optimism in heart I was optimistic this now major highway would have some little
 
 
 
-{{< imgresize 43miles.JPG "450x350" "43 miles on empty" >}}
+{{< imgresize "assets/43miles.JPG" "450x350" "43 miles on empty" >}}
 
 Wait, WAIT, turn-around!  Was that in fact an old hand-pump -- is it show or functional?  Do they actually have gas?! 
 

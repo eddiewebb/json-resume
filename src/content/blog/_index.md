@@ -3,6 +3,10 @@ title: "Blog"
 sitemap:
   priority : 0.9
 ---
-This section contains articles migrated from my old Wordpress site. Forgive the formatting please :)
+This section contains _mostly_ articles migrated from my old Wordpress site. It was more of notes to myself that i hoped would help others. A few got quite popular.  Who knew Oracle SQL was still so hot.  
+
+Anyway, I migrated them from wordpres to hugo, integrity suffered, Forgive the formatting please :)  
+
 <!--more-->
-The "featured" articles are those with highest comment count from WP.
+
+**You can check out my limited [Adventure Riding Blog]({{< ref "/blog/adv" >}}) for somethign different.**
