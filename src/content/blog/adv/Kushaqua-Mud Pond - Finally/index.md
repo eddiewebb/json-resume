@@ -13,7 +13,7 @@ resources:
   filename: ':siteName - :pageTitle.gpx'
 ---
 
-PLANNED RIDE: Here's the plan, re-visit CR-26 (full tank of gas this time!) and then turn southwest down Kushaqua-Mud Pond road down into Onchionta before returning eastward.
+PLANNED RIDE: Here's the plan, re-visit CR-26 (full tank of gas this time!) and then turn southwest down Kushaqua-Mud Pond road down into Onchiota before returning eastward.
 <!--more-->
 
 
