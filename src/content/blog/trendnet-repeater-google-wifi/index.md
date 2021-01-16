@@ -5,7 +5,7 @@ draft: false
 tags: [trendnet, wifi, google, bliki]
 ---
 
-I have a neat little trendnet ![Trendent N300](assets/router.webp) that I got on sale a while back with the idle idea I could expand my google mesh already 3 nodes strong.
+I have a neat little trendnet ![Trendent N300](router.webp) that I got on sale a while back with the idle idea I could expand my google mesh already 3 nodes strong.
 
 I tried a few times without much luck.
 

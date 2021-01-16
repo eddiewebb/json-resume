@@ -15,21 +15,11 @@ Moving forward I will be using the surname Webbinaro, which is the marriage of m
 Webb + Rendinaro = Webbinaro
 ```
 
-Although COVID-19 has slowed our process with the courts a bit, I'm updating my presence here and on all my social media and business profiles to reflect my new name.
+Now, despite the low-hanging joke for an SE and tech speaker it does not sound like `webinar` but rather `Webb-i-nair-o`, respecting the roots in my wife's family surname.
 
-But don't worry, I promise that Eddie Webbinaro is just as passionate about helping teams of every shape and size with awesome tools and culture of learning.
+Although COVID-19 has slowed our process with the courts a bit, we dit it after 4 months of paper pushing.
 
-To recap, Eddie Webb is further forth known as Eddie Webbinaro. Given my Eddie/Edward and intermiten inclusion of middle name, I now have 8 aliases. 
+I'm updating my presence here and on all my social media and business profiles to reflect my new name.  But don't worry, I promise that Eddie Webbinaro is just as passionate about helping teams of every shape and size with awesome tools and culture of learning.
 
-```
-Eddie Webb
-Eddie Arthur Webb # never use this
-Edward Webb
-Edward Arthur Webb #classic
-Eddie Webbinaro
-Eddie Arthur Webbinaro #meh
-Edward Webbinaro 
-Edward Arthur Webbinaro 
-```
+To recap, Eddie Webb is further forth known as Eddie Webbinaro. Given my indecisive use of Eddie and Edward combined intermittent inclusion of middle name, I now have 8 aliases, sweet!
 
-Woah, `Edward Arthur Webbinaro` - that's almost as good as Max Powers, but just call me Eddie... Webbinaro. :D
