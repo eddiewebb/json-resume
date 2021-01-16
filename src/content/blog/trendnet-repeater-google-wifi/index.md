@@ -5,13 +5,15 @@ draft: false
 tags: [trendnet, wifi, google, bliki]
 ---
 
-I have a neat little trendnet ![Trendent N300](router.webp) that I got on sale a while back with the idle idea I could expand my google mesh already 3 nodes strong.
+I have a neat little trendnet that I got on sale a while back with the idle idea I could expand my google mesh already 3 nodes strong.
+
+![Trendent N300](router.webp)
 
 I tried a few times without much luck.
 
-I Just could not find enough in the documentation to properly configure the repeater without hosting something.
+I Just could not find enough in the documentation to properly configure the repeater without hosing something.
 
-What do I mean hosting? It was like roulette trying to get  a few principles all working in tandem.
+What do I mean hosing? It was like roulette trying to get  a few principles all working in tandem.
 
 ### Desired Outcome
 
@@ -51,4 +53,6 @@ If everything went well we should be able to connect to either SSID at this poin
 
 Use acces on `.2` to change the SSID from the factory assigned to match your mesh.
 
+![Tada - new Access Point on the home wifi with perfect signal](newap.png)
 
+No more lost connections on the far-off wifi camera, everyone gets great signal.
