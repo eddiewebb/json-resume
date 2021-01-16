@@ -53,6 +53,6 @@ If everything went well we should be able to connect to either SSID at this poin
 
 Use acces on `.2` to change the SSID from the factory assigned to match your mesh.
 
-![Tada - new Access Point on the home wifi with perfect signal](newap.png)
+{{< imgresize "newap.png" "600x400" "Tada - new Access Point on the home wifi with perfect signal" >}}
 
 No more lost connections on the far-off wifi camera, everyone gets great signal.
