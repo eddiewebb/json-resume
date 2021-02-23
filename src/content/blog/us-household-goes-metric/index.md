@@ -11,7 +11,7 @@ I feel fortunate that my employer is based in Australia.  It's continued to push
 
 One small example was a recent thread in our "Makers" channel discussing where and when we see imperial and metric measures used. 
 
-Many of my Aussie co-workers pointed out they haven't needed to touch the _imperial spanners_ (That's a "standard wrench" for my American readers)  that their fathers left them ages ago. As my side of the world came round to face the sun some of them were wondering "Is the US really _that_ averse to metric? Don't they sometimes use both types of measures?"
+Many of my Aussie co-workers pointed out they haven't needed to touch the _imperial spanners_ (That's a "standard" or SAE wrench for my American readers ;) )  that their fathers left them ages ago. As my side of the world came round to face the sun some of them left the question there for us "Is the US really _that_ averse to metric? Don't they sometimes use both types of measures?"
 
 **Turns out the United States is already a "metric nation"** and has been since 1880's or 1970's depending on your interpretation.  
 
@@ -46,6 +46,14 @@ Because many American's, like my peers abroad did not even know Metric was _a th
 ## The U.S. Household
 
 Ok, so as we know U.S. Congress is inept, and will never pass any law that slightly inconviences industry.  So this U.S. Family is taking it upon ourselves to learn, adopt, and evangalize the international system of measure!
+
+To that end I'm making a marked effort to standardize on metric in our home with the support of my wife and children.
+
+- No more fahrenheit for us!
+- Height chart in the doorway? It's metric!
+- Printer, you better believe it's A4!
+
+Ok, I'm not sure about the last one, obviously there will be some real friction as we adopt what is still largely unacknowledged.  Below are some hopefully more practical steps we'll take.
 
 ## Join Us (the world..)
 
