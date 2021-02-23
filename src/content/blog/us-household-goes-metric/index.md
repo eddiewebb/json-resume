@@ -61,10 +61,14 @@ We're not treating this as "conversion" but just a high level mapping. Not getti
 
 I didn't want to start with conversions because my children 3 & 5 are too young for quick maths, and ideally young enough to just start with metric as their baseline.
 
+TIP: Set your home assistants (Google, Alexa, Apple) to use Celsius instead of Fahrenheit.
+
 
 ### Estimate Everything
 
 How much does that car weigh?  How long is that bridge? How much milk in your cup?  Use everyday objects to discuss estimating size in metric.
+
+TIP: nist.gov has a great ["everyday estimations" page](https://www.nist.gov/pml/weights-and-measures/everyday-estimation). Have your children draw each of the objects as you talk about the measure.  Hang the results as a handy chart!
 
 ### NIST
 
