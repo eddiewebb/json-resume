@@ -41,7 +41,21 @@ Because many American's, like my peers abroad did not even know Metric was _a th
 - 1982: Rather than make said mandate, Congress just dropped the comittees efforts and disestablished the Metric Board.
 - 1988: As part of "Omnibus Trade and Competitiveness Act of 1988", Congress amends the 1975 act, stating metric as "preferred system of weights and measures for United States trade and commerce."
 - 1992: The deadline for all U.S. Agencies to use the metric system in their procurement, grants and other business related activities.  Not required of private sector, it was intended to be catalyst for conversion within the country's commerce.
-- 2021: NIST is the only US agency to use metric consistently and most American's have no idea how to use the metric system, and could not give an accurate metric estimate to save thier life.
+- 2021: Most American's have no idea how to use the metric system, and could not give an accurate metric estimate to save their life.
+
+
+## Summary Today
+
+OK, my 2021 take was cynical I suppose, here's a more legitimate summary from USMA:
+
+- Metric is now required along with customary units on most consumer products. (See [USMA’s Consumer Products page](https://usma.org/consumer-products-available-in-metric-sizes) for examples of products packaged in rounded metric quantities, as well as many other products that are measured in metric.)
+- About 50% of measures in the US are metric. (Many of those measures are used in the fields of science, engineering, manufacturing, and international trade.)
+- All customary measures are defined and calibrated to the SI metric system. (Customary units are currently based, by the US government, on the metric system.)
+- Metric is used predominantly in the rest of the world, with the US being the only major holdout. (See USMA’s International page for how most other English-speaking countries switched in the 1970s and are now using metric.)
+- **[The Metric Conversion Act](https://usma.org/metric-conversion-act-of-1975), first passed in 1975 and amended in 1988, is still in effect in the US (The metric system is the preferred system of measurement in the US, and is encouraged by the government.)**
+
+Source: https://usma.org/usma-mission-and-activities
+
 
 ## The U.S. Household
 
@@ -78,10 +92,24 @@ How much does that car weigh?  How long is that bridge? How much milk in your cu
 
 TIP: nist.gov has a great ["everyday estimations" page](https://www.nist.gov/pml/weights-and-measures/everyday-estimation). Have your children draw each of the objects as you talk about the measure.  Hang the results as a handy chart!
 
-### NIST
 
-National Institute of Standards and Technology has an entire site dedicsted to Metric measures and adopttion, including videos, reading materials and even experiments.
+## Sources and Resources
 
+### National Institute of Standards and Technology (NIST)
 
-https://www.nist.gov/system/files/documents/pml/wmd/metric/1136a.pdf
+NIST has an entire site dedicsted to Metric measures and adopttion, including videos, reading materials and even experiments.
 
+https://www.nist.gov/metric
+
+### US Metric Association (USMA)
+
+The USMA advocates completion of the ongoing US conversion to the metric system, officially known as the International System of Units (SI).
+
+https://usma.org/
+
+### References
+Some sources I used...
+- https://www.smithsonianmag.com/smart-news/america-has-been-struggling-metric-system-almost-230-years-180964147/
+- https://www.nist.gov/system/files/documents/pml/wmd/metric/1136a.pdf
+- https://usma.org/
+- https://www.theatlantic.com/technology/archive/2015/06/whos-afraid-of-the-metric-system/395057/
