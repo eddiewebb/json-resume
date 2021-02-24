@@ -33,7 +33,7 @@ Because many American's, like my peers abroad did not even know Metric was _a th
 **But we did, we have, er we've tried?**
 
 - 1866: Congress authorizes metric system, and even gives set of standard weights and measures to every state.
-- 1875: U.S. is one of first 17 signatures of "Treat of the Meter" (a.k.a. Metric Convention) 
+- 1875: U.S. is one of first 17 signatures of "Treaty of the Meter" (a.k.a. Metric Convention) 
 - 1893: Metric was adopted as "the fundamental standard" and imperial measures (pound, foot, etc) are now defined in reference to the kilogram, meter, etc.
 - 1968: Congress authorizes 3 year study to feasibility of full conversion to metric. The study concluded it was not only possible, but inevitable.
 - 1975: Congress passes the "Metric Conversion Act of 1975", however a 10 year conversion period was scrapped, and encouraged "voluntary conversion." Those efforts were largely ignored by American public.
