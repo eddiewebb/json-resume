@@ -57,9 +57,14 @@ OK, my 2021 take was cynical I suppose, here's a more legitimate summary from US
 Source: https://usma.org/usma-mission-and-activities
 
 
+{{< imgresize "assets/Metric-Continuum-Updated-2020-10.jpeg" "600x400" "NIST summary of Metric Continuum">}}
+
+Source: https://www.nist.gov/blogs/taking-measure/busting-myths-about-metric-system
+
+
 ## The U.S. Household
 
-Ok, so as we know U.S. Congress is inept, and will never pass any law that slightly inconviences industry.  So this U.S. Family is taking it upon ourselves to learn, adopt, and evangalize the international system of measure!
+Ok, so as we know U.S. Congress is inept, and will never pass any law that slightly inconviences industry.  So to push from the other side this U.S. Family is taking it upon ourselves to learn, adopt, and evangalize  SI - the international system of measure!
 
 To that end I'm making a marked effort to standardize on metric in our home with the support of my wife and children.
 
