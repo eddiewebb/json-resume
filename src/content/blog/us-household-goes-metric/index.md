@@ -7,11 +7,11 @@ featured: true
 weight: 1
 ---
 
+Did you know metric is the preferred system for all U.S. agencies, and required for interactions with commerce?
+
 I feel fortunate that my employer is based in Australia.  It's continued to push me to re-evaluate my ehtnocentric view of the world.
 
-One small example was a recent thread in our "Makers" channel discussing where and when we see imperial and metric measures used. 
-
-Many of my Aussie co-workers pointed out they haven't needed to touch the _imperial spanners_ (That's a "standard" or SAE wrench for my American readers ;) )  that their fathers left them ages ago. As my side of the world came round to face the sun some of them left the question there for us "Is the US really _that_ averse to metric? Don't they sometimes use both types of measures?"
+One small example was a recent thread in our "Makers" channel discussing where and when we see imperial and metric measures used, some of them left the question there for us "Is the US really _that_ averse to metric? Don't they sometimes use both types of measures?"
 
 **Turns out the United States is already a "metric nation"** and has been since 1880's or 1970's depending on your interpretation.  
 
@@ -77,6 +77,16 @@ Ok, I'm not sure about the last one, obviously there will be some real friction 
 ## Join Us (the world..)
 
 If you're looking to jump-start your adoption of metric and standard measures, I am including some found and created resources to help my family see, size, estimate, write and speak in metric measures!
+
+### But our measure makes American unique!
+
+I mean, yeah but... 
+
+Anyway, more importantly it is _not_ American! It's Imperial, as in _British_ Imperial.  The measures of our very nemesis we threw off to found this nation. (Love you now, just making apoint here! )
+
+It's probably for those reasons early fore fathers tried to convert to metric before the country grew larger.
+
+Plus accepting standard measures is better for consumers and industry alike in the long term as more products standardize and expand markets.
 
 
 
