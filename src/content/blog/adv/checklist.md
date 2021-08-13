@@ -8,9 +8,8 @@ type: markdown
 ## always
 
 - [ ] garbage bags
-- [ ] first aid
 - [ ] toolkit
-- [ ] rope
+- [ ] rope (3-4mm paracord works great 50+ feet)
 - [ ] crevice pulleys 2x
 - [ ] duct tape
 - [ ] granola bars
@@ -24,6 +23,13 @@ type: markdown
 - [ ] extra fuel
 - [ ] lighter
 - [ ] hand sanitizer
+- [ ] headlamp / flashlight
+- [ ] pocketknife/multifunction
+
+## Safety
+- [ ] GPS messenger
+- [ ] first aid
+- [ ] 
 
 
 
@@ -38,9 +44,13 @@ type: markdown
 - [ ] ready to eat meals (confirm water use)
 - [ ] utensil set
 - [ ] toilet paper
-- [ ] paper towels
-- [ ] 
-
+- [ ] paper towels or camp towel
+- [ ] bug spray
+- [ ] extra tshirt, underwear, pants
+- [ ] coffee
+- [ ] shovel (the duece and similar pack well)
+- [ ] toiletries (toothbrush, paste, deodorant)
+- [ ] wet wipes / hand wipes
 
 
 ## blogging
