@@ -1,6 +1,7 @@
 ---
 title: adv motorcycle checklist
 date: 2021-08-12 
+type: markdown
 ---
 
 
