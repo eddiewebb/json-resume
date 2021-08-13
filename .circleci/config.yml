@@ -48,7 +48,8 @@ jobs:
       - run:
           name: Deploy public folder to <<parameters.domain>>
           command: |
-            apt-get install -y rsync
+            whoami
+            sudo apt-get install -y rsync
             rsync -avz --delete /tmp/public/ ${<<parameters.domain>>USER}@${<<parameters.domain>>HOST}:${<<parameters.domain>>PATH}/
       - run:
           name: Simple content check
