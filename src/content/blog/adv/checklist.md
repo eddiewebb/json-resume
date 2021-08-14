@@ -29,7 +29,7 @@ type: markdown
 ## Safety
 - [ ] GPS messenger
 - [ ] first aid
-- [ ] 
+- [ ] FRS radios
 
 
 
