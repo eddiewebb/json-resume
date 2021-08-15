@@ -36,18 +36,15 @@ These items are specific to camping.
   - [ ] hammock
 - [ ] sleeping bag (with stuff sack, garbage bag line sack if not waterproof)
 - [ ] camp chair (not mandatory...but nearly so)
+- [ ] utensil set
 
 ### Shared load
 
 - [ ] more water or filtration - 4L / night / rider
 - [ ] backpacking stove
 - [ ] stove fuel
-- [ ] ready to eat meals (confirm water use)
-- [ ] utensil setx
+- [ ] cooking utensils (don't go overboard, stick to MRE and just bring a spoon:)
 - [ ] mini shovel ('the duece' is cheap, small, and light)
-- [ ] wet wipes / hand wipes
-- [ ] food - 2 ready to eat meals per day per rider
-- [ ] coffee - enogh for 1 brew / day
 
 
 ## Shopping
@@ -59,6 +56,8 @@ These items aremaybe around the house, but likley to need a run to the store pri
 - [ ] 'power' snacks (granola bars, meat sticks, small and protien packed)
 - [ ] bug spray
 - [ ] hand wipes / wet wipes
+- [ ] food - 2 ready to eat meals per day per rider
+- [ ] coffee - enogh for 1 brew / day
 
 
 
