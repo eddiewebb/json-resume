@@ -1,41 +1,64 @@
 ---
-title:  motorcycle camping supply - pre-check
+title:  adventure motorcycling supply list
 date: 2021-08-12 
 type: markdown
 ---
 
+## always (leave these in your saddlebags even when not camping!)
 
-## always
+These items should always be in your saddlebags or tank bag if you're doing any non-commute riding that might have you away from home.
 
-- [x] garbage bags
-- [x] toolkit
-- [x] rope (3-4mm paracord works great 50+ feet)
-- [x] crevice pulleys 2x
-- [x] duct tape
-- [x] headlamp / flashlight
-- [x] pocketknife/multifunction
+### In case of...
 
-## Safety
-- [x] GPS messenger
-- [x] first aid
-- [x] FRS radios
+- [ ] toolkit
+- [ ] rope (3-4mm paracord works great 50+ feet)
+- [ ] crevice pulleys 2x
+- [ ] duct tape
+- [ ] nylon zip ties
+
+### Safety
+- [ ] GPS messenger
+- [ ] first aid
+- [ ] FRS radios (one-per rider)
 
 
 
-## camping
+## camping specific
+These items are specific to camping.
 
+### everybody / individual
+
+- [ ] headlamp / flashlight
+- [ ] pocketknife/multifunction
 - [ ] shelter
   - [ ] tent
     - [ ] sleeping pad
-  - [ ] **hammock** 
-- [x] sleeping bag (with stuff sack, garbage inside if not waterproof)
-- [ ] more water or filtration - 4L / night
-- [ ] **backpacking stove** 
-- [ ] **stove fuel**
-- [x] ready to eat meals (confirm water use)
-- [x] utensil setx
-- [ ] **mini shovel** (the duece and similar pack well)x
+  - [ ] hammock
+- [ ] sleeping bag (with stuff sack, garbage bag line sack if not waterproof)
+- [ ] camp chair (not mandatory...but nearly so)
+
+### Shared load
+
+- [ ] more water or filtration - 4L / night / rider
+- [ ] backpacking stove
+- [ ] stove fuel
+- [ ] ready to eat meals (confirm water use)
+- [ ] utensil setx
+- [ ] mini shovel ('the duece' is cheap, small, and light)
 - [ ] wet wipes / hand wipes
+- [ ] food - 2 ready to eat meals per day per rider
+- [ ] coffee - enogh for 1 brew / day
+
+
+## Shopping
+
+These items aremaybe around the house, but likley to need a run to the store prior to leaving or camping.
+
+- [ ] garbage bags
+- [ ] water
+- [ ] 'power' snacks (granola bars, meat sticks, small and protien packed)
+- [ ] bug spray
+- [ ] hand wipes / wet wipes
 
 
 
