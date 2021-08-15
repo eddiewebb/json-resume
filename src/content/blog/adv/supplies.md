@@ -4,11 +4,11 @@ date: 2021-08-12
 type: markdown
 ---
 
-## always (leave these in your saddlebags even when not camping!)
+### always (leave these in your saddlebags even when not camping!)
 
 These items should always be in your saddlebags or tank bag if you're doing any non-commute riding that might have you away from home.
 
-### In case of...
+#### In case of...
 
 - [ ] toolkit
 - [ ] rope (3-4mm paracord works great 50+ feet)
@@ -16,17 +16,17 @@ These items should always be in your saddlebags or tank bag if you're doing any 
 - [ ] duct tape
 - [ ] nylon zip ties
 
-### Safety
+#### Safety
 - [ ] GPS messenger
 - [ ] first aid
 - [ ] FRS radios (one-per rider)
 
 
 
-## camping specific
+### camping specific
 These items are specific to camping.
 
-### everybody / individual
+#### everybody / individual
 
 - [ ] headlamp / flashlight
 - [ ] pocketknife/multifunction
@@ -38,7 +38,7 @@ These items are specific to camping.
 - [ ] camp chair (not mandatory...but nearly so)
 - [ ] utensil set
 
-### Shared load
+#### Shared load
 
 - [ ] more water or filtration - 4L / night / rider
 - [ ] backpacking stove
@@ -47,7 +47,7 @@ These items are specific to camping.
 - [ ] mini shovel ('the duece' is cheap, small, and light)
 
 
-## Shopping
+### Shopping
 
 These items aremaybe around the house, but likley to need a run to the store prior to leaving or camping.
 
