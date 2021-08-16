@@ -12,7 +12,7 @@ These items should always be in your saddlebags or tank bag if you're doing any 
 
 - [ ] toolkit
 - [ ] rope (3-4mm paracord works great 50+ feet)
-- [ ] crevice pulleys 2x
+- [ ] crevasse pulleys 2x (small, split open for mid-line use)
 - [ ] duct tape
 - [ ] nylon zip ties
 
