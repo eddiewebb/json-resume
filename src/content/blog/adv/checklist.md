@@ -13,7 +13,7 @@ This list is my "am I ready to go" list for prep up to and final inspection. It 
 
 ### BEFORE TRIP
 
-#### Shopping List (WEEK BEFORE)
+##### Shopping List (WEEK BEFORE)
 
 - [ ] ready to eat meals (confirm water use)
 - [ ] toilet paper
@@ -40,7 +40,7 @@ This list is my "am I ready to go" list for prep up to and final inspection. It 
 
 ### DAY OF - PACKING
 
-#### Stuff Sack / Ride-On luggage
+##### Stuff Sack / Ride-On luggage
 
 Pack this portable waterproof bag up and it will be strapped on.
 
@@ -48,7 +48,7 @@ Pack this portable waterproof bag up and it will be strapped on.
 - [ ] rain suit
 - [ ] extra socks
 
-#### Tank Bag
+##### Tank Bag
 
 if  you dont have a tank bag, just put into a dittybag to keep them with easy access.
 
@@ -60,7 +60,7 @@ if  you dont have a tank bag, just put into a dittybag to keep them with easy ac
 - [ ] mini tripod
 
 
-#### Saddlebags
+##### Saddlebags
 - [ ] hammock tent
 - [ ] first aid
 - [ ] backpacking stove
@@ -73,11 +73,11 @@ if  you dont have a tank bag, just put into a dittybag to keep them with easy ac
 - [ ] toilet paper
 
 
-#### Safety
+##### Safety
 - [ ] GPS messenger
 - [ ] FRS radios
 
-#### Strap it on!
+##### Strap it on!
 - [ ] tent
 - [ ] sleeping pad
 - [ ] sleeping bag
