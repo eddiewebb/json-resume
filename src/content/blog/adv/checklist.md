@@ -44,9 +44,13 @@ This list is my "am I ready to go" list for prep up to and final inspection. It 
 
 Pack this portable waterproof bag up and it will be strapped on.
 
-- [ ] warm layers (long underwear, regular layer, sweatshirt)
+- [ ] extra socks (3 pair)
+- [ ] long johns (thermal underwear)
+- [ ] sweatshirt
+- [ ] extra t-shirt
+- [ ] fuzzy pants (sleeping)
 - [ ] rain suit
-- [ ] extra socks
+- [ ] winter hat
 
 ##### Tank Bag
 
