@@ -45,6 +45,7 @@ These items are specific to camping.
 - [ ] stove fuel
 - [ ] cooking utensils (don't go overboard, stick to MRE and just bring a spoon:)
 - [ ] mini shovel ('the duece' is cheap, small, and light)
+- [ ] fatwood (or lame lint/starter, but I much prefer fatwood on a bike)
 
 
 ### Shopping

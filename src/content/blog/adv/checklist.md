@@ -62,6 +62,7 @@ if  you dont have a tank bag, just put into a dittybag to keep them with easy ac
 - [ ] action cam
 - [ ] chargers
 - [ ] mini tripod
+- [ ] fire supplies (fatwood, lint, etc)
 
 
 ##### Saddlebags
