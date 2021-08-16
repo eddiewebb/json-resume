@@ -5,59 +5,88 @@ type: markdown
 ---
 
 
-## always
+## ADV motorcycle camping checklist 
 
-- [ ] garbage bags
-- [ ] toolkit
-- [ ] rope (3-4mm paracord works great 50+ feet)
-- [ ] crevice pulleys 2x
-- [ ] duct tape
-- [ ] granola bars
-- [ ] water 2L
-
-## traveling
-
-- [ ] warm layers
-- [ ] rain suit
-- [ ] extra socks
-- [ ] extra fuel
-- [ ] lighter
-- [ ] hand sanitizer
-- [ ] headlamp / flashlight
-- [ ] pocketknife/multifunction
-
-## Safety
-- [ ] GPS messenger
-- [ ] first aid
-- [ ] FRS radios
+This list is my "am I ready to go" list for prep up to and final inspection. It assumes I already have basics, which I track ahead of time in my [motorcycle camping supply list](./supplies) page.
 
 
 
-## camping
+### BEFORE TRIP
 
-- [ ] tent
-- [ ] sleeping pad
-- [ ] sleeping bag
-- [ ] more water or filtration - 4L / night
-- [ ] backpacking stove
-- [ ] stove fuel
+#### Shopping List (WEEK BEFORE)
+
 - [ ] ready to eat meals (confirm water use)
-- [ ] utensil set
 - [ ] toilet paper
-- [ ] paper towels or camp towel
-- [ ] bug spray
-- [ ] extra tshirt, underwear, pants
-- [ ] coffee
-- [ ] shovel (the duece and similar pack well)
-- [ ] toiletries (toothbrush, paste, deodorant)
+- [ ] stove fuel
+- [ ] hand sanitizer
 - [ ] wet wipes / hand wipes
 
 
-## blogging
+#### Packing Preperation (DAY BEFORE)
 
-- [ ] drone
+- [ ] sleeping bag stuff-sack waterproofed (sprayyed or lined)
+- [ ] documents waterproofed
+- [ ] toiletries packed
+- [ ] garbage bags
+- [ ] flashlight batteries fresh
+
+#### Charging
+
+- [ ] cellphone charged
+- [ ] extra charger
+- [ ] GPS charged
+- [ ] FRS charged
+- [ ] battery pack
+
+### DAY OF - PACKING
+
+#### Stuff Sack / Ride-On luggage
+
+Pack this portable waterproof bag up and it will be strapped on.
+
+- [ ] warm layers (long underwear, regular layer, sweatshirt)
+- [ ] rain suit
+- [ ] extra socks
+
+#### Tank Bag
+
+if  you dont have a tank bag, just put into a dittybag to keep them with easy access.
+
+- [ ] lighters (2x)
+- [ ] headlamp / flashlight
+- [ ] pocketknife/multifunction
 - [ ] action cam
 - [ ] chargers
 - [ ] mini tripod
 
+
+#### Saddlebags
+- [ ] hammock tent
+- [ ] first aid
+- [ ] backpacking stove
+- [ ] utensil set
+- [ ] coffee
+- [ ] shovel (the duece and similar pack well)
+- [ ] toiletries (toothbrush, paste, deodorant)
+- [ ] paper towels or camp towel
+- [ ] bug spray
+- [ ] toilet paper
+
+
+#### Safety
+- [ ] GPS messenger
+- [ ] FRS radios
+
+#### Strap it on!
+- [ ] tent
+- [ ] sleeping pad
+- [ ] sleeping bag
+- [ ] water 
+
+
+## Extras
+
+- [ ] drone
+- [ ] bungees
+- [ ] tie-downs
 
