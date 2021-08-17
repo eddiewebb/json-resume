@@ -7,7 +7,7 @@ type: markdown
 
 ## ADV motorcycle camping checklist 
 
-This list is my "am I ready to go" list for prep up to and final inspection. It assumes I already have basics, which I track ahead of time in my [motorcycle camping supply list](./supplies) page.
+This list is my "am I ready to go" list for prep up to and final inspection. It assumes I already have basics, which I try to shop for ahead of time in my [motorcycle camping supply list](./supplies) page.
 
 
 
@@ -76,11 +76,16 @@ if  you dont have a tank bag, just put into a dittybag to keep them with easy ac
 - [ ] paper towels or camp towel
 - [ ] bug spray
 - [ ] toilet paper
+- [ ] garbage bags
+- [ ] toolkit, duct tape, nyties, 
 
 
-##### Safety
+##### On You
 - [ ] GPS messenger
 - [ ] FRS radios
+- [ ] camelbak hydration
+- [ ] sunglasses
+- [ ] neck gator
 
 ##### Strap it on!
 - [ ] tent
