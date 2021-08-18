@@ -87,7 +87,7 @@ if  you dont have a tank bag, just put into a dittybag to keep them with easy ac
 - [ ] sunglasses
 - [ ] neck gator
 
-##### Strap it on!
+##### Strap it down!
 - [ ] tent
 - [ ] sleeping pad
 - [ ] sleeping bag
