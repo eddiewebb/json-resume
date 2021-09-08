@@ -73,7 +73,7 @@ A few campsites to choose from, we'll first explore the area.
 
 ### Preparing supplies
 
-As I mentioned this is my first motorcycle camping trip of the season (and also since having my daughter 6 years ago, lol) so I've really not kept any of our camping gear together.  To help get my head straight I created a [pre-trip moto camping supply list](https://www.notion.so/eddiewebb/Motorcycle-Camping-Supply-List-ada0af28553f42d58b2f4bc06d8a2075) to shop for anything missing.
+As I mentioned this is my first motorcycle camping trip of the season (and also since having my daughter 6 years ago, lol) so I've really not kept any of our camping gear together.  To help get my head straight I created a [pre-trip moto camping supply list](https://eddiewebb.notion.site/eddiewebb/Motorcycle-Camping-Supply-List-ada0af28553f42d58b2f4bc06d8a2075) to shop for anything missing.
 
 #### Nice-essities
 
@@ -102,9 +102,9 @@ Even with coffee press, the fuel, burner and stand all fit inside.
 
 ##### Hammock System / Tent
 
-Yes, we can find and buy compact tents meant for backpacking that are lighter and shorter.  They are also wicked expensive.
+While we can find and buy [compact tents meant for backpacking](https://www.rei.com/search?ir=q%3Abackpacking+tents&r=category%3Abackpacking-tents) that are lighter and shorter (usually they keep poles around 50 cm) -- they tend to be wicked expensive.
 
-I opted for a $150 tent/screen/rainfly combo that also **eliminates the need for a sleeping pad** since I am well above any rocks and roots.
+I opted for a $150 tent/screen/rainfly combo that also **eliminates the need for a sleeping pad** suspended well above any rocks and roots. But it was further spawned by some comments from an acquaintance who actually backpacks a ton, and aside from "[cold butt](https://shellhammocks.com/blogs/news/frozen-butt-syndrome)" they couldn't say enough about hammock camping.
 `(hammock + bag) < (tent + bag + pad)`
 
 
@@ -138,4 +138,6 @@ I was surprised to find my nelson-rigg saddlebags paired with the hard panniers 
 {{< imgresize "assets/loaded.webp" "400x300" "All of our geared loaded onto my 2012 G650 GS." >}}
 
 ** don't forget to adjust your motorcycle's sag for all the extra weight! **
+
+ 
 
