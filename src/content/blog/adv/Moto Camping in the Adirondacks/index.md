@@ -25,8 +25,8 @@ I've finally tapped my brother to join me for a off-road motorcycle camping adve
 
 - [What is Moto Camping](#what-is-moto-camping)
 - [Finding the right location](#finding-the-right-location)
-  - [Selecting your 1st site](#selecting-your-1st-site)
-  - [Our site - Deer River State Park](#our-site---deer-river-state-park)
+  - [Selecting our 1st site](#selecting-our-1st-site)
+  - [Our target site - Deer River State Park](#our-target-site---deer-river-state-park)
 - [Preparing supplies](#preparing-supplies)
   - [Nice-essities](#nice-essities)
     - [Short camp chair](#short-camp-chair)
@@ -34,7 +34,6 @@ I've finally tapped my brother to join me for a off-road motorcycle camping adve
     - [Hammock System / Tent](#hammock-system--tent)
   - [The Shopping](#the-shopping)
 - [Packing Up](#packing-up)
-  - [Final steps - lay it all out](#final-steps---lay-it-all-out)
 
 <!-- /MarkdownTOC -->
 
@@ -56,7 +55,7 @@ Unlike backpacking though:
 
 ### Finding the right location
 
-#### Selecting your 1st site
+#### Selecting our 1st site
 
 **For first time I actually chose a visit to a managed campsite** with anmenities -- in my case a local state campground.  It's  nice way to get used to the experience, learn what you need and don't need all with the comfort and knowledge of running water and first-aid is nearby.
 
@@ -64,7 +63,7 @@ Unlike backpacking though:
 
 **Now I want somewhere interesting.** The benefit of moto-camping over car camping is access. We can get these bikes many places that even a formible off-road vehicle might not reach.  So now it's time to choose a spot of beauty or activities that interest us!
 
-#### Our site - Deer River State Park
+#### Our target site - Deer River State Park
 
 In northern NY, west of Malone are a collection of smaller tends with awesome state parks all around.  We chose Deer River for it's seclusion and numerous primitive sites managed by DEC.
 
@@ -74,7 +73,7 @@ A few campsites to choose from, we'll first explore the area.
 
 ### Preparing supplies
 
-As I mentioned this is my first motorcycle camping trip of the season (and also since having my daughter 6 years ago, lol) so I've really not kept any of our camping gear together.  To help get my head straight I created a [pre-trip moto camping supply list]({{< ref "supplies.md" >}}) to shop for anything missing.
+As I mentioned this is my first motorcycle camping trip of the season (and also since having my daughter 6 years ago, lol) so I've really not kept any of our camping gear together.  To help get my head straight I created a [pre-trip moto camping supply list](https://www.notion.so/eddiewebb/Motorcycle-Camping-Supply-List-ada0af28553f42d58b2f4bc06d8a2075) to shop for anything missing.
 
 #### Nice-essities
 
@@ -130,34 +129,13 @@ Aside from the big fixed items, we'll need to do some shopping to get a few key 
 
 ### Packing Up
 
-Cool, now we've spent a bunch of money and our significant other is eyeing our pile of supplies with increasing skepticism.
+_Cool, now we've spent a bunch of money and our significant other is eyeing our pile of supplies with increasing skepticism._
 
 **Time to get our bikes loaded up!**
 
-#### Final steps - lay it all out
+I was surprised to find my nelson-rigg saddlebags paired with the hard panniers on my brothers bike were totally sufficient for all of our goods, aside from sleeping bags.
 
-
-**take a breath** we can do this.
-
-I suggest packing up the day(s) before just to make sure we have everything, and that it fits.  If we need supplies, bungees, etc better to find out with time to spare.
-
-I use a simple [moto camping checklist]({{<ref "checklist.md" >}}) to finish any shopping and start to organize my items into where they will be packed and or attached to my bike.
-
-  [ photo of items laid out ]
-
-Easiest way to take inventory, confirm supplies, and start to get a sense of the Tetris game we're about to play is to just lay it all out on the ground.  (hey let's bring that tarp too!)
-
-
-**Also keep in mind we need to get to & from the site -- with dry gear.**  So anything that isn't going into a waterproof pannier will need its own protection.
-
-In my case my beastly old sleeping bag is the sole item that won't be inside a [waterproof rollup saddlebag](https://amzn.to/37SnBfu).  I started doing this trick years ago when canoe camping, and just hoping it holds up here :grimmace:
-
-
-1. remove bag from stuff sack
-2. place garbage bag inside stuff sack as liner
-3. roll and place sleeping bag (no super agressive stuffin now K?)
-4. Leaving the top of the garbage bag open, gently compress, expelling air
-5. cinch stuff sack down around bag, and knot or fold it over.
+{{< imgresize "assets/loaded.webp" "400x300" "All of our geared loaded onto my 2012 G650 GS." >}}
 
 ** don't forget to adjust your motorcycle's sag for all the extra weight! **
 
