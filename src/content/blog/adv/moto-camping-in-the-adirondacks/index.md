@@ -34,6 +34,11 @@ I've finally tapped my brother to join me for a off-road motorcycle camping adve
     - [Hammock System / Tent](#hammock-system--tent)
   - [The Shopping](#the-shopping)
 - [Packing Up](#packing-up)
+- [Lessons Learned](#lessons-learned)
+  - [Confirmed](#confirmed)
+  - [Learned](#learned)
+  - [Monitor](#monitor)
+  - [Most Valuable Player & Recognition](#most-valuable-player--recognition)
 
 <!-- /MarkdownTOC -->
 
@@ -135,9 +140,41 @@ _Cool, now we've spent a bunch of money and our significant other is eyeing our 
 
 I was surprised to find my nelson-rigg saddlebags paired with the hard panniers on my brothers bike were totally sufficient for all of our goods, aside from sleeping bags.
 
-{{< imgresize "assets/loaded.webp" "400x300" "All of our geared loaded onto my 2012 G650 GS." >}}
+{{< imgresize "assets/loaded.jpg" "400x300" "All of our geared loaded onto my 2012 G650 GS." >}}
 
 ** don't forget to adjust your motorcycle's sag for all the extra weight! **
 
  
+### Lessons Learned
+
+"It was awesome" feels true, but not super useful. Here are some specific lessons learned from our trip!
+
+{{< imgresize "assets/camp.jpg" "600x400" "2 bikes, 2 hammocks, 2 brothers at a campsite in the woods." >}}
+
+#### Confirmed
+- **Camp shoes are bomb**!  
+  As a kind of last minute thought I grabbed my beater sneakers to stuff into my saddlebags. They're basically fabric and sole and take no space. And wow was I happy to have them.  My brother was sure to add it to his list for next time.
+- **RME or Ready-to-Eat meals rock**  
+  These bagged and boiled meals are surprisingly awesome. Warm, tasty, and hearty meals I compared to a good takeout experience.
+
+#### Learned
+- **Boots need to dry, and that's hard** 
+  This is obvious right, and yet overlooked. While we had a fire to warm ourselves and dry socks; riding boots proved much tricker. Even clever me having camp shoes to wear didn't help any as the the fire's heat was just unable to pentetrarte reinforced materials to drive moisture out. Still thinking of hacks here... I ended up wearing garbage bags outside my socks for day 2.  
+  {{< imgresize "assets/wetboots.jpg" "400x300" "Wet boots by fire, Tommy with no shoes." >}}
+
+#### Monitor
+- **Hammock Tents**
+  Both Tommy and I had mixed reviews of our hammock tents. It was easy setup & tear-down. But limited positions made a deep sleep elusive for us. We were also overdressed for what was a surprisingly warm night (+15F from forecast). And overheating played a large portion of my discomfort.
+
+
+#### Most Valuable Player & Recognition
+
+Me, obviously. (kidding)
+
+I want to give an all-star shout-out to [Nelson-Rigg gear](https://www.nelsonrigg.com/motorcycle-luggage/dual-sport-adventure). Their affordably priced "Adventure Dry Bags" proved themselves when my bike pinned all my dry clothes under 8 inches of water. Once righted and at camp I opened my bags to find everything perfectly dry.
+
+{{< imgresize "assets/bag.jpg" "400x300" "Nelson-Rigg Saddlebag on BMW G650 GS" >}}
+
+
+
 
