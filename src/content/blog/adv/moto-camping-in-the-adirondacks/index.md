@@ -160,11 +160,13 @@ I was surprised to find my nelson-rigg saddlebags paired with the hard panniers 
 #### Learned
 - **Boots need to dry, and that's hard** 
   This is obvious right, and yet overlooked. While we had a fire to warm ourselves and dry socks; riding boots proved much tricker. Even clever me having camp shoes to wear didn't help any as the the fire's heat was just unable to pentetrarte reinforced materials to drive moisture out. Still thinking of hacks here... I ended up wearing garbage bags outside my socks for day 2.  
+  {{< youtube id="iUgfTmlvHcQ" style="width:400px;height:250px;margin-right:20px;float:left;" >}}  
   {{< imgresize "assets/wetboots.jpg" "400x300" "Wet boots by fire, Tommy with no shoes." >}}
 
 #### Monitor
 - **Hammock Tents**
   Both Tommy and I had mixed reviews of our hammock tents. It was easy setup & tear-down. But limited positions made a deep sleep elusive for us. We were also overdressed for what was a surprisingly warm night (+15F from forecast). And overheating played a large portion of my discomfort.
+
 
 
 #### Most Valuable Player & Recognition
