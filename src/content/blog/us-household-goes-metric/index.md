@@ -9,9 +9,9 @@ weight: 1
 
 Did you know metric is the preferred system for all U.S. agencies, and required for interactions with commerce?
 
-I feel fortunate that my employer is based in Australia.  It's continued to push me to re-evaluate my ehtnocentric view of the world.
+I feel fortunate that my employer is based in Australia.  It's continued to push me to re-evaluate my ethnocentric views of measure.
 
-One small example was a recent thread in our "Makers" channel discussing where and when we see imperial and metric measures used, some of them left the question there for us "Is the US really _that_ averse to metric? Don't they sometimes use both types of measures?"
+It started during a recent converation in our "Makers" channel discussing where and when we see imperial and metric measures used, some of them left the question there for us "Is the US really _that_ averse to metric? Don't they sometimes use both types of measures?"
 
 **Turns out the United States is already a "metric nation"** and has been since 1880's or 1970's depending on your interpretation.  
 
