@@ -40,7 +40,7 @@ Still here? I appreciate it, and I've captured my thoughts on the position below
 
 
 
-* Transferred my CCC Associates degree to a Bachelors of Science from R.I.T.   
+* Bachelors of Science from R.I.T.'s School of Business
     * Graduated with High Honors
     * Major: Management Information Systems
     * Concentrations: _Organizational Behavior,_ Sociology
