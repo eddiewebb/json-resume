@@ -25,8 +25,6 @@ But above all, **your vote on May 17 is what matters most. So thank you.**
 * I’m passionate about supporting the systems that our community depends on.
 * I have the right experience -- as someone who’s managed the people (and the processes) of large organizations during times of both stability and change.
 
-Email: REDACTED
-Phone: REDACTED
 
 In case you don’t read any further, thanks for sharing, thanks for voting, and thank you for being part of our village.
 
@@ -80,11 +78,10 @@ Shared Values? It can feel impossible these days, but we know it's not.  Conflic
 If and when we do make changes that impact hundreds of students and employees, it’s important that we move with an intention that is understood across our community.  Of course support will vary from topic to topic, but the goals must always be clear.  I’ve seen first hand just what good and bad change management looks like and the damage of rash decisions. Unnecessary change will only prolong the journey and undermine trust.  It is important we can still act urgently when necessary, but we must do so without haste, and instead move deliberately with consideration for every member of our faculty and staff, and the ultimate impact on our community.
 
 
-Thank you for your support, \
- \
- \
-Eddie Webbinaro \
- \
+Thank you for your support, 
+
+Eddie Webbinaro 
+
 
 
 
