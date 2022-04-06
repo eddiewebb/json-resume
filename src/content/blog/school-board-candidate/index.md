@@ -21,9 +21,10 @@ But above all, **your vote on May 17 is what matters most. So thank you.**
 
 **Now if you’re interested in WHY** I am running for this position, I’ve included gratuitous detail below, but the highlights:
 * This is about community building, together.
+* I have children in the school and I have family working there. 
 * I’m passionate about my family and supporting other families in my community.
 * I’m passionate about supporting the systems that our community depends on.
-* I have the right experience -- as someone who’s managed the people (and the processes) of large organizations during times of both stability and change.
+* I have the right experience -- as someone who’s served on boards and managed large budgets, experienced managing people (and the processes) of large organizations during times of both stability and change.
 
 
 In case you don’t read any further, thanks for sharing, thanks for voting, and thank you for being part of our village.
@@ -51,6 +52,10 @@ Still here? I appreciate it, and I've captured my thoughts on the position below
     * Developed a platform serving 60,000+ employees, and 5,000 IT Staff
     * Transformed multiple departments from "legacy"  to modern software teams  
     (reducing costs and boosting morale)
+* Served on the Board of Directors for Seymour Osman Community Center, a project of Dover’s Housing Authority.
+    * Reviewed and approved annual operating budget and monthly progress
+    * Managed strategic initiatives in cooperation with local nonprofits and government
+    * Researched and secured Grants and funding
 * Career change into Sales as Solutions Engineering at CircleCI, a software startup from San Francisco
     * Helping other customers achieve similar transformations like we saw at Liberty
     * Promoted to Global Director 9 months into role
@@ -102,4 +107,4 @@ Resources:
 
 You can download a calendar event [for apple/ical](assets/election.ics "Download .ics Calendar Event" ) or [google calandar](https://calendar.google.com/event?action=TEMPLATE&tmeid=MDUydGJhcXRzbHNubGVudDc5cGZoYWFpMjQgZWR3YXJkLmEud2ViYkBt&tmsrc=edward.a.webb%40gmail.com "Add Election Reminder to Google Calendar") to remind you, or add you email to the form below and I'll remind you a couple days out.
 
-{{< subscribe list_name="vote@webbinaro.com" domain="webbinaro.com" submit_text="Please remind me!">}}
+{{< subscribe list_name="vote" domain="webbinaro.dev" submit_text="Please remind me!">}}
