@@ -1,0 +1,24 @@
+{{ if .IsNamedParams }}
+<form method="post" action="https://scripts.dreamhost.com/add_list.cgi">
+
+    <input type="hidden" name="list" value="{{ .Get "list_name" }}">
+    <input type="hidden" name="domain" value="{{ .Get "domain" }}">
+    <!--Visible Fields-->
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" name="name">
+    </div>
+    <!-- Required: -->
+    <div>
+        <label for="email">Email:</label>
+        <input type="text" name="email" placeholder="Enter a valid email" required>
+    </div>
+    <div class="button">
+        <input type="submit" name="submit" value="{{ .Get "submit_text" }}">
+    </div>
+    <!-- Optional Unsubscribe Button -->
+    <div class="button">
+        <input type="submit" name="unsub" value="Actually, Please Remove me from  reminder list">
+    </div>
+    </form>
+    {{ end }}
