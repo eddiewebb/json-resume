@@ -4,13 +4,13 @@ workflows:
   version: 2
   build-deploy:
     jobs:
-      - hugo_job:
-          name: deploy-test
+      #- hugo_job:
+      #    name: deploy-test
       - hugo_job:
           name: deploy-prod
           domain: REZ
-          requires:
-            - deploy-test
+      #    requires:
+      #      - deploy-test
           filters:
             branches:
               only: master
