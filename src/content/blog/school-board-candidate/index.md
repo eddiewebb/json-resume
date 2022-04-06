@@ -105,6 +105,6 @@ Resources:
 
 ### Need a Reminder?
 
-You can download a calendar event [for apple/ical](assets/election.ics "Download .ics Calendar Event" ) or [google calandar](https://calendar.google.com/event?action=TEMPLATE&tmeid=MDUydGJhcXRzbHNubGVudDc5cGZoYWFpMjQgZWR3YXJkLmEud2ViYkBt&tmsrc=edward.a.webb%40gmail.com "Add Election Reminder to Google Calendar") to remind you, or add you email to the form below and I'll remind you a couple days out.
+You can download a calendar event [for apple/ical](assets/election.ics "Download .ics Calendar Event" ) or [google calandar](https://calendar.google.com/event?action=TEMPLATE&tmeid=MDUydGJhcXRzbHNubGVudDc5cGZoYWFpMjQgZWR3YXJkLmEud2ViYkBt&tmsrc=edward.a.webb%40gmail.com "Add Election Reminder to Google Calendar") to remind you, or add your email to the form below and I'll remind you a couple days out.
 
 {{< subscribe list_name="vote" domain="webbinaro.dev" submit_text="Please remind me!">}}
