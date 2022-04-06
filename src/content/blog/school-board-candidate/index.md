@@ -24,7 +24,7 @@ But above all, **your vote on May 17 is what matters most. So thank you.**
 * I have children in the school and I have family working there. 
 * I’m passionate about my family and supporting other families in my community.
 * I’m passionate about supporting the systems that our community depends on.
-* I have the right experience -- as someone who’s served on boards and managed large budgets, experienced managing people (and the processes) of large organizations during times of both stability and change.
+* I have the right experience -- as someone who’s served on boards and managed large budgets, experience managing people (and the processes) of large organizations during times of both stability and change.
 
 
 In case you don’t read any further, thanks for sharing, thanks for voting, and thank you for being part of our village.
