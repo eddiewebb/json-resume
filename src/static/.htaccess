@@ -1,9 +1,16 @@
 # Support move of old blog to subdomain.
 <IfModule mod_rewrite.c>
   RewriteEngine on
-  #force SSL
+
+  # to make sure maillist form works, they need to come form single domain.
+  RewriteCond %{HTTP_HOST} !^webbinaro\.dev [NC]
+  RewriteCond %{HTTP_HOST}   !^$
+  RewriteRule ^/?(.*)         https://webbinaro.dev/$1 [L,R,NE]
+
+  # force SSL 
   RewriteCond %{HTTPS} !=on
   RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
+
 </IfModule>
 
 
