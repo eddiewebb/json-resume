@@ -17,7 +17,7 @@ Webb + Rendinaro = Webbinaro
 
 Now, despite the low-hanging joke for an SE and tech speaker it does not sound like `webinar` but rather `Webb-i-nair-o`, respecting the roots in my wife's family surname.
 
-Although COVID-19 has slowed our process with the courts a bit, we dit it after 4 months of paper pushing.
+Although COVID-19 has slowed our process with the courts a bit, after 4 months of paper pushing we did it.
 
 I'm updating my presence here and on all my social media and business profiles to reflect my new name.  But don't worry, I promise that Eddie Webbinaro is just as passionate about helping teams of every shape and size with awesome tools and culture of learning.
 

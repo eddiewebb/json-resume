@@ -52,23 +52,13 @@ enableGitInfo = true
     name = "LinkedIn"
     link = "https://www.linkedin.com/in/edwardwebb/"
 
-[[params.handles]]
-    name = "Twitter"
-    link = "https://twitter.com/edwardawebb/"
+#[[params.handles]]
+#    name = "Twitter"
+#    link = "https://twitter.com/edwardawebb/"
 
 [[params.handles]]
     name = "GitHub"
     link = "https://github.com/eddiewebb/"
-
-[[params.handles]]
-    name = "Sourcerer"
-    link = "https://sourcerer.io/eddiewebb/"
-    icon = "osi"
-
-[[params.handles]]
-    name = "Stack Overflow"
-    link = "https://stackoverflow.com/users/story/82880"
-    icon = "stack-overflow"
 
 [[params.handles]]
     name = "Keybase"

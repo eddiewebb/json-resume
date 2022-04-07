@@ -15,17 +15,17 @@ tags: [agile, MIsc.Tips, scrum, Software Development, software development]
 
 "That's absurb!" you shout in your head, **what possible use does this daily agile ceremony hold if not to update my peers on all the great work I did yesterday**.   Well there are several reasons to hold this daily event, but all need to be viewed in the critical lens of reducing the amount of communication needed to the smallest conceivable morsel and frequency. I'll share what I consider a good report and a bad report before I delve into the qualities that distinguish them.
 
-> "Yesterday I completed GD-123, all applications can consume the recommendation service in prod now. Today I will be picking up GD-136, but may need some help on the dependency on the pony service."
+> "Yesterday I completed GD-123, the new user profile, and all applications can consume the recommendation service in prod now. Today I will be picking up GD-136, the user avatar work, but will need some help on visual work."
 
- 
+ Awesome - is that design work a blocker? no, not yet? Rock on..
 
-> "Yesterday I was working on the recommendation service. I hit an issue where the CC service did not accept the criteria for age brackets but was able to resolve it by passing in a qualifier that stipulated the sex it applied to.  I deployed it out to production last night and it was passing all the smoke tests across the board. It should be ready for people to use now.  I'll probably start working on the corral portal, I like the idea of separating the animals by pedigree as well as age but don't feel strongly either way I guess.  Keep in mind that eventually when we have the rancher portal in place we will need a new integration bridge between the pony and cattle services.  Oh, and also I spent sometime yesterday with Bryan reviewing the customer documentation for release 3 and it all looks really good, I like that we included more images than our last round."
+> "Yesterday I was working on the recommendation service. I hit an issue where the CC service did not accept the criteria for age brackets but was able to resolve it by passing in a qualifier that stipulated the first day of month it applied to.  I deployed it out to production last night and it was passing all the smoke tests across the board. It should be ready for people to use now.  I'll probably start working on the corral portal, I like the idea of separating the animals by pedigree as well as age but don't feel strongly either way I guess.  Keep in mind that eventually when we have the rancher portal in place we will need a new integration bridge between the pony and cattle services.  Oh, and also I spent sometime yesterday with Bryan reviewing the customer documentation for release 3 and it all looks really good, I like that we included more images than our last round."
 
-What, sorry, I wasn't paying attention... But seriously, we are an awesome team, we all do great work, tell me about that awesome debugging session over a beer sometime when I have opted to be there and don't have coding my own hot-fire on the mind.   What makes a good update (without being a readout of status)?
-
+What, sorry, I wasn't paying attention... But seriously, we are an awesome team, we all do great work, tell me about that awesome debugging session over apps sometime when I have opted to be there and don't have coding my own hot-fire on the mind.   What makes a good update (without being a readout of status)?
 *   Reference to prioritized and visible work items (the ticket)
 *   Identifying blockers (whether you are the impeded or impeder)
 *   Getting help, or expressing the need for help
 *   Concise!!
+
 
   Use standups to identify impediments that have, or may soon come up, or when they are knocked down.  If you did 99 things yesterday doesn't mean the team will think you are a slouch for only talking in detail to the 1 that affects the other work in flight.
