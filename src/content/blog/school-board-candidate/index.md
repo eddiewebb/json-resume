@@ -19,7 +19,7 @@ I’ve submitted my nomination to be on the ballot for **School Board Member for
 
 But above all, **your vote on May 17 is what matters most. So thank you.**
 
-**Now if you’re interested in WHY** I am running for this position, I’ve included gratuitous detail below, but the highlights:
+**Now if you’re interested in WHY** I am running for this position, I’ve included gratuitous detail further below, but the highlights:
 * This is about community building, together.
 * I have children in the school and I have family working there. 
 * I’m passionate about my family and supporting other families in my community.
@@ -60,8 +60,7 @@ Still here? I appreciate it, and I've captured my thoughts on the position below
     * Helping other customers achieve similar transformations like we saw at Liberty
     * Promoted to Global Director 9 months into role
     * Grew team with self-funded model that generates additional revenue for company
-    * Launched Competitive Intelligence function of company
-    * Formed Community outreach and engineering team
+    * Launched Competitive Intelligence & Community engineering teams
     * Currently managing 18 employees globally across 3 geographies
 * Raising a smart and loving family in Peru with our daughter and son enrolled in Peru (Pre-K & 1st)
 
@@ -77,7 +76,7 @@ So what is that _North Star_, **what is my agenda for the School Board?** Well, 
 But beyond my individual concerns, **I am approaching this role with an open curiosity and passion for my community**.  I've already heard some of you share your concerns, and not surprisingly, it varies a bit, but  we all highly value a good education.  I was pleased to hear from a number of new families who moved here specifically for the quality of our district. Our success comes when we combine our abilities to work across our challenges together, and define and support what drives that education.   If chosen to represent the community I'll work hard to hear all perspectives, and bring our dialog back to shared values. 
 
 
-Shared Values? It can feel impossible these days, but we know it's not.  Conflict in itself is a healthy expression of differing viewpoints, so long as we can effectively handle and address it.  For instance, even those residents who felt taxes were a bit high agreed stupid children would no good either, so it's about finding the balance and compromise in any conflict. :smiley: Of course no conflict is that simple, but also true is that no conversation will get past the superficial view if we never get past hyperbole and rhetoric. We all could spend more time listening and asking sincere questions.  **Genuine curiosity brings understanding,  it brings the deeper understanding of positions, values, and concerns required to reach compromise** and move forward as a community(this is an email about community). 
+Shared Values? It can feel impossible these days, but we know it's not.  Conflict in itself is a healthy expression of differing viewpoints, so long as we can effectively handle and address it.  For instance, even those residents who felt taxes were a bit high agreed stupid children would no good either, so it's about finding the balance and compromise in any conflict. :smiley: Of course no conflict is that simple, but also true is that no conversation will get past the superficial stances if we never get past hyperbole and rhetoric. We all could spend more time listening and asking sincere questions.  **Genuine curiosity brings understanding,  it brings the deeper understanding of positions, values, and concerns required to reach compromise** and move forward as a community(this is an email about community). 
 
 
 If and when we do make changes that impact hundreds of students and employees, it’s important that we move with an intention that is understood across our community.  Of course support will vary from topic to topic, but the goals must always be clear.  I’ve seen first hand just what good and bad change management looks like and the damage of rash decisions. Unnecessary change will only prolong the journey and undermine trust.  It is important we can still act urgently when necessary, but we must do so without haste, and instead move deliberately with consideration for every member of our faculty and staff, and the ultimate impact on our community.
@@ -103,8 +102,8 @@ Resources:
 
 
 
-### Want a Reminder?
+### Want an Election Day Reminder?
 
-You can download a calendar event [for apple/ical](assets/election.ics "Download .ics Calendar Event" ) or [google calandar](https://calendar.google.com/event?action=TEMPLATE&tmeid=MDUydGJhcXRzbHNubGVudDc5cGZoYWFpMjQgZWR3YXJkLmEud2ViYkBt&tmsrc=edward.a.webb%40gmail.com "Add Election Reminder to Google Calendar") to remind you, or add your email to the form below and I'll remind you a couple days out!
+You can download a calendar event [for apple/ical](assets/election.ics "Download .ics Calendar Event" ) or [google calandar](https://calendar.google.com/event?action=TEMPLATE&tmeid=MDUydGJhcXRzbHNubGVudDc5cGZoYWFpMjQgZWR3YXJkLmEud2ViYkBt&tmsrc=edward.a.webb%40gmail.com "Add Election Reminder to Google Calendar") to remind you, or add your email to the form below and I'll remind you a couple days out & morning of the vote **May 17th, 12 noon to 9p.m. in High School Gym**!
 
 {{< subscribe list_name="vote" domain="webbinaro.dev" submit_text="Please remind me!">}}
