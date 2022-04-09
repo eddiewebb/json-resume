@@ -5,6 +5,8 @@ draft: false
 tags: [life, school, family, community]
 featured: true
 weight: 1
+aliases:
+    - /school-board
 ---
 
 _This is a reprint of my campaign email for School Board_

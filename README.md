@@ -70,3 +70,10 @@ Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework 
 ## Copyright and License
 
 Copyright 2013-2018 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-resume/blob/gh-pages/LICENSE) license.
+
+
+
+
+## Serving locally with dfocker
+
+docker run -p1313:1313 -v $PWD:/tmp/site eddiewebb/hugo:0.84.4-webp hugo serve -s /tmp/site/src --bind 0.0.0.0
