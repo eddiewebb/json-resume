@@ -13,7 +13,7 @@ _This is a reprint of my campaign email for School Board_
 
 Hey Friends!
 
-I’ve submitted my nomination to be on the ballot for **School Board Member for the Peru Central School district**.  The vote is May 17th from 12:00 noon to 9:00 p.m. in the High School Gymnasium. I am very excited for this chance to support of our community, **and I need your help:**
+I’ve submitted my nomination to be on the ballot for **School Board Member for the Peru Central School district**.  The vote is May 17th from 12:00 noon to 9:00 p.m. ([want reminders?](#want-an-election-day-reminder "Jump to reminders")) in the High School Gymnasium. I am very excited for this chance to support of our community, **and I need your help:**
 
 * If you have any questions or perspectives to share, I’d love to arrange time to chat. 
 * If you’d like to share this email with others, please do. 
@@ -106,6 +106,6 @@ Resources:
 
 ### Want an Election Day Reminder?
 
-You can download a calendar event [for apple/ical](assets/election.ics "Download .ics Calendar Event" ) or [google calendar](https://calendar.google.com/event?action=TEMPLATE&tmeid=MDUydGJhcXRzbHNubGVudDc5cGZoYWFpMjQgZWR3YXJkLmEud2ViYkBt&tmsrc=edward.a.webb%40gmail.com "Add Election Reminder to Google Calendar") to remind you, or add your email to the form below and I'll remind you a couple days out & morning of the vote **May 17th, 12 noon to 9p.m. in High School Gym**!
+You can download a calendar event [for apple/ical](assets/election.ics "Download .ics Calendar Event" ) or [google calendar](https://calendar.google.com/event?action=TEMPLATE&tmeid=MDUydGJhcXRzbHNubGVudDc5cGZoYWFpMjQgdjJvNGoyaDBhdHZncWhiZzVrczQza2xwMWNAZw&tmsrc=v2o4j2h0atvgqhbg5ks43klp1c%40group.calendar.google.com "Add Election Reminder to Google Calendar") to remind you, or add your email to the form below and I'll remind you a couple days out & morning of the vote **May 17th, 12 noon to 9p.m. in High School Gym**!
 
 {{< subscribe list_name="vote" domain="webbinaro.dev" submit_text="Please remind me!">}}
