@@ -106,6 +106,6 @@ Resources:
 
 ### Want an Election Day Reminder?
 
-You can download a calendar event [for apple/ical](assets/election.ics "Download .ics Calendar Event" ) or [google calandar](https://calendar.google.com/event?action=TEMPLATE&tmeid=MDUydGJhcXRzbHNubGVudDc5cGZoYWFpMjQgZWR3YXJkLmEud2ViYkBt&tmsrc=edward.a.webb%40gmail.com "Add Election Reminder to Google Calendar") to remind you, or add your email to the form below and I'll remind you a couple days out & morning of the vote **May 17th, 12 noon to 9p.m. in High School Gym**!
+You can download a calendar event [for apple/ical](assets/election.ics "Download .ics Calendar Event" ) or [google calendar](https://calendar.google.com/event?action=TEMPLATE&tmeid=MDUydGJhcXRzbHNubGVudDc5cGZoYWFpMjQgZWR3YXJkLmEud2ViYkBt&tmsrc=edward.a.webb%40gmail.com "Add Election Reminder to Google Calendar") to remind you, or add your email to the form below and I'll remind you a couple days out & morning of the vote **May 17th, 12 noon to 9p.m. in High School Gym**!
 
 {{< subscribe list_name="vote" domain="webbinaro.dev" submit_text="Please remind me!">}}
