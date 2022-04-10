@@ -11,7 +11,7 @@ aliases:
 
 _This is a reprint of my campaign email for School Board_
 
-Hey Friends!
+Hello Friends & Neighbors!
 
 I’ve submitted my nomination to be on the ballot for **School Board Member for the Peru Central School district**.  The vote is May 17th from 12:00 noon to 9:00 p.m. ([want reminders?](#want-an-election-day-reminder "Jump to reminders")) in the High School Gymnasium. I am very excited for this chance to support of our community, **and I need your help:**
 
