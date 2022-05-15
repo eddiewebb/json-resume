@@ -7,6 +7,7 @@ featured: true
 weight: 1
 aliases:
     - /school-board
+featured_image: assets/with_kids.jpg
 ---
 {{< floatimg "assets/with_kids.jpg" "350x350" "Eddie with his 2 children" "right" >}}
 
