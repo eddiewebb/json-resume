@@ -5,11 +5,12 @@ draft: false
 tags: [life, school, family, community]
 featured: true
 weight: 1
-aliases:
-    - /school-board
-featured_image: assets/with_kids.jpg
+resources:
+    - name: site_preview
+      title: Voter Resources - Vote May 17 | Eddie Webbinaro
+      src: assets/with_kids.jpg
 ---
-{{< floatimg "assets/with_kids.jpg" "350x350" "Eddie with his 2 children" "right" >}}
+{{< floatimg "site_preview" "350x350" "Eddie with his 2 children" "right" >}}
 
 _This is a reprint of my campaign email for School Board_
 
