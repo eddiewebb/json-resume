@@ -77,3 +77,7 @@ Copyright 2013-2018 Blackrock Digital LLC. Code released under the [MIT](https:/
 ## Serving locally with dfocker
 
 docker run -p1313:1313 -v $PWD:/tmp/site eddiewebb/hugo:0.84.4-webp hugo serve -s /tmp/site/src --bind 0.0.0.0
+
+ OR
+
+docker run --rm -it   -v $(pwd):/src -p 1313:1313   klakegg/hugo:0.93.2-ext serve -s src/

@@ -8,6 +8,7 @@ weight: 1
 aliases:
     - /school-board
 ---
+{{< floatimg "assets/with_kids.jpg" "350x350" "Eddie with his 2 children" "right" >}}
 
 _This is a reprint of my campaign email for School Board_
 
