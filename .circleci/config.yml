@@ -8,7 +8,7 @@ workflows:
       #    name: deploy-test
       - hugo_job:
           name: deploy-prod
-          domain: REZ
+          domain: deploy.edwardawebb.com 
       #    requires:
       #      - deploy-test
           context: [ webbsites ]
