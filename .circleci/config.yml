@@ -21,7 +21,7 @@ jobs:
       domain:
         description: Environment variables prefix. For Eddie this is either TEST or REZ
         type: string
-        default: TEST   
+        default: deploy.edwardawebb.com   
     docker:
       - image: eddiewebb/hugo:0.84.4-webp
     working_directory: ~/repo
@@ -35,7 +35,7 @@ jobs:
       - run:
           name: HUGO build for Test domain
           command: |
-            hugo -v -s ~/repo/src/ --destination /tmp/public -b https://${<<parameters.domain>>HOST}
+            hugo -v -s ~/repo/src/ --destination /tmp/public -b https://<<parameters.domain>>
             ls /tmp/public
             if [ ! -f /tmp/public/index.html ];then
               echo "index.html not created, failing"
@@ -44,17 +44,19 @@ jobs:
       - add_ssh_keys
       - run:
           name: Keyscan  (HACK)
-          command: ssh-keyscan -H ${<<parameters.domain>>HOST} >> ~/.ssh/known_hosts
+          command: |
+            ssh-keyscan -H ${DEPLOY_HOST} >> ~/.ssh/known_hosts
+            echo "${DEPLOY_KEY}" > ~/.ssh/id_ed25519
       - run:
           name: Deploy public folder to <<parameters.domain>>
           command: |
             whoami
             sudo apt-get install -y rsync
-            rsync -avz --delete /tmp/public/ ${<<parameters.domain>>USER}@${<<parameters.domain>>HOST}:${<<parameters.domain>>PATH}/
+            rsync -avz --delete /tmp/public/ ${DEPLOY_USER}@${DEPLOY_HOST}:/var/www/<<parameters.domain>>/
       - run:
           name: Simple content check
           command: |
-            HTTPCODE=`curl -s -o /dev/null -w "%{http_code}" https://${<<parameters.domain>>HOST}/index.html`
+            HTTPCODE=`curl -s -o /dev/null -w "%{http_code}" https://<<parameters.domain>>/index.html`
             if [ "$HTTPCODE" -ne 200 ];then
               echo "index.html not found, failing"
               exit 1
