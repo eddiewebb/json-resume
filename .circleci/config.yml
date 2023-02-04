@@ -11,6 +11,7 @@ workflows:
           domain: REZ
       #    requires:
       #      - deploy-test
+          context: [ webbsites ]
           filters:
             branches:
               only: master
