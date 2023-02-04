@@ -6,10 +6,6 @@ tags: []
 featured: false
 weight: 1
 aliases: []
-resources:
-    - name: inside
-      title: Eddie Webbinaro
-      src: assets/lux_sensor_inside.jpg
 ---
 
 
