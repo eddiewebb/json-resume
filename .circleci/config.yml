@@ -8,7 +8,7 @@ workflows:
       #    name: deploy-test
       - hugo_job:
           name: deploy-prod
-          domain: deploy.edwardawebb.com 
+          domain: webbinaro.dev 
       #    requires:
       #      - deploy-test
           context: [ webbsites ]
@@ -22,7 +22,7 @@ jobs:
       domain:
         description: Environment variables prefix. For Eddie this is either TEST or REZ
         type: string
-        default: deploy.edwardawebb.com   
+        default: webbinaro.dev   
     docker:
       - image: eddiewebb/hugo:0.84.4-webp
     working_directory: ~/repo
