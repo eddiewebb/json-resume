@@ -47,13 +47,14 @@ jobs:
           name: Keyscan  (HACK)
           command: |
             ssh-keyscan -H ${DEPLOY_HOST} >> ~/.ssh/known_hosts
-            echo "${DEPLOY_KEY}" > ~/.ssh/id_ed25519
+            echo "${DEPLOY_KEY}" > ~/.ssh/id_ed25519 && chmod 0600 ~/.ssh/id_ed25519
       - run:
           name: Deploy public folder to <<parameters.domain>>
           command: |
             whoami
             sudo apt-get install -y rsync
             rsync -avz --delete /tmp/public/ ${DEPLOY_USER}@${DEPLOY_HOST}:/var/www/<<parameters.domain>>/
+            ssh ${DEPLOY_USER}@${DEPLOY_HOST} -C "chown -R www-data:www-data /var/www/<<parameters.domain>>"
       - run:
           name: Simple content check
           command: |
