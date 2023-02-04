@@ -47,7 +47,7 @@ jobs:
           name: Keyscan  (HACK)
           command: |
             ssh-keyscan -H ${DEPLOY_HOST} >> ~/.ssh/known_hosts
-            echo "${DEPLOY_KEY}" > ~/.ssh/id_ed25519 && chmod 0600 ~/.ssh/id_ed25519
+            echo "${DEPLOY_KEY}" | base64 -d > ~/.ssh/id_ed25519 && chmod 0600 ~/.ssh/id_ed25519
       - run:
           name: Deploy public folder to <<parameters.domain>>
           command: |
