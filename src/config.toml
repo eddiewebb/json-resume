@@ -65,6 +65,11 @@ enableGitInfo = true
     link = "https://keybase.io/edwardawebb"
     icon = "keybase"
 
+[[params.handles]]
+    name = "VCard"
+    link = "/Eddie_Webbinaro.vcf"
+    icon = "id-card fas"
+
 [permalinks]
   publications = "/presentations/:title/"
 
