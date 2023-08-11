@@ -34,20 +34,13 @@ enableGitInfo = true
     description = "Eddie has over 15 years experience enabling agile, CI/CD and DevOps culture in the enterprise.  Previously the Director of Enterprise DevOps Platforms influencing culture and technology at a Fortune 100 company, Eddie now helps CircleCI customers of all sizes adopt the best technologies and practices on their DevOps journey."
     favicon = "images/favicon.ico"
     # what sections
-    showSkills = true
-    showProjects = true
-    showOpenSource = true
-    showPublications = true
-    publicationsAlternateName = "Presentations"
-    showExperience = true
-    showEducation = true
-    showBlog      = true
     showQr = false
     showContact     = true
 
     # do you want to show git hash on page footer and link to repo? Add commit prefix here.
     gitCommitPrefix = "https://github.com/eddiewebb/json-resume/commit/"
 
+    sections = ["skills","publications","creations","contributions","experience","education","blog"]
 
 [[params.handles]]
     name = "LinkedIn"
