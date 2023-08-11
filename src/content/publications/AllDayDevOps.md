@@ -8,7 +8,7 @@ tags: ["DevOps","Continuous Integration","Continuous Delivery","CI/CD pipelines"
 image: "/img/organicdevops-thumb.webp"
 link: "http://www.alldaydevops.com/blog/organically-devops-building-quality-and-security-into-the-software-supply-chain-at-liberty-mutual"
 fact: "Interesting little tidbit shown below image on summary and detail page"
-weight: 400
+weight: 100
 sitemap:
   priority : 0.9
 ---

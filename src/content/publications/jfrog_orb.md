@@ -7,7 +7,7 @@ description: "This joint webinar introduces CircleCI Orbs and demonstrates the e
 tags: ["DevOps","Continuous Integration","Continuous Delivery","CI/CD pipelines","Artifactory","JFrog","CircleCI"]
 image: "/img/circleci_jfrog_webinar-thumb.webp"
 link: "https://www.youtube.com/watch?v=V5iApHNrSEs"
-weight: 100
+weight: 400
 sitemap:
   priority : 0.9
 ---
