@@ -9,9 +9,10 @@ outputs:
 - rss
 - json
 ---
-**Director, Solutions Engineering @ [CircleCI](https://circleci.com)**
+**Head of Solutions Engineering @ [CircleCI](https://circleci.com)**
 
-Eddie has over a decade of experience enabling agile, CI/CD and DevOps culture in the enterprise.  Previously the Director of Enterprise Software Delivery Platforms at a Fortune 100 company, Eddie now leverages his experience influencing culture and technology to help CircleCI customers of all sizes adopt the best technologies and practices along their journey.
+Previously the Head of Software Delivery Platforms at a Fortune 100 insurer, Eddie Webbinaro has spent the last 15 years working in the convergence of Agile, CI/CD, DevOps, and ITSM. Eddie currently leads CircleCI’s global Solutions Engineering teams, helping small startups and highly regulated organizations adopt the culture, tooling, and training to elevate trust and accelerate delivery.
+
 
 This site was generated using [HUGO](https://gohugo.io/) from an [open source theme](https://github.com/eddiewebb/hugo-resume) via a [CircleCI pipeline](https://circleci.com/gh/eddiewebb/json-resume).
 
