@@ -1,11 +1,11 @@
 [
   {
       "grouping":"Architecture & Concepts",
-      "skills":[ "API Management Platforms", "Configuration as Code", "DevOps","DNS","Disaster Recovery & HA", "GraphQL", "Firewalls","Microservices","REST", "SOA", "SaaS/FaaS/PaaS/IaaS", "Webservices"]
+      "skills":[ "API Management Platforms", "Infrastructure as Code", "DevOps","DNS","Disaster Recovery & HA", "GRC", "Firewalls","Microservices","REST", "SOA", "SaaS/FaaS/PaaS/IaaS", "Webservices"]
   },
   {
       "grouping":"Languages, Operating Systems & Dev Tools",
-      "skills":[ "Java","Python","git","go","subversion","linux","maven", "bash","php","cypress", "selenium"]
+      "skills":[ "Java","Python","git","go","linux","maven", "bash","php","cypress", "selenium"]
   },
   {
     "grouping":"Platform, Container & Cloud Administration",
@@ -17,6 +17,7 @@
           {"name":"CircleCI","link":"https://circleci.com"},
           {"name":"Cloud Foundry","link":"https://cloudfoundry.org"},
           {"name":"Docker","link":"https://docker.com"},
+          {"name":"Kubernetes","link":"https://kubernetes.io/"},
           {"name":"Google Cloud","link":"https://cloud.google.com"},
           {"name":"Linux","link":"https://bosh.io"},
           {"name":"NGINX","link":"https://www.nginx.com/"},
@@ -24,6 +25,7 @@
           {"name":"SonarQube","link":"https://www.sonarsource.com/"},
           {"name":"Sonatype Nexus & CLM","link":"https://sonatype.com/"},
           {"name":"Terraform","link":"https://www.terraform.io/"}
+          {"name":"Vault","link":"https://www.vaultproject.io/"}
       ]
   }
 ]
