@@ -58,6 +58,11 @@ enableGitInfo = true
     name = "Keybase"
     link = "https://keybase.io/edwardawebb"
     icon = "keybase"
+    
+[[params.handles]]
+    name = "Bluesky"
+    link = "https://bsky.app/profile/webbinaro.dev"
+    icon = "bluesky"
 
 #[[params.handles]]
 #    name = "VCard"
