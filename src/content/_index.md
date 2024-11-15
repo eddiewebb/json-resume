@@ -14,7 +14,7 @@ outputs:
 Previously the Global Director for Enterprise Software Delivery Platforms at a Fortune 100 insurer, Eddie Webbinaro has spent the last 15 years working in the convergence of Agile, CI/CD, DevOps, and ITSM. Eddie currently leads CircleCI’s global Field Engineering teams, helping small startups and highly regulated organizations adopt the culture, tooling, and training to elevate trust and accelerate delivery. 
 
 Enabling software teams with the confidence to move quickly without negatively impacting business operations.  
-(Move fast and break things is dead.)
+(_Move fast and break things_ is dead.)
 
 
 This site was generated using [HUGO](https://gohugo.io/) from an [open source theme](https://github.com/eddiewebb/hugo-resume) via a [CircleCI pipeline](https://circleci.com/gh/eddiewebb/json-resume).
