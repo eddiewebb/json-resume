@@ -19,5 +19,12 @@
 		"badge":"https://www.certmetrics.com/api/ob/image/atlassian/c/26/",
 		"proof":"https://www.certmetrics.com/atlassian/public/badge.aspx?i=26&t=c&d=2020-08-07&ci=AT00143196"
 		
+	},
+	{
+		"name":"ITIL 4: Foundations",
+		"description": "ITIL 4 Foundation introduces an end-to-end operating model for the creation, delivery and continual improvement of technology-enabled products and services.",
+		"badge":"https://agilizing.com/wp-content/uploads/2024/08/ITIL-4-Foundation.png",
+		"proof":"https://candidate.peoplecert.org/MobileReports.aspx?id=40A47E5AE86A7508A3C077226E05380F1AF555BBF115DB32372E8F7CDC4DBD263323447AF1451DD2DD881C25B7104C7DC50A2BD412555869FCD87CCD7F852E561E2D12E9DBFAF3F37857BF72ED0A4BE61FA82D7E653773BC3FE3DBE2332CD482DB669483"
+		
 	}
 ]
