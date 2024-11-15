@@ -24,7 +24,7 @@
           {"name":"Packer","link":"https://www.packer.io/"},
           {"name":"SonarQube","link":"https://www.sonarsource.com/"},
           {"name":"Sonatype Nexus & CLM","link":"https://sonatype.com/"},
-          {"name":"Terraform","link":"https://www.terraform.io/"}
+          {"name":"Terraform","link":"https://www.terraform.io/"},
           {"name":"Vault","link":"https://www.vaultproject.io/"}
       ]
   }
