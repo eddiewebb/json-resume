@@ -18,5 +18,4 @@ Enabling software teams with the confidence to move quickly without negatively i
 
 
 This site was generated using [HUGO](https://gohugo.io/) from an [open source theme](https://github.com/eddiewebb/hugo-resume) via a [CircleCI pipeline](https://circleci.com/gh/eddiewebb/json-resume).
-
 ![CircleCI Status Badge](https://circleci.com/gh/eddiewebb/json-resume.svg?style=svg)

@@ -36,6 +36,9 @@ enableGitInfo = true
     # what sections
     showQr = false
     showContact     = true
+    showBoards  = true
+    showCertifications = true
+    showSocializations = true
 
     # do you want to show git hash on page footer and link to repo? Add commit prefix here.
     gitCommitPrefix = "https://github.com/eddiewebb/json-resume/commit/"
@@ -63,6 +66,11 @@ enableGitInfo = true
     name = "Bluesky"
     link = "https://bsky.app/profile/webbinaro.dev"
     icon = "bluesky"
+
+[[params.handles]]
+    link = "https://stackoverflow.com/users/82880/eddie"
+    name = "Stack Overflow"
+    icon = "stack-overflow"
 
 #[[params.handles]]
 #    name = "VCard"
