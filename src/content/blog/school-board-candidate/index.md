@@ -3,7 +3,6 @@ title: I'm running for School Board
 date: 2022-04-04 08:00:00
 draft: false
 tags: [life, school, family, community]
-featured: true
 weight: 1
 aliases:
     - /school-board

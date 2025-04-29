@@ -3,7 +3,6 @@ title: Vote Tuesday, May 17
 date: 2022-05-15 08:00:00
 draft: false
 tags: [life, school, family, community]
-featured: true
 weight: 1
 resources:
     - name: site_preview

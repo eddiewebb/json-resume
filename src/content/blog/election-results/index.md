@@ -3,7 +3,6 @@ title: Eddie Webbinaro Elected School Board Member
 date: 2022-05-17 22:00:00
 draft: false
 tags: [life, school, family, community]
-featured: true
 weight: 1
 aliases: [/we-won]
 resources:
