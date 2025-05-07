@@ -1,0 +1,99 @@
+<html>
+<head>
+    <title>Two Tone / Toneout Generator for Fire and EMS</title>
+    <script src="https://unpkg.com/tone"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h1>Two Tone / Toneout Generator for EMS/Fire</h1>
+    <table id="tonetable">
+        <tr data-rowid="1">
+            <td> Label (optional): <input type="text" name="label" id="label" value="Toneout 1"/></td>
+            <td> Tone 1(Hz): <input type="text" name="tone" id="tone" value="601.1"/></td>
+            <td> Tone 2(Hz): <input type="text" name="ttwo" id="ttwo" value="788.2"/></td>
+            <td> <button  class="button" id="start-button" title="Play">Play</button></td>
+        </tr>
+    </table>
+    <button class="button" id="add-row" title="addrow">Add Row</button>
+    <button class="button" id="copy-url" title="copyurl">Copy URL</button>
+<script>
+
+    function playTone(rowId){
+        console.log(`Playing tone from row ${rowId}`)
+        tone = document.querySelector(`tr[data-rowid="${rowId}"] #tone`).value
+        ttwo = document.querySelector(`tr[data-rowid="${rowId}"] #ttwo`).value
+
+        const osc = new Tone.Oscillator().toDestination();
+        osc.frequency.value = tone;
+        osc.frequency.setValueAtTime(ttwo,"+1","3")
+        osc.start().stop("+4");
+
+    }
+    function addRow(){
+        rowCount = document.querySelectorAll('table#tonetable tr').length
+        newRow = $(`table#tonetable tr[data-rowid='${rowCount}']`).clone();
+        newRow[0].dataset.rowid = rowCount+1
+        newRow[0].firstElementChild.firstElementChild.value=`Toneout ${newRow[0].dataset.rowid}`
+        newRow.appendTo('#tonetable')
+        
+    }
+    async function copyUrl(){
+        //update address Bar
+        const urlParams = new URLSearchParams(window.location.search);
+        rows = document.querySelectorAll(`table#tonetable tr`)
+        rows.forEach(row => {
+            rowIndex=row.dataset.rowid
+            values=[]
+            values.push(getRowValue(rowIndex, "label").value)
+            values.push(getRowValue(rowIndex, "tone").value)
+            values.push(getRowValue(rowIndex, "ttwo").value)
+            urlParams.set(rowIndex,values.join(","))
+        });
+        console.log(urlParams)
+        await navigator.clipboard.writeText(window.location).then(()=>{
+            window.location.search = urlParams
+        })
+        
+    }
+    function loadPresets(){
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        for (const key of urlParams.keys()) {
+            console.log(key); // Output: Each parameter key
+            rowIndex=parseInt(key)
+            if (rowIndex > 1){
+                addRow()
+            }
+            values=urlParams.get(key).split(",")
+            row = $(`table#tonetable tr[data-rowid='${rowIndex}']`)
+            console.log(row)
+            label=`Toneout ${rowIndex}`
+            if(values.length == 3){
+               label=values.shift()
+            }
+            getRowValue(rowIndex, "label").value=label
+            getRowValue(rowIndex, "tone").value=values.shift()
+            getRowValue(rowIndex, "ttwo").value=values.shift()
+
+        }
+    }
+    function getRowValue(rowId,elementId){
+        return document.querySelector(`tr[data-rowid="${rowId}"] #${elementId}`)
+    }
+    $(document).ready(function () {
+        loadPresets();
+
+        $(document).on("click", "#start-button", function(e) {
+            rowId = e.target.parentElement.parentElement.dataset.rowid
+            playTone(rowId);
+        })
+        $(document).on("click", "#add-row", function(e) {
+            addRow();
+        })
+        $(document).on("click", "#copy-url", function(e) {
+            copyUrl();
+        })
+    });
+</script>
+</body>
+</html>
