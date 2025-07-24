@@ -16,5 +16,21 @@
         "term_start":"2022-06-01",
         "term_end":"2027-05-31",
         "role":"BOE Member"
+    },
+    {
+        "organization":"Peru Fire Department",
+        "logo":"/peruvfd.png",
+        "website":"https://pfd27.com",
+        "description":"Peru Fire Department is an all volunteer Fire and Rescue department.",
+        "term_start":"2025-03-01",
+        "role":"Firefighter"
+    },
+    {
+        "organization":"Clinton Community College, Board of Trustees",
+        "logo":"/ccc.png",
+        "website":"https://www.clinton.edu/",
+        "description":"Clinton Community College",
+        "term_start":"2025-06-30",
+        "role":"Trustee"
     }
 ]
