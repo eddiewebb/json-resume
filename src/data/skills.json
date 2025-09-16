@@ -5,21 +5,21 @@
   },
   {
       "grouping":"Languages, Operating Systems & Dev Tools",
-      "skills":[ "Java","Python","git","go","linux","maven", "bash","php","cypress", "selenium"]
+      "skills":[ "Java","Python","git","go","linux","maven", "bash","php",{"name":"cypress","devicon":"cypressio"}, "selenium"]
   },
   {
     "grouping":"Platform, Container & Cloud Administration",
       "skills":[
           {"name":"Atlassian","link":"https://atlassian.com"},
           {"name":"Artifactory","link":"https://jfrog.com"},
-          {"name":"Argo","link":"https://argoproj.github.io/"},
-          {"name":"AWS","link":"https://aws.amazon.com"},
+          {"name":"Argo Project","devicon":"argocd","link":"https://argoproj.github.io/"},
+          {"name":"AWS","devicon":"amazonwebservices","link":"https://aws.amazon.com"},
           {"name":"BOSH","link":"https://bosh.io"},
           {"name":"CircleCI","link":"https://circleci.com"},
           {"name":"Cloud Foundry","link":"https://cloudfoundry.org"},
           {"name":"Docker","link":"https://docker.com"},
           {"name":"Kubernetes","link":"https://kubernetes.io/"},
-          {"name":"Google Cloud","link":"https://cloud.google.com"},
+          {"name":"Google Cloud","devicon":"googlecloud","link":"https://cloud.google.com"},
           {"name":"Linux","link":"https://bosh.io"},
           {"name":"NGINX","link":"https://www.nginx.com/"},
           {"name":"SonarQube","link":"https://www.sonarsource.com/"},
