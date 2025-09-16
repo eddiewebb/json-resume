@@ -12,6 +12,7 @@
       "skills":[
           {"name":"Atlassian","link":"https://atlassian.com"},
           {"name":"Artifactory","link":"https://jfrog.com"},
+          {"name":"Argo","link":"https://argoproj.github.io/"},
           {"name":"AWS","link":"https://aws.amazon.com"},
           {"name":"BOSH","link":"https://bosh.io"},
           {"name":"CircleCI","link":"https://circleci.com"},
@@ -21,7 +22,6 @@
           {"name":"Google Cloud","link":"https://cloud.google.com"},
           {"name":"Linux","link":"https://bosh.io"},
           {"name":"NGINX","link":"https://www.nginx.com/"},
-          {"name":"Packer","link":"https://www.packer.io/"},
           {"name":"SonarQube","link":"https://www.sonarsource.com/"},
           {"name":"Sonatype Nexus & CLM","link":"https://sonatype.com/"},
           {"name":"Terraform","link":"https://www.terraform.io/"},
