@@ -26,7 +26,7 @@ enableGitInfo = true
 [params]
     firstName = "Eddie"
     lastName = "Webbinaro"
-    profileImage = "img/TechChat.webp"
+    profileImage = "img/eddie_bees.jpg"
     phone = "603-463-0447"
     contactNote = "Technology Sales Leader in CI, CD, and DevOps"
     address = "Peru, NY"
