@@ -1,4 +1,4 @@
-baseURL = "https://edwardawebb.com/"
+baseURL = "https://webbinaro.dev/"
 languageCode = "en-us"
 title = "Eddie Webbinaro"
 theme = "resume"
@@ -31,6 +31,7 @@ enableGitInfo = true
     contactNote = "Technology Sales Leader in CI, CD, and DevOps"
     address = "Peru, NY"
     email = "eddie@webbinaro.dev"
+    workemail = "eddie.webbinaro@akuity.io"
     description = "Eddie has over 15 years experience enabling agile, CI/CD and DevOps culture in the enterprise.  Previously the Director of Enterprise DevOps Platforms influencing culture and technology at a Fortune 100 company, Eddie now helps CircleCI customers of all sizes adopt the best technologies and practices on their DevOps journey."
     favicon = "images/favicon.ico"
     # what sections
@@ -39,6 +40,16 @@ enableGitInfo = true
     showBoards  = true
     showCertifications = true
     showSocializations = true
+    vcardfields = [
+        "name",
+        "image",
+        "org",
+        "email",
+        "workemail",
+        "phone",
+        "url",
+        "title"
+    ]
 
     # do you want to show git hash on page footer and link to repo? Add commit prefix here.
     gitCommitPrefix = "https://github.com/eddiewebb/json-resume/commit/"
@@ -85,6 +96,17 @@ enableGitInfo = true
 [params.google.analytics]
     trackerID = "UA-28342049-2"
 
+
+[mediaTypes]
+  [mediaTypes."text/vcard"]
+    suffixes = ["vcf"]
+
+[outputFormats]
+  [outputFormats.VCard]
+    mediaType = "text/vcard"
+    baseName = "contact"
+    isPlainText = true
+    notAlternative = true
 
 [outputs]
     home = ["HTML", "JSON"]

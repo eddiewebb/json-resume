@@ -1,6 +1,7 @@
 ---
 title: Eddie Webbinaro
-layout: contact
+layout: "contact"
+outputs: ["HTML","VCard"]
 ---
 
-[VCard Download](/Eddie_Webbinaro.vcf)
+[VCard Download](/contact.vcf)
