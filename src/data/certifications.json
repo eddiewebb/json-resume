@@ -1,5 +1,12 @@
 [
 	{
+		"name":"Technician, Amateur Radio Operator",
+		"description": "Technician, Amateur Radio Operator",
+		"badge":"/img/fcc_seal.png",
+		"proof":"https://wireless2.fcc.gov/UlsApp/UlsSearch/license.jsp?licKey=5246465"
+
+	},
+	{
 		"name":"AWS Solutions Architect",
 		"description": "AWS Certified Solutions Architect – Associate",
 		"badge":"/img/awssa.png",

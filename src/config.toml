@@ -96,6 +96,11 @@ enableGitInfo = true
 [params.google.analytics]
     trackerID = "UA-28342049-2"
 
+[params.customSections.ham]
+    name = "KE2HOA"
+    url  = "https://ham.webbinaro.dev/x/hi"
+
+
 
 [mediaTypes]
   [mediaTypes."text/vcard"]

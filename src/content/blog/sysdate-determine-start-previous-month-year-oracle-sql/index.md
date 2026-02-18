@@ -3,7 +3,6 @@ title: 'Oracle SQL: Use sysdate for start and end of previous month and year'
 date: Mon, 30 Mar 2009 22:47:59 +0000
 draft: false
 tags: [Database Tips, oracle]
-featured: true
 ---
 
 Wow, that title is a mouthful. Basically i figured out how to **use SYSDATE and some other temporal methods to automatically determine the first and last day of the previous month, or previous year**. I needed this to hand off  a canned query that can be used by many users without the need to constantly update the date parameters of the query.  For instance "**Show me sales totals for the previous month!**"  or " **What was the total number of transactions last year?**" You could just type something like
