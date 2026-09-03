@@ -4,6 +4,9 @@ title = "Eddie Webbinaro"
 theme = "resume"
 enableGitInfo = true
 
+ignoreLogs = ['warning-goldmark-raw-html']
+
+
 [markup]
   [markup.highlight]
     codeFences = true
@@ -115,3 +118,5 @@ enableGitInfo = true
 
 [outputs]
     home = ["HTML", "JSON"]
+
+
