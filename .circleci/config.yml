@@ -52,7 +52,8 @@ jobs:
           name: Deploy public folder to <<parameters.domain>>
           command: |
             whoami
-            sudo apt-get install -y rsync
+            echo "Syncing to ${DEPLOY_USER}@${DEPLOY_HOST}:/var/www/<<parameters.domain>>/"
+            #sudo apt-get install -y rsync
             rsync -avz --delete /tmp/public/ ${DEPLOY_USER}@${DEPLOY_HOST}:/var/www/<<parameters.domain>>/
             ssh ${DEPLOY_USER}@${DEPLOY_HOST} -C "chown -R www-data:www-data /var/www/<<parameters.domain>>"
       - run:
