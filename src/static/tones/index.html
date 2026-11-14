@@ -1,159 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Two-Tone Generator & Decoder</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            margin: 2rem;
-            background: #f4f6f8;
-            color: #333;
-        }
-
-        h1 {
-            margin-bottom: 0.5rem;
-        }
-
-        .card {
-            background: #fff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 1.5rem;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1rem;
-        }
-
-        th,
-        td {
-            text-align: left;
-            padding: 0.75rem;
-            border-bottom: 1px solid #eee;
-        }
-
-        th {
-            background: #fafafa;
-        }
-
-        input[type="number"] {
-            width: 90px;
-            padding: 0.4rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        button {
-            padding: 0.4rem 0.8rem;
-            border: none;
-            background: #0066cc;
-            color: #fff;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-right: 0.3rem;
-        }
-
-        button:hover {
-            background: #0052a3;
-        }
-
-        button.danger {
-            background: #d9534f;
-        }
-
-        button.danger:hover {
-            background: #c9302c;
-        }
-
-        .status {
-            font-weight: bold;
-            margin-left: 1rem;
-            color: #0066cc;
-        }
-
-        .mic-indicator {
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #ccc;
-            margin-right: 0.5rem;
-        }
-
-        .mic-indicator.active {
-            background: #28a745;
-            box-shadow: 0 0 8px #28a745;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two-Tone Generator & Decoder</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 2rem; background: #f4f6f8; color: #333; }
+    h1 { margin-bottom: 0.5rem; }
+    .card { background: #fff; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 1.5rem; }
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    th, td { text-align: left; padding: 0.75rem; border-bottom: 1px solid #eee; }
+    th { background: #fafafa; }
+    input[type="text"] { width: 140px; padding: 0.4rem; border: 1px solid #ccc; border-radius: 4px; }
+    input[type="number"] { width: 85px; padding: 0.4rem; border: 1px solid #ccc; border-radius: 4px; }
+    button { padding: 0.4rem 0.8rem; border: none; background: #0066cc; color: #fff; border-radius: 4px; cursor: pointer; margin-right: 0.3rem; }
+    button:hover { background: #0052a3; }
+    button.secondary { background: #6c757d; }
+    button.secondary:hover { background: #5a6268; }
+    button.danger { background: #d9534f; }
+    button.danger:hover { background: #c9302c; }
+    .status { font-weight: bold; margin-left: 1rem; color: #0066cc; }
+    .mic-indicator { display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #ccc; margin-right: 0.5rem; }
+    .mic-indicator.active { background: #28a745; box-shadow: 0 0 8px #28a745; }
+    .toolbar { display: flex; align-items: center; justify-content: space-between; margin-top: 1rem; }
+  </style>
 </head>
-
 <body>
 
-    <h1>Two-Tone Sequential Paging Utility</h1>
-    <p>Generate, play, export WAV files, and auto-decode two-tone signals from files or microphone audio.</p>
+  <h1>Two-Tone Sequential Paging Utility</h1>
+  <p>Generate, play, export WAV files, and auto-decode two-tone signals from files or microphone audio.</p>
 
-    <div class="card">
-        <h2>Signal Decoder</h2>
-        <div style="margin-bottom: 1rem;">
-            <label for="audioFileInput"><strong>Decode Audio File:</strong></label>
-            <input type="file" id="audioFileInput" accept="audio/*">
-        </div>
-        <div>
-            <button id="toggleMicBtn">Enable Microphone Listening</button>
-            <span id="micIndicator" class="mic-indicator"></span>
-            <span id="decoderStatus" class="status">Idle</span>
-        </div>
+  <div class="card">
+    <h2>Signal Decoder</h2>
+    <div style="margin-bottom: 1rem;">
+      <label for="audioFileInput"><strong>Decode Audio File:</strong></label>
+      <input type="file" id="audioFileInput" accept="audio/*">
     </div>
-
-    <div class="card">
-        <h2>Tone Configurations</h2>
-        <table id="tonesTable">
-            <thead>
-                <tr>
-                    <th>Tone A Freq (Hz)</th>
-                    <th>Tone A Duration (s)</th>
-                    <th>Tone B Freq (Hz)</th>
-                    <th>Tone B Duration (s)</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody id="tonesTableBody">
-            </tbody>
-        </table>
-        <br>
-        <button id="addRowBtn">+ Add Custom Row</button>
+    <div>
+      <button id="toggleMicBtn">Enable Microphone Listening</button>
+      <span id="micIndicator" class="mic-indicator"></span>
+      <span id="decoderStatus" class="status">Idle</span>
     </div>
+  </div>
 
-    <script type="module">
-        import { playTonePair } from './js/tones.js';
-        import { downloadToneWav } from './js/audio-exporter.js';
-        import { decodeAudioFile, TwoToneDecoder } from './js/tone-decoder.js';
+  <div class="card">
+    <h2>Tone Configurations</h2>
+    <table id="tonesTable">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Tone A Freq (Hz)</th>
+          <th>Tone A Duration (s)</th>
+          <th>Tone B Freq (Hz)</th>
+          <th>Tone B Duration (s)</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="tonesTableBody">
+      </tbody>
+    </table>
+    <div class="toolbar">
+      <button id="addRowBtn">+ Add Custom Row</button>
+      <button id="copyUrlBtn" class="secondary">Copy Bookmarkable Link</button>
+    </div>
+  </div>
 
-        const tableBody = document.getElementById('tonesTableBody');
-        const addRowBtn = document.getElementById('addRowBtn');
-        const fileInput = document.getElementById('audioFileInput');
-        const toggleMicBtn = document.getElementById('toggleMicBtn');
-        const micIndicator = document.getElementById('micIndicator');
-        const statusEl = document.getElementById('decoderStatus');
+  <script type="module">
+    import { playTonePair } from './js/tones.js';
+    import { downloadToneWav } from './js/audio-exporter.js';
+    import { decodeAudioFile, TwoToneDecoder } from './js/tone-decoder.js';
 
-        let isMicListening = false;
-        let micStream = null;
-        let audioContext = null;
-        let analyserNode = null;
-        let micAnimationId = null;
-        let micDecoder = null;
+    const tableBody = document.getElementById('tonesTableBody');
+    const addRowBtn = document.getElementById('addRowBtn');
+    const copyUrlBtn = document.getElementById('copyUrlBtn');
+    const fileInput = document.getElementById('audioFileInput');
+    const toggleMicBtn = document.getElementById('toggleMicBtn');
+    const micIndicator = document.getElementById('micIndicator');
+    const statusEl = document.getElementById('decoderStatus');
 
-        function addRow(freqA = 701.0, durA = 1.0, freqB = 903.2, durB = 3.0) {
-            const rowId = Date.now() + Math.random().toString(36).substr(2, 5);
-            const tr = document.createElement('tr');
-            tr.id = `row-${rowId}`;
-            tr.innerHTML = `
+    let isMicListening = false;
+    let micStream = null;
+    let audioContext = null;
+    let analyserNode = null;
+    let micAnimationId = null;
+    let micDecoder = null;
+
+    /**
+     * Updates the browser URL query string to match the current form state.
+     * Output format: ?1=EMS%2C601.1%2C788.2&2=Fire%2C601.1%2C510.5
+     */
+    function updateURLParams() {
+      const rows = tableBody.querySelectorAll('tr');
+      const params = new URLSearchParams();
+
+      rows.forEach((tr, index) => {
+        const title = tr.querySelector('.rowTitle').value.trim() || `Tone ${index + 1}`;
+        const fA = parseFloat(tr.querySelector('.freqA').value) || 0;
+        const dA = parseFloat(tr.querySelector('.durA').value) || 1.0;
+        const fB = parseFloat(tr.querySelector('.freqB').value) || 0;
+        const dB = parseFloat(tr.querySelector('.durB').value) || 3.0;
+
+        let val;
+        if (dA === 1.0 && dB === 3.0) {
+          val = `${title},${fA},${fB}`;
+        } else {
+          val = `${title},${fA},${dA},${fB},${dB}`;
+        }
+
+        params.set(index + 1, val);
+      });
+
+      const newSearch = params.toString() ? `?${params.toString()}` : window.location.pathname;
+      window.history.replaceState(null, '', newSearch);
+    }
+
+    function addRow(title = 'Callout', freqA = 701.0, durA = 1.0, freqB = 903.2, durB = 3.0, triggerURLUpdate = true) {
+      const rowId = Date.now() + Math.random().toString(36).substr(2, 5);
+      const tr = document.createElement('tr');
+      tr.id = `row-${rowId}`;
+      tr.innerHTML = `
+        <td><input type="text" class="rowTitle" value="${title}"></td>
         <td><input type="number" step="0.1" class="freqA" value="${Math.round(freqA * 10) / 10}"></td>
         <td><input type="number" step="0.1" class="durA" value="${durA.toFixed(2)}"></td>
         <td><input type="number" step="0.1" class="freqB" value="${Math.round(freqB * 10) / 10}"></td>
@@ -165,111 +131,168 @@
         </td>
       `;
 
-            tr.querySelector('.play-btn').addEventListener('click', () => {
-                const fA = tr.querySelector('.freqA').value;
-                const dA = tr.querySelector('.durA').value;
-                const fB = tr.querySelector('.freqB').value;
-                const dB = tr.querySelector('.durB').value;
-                playTonePair(fA, dA, fB, dB);
-            });
+      tr.querySelectorAll('input').forEach(input => {
+        input.addEventListener('input', updateURLParams);
+      });
 
-            tr.querySelector('.download-btn').addEventListener('click', () => {
-                const fA = tr.querySelector('.freqA').value;
-                const dA = tr.querySelector('.durA').value;
-                const fB = tr.querySelector('.freqB').value;
-                const dB = tr.querySelector('.durB').value;
-                downloadToneWav(fA, dA, fB, dB, `tone_${fA}Hz_${fB}Hz.wav`);
-            });
+      tr.querySelector('.play-btn').addEventListener('click', () => {
+        const fA = tr.querySelector('.freqA').value;
+        const dA = tr.querySelector('.durA').value;
+        const fB = tr.querySelector('.freqB').value;
+        const dB = tr.querySelector('.durB').value;
+        playTonePair(fA, dA, fB, dB);
+      });
 
-            tr.querySelector('.delete-btn').addEventListener('click', () => {
-                tr.remove();
-            });
+      tr.querySelector('.download-btn').addEventListener('click', () => {
+        const tName = tr.querySelector('.rowTitle').value.trim() || 'tone';
+        const fA = tr.querySelector('.freqA').value;
+        const dA = tr.querySelector('.durA').value;
+        const fB = tr.querySelector('.freqB').value;
+        const dB = tr.querySelector('.durB').value;
+        downloadToneWav(fA, dA, fB, dB, `${tName}_${fA}Hz_${fB}Hz.wav`);
+      });
 
-            tableBody.appendChild(tr);
+      tr.querySelector('.delete-btn').addEventListener('click', () => {
+        tr.remove();
+        updateURLParams();
+      });
+
+      tableBody.appendChild(tr);
+
+      if (triggerURLUpdate) {
+        updateURLParams();
+      }
+    }
+
+    /**
+     * Reads URL query parameters on page load and populates initial rows.
+     */
+    function loadRowsFromURL() {
+      const params = new URLSearchParams(window.location.search);
+      let loaded = false;
+      let index = 1;
+
+      while (params.has(index.toString())) {
+        const raw = params.get(index.toString());
+        if (raw) {
+          const parts = raw.split(',');
+          if (parts.length >= 3) {
+            const title = parts[0];
+            const fA = parseFloat(parts[1]) || 0;
+            let dA = 1.0;
+            let fB = parseFloat(parts[2]) || 0;
+            let dB = 3.0;
+
+            if (parts.length >= 5) {
+              dA = parseFloat(parts[2]) || 1.0;
+              fB = parseFloat(parts[3]) || 0;
+              dB = parseFloat(parts[4]) || 3.0;
+            }
+
+            addRow(title, fA, dA, fB, dB, false);
+            loaded = true;
+          }
         }
+        index++;
+      }
 
-        // Initialize with default sample row
-        addRow(701.0, 1.0, 903.2, 3.0);
+      // Default initial rows matching previous sample defaults if URL query is empty
+      if (!loaded) {
+        addRow('EMS', 601.1, 1.0, 788.2, 3.0, false);
+        addRow('Fire', 601.1, 1.0, 510.5, 3.0, false);
+        addRow('All County', 1251.9, 1.0, 510.5, 3.0, false);
+      }
+      updateURLParams();
+    }
 
-        addRowBtn.addEventListener('click', () => addRow());
+    // Initialize layout from URL parameters
+    loadRowsFromURL();
 
-        // File Upload Decoding
-        fileInput.addEventListener('change', async (e) => {
-            const file = e.target.files[0];
-            if (!file) return;
+    addRowBtn.addEventListener('click', () => addRow());
 
-            statusEl.textContent = 'Decoding file...';
-            await decodeAudioFile(
-                file,
-                (decoded) => {
-                    addRow(decoded.freqA, decoded.durA, decoded.freqB, decoded.durB);
-                    statusEl.textContent = `Decoded & Added: ${Math.round(decoded.freqA)}Hz / ${Math.round(decoded.freqB)}Hz`;
-                },
-                (statusMsg) => { statusEl.textContent = statusMsg; }
-            );
+    copyUrlBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        const origText = copyUrlBtn.textContent;
+        copyUrlBtn.textContent = 'Copied!';
+        setTimeout(() => { copyUrlBtn.textContent = origText; }, 2000);
+      });
+    });
+
+    // File Upload Decoding
+    fileInput.addEventListener('change', async (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      statusEl.textContent = 'Decoding file...';
+      await decodeAudioFile(
+        file,
+        (decoded) => {
+          addRow(file.name, decoded.freqA, decoded.durA, decoded.freqB, decoded.durB);
+          statusEl.textContent = `Decoded & Added: ${Math.round(decoded.freqA)}Hz / ${Math.round(decoded.freqB)}Hz`;
+        },
+        (statusMsg) => { statusEl.textContent = statusMsg; }
+      );
+    });
+
+    // Live Microphone Stream Decoding
+    toggleMicBtn.addEventListener('click', async () => {
+      if (isMicListening) {
+        stopMicListening();
+      } else {
+        await startMicListening();
+      }
+    });
+
+    async function startMicListening() {
+      try {
+        micStream = await navigator.mediaDevices.getUserMedia({ audio: true, video: false });
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const source = audioContext.createMediaStreamSource(micStream);
+        analyserNode = audioContext.createAnalyser();
+        analyserNode.fftSize = 2048;
+        source.connect(analyserNode);
+
+        micDecoder = new TwoToneDecoder({
+          sampleRate: audioContext.sampleRate,
+          onToneDecoded: (decoded) => {
+            addRow('from mic', decoded.freqA, decoded.durA, decoded.freqB, decoded.durB);
+            stopMicListening(true);
+            statusEl.textContent = `Decoded & Stopped: ${Math.round(decoded.freqA)}Hz / ${Math.round(decoded.freqB)}Hz`;
+          },
+          onStatusChange: (statusMsg) => { 
+            if (isMicListening) statusEl.textContent = statusMsg; 
+          }
         });
 
-        // Live Microphone Stream Decoding
-        toggleMicBtn.addEventListener('click', async () => {
-            if (isMicListening) {
-                stopMicListening();
-            } else {
-                await startMicListening();
-            }
-        });
+        isMicListening = true;
+        micIndicator.classList.add('active');
+        toggleMicBtn.textContent = 'Disable Microphone Listening';
+        statusEl.textContent = 'Listening...';
 
-        async function startMicListening() {
-            try {
-                micStream = await navigator.mediaDevices.getUserMedia({ audio: true, video: false });
-                audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                const source = audioContext.createMediaStreamSource(micStream);
-                analyserNode = audioContext.createAnalyser();
-                analyserNode.fftSize = 2048;
-                source.connect(analyserNode);
-
-                micDecoder = new TwoToneDecoder({
-                    sampleRate: audioContext.sampleRate,
-                    onToneDecoded: (decoded) => {
-                        addRow(decoded.freqA, decoded.durA, decoded.freqB, decoded.durB);
-                        // Stop listening automatically after a successful decode
-                        stopMicListening(true);
-                        statusEl.textContent = `Decoded & Stopped: ${Math.round(decoded.freqA)} Hz / ${Math.round(decoded.freqB)} Hz`;
-                    },
-                    onStatusChange: (statusMsg) => {
-                        if (isMicListening) statusEl.textContent = statusMsg;
-                    }
-                });
-
-                isMicListening = true;
-                micIndicator.classList.add('active');
-                toggleMicBtn.textContent = 'Disable Microphone Listening';
-                statusEl.textContent = 'Listening...';
-
-                const buffer = new Float32Array(analyserNode.fftSize);
-                function processLoop() {
-                    if (!isMicListening) return;
-                    analyserNode.getFloatTimeDomainData(buffer);
-                    micDecoder.processFrame(buffer, audioContext.currentTime);
-                    micAnimationId = requestAnimationFrame(processLoop);
-                }
-                processLoop();
-            } catch (err) {
-                statusEl.textContent = `Mic Error: ${err.message}`;
-            }
+        const buffer = new Float32Array(analyserNode.fftSize);
+        function processLoop() {
+          if (!isMicListening) return;
+          analyserNode.getFloatTimeDomainData(buffer);
+          micDecoder.processFrame(buffer, audioContext.currentTime);
+          micAnimationId = requestAnimationFrame(processLoop);
         }
+        processLoop();
+      } catch (err) {
+        statusEl.textContent = `Mic Error: ${err.message}`;
+      }
+    }
 
-        function stopMicListening(keepStatus = false) {
-            isMicListening = false;
-            if (micAnimationId) cancelAnimationFrame(micAnimationId);
-            if (micStream) micStream.getTracks().forEach(t => t.stop());
-            if (audioContext) audioContext.close();
-            micIndicator.classList.remove('active');
-            toggleMicBtn.textContent = 'Enable Microphone Listening';
-            if (!keepStatus) {
-                statusEl.textContent = 'Idle';
-            }
-        }
-    </script>
+    function stopMicListening(keepStatus = false) {
+      isMicListening = false;
+      if (micAnimationId) cancelAnimationFrame(micAnimationId);
+      if (micStream) micStream.getTracks().forEach(t => t.stop());
+      if (audioContext) audioContext.close();
+      micIndicator.classList.remove('active');
+      toggleMicBtn.textContent = 'Enable Microphone Listening';
+      if (!keepStatus) {
+        statusEl.textContent = 'Idle';
+      }
+    }
+  </script>
 </body>
-
 </html>
