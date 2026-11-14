@@ -1,7 +1,7 @@
 {
     "title":"Simple Little Toneout Generator",
-    "link":"/tones.html",
-    "image":"/img/toneout.png",
+    "link":"/tones",
+    "image":"/img/twotone.png",
     "description":"Generate two tone toneouts commonly used by Fire/EMS. Useful for training and curiosity.",
     "tags":["javascript","jQuery","Firefighter", "toneout"],
     "featured":true,
@@ -22,6 +22,6 @@ Some javascript and use of the [tone.js](https://tonejs.github.io/) library to c
 - Generate shareable URL
 
 #### Peru Pager Toneouts
-Here's a [link to listen to the 3 toneouts that my local Fire/EMS department uses](/tones.html?1=EMS%2C601.1%2C788.2&2=Fire%2C601.1%2C510.5&3=All+County%2C1251.9%2C510.5) on our pagers as an example.
+Here's a [link to listen to the 3 toneouts that my local Fire/EMS department uses](/tones/?1=EMS%2C601.1%2C788.2&2=Fire%2C601.1%2C510.5&3=All+County%2C1251.9%2C510.5) on our pagers as an example.
 
-![Super Simple Toneout Generator](/img/toneout.png)
+![Super Simple Toneout Generator](/img/twotone.png)
